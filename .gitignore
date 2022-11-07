@@ -1,3 +1,7 @@
+# START My own ignore entries
+build/
+# END My own ignore entries
+
 # Created by https://www.toptal.com/developers/gitignore/api/rider,visualstudio,vim,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=rider,visualstudio,vim,c++
 
