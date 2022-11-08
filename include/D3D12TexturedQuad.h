@@ -20,29 +20,42 @@
 // THE SOFTWARE.
 //
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <cstdio>
+#ifndef AMD_TEXTURED_QUAD_D3D12_SAMPLE_H_
+#define AMD_TEXTURED_QUAD_D3D12_SAMPLE_H_
 
 #include "D3D12Sample.h"
-#include "D3D12TexturedQuad.h"
 
-int WinMain (
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR     lpCmdLine,
-	int       nCmdShow
-	)
+#include <vector>
+
+namespace AMD {
+class D3D12TexturedQuad : public D3D12Sample
 {
-	AMD::D3D12Sample* sample = new AMD::D3D12TexturedQuad;
+private:
+	void CreateTexture (ID3D12GraphicsCommandList* uploadCommandList);
+	void CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList);
+	void CreateConstantBuffer ();
+	void UpdateConstantBuffer ();
+	void CreateRootSignature ();
+	void CreatePipelineStateObject ();
+	void RenderImpl (ID3D12GraphicsCommandList* commandList) override;
+	void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList) override;
 
-	if (sample == nullptr)
-	{
-		return 1;
-	}
+	Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
 
-	sample->Run (512);
-	delete sample;
+	Microsoft::WRL::ComPtr<ID3D12Resource> vertexBuffer_;
+	D3D12_VERTEX_BUFFER_VIEW vertexBufferView_;
 
-	return 0;
+	Microsoft::WRL::ComPtr<ID3D12Resource> indexBuffer_;
+	D3D12_INDEX_BUFFER_VIEW indexBufferView_;
+
+	Microsoft::WRL::ComPtr<ID3D12Resource>	image_;
+	Microsoft::WRL::ComPtr<ID3D12Resource>	uploadImage_;
+	std::vector<std::uint8_t>				imageData_;
+
+	Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
+
+	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    srvDescriptorHeap_;
+};
 }
+
+#endif

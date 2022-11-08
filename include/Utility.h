@@ -20,29 +20,19 @@
 // THE SOFTWARE.
 //
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <cstdio>
+#ifndef ANTERU_D3D12_SAMPLE_UTILITY_H_
+#define ANTERU_D3D12_SAMPLE_UTILITY_H_
 
-#include "D3D12Sample.h"
-#include "D3D12TexturedQuad.h"
+#include <vector>
+#include <cstdint>
 
-int WinMain (
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR     lpCmdLine,
-	int       nCmdShow
-	)
+///////////////////////////////////////////////////////////////////////////////
+template <typename T>
+constexpr T RoundToNextMultiple (const T a, const T multiple)
 {
-	AMD::D3D12Sample* sample = new AMD::D3D12TexturedQuad;
-
-	if (sample == nullptr)
-	{
-		return 1;
-	}
-
-	sample->Run (512);
-	delete sample;
-
-	return 0;
+	return ((a + multiple - 1) / multiple) * multiple;
 }
+
+std::vector<std::uint8_t> ReadFile (const char* filename);
+
+#endif

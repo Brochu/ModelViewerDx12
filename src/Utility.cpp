@@ -20,29 +20,29 @@
 // THE SOFTWARE.
 //
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <cstdio>
+#include "Utility.h"
 
-#include "D3D12Sample.h"
-#include "D3D12TexturedQuad.h"
+#include <stdio.h>
 
-int WinMain (
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR     lpCmdLine,
-	int       nCmdShow
-	)
+///////////////////////////////////////////////////////////////////////////////
+std::vector<std::uint8_t> ReadFile (const char* filename)
 {
-	AMD::D3D12Sample* sample = new AMD::D3D12TexturedQuad;
+	std::vector<std::uint8_t> result;
+	std::uint8_t buffer[4096];
 
-	if (sample == nullptr)
-	{
-		return 1;
+	auto handle = std::fopen (filename, "rb");
+
+	for (;;) {
+		const auto bytesRead = std::fread (buffer, 1, sizeof (buffer), handle);
+
+		result.insert (result.end (), buffer, buffer + bytesRead);
+
+		if (bytesRead < sizeof (buffer)) {
+			break;
+		}
 	}
 
-	sample->Run (512);
-	delete sample;
+	std::fclose (handle);
 
-	return 0;
+	return result;
 }

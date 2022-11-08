@@ -20,29 +20,20 @@
 // THE SOFTWARE.
 //
 
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <cstdio>
+#ifndef ANTERU_D3D12_SAMPLE_IMAGEIO_H_
+#define ANTERU_D3D12_SAMPLE_IMAGEIO_H_
 
-#include "D3D12Sample.h"
-#include "D3D12TexturedQuad.h"
+#include <vector>
+#include <cstdint>
 
-int WinMain (
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR     lpCmdLine,
-	int       nCmdShow
-	)
-{
-	AMD::D3D12Sample* sample = new AMD::D3D12TexturedQuad;
+#ifdef LoadImage
+#undef LoadImage
+#endif
 
-	if (sample == nullptr)
-	{
-		return 1;
-	}
+std::vector<std::uint8_t> LoadImageFromFile (const char* path, const int rowAlignment,
+	int* width, int* height);
 
-	sample->Run (512);
-	delete sample;
+std::vector<std::uint8_t> LoadImageFromMemory(const void* data, const std::size_t size, const int rowAlignment,
+	int* width, int* height);
 
-	return 0;
-}
+#endif
