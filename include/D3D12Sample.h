@@ -83,6 +83,7 @@ private:
 	void PrepareRender ();
 	void FinalizeRender ();
 
+    void Update ();
 	void Render ();
 	void Present ();
 

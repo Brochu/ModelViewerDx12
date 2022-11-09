@@ -147,6 +147,14 @@ void D3D12Sample::PrepareRender ()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+void D3D12Sample::Update ()
+{
+    //TODO: Maybe add some logic here
+    // We could update some internal state for the sample
+    // ex: Time tracking, constant buffers for camera transforms etc
+}
+
+///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Render ()
 {
 	PrepareRender ();
@@ -205,10 +213,11 @@ void D3D12Sample::Run (const int frameCount)
 {
 	Initialize ();
 
-	for (int i = 0; i < frameCount; ++i) {
+	while (!window_->IsClosed()) {
 		WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
 			fenceValues_[GetQueueSlot ()], frameFenceEvents_[GetQueueSlot ()]);
 		
+        Update ();
 		Render ();
 		Present ();
 	}
