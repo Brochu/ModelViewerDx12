@@ -26,9 +26,11 @@ set (source
     ${CMAKE_CURRENT_LIST_DIR}/src/D3D12Sample.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/D3D12TexturedQuad.cpp
 )
-
-#TODO: Find and link the libraries needed for the project
-# Probably good to start linking with Dx12 in order to make sure the HelloWorld works
+set (libs
+    d3d12.lib
+    d3dcompiler.lib
+    dxgi.lib
+)
 
 add_executable (ModelViewerDx12 WIN32 ${source} ${headers})
 
@@ -37,7 +39,7 @@ target_include_directories(ModelViewerDx12
         ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
-target_link_libraries(ModelViewerDx12 d3d12.lib d3dcompiler.lib dxgi.lib)
+target_link_libraries(ModelViewerDx12 ${libs})
 
 set_target_properties( ModelViewerDx12
     PROPERTIES
