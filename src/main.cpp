@@ -22,10 +22,14 @@
 
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
-#include <cstdio>
 
+#include "Window.h"
 #include "D3D12Sample.h"
 #include "D3D12TexturedQuad.h"
+
+const std::string TITLE = "AMD HelloD3D12";
+const int WIDTH = 1280;
+const int HEIGHT = 720;
 
 int WinMain (
 	HINSTANCE hInstance,
@@ -34,15 +38,8 @@ int WinMain (
 	int       nCmdShow
 	)
 {
-	AMD::D3D12Sample* sample = new AMD::D3D12TexturedQuad;
-
-	if (sample == nullptr)
-	{
-		return 1;
-	}
-
-	sample->Run (512);
-	delete sample;
+    std::unique_ptr<AMD::Window> window (new AMD::Window (TITLE, WIDTH, HEIGHT));
+    window->RunSample(nullptr);
 
 	return 0;
 }
