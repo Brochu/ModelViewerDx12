@@ -29,6 +29,7 @@
 #include <memory>
 
 namespace AMD {
+//TODO: We can remove this when references to AMD::Window are removed
 class Window;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -94,6 +95,7 @@ private:
 	void SetupSwapChain ();
 	void SetupRenderTargets ();
 
+    //TODO: Remove this reference, new arch makes it so the sample doesn't know about the window
 	std::unique_ptr<Window> window_;
 
 	Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
