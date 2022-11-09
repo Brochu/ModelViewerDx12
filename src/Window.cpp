@@ -39,6 +39,10 @@ LRESULT CALLBACK amdWndProc(
     case WM_CLOSE:
         window->OnClose();
         return 0;
+
+    case WM_PAINT:
+        //TODO: Change arch so that the sample's Render and Present are called here
+        return 0;
     }
 
     return ::DefWindowProcA(hwnd, uMsg, wParam, lParam);
@@ -87,6 +91,13 @@ Window::Window(const std::string& title, const int width, const int height)
     // Show the window and paint its contents.
     ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
     ::UpdateWindow(hwnd_);
+
+    //TODO: Look into being able to pump all messages that are queued
+    // For some reason using a while loop like in sample apps loops forever?
+    //MSG msg = {};
+    //PeekMessage(&msg, NULL, 0, 0, RM_REMOVE);
+    //TranslateMessage(&msg);
+    //DispatchMessage(&msg);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
