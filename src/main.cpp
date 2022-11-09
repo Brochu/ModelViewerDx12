@@ -39,7 +39,9 @@ int WinMain (
 	)
 {
     std::unique_ptr<AMD::Window> window (new AMD::Window (TITLE, WIDTH, HEIGHT));
-    window->RunSample(nullptr);
+    std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12TexturedQuad);
+
+    window->RunSample(sample.get());
 
 	return 0;
 }
