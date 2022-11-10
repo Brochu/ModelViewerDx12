@@ -29,7 +29,6 @@
 #include <memory>
 
 namespace AMD {
-class Window;
 
 ///////////////////////////////////////////////////////////////////////////////
 class D3D12Sample
@@ -41,7 +40,9 @@ public:
 	D3D12Sample ();
 	virtual ~D3D12Sample ();
 
-	void Run (const int frameCount);
+	void Run (int w, int h, HWND hwnd);
+    void Step ();
+    void Stop ();
 
 protected:
 	int GetQueueSlot () const
@@ -93,12 +94,13 @@ private:
 	void SetupSwapChain ();
 	void SetupRenderTargets ();
 
-	std::unique_ptr<Window> window_;
-
 	Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
 	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
 
 	int currentBackBuffer_ = 0;
+    int width_ = -1;
+    int height_ = -1;
+    HWND hwnd_;
 	
 	std::int32_t renderTargetViewDescriptorSize_;
 };

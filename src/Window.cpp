@@ -89,11 +89,13 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
     ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
     ::UpdateWindow(hwnd_);
 
-    if (sample != nullptr)
+    sample->Run(width, height, hwnd_);
+    for (int i = 0; i < 512; i++)
     {
-        sample->Run(512);
+        sample->Step();
     }
-}
+    sample->Stop();
+}   
 
 ///////////////////////////////////////////////////////////////////////////////
 bool IWindow::IsClosed() const

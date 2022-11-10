@@ -30,7 +30,6 @@
 #include <algorithm>
 
 #include "ImageIO.h"
-#include "Window.h"
 
 #ifdef max 
 #undef max
@@ -202,18 +201,26 @@ void WaitForFence (ID3D12Fence* fence, UINT64 completionValue, HANDLE waitEvent)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void D3D12Sample::Run (const int frameCount)
+void D3D12Sample::Run (int w, int h, HWND hwnd)
 {
+    width_ = w;
+    height_ = h;
+    hwnd_ = hwnd;
+
 	Initialize ();
+}
 
-	for (int i = 0; i < frameCount; ++i) {
-		WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
-			fenceValues_[GetQueueSlot ()], frameFenceEvents_[GetQueueSlot ()]);
-		
-		Render ();
-		Present ();
-	}
+void D3D12Sample::Step ()
+{
+    WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
+        fenceValues_[GetQueueSlot ()], frameFenceEvents_[GetQueueSlot ()]);
+    
+    Render ();
+    Present ();
+}
 
+void D3D12Sample::Stop ()
+{
 	// Drain the queue, wait for everything to finish
 	for (int i = 0; i < GetQueueSlotCount (); ++i) {
 		WaitForFence (frameFences_[i].Get (), fenceValues_[i], frameFenceEvents_[i]);
@@ -301,8 +308,6 @@ void D3D12Sample::SetupSwapChain ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Initialize ()
 {
-	window_.reset (new Window ("AMD HelloD3D12", 1280, 720, nullptr));
-
 	CreateDeviceAndSwapChain ();
 	CreateAllocatorsAndCommandLists ();
 	CreateViewportScissor ();
@@ -378,9 +383,9 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
 	// we specify here
 	swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-	swapChainDesc.BufferDesc.Width = window_->GetWidth ();
-	swapChainDesc.BufferDesc.Height = window_->GetHeight ();
-	swapChainDesc.OutputWindow = window_->GetHWND ();
+	swapChainDesc.BufferDesc.Width = width_;
+	swapChainDesc.BufferDesc.Height = height_;
+	swapChainDesc.OutputWindow = hwnd_;
 	swapChainDesc.SampleDesc.Count = 1;
 	swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
 	swapChainDesc.Windowed = true;
@@ -414,11 +419,11 @@ void D3D12Sample::CreateAllocatorsAndCommandLists ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::CreateViewportScissor ()
 {
-	rectScissor_ = { 0, 0, window_->GetWidth (), window_->GetHeight () };
+	rectScissor_ = { 0, 0, width_, height_ };
 
 	viewport_ = { 0.0f, 0.0f,
-		static_cast<float>(window_->GetWidth ()),
-		static_cast<float>(window_->GetHeight ()),
+		static_cast<float>(width_),
+		static_cast<float>(height_),
 		0.0f, 1.0f
 	};
 }
