@@ -27,8 +27,6 @@
 #include <Windows.h>
 #include <memory>
 
-#include <D3D12Sample.h>
-
 namespace AMD {
 /**
 * Encapsulate a window class.
@@ -63,7 +61,6 @@ public:
 
 	bool IsClosed () const;
 	virtual void OnClose () = 0;
-	virtual void RunSample (D3D12Sample* sample) = 0;
 
 	int GetWidth () const;
 	int GetHeight () const;
@@ -85,7 +82,6 @@ public:
 	{
 		isClosed_ = true;
 	}
-	void RunSample (D3D12Sample *sample) override;
 
 private:
 	bool IsClosedImpl () const override
@@ -107,7 +103,6 @@ private:
 	HWND hwnd_ = 0;
 	bool isClosed_ = false;
 	int width_ = -1, height_ = -1;
-    std::string title_ = "";
 };
 }
 

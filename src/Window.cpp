@@ -39,10 +39,6 @@ LRESULT CALLBACK amdWndProc(
     case WM_CLOSE:
         window->OnClose();
         return 0;
-
-    case WM_PAINT:
-        //TODO: Change arch so that the sample's Render and Present are called here
-        return 0;
     }
 
     return ::DefWindowProcA(hwnd, uMsg, wParam, lParam);
@@ -68,8 +64,29 @@ int IWindow::GetHeight() const
 
 ///////////////////////////////////////////////////////////////////////////////
 Window::Window(const std::string& title, const int width, const int height)
-    : width_ (width), height_ (height), title_ (title)
+    : width_ (width)
+    , height_ (height)
 {
+    DWORD style = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX;
+
+    ::RECT rect;
+    ::SetRect(&rect, 0, 0, width, height);
+    ::AdjustWindowRect(&rect, style, FALSE);
+
+    windowClass_.reset(new WindowClass("D3D12SampleWindowClass", amdWndProc));
+
+    // Create the main window.
+    hwnd_ = ::CreateWindowA(windowClass_->GetName().c_str(),
+        title.c_str(),
+        style, CW_USEDEFAULT, CW_USEDEFAULT,
+        rect.right - rect.left, rect.bottom - rect.top, (HWND)NULL,
+        (HMENU)NULL, NULL, (LPVOID)NULL);
+
+    ::SetWindowLongPtr(hwnd_, GWLP_USERDATA, reinterpret_cast<LONG_PTR> (this));
+
+    // Show the window and paint its contents.
+    ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
+    ::UpdateWindow(hwnd_);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -82,38 +99,6 @@ bool IWindow::IsClosed() const
 HWND Window::GetHWND () const
 {
     return hwnd_;
-}
-
-///////////////////////////////////////////////////////////////////////////////
-void Window::RunSample (D3D12Sample *sample)
-{
-    DWORD style = WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX;
-
-    ::RECT rect;
-    ::SetRect(&rect, 0, 0, width_, height_);
-    ::AdjustWindowRect(&rect, style, FALSE);
-
-    windowClass_.reset(new WindowClass("D3D12SampleWindowClass", amdWndProc));
-
-    // Create the main window.
-    hwnd_ = ::CreateWindowA(windowClass_->GetName().c_str(),
-        title_.c_str(),
-        style, CW_USEDEFAULT, CW_USEDEFAULT,
-        rect.right - rect.left, rect.bottom - rect.top, (HWND)NULL,
-        (HMENU)NULL, NULL, (LPVOID)NULL);
-
-    ::SetWindowLongPtr(hwnd_, GWLP_USERDATA, reinterpret_cast<LONG_PTR> (this));
-
-    // Show the window and paint its contents.
-    ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
-    ::UpdateWindow(hwnd_);
-
-    MSG msg = {};
-    while (!IsClosed() && PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-    {
-        TranslateMessage(&msg);
-        DispatchMessage(&msg);
-    }
 }
 
 /////////////////////////////////////////////////////////////////////////

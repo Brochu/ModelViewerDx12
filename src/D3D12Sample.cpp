@@ -53,12 +53,13 @@ Create everything we need for rendering, this includes a device, a command queue
 and a swap chain.
 */
 RenderEnvironment CreateDeviceAndSwapChainHelper (
-	IDXGIAdapter* adapter,
-	const DXGI_SWAP_CHAIN_DESC* swapChainDesc)
+	_In_opt_ IDXGIAdapter* adapter,
+	D3D_FEATURE_LEVEL minimumFeatureLevel,
+	_In_ const DXGI_SWAP_CHAIN_DESC* swapChainDesc)
 {
 	RenderEnvironment result;
 
-	auto hr = D3D12CreateDevice (adapter, D3D_FEATURE_LEVEL_12_1,
+	auto hr = D3D12CreateDevice (adapter, minimumFeatureLevel,
 		IID_PPV_ARGS (&result.device));
 
 	if (FAILED (hr)) {
@@ -147,14 +148,6 @@ void D3D12Sample::PrepareRender ()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-void D3D12Sample::Update ()
-{
-    //TODO: Maybe add some logic here
-    // We could update some internal state for the sample
-    // ex: Time tracking, constant buffers for camera transforms etc
-}
-
-///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Render ()
 {
 	PrepareRender ();
@@ -213,11 +206,10 @@ void D3D12Sample::Run (const int frameCount)
 {
 	Initialize ();
 
-	while (!window_->IsClosed()) {
+	for (int i = 0; i < frameCount; ++i) {
 		WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
 			fenceValues_[GetQueueSlot ()], frameFenceEvents_[GetQueueSlot ()]);
 		
-        Update ();
 		Render ();
 		Present ();
 	}
@@ -393,7 +385,8 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
 	swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD;
 	swapChainDesc.Windowed = true;
 
-	auto renderEnv = CreateDeviceAndSwapChainHelper (nullptr, &swapChainDesc);
+	auto renderEnv = CreateDeviceAndSwapChainHelper (nullptr, D3D_FEATURE_LEVEL_11_0,
+		&swapChainDesc);
 
 	device_ = renderEnv.device;
 	commandQueue_ = renderEnv.queue;
