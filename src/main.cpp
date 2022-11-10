@@ -23,8 +23,13 @@
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
+#include "Window.h"
 #include "D3D12Sample.h"
 #include "D3D12TexturedQuad.h"
+
+const std::string TITLE = "[Dx12] Model Viewer";
+const int WIDTH = 1280;
+const int HEIGHT = 720;
 
 int WinMain (
 	HINSTANCE hInstance,
@@ -34,7 +39,7 @@ int WinMain (
 	)
 {
     std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12TexturedQuad);
-    sample->Run(512);
+    std::unique_ptr<AMD::Window> window (new AMD::Window(TITLE, WIDTH, HEIGHT, sample.get()));
 
 	return 0;
 }

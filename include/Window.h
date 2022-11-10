@@ -28,6 +28,7 @@
 #include <memory>
 
 namespace AMD {
+class D3D12Sample;
 /**
 * Encapsulate a window class.
 *
@@ -74,7 +75,7 @@ private:
 class Window : public IWindow
 {
 public:
-	Window (const std::string& title, int width, int height);
+	Window (const std::string& title, int width, int height, D3D12Sample *sample);
 
 	HWND GetHWND () const;
 

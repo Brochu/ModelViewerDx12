@@ -301,7 +301,7 @@ void D3D12Sample::SetupSwapChain ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Initialize ()
 {
-	window_.reset (new Window ("AMD HelloD3D12", 1280, 720));
+	window_.reset (new Window ("AMD HelloD3D12", 1280, 720, nullptr));
 
 	CreateDeviceAndSwapChain ();
 	CreateAllocatorsAndCommandLists ();

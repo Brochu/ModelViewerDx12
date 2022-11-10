@@ -21,6 +21,7 @@
 //
 
 #include "Window.h"
+#include "D3D12Sample.h"
 
 namespace AMD {
 namespace {
@@ -63,7 +64,7 @@ int IWindow::GetHeight() const
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-Window::Window(const std::string& title, const int width, const int height)
+Window::Window(const std::string& title, const int width, const int height, D3D12Sample *sample)
     : width_ (width)
     , height_ (height)
 {
@@ -87,6 +88,11 @@ Window::Window(const std::string& title, const int width, const int height)
     // Show the window and paint its contents.
     ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
     ::UpdateWindow(hwnd_);
+
+    if (sample != nullptr)
+    {
+        sample->Run(512);
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
