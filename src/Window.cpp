@@ -45,8 +45,9 @@ LRESULT CALLBACK amdWndProc(
         window->OnClose();
         return 0;
 
-    //case WM_PAINT:
-        //sample_->Step();
+    case WM_PAINT:
+        sample_->Step();
+        return 0;
     }
 
     return ::DefWindowProcA(hwnd, uMsg, wParam, lParam);
@@ -92,14 +93,12 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
 
     ::SetWindowLongPtr(hwnd_, GWLP_USERDATA, reinterpret_cast<LONG_PTR> (this));
 
-    //TODO: Debug why the sample cannot load the texture needed?
-    // Is there a sync issue when first starting the sample? Try to use the texture before loaded?
-    // Initialize the sample to run
-    //sample->Run(width, height, hwnd_);
-    //sample_ = sample;
-
     // Show the window and paint its contents.
     ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
+
+    // Initialize the sample to run
+    sample->Run(width, height, hwnd_);
+    sample_ = sample;
 
     MSG msg = {};
     while (!IsClosed())
@@ -110,8 +109,8 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
             DispatchMessage(&msg);
         }
     }
-
-    //sample->Stop();
+    
+    sample->Stop();
 }   
 
 ///////////////////////////////////////////////////////////////////////////////
