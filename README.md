@@ -8,6 +8,7 @@ The toolset I would like to use to compile and link this project
 
 * Cmake
 * Clang/Clangd
+* [Orbit](https://github.com/google/orbit) (Performance profiling from Google)
 
 I would also like to link to the following libraries to help with development
 
