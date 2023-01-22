@@ -30,6 +30,8 @@ set (libs
     d3d12.lib
     d3dcompiler.lib
     dxgi.lib
+
+    assimp-vc143-mt.lib
 )
 
 add_executable (ModelViewerDx12 WIN32 ${source} ${headers})
@@ -37,6 +39,10 @@ add_executable (ModelViewerDx12 WIN32 ${source} ${headers})
 target_include_directories(ModelViewerDx12
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/include
+)
+target_link_directories(ModelViewerDx12
+    PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}/libs
 )
 
 target_link_libraries(ModelViewerDx12 ${libs})
