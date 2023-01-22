@@ -32,14 +32,14 @@ const int WIDTH = 1280;
 const int HEIGHT = 720;
 
 int WinMain (
-	HINSTANCE hInstance,
-	HINSTANCE hPrevInstance,
-	LPSTR     lpCmdLine,
-	int       nCmdShow
-	)
+    HINSTANCE hInstance,
+    HINSTANCE hPrevInstance,
+    LPSTR     lpCmdLine,
+    int       nCmdShow
+)
 {
     std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12TexturedQuad);
     std::unique_ptr<AMD::Window> window (new AMD::Window(TITLE, WIDTH, HEIGHT, sample.get()));
 
-	return 0;
+    return 0;
 }
