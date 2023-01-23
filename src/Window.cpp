@@ -23,6 +23,9 @@
 #include "Window.h"
 #include "D3D12Sample.h"
 
+#include "imgui.h"
+#include "imgui_impl_win32.h"
+
 namespace AMD {
     D3D12Sample *sample_;
 
@@ -95,6 +98,14 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
 
     // Show the window and paint its contents.
     ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
+
+    // Init Imgui
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO &io = ImGui::GetIO();
+    ImGui::StyleColorsDark();
+    //ImGui::StyleColorsLight(); For light theme
+    ImGui_ImplWin32_Init(hwnd_);
 
     // Initialize the sample to run
     sample->Run(width, height, hwnd_);
