@@ -20,21 +20,17 @@
 // THE SOFTWARE.
 //
 
+#define NOMINMAX
 #include "D3D12Sample.h"
 
-#include <dxgi1_4.h>
+#include "ImageIO.h"
+#include "Tracy.hpp"
+
+#include "dxgi1_4.h"
 #include "d3dx12.h"
-#include <iostream>
-#include <d3dcompiler.h>
+#include "d3dcompiler.h"
 #include "Shaders.h"
 #include <algorithm>
-
-#include "ImageIO.h"
-
-#ifdef max
-#undef max
-#endif
-#include "Tracy.hpp"
 
 using namespace Microsoft::WRL;
 

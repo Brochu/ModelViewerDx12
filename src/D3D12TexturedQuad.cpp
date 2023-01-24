@@ -20,14 +20,16 @@
 // THE SOFTWARE.
 //
 
+#define NOMINMAX
 #include "D3D12TexturedQuad.h"
 
 #include "ImageIO.h"
 #include "RubyTexture.h"
 #include "Shaders.h"
+#include "Tracy.hpp"
 
 #include "d3dx12.h"
-#include <d3dcompiler.h>
+#include "d3dcompiler.h"
 #include <cmath>
 
 using namespace Microsoft::WRL;
