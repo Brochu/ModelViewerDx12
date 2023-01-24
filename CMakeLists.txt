@@ -25,9 +25,6 @@ set (imgui_headers
     ${CMAKE_CURRENT_LIST_DIR}/include/imgui/imstb_textedit.h
     ${CMAKE_CURRENT_LIST_DIR}/include/imgui/imstb_truetype.h
 )
-set (tracy_headers
-    ${CMAKE_CURRENT_LIST_DIR}/include/tracy/Tracy.hpp
-)
 
 set (source
     ${CMAKE_CURRENT_LIST_DIR}/src/main.cpp
@@ -48,9 +45,6 @@ set (imgui_source
     ${CMAKE_CURRENT_LIST_DIR}/src/imgui/imgui_tables.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/imgui/imgui_widgets.cpp
 )
-set (tracy_source
-    ${CMAKE_CURRENT_LIST_DIR}/src/tracy/TracyClient.cpp
-)
 
 set (libs
     d3d12.lib
@@ -60,26 +54,25 @@ set (libs
     assimp-vc143-mt.lib
 )
 
-# Setup Tracy integration
-option(TRACY_ENABLE "" on)
-option(TRACY_ON_DEMAND "" off)
-add_subdirectory(libs/tracy)
-
 add_executable (ModelViewerDx12 WIN32
-    ${source} ${imgui_source} ${tracy_source}
-    ${headers} ${imgui_headers} ${tracy_headers}
+    ${source} ${imgui_source}
+    ${headers} ${imgui_headers}
 )
 
 target_include_directories(ModelViewerDx12
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/include
         ${CMAKE_CURRENT_LIST_DIR}/include/imgui
-        ${CMAKE_CURRENT_LIST_DIR}/include/tracy
+        ${CMAKE_CURRENT_LIST_DIR}/tracy/public/tracy
 )
 target_link_directories(ModelViewerDx12
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/libs
 )
+
+# Tracy setup
+add_subdirectory(tracy)
+add_compile_definitions(TRACY_ENABLE=ON)
 
 target_link_libraries(ModelViewerDx12 ${libs} Tracy::TracyClient)
 
