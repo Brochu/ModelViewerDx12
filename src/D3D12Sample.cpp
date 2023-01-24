@@ -31,9 +31,10 @@
 
 #include "ImageIO.h"
 
-#ifdef max 
+#ifdef max
 #undef max
 #endif
+#include "Tracy.hpp"
 
 using namespace Microsoft::WRL;
 
@@ -149,6 +150,7 @@ void D3D12Sample::PrepareRender ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Render ()
 {
+	ZoneScoped;
 	PrepareRender ();
 	
 	auto commandList = commandLists_ [currentBackBuffer_].Get ();
@@ -217,6 +219,8 @@ void D3D12Sample::Step ()
     
     Render ();
     Present ();
+
+	FrameMark;
 }
 
 void D3D12Sample::Stop ()
@@ -268,6 +272,7 @@ next back buffer and also signal the fence for the current queue slot entry.
 */
 void D3D12Sample::Present ()
 {
+	ZoneScoped;
 	swapChain_->Present (1, 0);
 
 	// Mark the fence for the current frame.
