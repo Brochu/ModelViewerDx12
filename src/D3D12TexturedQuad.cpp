@@ -107,6 +107,8 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
     commandList->IASetIndexBuffer (&indexBufferView_);
     commandList->DrawIndexedInstanced (6, 1, 0, 0, 0);
+
+    //TODO: Add draw logic for Imgui overlay here
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -124,12 +126,15 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
     descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 
     device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&srvDescriptorHeap_));
+    //TODO: Might need to create a separate descriptor head for Imgui specific descriptors
 
     CreateRootSignature ();
     CreatePipelineStateObject ();
     CreateConstantBuffer ();
     CreateMeshBuffers (uploadCommandList);
     CreateTexture (uploadCommandList);
+
+    //TODO: Init the renderer side of Imgui
 }
 
 ///////////////////////////////////////////////////////////////////////////////
