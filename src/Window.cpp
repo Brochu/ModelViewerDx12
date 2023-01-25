@@ -20,8 +20,11 @@
 // THE SOFTWARE.
 //
 
+#define NOMINMAX
 #include "Window.h"
+
 #include "D3D12Sample.h"
+#include "Tracy.hpp"
 
 #include "imgui.h"
 #include "imgui_impl_win32.h"
@@ -38,6 +41,8 @@ LRESULT CALLBACK amdWndProc(
     LPARAM lParam
     )
 {
+    ZoneScopedN("Window::ProcCallback");
+
     auto ptr = ::GetWindowLongPtr(hwnd, GWLP_USERDATA);
     auto window = reinterpret_cast<IWindow*> (ptr);
 
@@ -114,6 +119,8 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
     MSG msg = {};
     while (!IsClosed())
     {
+        ZoneScopedN("Window::EventLoop");
+
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
         {
             TranslateMessage(&msg);

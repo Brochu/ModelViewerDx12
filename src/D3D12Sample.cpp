@@ -108,6 +108,7 @@ D3D12Sample::~D3D12Sample ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::PrepareRender ()
 {
+    ZoneScopedN("Sample::PrepareRender");
     commandAllocators_ [currentBackBuffer_]->Reset ();
 
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
@@ -146,7 +147,7 @@ void D3D12Sample::PrepareRender ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Render ()
 {
-    ZoneScoped;
+    ZoneScopedN("Sample::Render");
     PrepareRender ();
     
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
@@ -159,6 +160,8 @@ void D3D12Sample::Render ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
 {
+    ZoneScopedN("Sample::RenderImpl");
+
     // Set our state (shaders, etc.)
     commandList->SetPipelineState (pso_.Get ());
 
@@ -169,6 +172,8 @@ void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::FinalizeRender ()
 {
+    ZoneScopedN("Sample::FinalizeRender");
+
     // Transition the swap chain back to present
     D3D12_RESOURCE_BARRIER barrier;
     barrier.Transition.pResource = renderTargets_ [currentBackBuffer_].Get ();
@@ -210,13 +215,15 @@ void D3D12Sample::Run (int w, int h, HWND hwnd)
 
 void D3D12Sample::Step ()
 {
+    ZoneScopedN("Sample::Step");
+
     WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
         fenceValues_[GetQueueSlot ()], frameFenceEvents_[GetQueueSlot ()]);
     
     Render ();
     Present ();
 
-    FrameMark;
+    FrameMarkNamed("Frame");
 }
 
 void D3D12Sample::Stop ()
@@ -268,7 +275,7 @@ next back buffer and also signal the fence for the current queue slot entry.
 */
 void D3D12Sample::Present ()
 {
-    ZoneScoped;
+    ZoneScopedN("Sample::Present");
     swapChain_->Present (1, 0);
 
     // Mark the fence for the current frame.
