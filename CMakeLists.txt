@@ -5,7 +5,6 @@ set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set (CMAKE_CXX_STANDARD 17)
 
 set (headers
-    ${CMAKE_CURRENT_LIST_DIR}/include/Shaders.h
     ${CMAKE_CURRENT_LIST_DIR}/include/RubyTexture.h
 
     ${CMAKE_CURRENT_LIST_DIR}/include/Window.h

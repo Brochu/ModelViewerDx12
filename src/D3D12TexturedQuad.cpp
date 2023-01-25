@@ -21,10 +21,9 @@
 //
 
 #include "D3D12TexturedQuad.h"
-
 #include "ImageIO.h"
 #include "RubyTexture.h"
-#include "Shaders.h"
+#include "Utility.h"
 
 #include "d3dx12.h"
 #include "d3dcompiler.h"
@@ -306,6 +305,8 @@ void D3D12TexturedQuad::CreateRootSignature ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreatePipelineStateObject ()
 {
+    std::vector<unsigned char> code = ReadFile("shaders/shaders.hlsl");
+
     static const D3D12_INPUT_ELEMENT_DESC layout[] =
     {
         { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
@@ -320,12 +321,12 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     };
 
     ComPtr<ID3DBlob> vertexShader;
-    D3DCompile (Shaders, sizeof (Shaders),
+    D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "VS_main", "vs_5_0", 0, 0, &vertexShader, nullptr);
 
     ComPtr<ID3DBlob> pixelShader;
-    D3DCompile (Shaders, sizeof (Shaders),
+    D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "PS_main", "ps_5_0", 0, 0, &pixelShader, nullptr);
 
