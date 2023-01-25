@@ -22,15 +22,14 @@
 
 #include "ImageIO.h"
 
+#include "Utility.h"
+
 #include <Windows.h>
 #include <wrl.h>
 #include <wincodec.h>
 // for _com_error
 #include <comdef.h>
-
 #include <stdexcept>
-
-#include "Utility.h"
 #define SAFE_WIC(expr) do {const auto r = expr; if (FAILED(r)) {_com_error err (r); OutputDebugString (err.ErrorMessage()); __debugbreak ();} } while (0,0)
 
 using namespace Microsoft::WRL;
