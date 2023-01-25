@@ -22,15 +22,11 @@
 
 #define NOMINMAX
 #include "D3D12Sample.h"
-
 #include "ImageIO.h"
-#include "Tracy.hpp"
 
+#include "Tracy.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
-#include "d3dcompiler.h"
-#include "Shaders.h"
-#include <algorithm>
 
 using namespace Microsoft::WRL;
 
