@@ -23,6 +23,8 @@
 #ifndef ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
 #define ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
 
+#include "TracyD3D12.hpp"
+
 #include <d3d12.h>
 #include <dxgi.h>
 #include <wrl.h>
@@ -73,6 +75,8 @@ protected:
 
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
     Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
+
+    TracyD3D12Ctx tracyCtx_;
 
     virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
     virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);

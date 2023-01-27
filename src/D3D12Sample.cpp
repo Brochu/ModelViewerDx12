@@ -20,7 +20,6 @@
 // THE SOFTWARE.
 //
 
-#define NOMINMAX
 #include "D3D12Sample.h"
 #include "ImageIO.h"
 
@@ -139,6 +138,8 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ClearRenderTargetView (renderTargetHandle,
         clearColor, 0, nullptr);
+
+    TracyD3D12Zone(tracyCtx_, commandList, "Cleared main RenderTarget");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -183,6 +184,8 @@ void D3D12Sample::FinalizeRender ()
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
     commandList->ResourceBarrier (1, &barrier);
 
+    TracyD3D12Zone(tracyCtx_, commandList, "Finalize rendering");
+
     commandList->Close ();
 
     // Execute our commands
@@ -212,6 +215,9 @@ void D3D12Sample::Run (int w, int h, HWND hwnd)
 
 void D3D12Sample::Step ()
 {
+    FrameMarkNamed("Frame");
+    TracyD3D12NewFrame(tracyCtx_);
+
     ZoneScopedN("Sample::Step");
 
     WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
@@ -219,8 +225,6 @@ void D3D12Sample::Step ()
     
     Render ();
     Present ();
-
-    FrameMarkNamed("Frame");
 }
 
 void D3D12Sample::Stop ()
@@ -361,6 +365,8 @@ void D3D12Sample::InitializeImpl (ID3D12GraphicsCommandList * /*uploadCommandLis
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Shutdown ()
 {
+    TracyMessage("Shutting down sample app", 24);
+
     for (auto event : frameFenceEvents_) {
         CloseHandle (event);
     }
@@ -402,8 +408,10 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     commandQueue_ = renderEnv.queue;
     swapChain_ = renderEnv.swapChain;
 
-    //TODO: Figure out how to keep track of the TracyD3D12 context obj
-    // We need to use the same context between Sample.cpp and Textured*.cpp
+    // Initialize the context object for Tracy to track GPU info
+    TracyMessage("Initialize TracyD3D12 context object", 36);
+    tracyCtx_ = TracyD3D12Context(device_.Get(), commandQueue_.Get());
+    TracyD3D12ContextName(tracyCtx_, "TracyContext", 12);
 
     renderTargetViewDescriptorSize_ =
         device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
