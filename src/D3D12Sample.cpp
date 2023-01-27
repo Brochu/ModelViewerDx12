@@ -25,6 +25,7 @@
 #include "ImageIO.h"
 
 #include "Tracy.hpp"
+#include "TracyD3D12.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
 
@@ -400,6 +401,9 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     device_ = renderEnv.device;
     commandQueue_ = renderEnv.queue;
     swapChain_ = renderEnv.swapChain;
+
+    //TODO: Figure out how to keep track of the TracyD3D12 context obj
+    // We need to use the same context between Sample.cpp and Textured*.cpp
 
     renderTargetViewDescriptorSize_ =
         device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
