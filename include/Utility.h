@@ -30,7 +30,7 @@
 template <typename T>
 constexpr T RoundToNextMultiple (const T a, const T multiple)
 {
-	return ((a + multiple - 1) / multiple) * multiple;
+    return ((a + multiple - 1) / multiple) * multiple;
 }
 
 std::vector<std::uint8_t> ReadFile (const char* filename);

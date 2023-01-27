@@ -34,75 +34,75 @@ namespace AMD {
 class D3D12Sample
 {
 public:
-	D3D12Sample (const D3D12Sample&) = delete;
-	D3D12Sample& operator= (const D3D12Sample&) = delete;
+    D3D12Sample (const D3D12Sample&) = delete;
+    D3D12Sample& operator= (const D3D12Sample&) = delete;
 
-	D3D12Sample ();
-	virtual ~D3D12Sample ();
+    D3D12Sample ();
+    virtual ~D3D12Sample ();
 
-	void Run (int w, int h, HWND hwnd);
+    void Run (int w, int h, HWND hwnd);
     void Step ();
     void Stop ();
 
 protected:
-	int GetQueueSlot () const
-	{
-		return currentBackBuffer_;
-	}
+    int GetQueueSlot () const
+    {
+        return currentBackBuffer_;
+    }
 
-	static const int QUEUE_SLOT_COUNT = 3;
+    static const int QUEUE_SLOT_COUNT = 3;
 
-	static constexpr int GetQueueSlotCount ()
-	{
-		return QUEUE_SLOT_COUNT;
-	}
+    static constexpr int GetQueueSlotCount ()
+    {
+        return QUEUE_SLOT_COUNT;
+    }
 
-	D3D12_VIEWPORT viewport_;
-	D3D12_RECT rectScissor_;
-	Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
-	Microsoft::WRL::ComPtr<ID3D12Device> device_;
-	Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
-	Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
+    D3D12_VIEWPORT viewport_;
+    D3D12_RECT rectScissor_;
+    Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
+    Microsoft::WRL::ComPtr<ID3D12Device> device_;
+    Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
 
-	HANDLE frameFenceEvents_ [QUEUE_SLOT_COUNT];
-	Microsoft::WRL::ComPtr<ID3D12Fence> frameFences_ [QUEUE_SLOT_COUNT];
-	UINT64 currentFenceValue_;
-	UINT64 fenceValues_[QUEUE_SLOT_COUNT];
+    HANDLE frameFenceEvents_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Fence> frameFences_ [QUEUE_SLOT_COUNT];
+    UINT64 currentFenceValue_;
+    UINT64 fenceValues_[QUEUE_SLOT_COUNT];
 
-	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> renderTargetDescriptorHeap_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> renderTargetDescriptorHeap_;
 
-	Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
-	Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
+    Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
+    Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
 
-	virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
-	virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
+    virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
+    virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
 
 private:
-	void Initialize ();
-	void Shutdown ();
+    void Initialize ();
+    void Shutdown ();
 
-	void PrepareRender ();
-	void FinalizeRender ();
+    void PrepareRender ();
+    void FinalizeRender ();
 
-	void Render ();
-	void Present ();
+    void Render ();
+    void Present ();
 
-	void CreateDeviceAndSwapChain ();
-	void CreateAllocatorsAndCommandLists ();
-	void CreateViewportScissor ();
-	void CreatePipelineStateObject ();
-	void SetupSwapChain ();
-	void SetupRenderTargets ();
+    void CreateDeviceAndSwapChain ();
+    void CreateAllocatorsAndCommandLists ();
+    void CreateViewportScissor ();
+    void CreatePipelineStateObject ();
+    void SetupSwapChain ();
+    void SetupRenderTargets ();
 
-	Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
-	Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
 
-	int currentBackBuffer_ = 0;
+    int currentBackBuffer_ = 0;
     int width_ = -1;
     int height_ = -1;
     HWND hwnd_;
-	
-	std::int32_t renderTargetViewDescriptorSize_;
+    
+    std::int32_t renderTargetViewDescriptorSize_;
 };
 }
 
