@@ -225,6 +225,10 @@ void D3D12Sample::Step ()
     
     Render ();
     Present ();
+
+    //TODO: This makes the last frame captured last some crazy amount of time
+    // Need to look into how to capture GPU zones with Tracy
+    //TracyD3D12Collect(tracyCtx_);
 }
 
 void D3D12Sample::Stop ()
@@ -366,6 +370,7 @@ void D3D12Sample::InitializeImpl (ID3D12GraphicsCommandList * /*uploadCommandLis
 void D3D12Sample::Shutdown ()
 {
     TracyMessage("Shutting down sample app", 24);
+    TracyD3D12Destroy(tracyCtx_);
 
     for (auto event : frameFenceEvents_) {
         CloseHandle (event);
