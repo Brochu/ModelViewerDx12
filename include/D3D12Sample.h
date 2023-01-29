@@ -78,6 +78,8 @@ protected:
 
     TracyD3D12Ctx tracyCtx_;
 
+    float clearColor_[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
+
     virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
     virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
 

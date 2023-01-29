@@ -131,13 +131,8 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ResourceBarrier (1, &barrier);
 
-    static const float clearColor [] = {
-        0.042f, 0.042f, 0.042f,
-        1
-    };
-
     commandList->ClearRenderTargetView (renderTargetHandle,
-        clearColor, 0, nullptr);
+        clearColor_, 0, nullptr);
 
     TracyD3D12Zone(tracyCtx_, commandList, "Cleared main RenderTarget");
 }

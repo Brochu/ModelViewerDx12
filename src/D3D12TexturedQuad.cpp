@@ -125,6 +125,9 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Text("Image");
         ImGui::SliderFloat("Scale", &scale_, 0.0f, 1.0f);
         ImGui::Separator();
+        ImGui::Text("Background");
+        ImGui::ColorEdit3("clear color", clearColor_);
+        ImGui::Separator();
 
         ImGui::End();
 
