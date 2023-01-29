@@ -25,6 +25,10 @@
 #include "RubyTexture.h"
 #include "Utility.h"
 
+#include "imgui.h"
+#include "imgui_impl_dx12.h"
+#include "imgui_impl_win32.h"
+
 #include "d3dx12.h"
 #include "d3dcompiler.h"
 #include <cmath>
@@ -108,7 +112,17 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetIndexBuffer (&indexBufferView_);
     commandList->DrawIndexedInstanced (6, 1, 0, 0, 0);
 
-    //TODO: Add draw logic for Imgui overlay here
+    // Imgui logic ---------------------
+    ImGui_ImplDX12_NewFrame();
+    ImGui_ImplWin32_NewFrame();
+    ImGui::NewFrame();
+
+    ImGui::ShowDemoWindow(&showWindow_);
+    ImGui::Render();
+
+    ID3D12DescriptorHeap* imguiHeaps[] = { imguiDescriptorHeap_.Get() };
+    commandList->SetDescriptorHeaps(1, imguiHeaps);
+    ImGui_ImplDX12_RenderDrawData(ImGui::GetDrawData(), commandList);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -126,7 +140,7 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
     descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 
     device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&srvDescriptorHeap_));
-    //TODO: Might need to create a separate descriptor head for Imgui specific descriptors
+    device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&imguiDescriptorHeap_));
 
     CreateRootSignature ();
     CreatePipelineStateObject ();
@@ -134,7 +148,13 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
     CreateMeshBuffers (uploadCommandList);
     CreateTexture (uploadCommandList);
 
-    //TODO: Init the renderer side of Imgui
+    // Imgui render side init
+    ImGui_ImplDX12_Init(device_.Get(),
+                        QUEUE_SLOT_COUNT,
+                        DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
+                        imguiDescriptorHeap_.Get(),
+                        imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
+                        imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
 }
 
 ///////////////////////////////////////////////////////////////////////////////

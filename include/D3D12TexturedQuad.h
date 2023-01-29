@@ -55,6 +55,9 @@ private:
     Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    srvDescriptorHeap_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    imguiDescriptorHeap_;
+
+    bool showWindow_ = true;
 };
 }
 

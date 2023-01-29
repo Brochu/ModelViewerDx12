@@ -28,6 +28,7 @@
 
 #include "imgui.h"
 #include "imgui_impl_win32.h"
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 namespace AMD {
     D3D12Sample *sample_;
@@ -42,6 +43,10 @@ LRESULT CALLBACK amdWndProc(
     )
 {
     ZoneScopedN("Window::ProcCallback");
+
+    if (ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam)) {
+        return true;
+    }
 
     auto ptr = ::GetWindowLongPtr(hwnd, GWLP_USERDATA);
     auto window = reinterpret_cast<IWindow*> (ptr);
