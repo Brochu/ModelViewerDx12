@@ -58,6 +58,7 @@ private:
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    imguiDescriptorHeap_;
 
     bool showWindow_ = true;
+    float scale_ = 0.5f;
 };
 }
 

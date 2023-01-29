@@ -118,6 +118,18 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     ImGui::NewFrame();
 
     ImGui::ShowDemoWindow(&showWindow_);
+    {
+        ImGui::Begin("ModelViewer - Parameters");
+
+        ImGui::Separator();
+        ImGui::Text("Image");
+        ImGui::SliderFloat("Scale", &scale_, 0.0f, 1.0f);
+        ImGui::Separator();
+
+        ImGui::End();
+
+        //TODO: Add parameter controls
+    }
     ImGui::Render();
 
     ID3D12DescriptorHeap* imguiHeaps[] = { imguiDescriptorHeap_.Get() };
@@ -282,13 +294,11 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::UpdateConstantBuffer ()
 {
-    static int counter = 0;
-    counter++;
-
     void* p;
+
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);
     float* f = static_cast<float*>(p);
-    f[0] = std::abs (std::sin (static_cast<float> (counter) / 64.0f));
+    f[0] = scale_;
     constantBuffers_[GetQueueSlot ()]->Unmap (0, nullptr);
 }
 
