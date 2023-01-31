@@ -50,7 +50,7 @@ private:
 
     Microsoft::WRL::ComPtr<ID3D12Resource>	image_;
     Microsoft::WRL::ComPtr<ID3D12Resource>	uploadImage_;
-    std::vector<std::uint8_t>				imageData_;
+    std::vector<std::uint8_t>			imageData_;
 
     Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
 
