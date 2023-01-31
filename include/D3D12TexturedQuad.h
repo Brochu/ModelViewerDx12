@@ -61,6 +61,10 @@ private:
     bool showWindow_ = true;
     float scale_ = 0.5f;
     int selectedModel_ = 0;
+
+    // Paths
+    const char *shaderFile_ = "shaders/shaders.hlsl";
+    const char *configFile_ = "config.ini";
 };
 }
 
