@@ -23,6 +23,7 @@
 #include "D3D12TexturedQuad.h"
 #include "ImageIO.h"
 #include "RubyTexture.h"
+#include "Tracy.hpp"
 #include "Utility.h"
 
 #include "imgui.h"
@@ -124,11 +125,20 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Separator();
         ImGui::Text("Image");
         ImGui::SliderFloat("Scale", &scale_, 0.0f, 1.0f);
+
         ImGui::Separator();
         ImGui::Text("Background");
         ImGui::ColorEdit3("clear color", clearColor_);
-        ImGui::Separator();
 
+        ImGui::Separator();
+        ImGui::Text("Model Viewer");
+
+        //TODO: Need to load all model filepaths from config file
+        if (ImGui::Combo("Model", &selectedModel_, "AAA\0BBB\0CCC\0\0", 3)) {
+            TracyMessage("Changing selected model", 23);
+        }
+
+        ImGui::Separator();
         ImGui::End();
 
         //TODO: Add parameter controls
