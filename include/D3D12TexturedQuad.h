@@ -57,8 +57,10 @@ private:
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    srvDescriptorHeap_;
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    imguiDescriptorHeap_;
 
+    // Debug parameters
     bool showWindow_ = true;
     float scale_ = 0.5f;
+    int selectedModel_ = 0;
 };
 }
 
