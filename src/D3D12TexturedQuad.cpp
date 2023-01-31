@@ -343,7 +343,7 @@ void D3D12TexturedQuad::CreateRootSignature ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreatePipelineStateObject ()
 {
-    std::vector<unsigned char> code = ReadFile("shaders/shaders.hlsl");
+    std::vector<unsigned char> code = ReadFile(shaderFile_);
 
     static const D3D12_INPUT_ELEMENT_DESC layout[] =
     {
