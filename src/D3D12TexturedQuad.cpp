@@ -172,6 +172,7 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
     CreateConstantBuffer ();
     CreateMeshBuffers (uploadCommandList);
     CreateTexture (uploadCommandList);
+    LoadConfig ();
 
     // Imgui render side init
     ImGui_ImplDX12_Init(device_.Get(),
@@ -407,5 +408,14 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     psoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
     device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
+}
+
+void D3D12TexturedQuad::LoadConfig ()
+{
+    //TODO: Loading the config file
+    // Parse model names list
+    // Create null character separated string of all models
+    // Maybe add empty value at index 0?
+    // Start thinking on how to reload model data when selecting a new model
 }
 }

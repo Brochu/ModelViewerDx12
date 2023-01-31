@@ -37,6 +37,8 @@ private:
     void UpdateConstantBuffer ();
     void CreateRootSignature ();
     void CreatePipelineStateObject ();
+    void LoadConfig ();
+
     void RenderImpl (ID3D12GraphicsCommandList* commandList) override;
     void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList) override;
 
