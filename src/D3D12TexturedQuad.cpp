@@ -135,8 +135,8 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Separator();
         ImGui::Text("Model Viewer");
 
-        assert(models_.size() <= 8);
-        char* models[8];
+        assert(models_.size() <= 32);
+        char* models[32];
         for (int i = 0; i < models_.size(); i++) {
             models[i] = models_[i].data();
         }
