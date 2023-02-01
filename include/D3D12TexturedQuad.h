@@ -62,6 +62,8 @@ private:
     // Debug parameters
     bool showWindow_ = true;
     float scale_ = 0.5f;
+
+    std::string models_;
     int selectedModel_ = 0;
 
     // Paths
