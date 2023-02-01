@@ -63,8 +63,8 @@ private:
     bool showWindow_ = true;
     float scale_ = 0.5f;
 
-    std::string models_;
-    int selectedModel_ = 0;
+    std::vector<std::string> models_;
+    int modelIndex_ = 0;
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";

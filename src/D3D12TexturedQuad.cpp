@@ -135,8 +135,12 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Separator();
         ImGui::Text("Model Viewer");
 
-        //TODO: Need to load all model filepaths from config file
-        if (ImGui::Combo("Model", &selectedModel_, "AAA\0BBB\0CCC\0\0", 3)) {
+        char** models = new char*[models_.size()];
+        for (int i = 0; i < models_.size(); i++) {
+            models[i] = models_[i].data();
+        }
+        if (ImGui::Combo("Model", &modelIndex_, models, (int)models_.size())) {
+            // Start thinking on how to reload model data when selecting a new model
             TracyMessage("Changing selected model", 23);
         }
 
@@ -414,17 +418,14 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
 
 void D3D12TexturedQuad::LoadConfig ()
 {
-    //TODO: Loading the config file
-    // Parse model names list
-    // Maybe add empty value at index 0?
-    // Start thinking on how to reload model data when selecting a new model
-
     std::fstream fs(configFile_);
     std::string line;
 
+    //TODO: This will break when adding more sections of configs
+    // Look into a better parsing later
     while (std::getline(fs, line)) {
         if (line[0] != '[') {
-            models_ = line;
+            models_.push_back(line);
         }
     }
 }
