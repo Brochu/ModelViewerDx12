@@ -23,15 +23,15 @@
 #include "D3D12TexturedQuad.h"
 #include "ImageIO.h"
 #include "RubyTexture.h"
-#include "Tracy.hpp"
 #include "Utility.h"
-
-#include "imgui.h"
-#include "imgui_impl_dx12.h"
-#include "imgui_impl_win32.h"
 
 #include "d3dx12.h"
 #include "d3dcompiler.h"
+#include "imgui.h"
+#include "imgui_impl_dx12.h"
+#include "imgui_impl_win32.h"
+#include "Tracy.hpp"
+
 #include <cmath>
 #include <fstream>
 #include <string>
