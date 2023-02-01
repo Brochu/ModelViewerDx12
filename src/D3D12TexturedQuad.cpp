@@ -33,6 +33,8 @@
 #include "d3dx12.h"
 #include "d3dcompiler.h"
 #include <cmath>
+#include <fstream>
+#include <string>
 
 using namespace Microsoft::WRL;
 
@@ -414,8 +416,16 @@ void D3D12TexturedQuad::LoadConfig ()
 {
     //TODO: Loading the config file
     // Parse model names list
-    // Create null character separated string of all models
     // Maybe add empty value at index 0?
     // Start thinking on how to reload model data when selecting a new model
+
+    std::fstream fs(configFile_);
+    std::string line;
+
+    while (std::getline(fs, line)) {
+        if (line[0] != '[') {
+            models_ = line;
+        }
+    }
 }
 }
