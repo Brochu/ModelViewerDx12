@@ -135,19 +135,19 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Separator();
         ImGui::Text("Model Viewer");
 
-        char** models = new char*[models_.size()];
+        assert(models_.size() <= 8);
+        char* models[8];
         for (int i = 0; i < models_.size(); i++) {
             models[i] = models_[i].data();
         }
         if (ImGui::Combo("Model", &modelIndex_, models, (int)models_.size())) {
             // Start thinking on how to reload model data when selecting a new model
-            TracyMessage("Changing selected model", 23);
         }
+
+        //TODO: Adding controls for camera & light positions+orientation
 
         ImGui::Separator();
         ImGui::End();
-
-        //TODO: Add parameter controls
     }
     ImGui::Render();
 
@@ -160,6 +160,7 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
 void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadCommandList)
 {
     D3D12Sample::InitializeImpl (uploadCommandList);
+    LoadConfig ();
 
     // We need one descriptor heap to store our texture SRV which cannot go
     // into the root signature. So create a SRV type heap with one entry
@@ -178,7 +179,6 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
     CreateConstantBuffer ();
     CreateMeshBuffers (uploadCommandList);
     CreateTexture (uploadCommandList);
-    LoadConfig ();
 
     // Imgui render side init
     ImGui_ImplDX12_Init(device_.Get(),
@@ -198,6 +198,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         float uv[2];
     };
 
+    //TODO: Trying to load vertices and indices from selected OBJ file
     static const Vertex vertices[4] = {
         // Upper Left
         { { -1.0f, 1.0f, 0 },{ 0, 0 } },
@@ -421,11 +422,15 @@ void D3D12TexturedQuad::LoadConfig ()
     std::fstream fs(configFile_);
     std::string line;
 
-    //TODO: This will break when adding more sections of configs
-    // Look into a better parsing later
     while (std::getline(fs, line)) {
-        if (line[0] != '[') {
-            models_.push_back(line);
+        if (line[0] == '[' && line.find("models") != std::string::npos) {
+            // Parsing possible models to render
+            std::string line;
+
+            while (std::getline(fs, line)) {
+                if (line.size() == 0) break;
+                models_.push_back(line);
+            }
         }
     }
 }
