@@ -1,0 +1,3962 @@
+newmtl MAT_NULL
+
+newmtl gxmat1
+map_Kd 87.png
+
+newmtl gxmat2
+map_Kd 87.png
+
+newmtl gxmat3
+map_Kd 85.png
+
+newmtl gxmat4
+map_Kd 86.png
+
+newmtl gxmat5
+map_Kd 84.png
+
+newmtl gxmat6
+map_Kd 89.png
+
+newmtl gxmat7
+map_Kd 85.png
+
+newmtl gxmat8
+map_Kd 86.png
+
+newmtl gxmat9
+map_Kd 88.png
+
+newmtl gxmat10
+map_Kd 74.png
+
+newmtl gxmat11
+map_Kd 6.png
+
+newmtl gxmat12
+map_Kd 6.png
+
+newmtl gxmat13
+map_Kd 7.png
+
+newmtl gxmat14
+map_Kd 7.png
+
+newmtl gxmat15
+map_Kd 6.png
+
+newmtl gxmat16
+map_Kd 94.png
+
+newmtl gxmat17
+map_Kd 6.png
+
+newmtl gxmat18
+map_Kd 6.png
+
+newmtl gxmat19
+map_Kd 85.png
+
+newmtl gxmat20
+map_Kd 5.png
+
+newmtl gxmat21
+map_Kd 5.png
+
+newmtl gxmat22
+map_Kd 85.png
+
+newmtl gxmat23
+map_Kd 6.png
+
+newmtl gxmat24
+map_Kd 6.png
+
+newmtl gxmat25
+map_Kd 88.png
+
+newmtl gxmat26
+map_Kd 74.png
+
+newmtl gxmat27
+map_Kd 6.png
+
+newmtl gxmat28
+map_Kd 86.png
+
+newmtl gxmat29
+map_Kd 86.png
+
+newmtl gxmat30
+map_Kd 86.png
+
+newmtl gxmat31
+map_Kd 6.png
+
+newmtl gxmat32
+map_Kd 88.png
+
+newmtl gxmat33
+map_Kd 74.png
+
+newmtl gxmat34
+map_Kd 88.png
+
+newmtl gxmat35
+map_Kd 74.png
+
+newmtl gxmat36
+map_Kd 85.png
+
+newmtl gxmat37
+map_Kd 6.png
+
+newmtl gxmat38
+map_Kd 5.png
+
+newmtl gxmat39
+map_Kd 6.png
+
+newmtl gxmat40
+map_Kd 6.png
+
+newmtl gxmat41
+map_Kd 88.png
+
+newmtl gxmat42
+map_Kd 74.png
+
+newmtl gxmat43
+map_Kd 46.png
+
+newmtl gxmat44
+map_Kd 104.png
+
+newmtl gxmat45
+map_Kd 6.png
+
+newmtl gxmat46
+map_Kd 5.png
+
+newmtl gxmat47
+map_Kd 6.png
+
+newmtl gxmat48
+map_Kd 6.png
+
+newmtl gxmat49
+map_Kd 6.png
+
+newmtl gxmat50
+map_Kd 88.png
+
+newmtl gxmat51
+map_Kd 104.png
+
+newmtl gxmat52
+map_Kd 88.png
+
+newmtl gxmat53
+map_Kd 104.png
+
+newmtl gxmat54
+map_Kd 5.png
+
+newmtl gxmat55
+map_Kd 88.png
+
+newmtl gxmat56
+map_Kd 7.png
+
+newmtl gxmat57
+map_Kd 6.png
+
+newmtl gxmat58
+map_Kd 8.png
+
+newmtl gxmat59
+map_Kd 104.png
+
+newmtl gxmat60
+map_Kd 5.png
+
+newmtl gxmat61
+map_Kd 5.png
+
+newmtl gxmat62
+map_Kd 7.png
+
+newmtl gxmat63
+map_Kd 8.png
+
+newmtl gxmat64
+map_Kd 104.png
+
+newmtl gxmat65
+map_Kd 6.png
+
+newmtl gxmat66
+map_Kd 8.png
+
+newmtl gxmat67
+map_Kd 104.png
+
+newmtl gxmat68
+map_Kd 5.png
+
+newmtl gxmat69
+map_Kd 8.png
+
+newmtl gxmat70
+map_Kd 104.png
+
+newmtl gxmat71
+map_Kd 5.png
+
+newmtl gxmat72
+map_Kd 5.png
+
+newmtl gxmat73
+map_Kd 87.png
+
+newmtl gxmat74
+map_Kd 85.png
+
+newmtl gxmat75
+map_Kd 84.png
+
+newmtl gxmat76
+map_Kd 86.png
+
+newmtl gxmat77
+map_Kd 81.png
+
+newmtl gxmat78
+map_Kd 81.png
+
+newmtl gxmat79
+map_Kd 81.png
+
+newmtl gxmat80
+map_Kd 54.png
+
+newmtl gxmat81
+map_Kd 74.png
+
+newmtl gxmat82
+map_Kd 53.png
+
+newmtl gxmat83
+map_Kd 74.png
+
+newmtl gxmat84
+map_Kd 95.png
+
+newmtl gxmat85
+map_Kd 77.png
+
+newmtl gxmat86
+map_Kd 77.png
+
+newmtl gxmat87
+map_Kd 79.png
+
+newmtl gxmat88
+map_Kd 79.png
+
+newmtl gxmat89
+map_Kd 77.png
+
+newmtl gxmat90
+map_Kd 77.png
+
+newmtl gxmat91
+map_Kd 77.png
+
+newmtl gxmat92
+map_Kd 77.png
+
+newmtl gxmat93
+map_Kd 54.png
+
+newmtl gxmat94
+map_Kd 74.png
+
+newmtl gxmat95
+map_Kd 53.png
+
+newmtl gxmat96
+map_Kd 74.png
+
+newmtl gxmat97
+map_Kd 91.png
+
+newmtl gxmat98
+map_Kd 91.png
+
+newmtl gxmat99
+map_Kd 91.png
+
+newmtl gxmat100
+map_Kd 82.png
+
+newmtl gxmat101
+map_Kd 74.png
+
+newmtl gxmat102
+map_Kd 82.png
+
+newmtl gxmat103
+map_Kd 74.png
+
+newmtl gxmat104
+map_Kd 75.png
+
+newmtl gxmat105
+map_Kd 96.png
+
+newmtl gxmat106
+map_Kd 57.png
+
+newmtl gxmat107
+map_Kd 57.png
+
+newmtl gxmat108
+map_Kd 57.png
+
+newmtl gxmat109
+map_Kd 75.png
+
+newmtl gxmat110
+map_Kd 96.png
+
+newmtl gxmat111
+map_Kd 75.png
+
+newmtl gxmat112
+map_Kd 57.png
+
+newmtl gxmat113
+map_Kd 57.png
+
+newmtl gxmat114
+map_Kd 57.png
+
+newmtl gxmat115
+map_Kd 75.png
+
+newmtl gxmat116
+map_Kd 96.png
+
+newmtl gxmat117
+map_Kd 75.png
+
+newmtl gxmat118
+map_Kd 57.png
+
+newmtl gxmat119
+map_Kd 57.png
+
+newmtl gxmat120
+map_Kd 57.png
+
+newmtl gxmat121
+map_Kd 75.png
+
+newmtl gxmat122
+map_Kd 96.png
+
+newmtl gxmat123
+map_Kd 75.png
+
+newmtl gxmat124
+map_Kd 57.png
+
+newmtl gxmat125
+map_Kd 57.png
+
+newmtl gxmat126
+map_Kd 57.png
+
+newmtl gxmat127
+map_Kd 75.png
+
+newmtl gxmat128
+map_Kd 96.png
+
+newmtl gxmat129
+map_Kd 75.png
+
+newmtl gxmat130
+map_Kd 57.png
+
+newmtl gxmat131
+map_Kd 57.png
+
+newmtl gxmat132
+map_Kd 57.png
+
+newmtl gxmat133
+map_Kd 81.png
+
+newmtl gxmat134
+map_Kd 81.png
+
+newmtl gxmat135
+map_Kd 81.png
+
+newmtl gxmat136
+map_Kd 81.png
+
+newmtl gxmat137
+map_Kd 81.png
+
+newmtl gxmat138
+map_Kd 81.png
+
+newmtl gxmat139
+map_Kd 81.png
+
+newmtl gxmat140
+map_Kd 81.png
+
+newmtl gxmat141
+map_Kd 81.png
+
+newmtl gxmat142
+map_Kd 62.png
+
+newmtl gxmat143
+map_Kd 74.png
+
+newmtl gxmat144
+map_Kd 63.png
+
+newmtl gxmat145
+map_Kd 74.png
+
+newmtl gxmat146
+map_Kd 67.png
+
+newmtl gxmat147
+map_Kd 74.png
+
+newmtl gxmat148
+map_Kd 67.png
+
+newmtl gxmat149
+map_Kd 74.png
+
+newmtl gxmat150
+map_Kd 62.png
+
+newmtl gxmat151
+map_Kd 74.png
+
+newmtl gxmat152
+map_Kd 62.png
+
+newmtl gxmat153
+map_Kd 74.png
+
+newmtl gxmat154
+map_Kd 54.png
+
+newmtl gxmat155
+map_Kd 74.png
+
+newmtl gxmat156
+map_Kd 53.png
+
+newmtl gxmat157
+map_Kd 74.png
+
+newmtl gxmat158
+map_Kd 52.png
+
+newmtl gxmat159
+map_Kd 50.png
+
+newmtl gxmat160
+map_Kd 77.png
+
+newmtl gxmat161
+map_Kd 79.png
+
+newmtl gxmat162
+map_Kd 65.png
+
+newmtl gxmat163
+map_Kd 64.png
+
+newmtl gxmat164
+map_Kd 64.png
+
+newmtl gxmat165
+map_Kd 50.png
+
+newmtl gxmat166
+map_Kd 50.png
+
+newmtl gxmat167
+map_Kd 98.png
+
+newmtl gxmat168
+map_Kd 74.png
+
+newmtl gxmat169
+map_Kd 98.png
+
+newmtl gxmat170
+map_Kd 74.png
+
+newmtl gxmat171
+map_Kd 97.png
+
+newmtl gxmat172
+map_Kd 74.png
+
+newmtl gxmat173
+map_Kd 97.png
+
+newmtl gxmat174
+map_Kd 74.png
+
+newmtl gxmat175
+map_Kd 52.png
+
+newmtl gxmat176
+map_Kd 74.png
+
+newmtl gxmat177
+map_Kd 51.png
+
+newmtl gxmat178
+map_Kd 74.png
+
+newmtl gxmat179
+map_Kd 51.png
+
+newmtl gxmat180
+map_Kd 74.png
+
+newmtl gxmat181
+map_Kd 52.png
+
+newmtl gxmat182
+map_Kd 50.png
+
+newmtl gxmat183
+map_Kd 62.png
+
+newmtl gxmat184
+map_Kd 74.png
+
+newmtl gxmat185
+map_Kd 62.png
+
+newmtl gxmat186
+map_Kd 74.png
+
+newmtl gxmat187
+map_Kd 62.png
+
+newmtl gxmat188
+map_Kd 74.png
+
+newmtl gxmat189
+map_Kd 63.png
+
+newmtl gxmat190
+map_Kd 74.png
+
+newmtl gxmat191
+map_Kd 67.png
+
+newmtl gxmat192
+map_Kd 74.png
+
+newmtl gxmat193
+map_Kd 92.png
+
+newmtl gxmat194
+map_Kd 74.png
+
+newmtl gxmat195
+map_Kd 93.png
+
+newmtl gxmat196
+map_Kd 74.png
+
+newmtl gxmat197
+map_Kd 93.png
+
+newmtl gxmat198
+map_Kd 74.png
+
+newmtl gxmat199
+map_Kd 77.png
+
+newmtl gxmat200
+map_Kd 77.png
+
+newmtl gxmat201
+map_Kd 79.png
+
+newmtl gxmat202
+map_Kd 79.png
+
+newmtl gxmat203
+map_Kd 77.png
+
+newmtl gxmat204
+map_Kd 77.png
+
+newmtl gxmat205
+map_Kd 79.png
+
+newmtl gxmat206
+map_Kd 79.png
+
+newmtl gxmat207
+map_Kd 31.png
+
+newmtl gxmat208
+map_Kd 30.png
+
+newmtl gxmat209
+map_Kd 33.png
+
+newmtl gxmat210
+map_Kd 30.png
+
+newmtl gxmat211
+map_Kd 32.png
+
+newmtl gxmat212
+map_Kd 28.png
+
+newmtl gxmat213
+map_Kd 28.png
+
+newmtl gxmat214
+map_Kd 29.png
+
+newmtl gxmat215
+map_Kd 34.png
+
+newmtl gxmat216
+map_Kd 35.png
+
+newmtl gxmat217
+map_Kd 78.png
+
+newmtl gxmat218
+map_Kd 35.png
+
+newmtl gxmat219
+map_Kd 78.png
+
+newmtl gxmat220
+map_Kd 37.png
+
+newmtl gxmat221
+map_Kd 38.png
+
+newmtl gxmat222
+map_Kd 39.png
+
+newmtl gxmat223
+map_Kd 37.png
+
+newmtl gxmat224
+map_Kd 40.png
+
+newmtl gxmat225
+map_Kd 104.png
+
+newmtl gxmat226
+map_Kd 43.png
+
+newmtl gxmat227
+map_Kd 41.png
+
+newmtl gxmat228
+map_Kd 44.png
+
+newmtl gxmat229
+map_Kd 42.png
+
+newmtl gxmat230
+map_Kd 45.png
+
+newmtl gxmat231
+map_Kd 41.png
+
+newmtl gxmat232
+map_Kd 44.png
+
+newmtl gxmat233
+map_Kd 44.png
+
+newmtl gxmat234
+map_Kd 42.png
+
+newmtl gxmat235
+map_Kd 44.png
+
+newmtl gxmat236
+map_Kd 41.png
+
+newmtl gxmat237
+map_Kd 46.png
+
+newmtl gxmat238
+map_Kd 104.png
+
+newmtl gxmat239
+map_Kd 95.png
+
+newmtl gxmat240
+map_Kd 90.png
+
+newmtl gxmat241
+map_Kd 47.png
+
+newmtl gxmat242
+map_Kd 48.png
+
+newmtl gxmat243
+map_Kd 49.png
+
+newmtl gxmat244
+map_Kd 104.png
+
+newmtl gxmat245
+map_Kd 46.png
+
+newmtl gxmat246
+map_Kd 104.png
+
+newmtl gxmat247
+map_Kd 2.png
+
+newmtl gxmat248
+map_Kd 3.png
+
+newmtl gxmat249
+map_Kd 0.png
+
+newmtl gxmat250
+map_Kd 0.png
+
+newmtl gxmat251
+map_Kd 1.png
+
+newmtl gxmat252
+map_Kd 4.png
+
+newmtl gxmat253
+map_Kd 4.png
+
+newmtl gxmat254
+map_Kd 3.png
+
+newmtl gxmat255
+map_Kd 2.png
+
+newmtl gxmat256
+map_Kd 4.png
+
+newmtl gxmat257
+map_Kd 4.png
+
+newmtl gxmat258
+map_Kd 0.png
+
+newmtl gxmat259
+map_Kd 0.png
+
+newmtl gxmat260
+map_Kd 1.png
+
+newmtl gxmat261
+map_Kd 85.png
+
+newmtl gxmat262
+map_Kd 85.png
+
+newmtl gxmat263
+map_Kd 86.png
+
+newmtl gxmat264
+map_Kd 16.png
+
+newmtl gxmat265
+map_Kd 26.png
+
+newmtl gxmat266
+map_Kd 104.png
+
+newmtl gxmat267
+map_Kd 13.png
+
+newmtl gxmat268
+map_Kd 27.png
+
+newmtl gxmat269
+map_Kd 20.png
+
+newmtl gxmat270
+map_Kd 17.png
+
+newmtl gxmat271
+map_Kd 25.png
+
+newmtl gxmat272
+map_Kd 104.png
+
+newmtl gxmat273
+map_Kd 24.png
+
+newmtl gxmat274
+map_Kd 22.png
+
+newmtl gxmat275
+map_Kd 22.png
+
+newmtl gxmat276
+map_Kd 15.png
+
+newmtl gxmat277
+map_Kd 25.png
+
+newmtl gxmat278
+map_Kd 104.png
+
+newmtl gxmat279
+map_Kd 18.png
+
+newmtl gxmat280
+map_Kd 12.png
+
+newmtl gxmat281
+map_Kd 27.png
+
+newmtl gxmat282
+map_Kd 104.png
+
+newmtl gxmat283
+map_Kd 18.png
+
+newmtl gxmat284
+map_Kd 19.png
+
+newmtl gxmat285
+map_Kd 25.png
+
+newmtl gxmat286
+map_Kd 104.png
+
+newmtl gxmat287
+map_Kd 11.png
+
+newmtl gxmat288
+map_Kd 19.png
+
+newmtl gxmat289
+map_Kd 27.png
+
+newmtl gxmat290
+map_Kd 104.png
+
+newmtl gxmat291
+map_Kd 26.png
+
+newmtl gxmat292
+map_Kd 104.png
+
+newmtl gxmat293
+map_Kd 25.png
+
+newmtl gxmat294
+map_Kd 104.png
+
+newmtl gxmat295
+map_Kd 18.png
+
+newmtl gxmat296
+map_Kd 26.png
+
+newmtl gxmat297
+map_Kd 104.png
+
+newmtl gxmat298
+map_Kd 26.png
+
+newmtl gxmat299
+map_Kd 104.png
+
+newmtl gxmat300
+map_Kd 24.png
+
+newmtl gxmat301
+map_Kd 16.png
+
+newmtl gxmat302
+map_Kd 27.png
+
+newmtl gxmat303
+map_Kd 104.png
+
+newmtl gxmat304
+map_Kd 19.png
+
+newmtl gxmat305
+map_Kd 27.png
+
+newmtl gxmat306
+map_Kd 104.png
+
+newmtl gxmat307
+map_Kd 21.png
+
+newmtl gxmat308
+map_Kd 19.png
+
+newmtl gxmat309
+map_Kd 23.png
+
+newmtl gxmat310
+map_Kd 26.png
+
+newmtl gxmat311
+map_Kd 104.png
+
+newmtl gxmat312
+map_Kd 19.png
+
+newmtl gxmat313
+map_Kd 14.png
+
+newmtl gxmat314
+map_Kd 21.png
+
+newmtl gxmat315
+map_Kd 9.png
+
+newmtl gxmat316
+map_Kd 10.png
+
+newmtl gxmat317
+map_Kd 22.png
+
+newmtl gxmat318
+map_Kd 23.png
+
+newmtl gxmat319
+map_Kd 26.png
+
+newmtl gxmat320
+map_Kd 104.png
+
+newmtl gxmat321
+map_Kd 18.png
+
+newmtl gxmat322
+map_Kd 27.png
+
+newmtl gxmat323
+map_Kd 104.png
+
+newmtl gxmat324
+map_Kd 27.png
+
+newmtl gxmat325
+map_Kd 104.png
+
+newmtl gxmat326
+map_Kd 25.png
+
+newmtl gxmat327
+map_Kd 104.png
+
+newmtl gxmat328
+map_Kd 12.png
+
+newmtl gxmat329
+map_Kd 27.png
+
+newmtl gxmat330
+map_Kd 104.png
+
+newmtl gxmat331
+map_Kd 27.png
+
+newmtl gxmat332
+map_Kd 104.png
+
+newmtl gxmat333
+map_Kd 24.png
+
+newmtl gxmat334
+map_Kd 25.png
+
+newmtl gxmat335
+map_Kd 104.png
+
+newmtl gxmat336
+map_Kd 26.png
+
+newmtl gxmat337
+map_Kd 104.png
+
+newmtl gxmat338
+map_Kd 15.png
+
+newmtl gxmat339
+map_Kd 18.png
+
+newmtl gxmat340
+map_Kd 25.png
+
+newmtl gxmat341
+map_Kd 104.png
+
+newmtl gxmat342
+map_Kd 26.png
+
+newmtl gxmat343
+map_Kd 104.png
+
+newmtl gxmat344
+map_Kd 19.png
+
+newmtl gxmat345
+map_Kd 19.png
+
+newmtl gxmat346
+map_Kd 27.png
+
+newmtl gxmat347
+map_Kd 104.png
+
+newmtl gxmat348
+map_Kd 16.png
+
+newmtl gxmat349
+map_Kd 19.png
+
+newmtl gxmat350
+map_Kd 19.png
+
+newmtl gxmat351
+map_Kd 13.png
+
+newmtl gxmat352
+map_Kd 21.png
+
+newmtl gxmat353
+map_Kd 16.png
+
+newmtl gxmat354
+map_Kd 14.png
+
+newmtl gxmat355
+map_Kd 25.png
+
+newmtl gxmat356
+map_Kd 104.png
+
+newmtl gxmat357
+map_Kd 22.png
+
+newmtl gxmat358
+map_Kd 11.png
+
+newmtl gxmat359
+map_Kd 17.png
+
+newmtl gxmat360
+map_Kd 20.png
+
+newmtl gxmat361
+map_Kd 19.png
+
+newmtl gxmat362
+map_Kd 26.png
+
+newmtl gxmat363
+map_Kd 104.png
+
+newmtl gxmat364
+map_Kd 18.png
+
+newmtl gxmat365
+map_Kd 18.png
+
+newmtl gxmat366
+map_Kd 21.png
+
+newmtl gxmat367
+map_Kd 24.png
+
+newmtl gxmat368
+map_Kd 26.png
+
+newmtl gxmat369
+map_Kd 104.png
+
+newmtl gxmat370
+map_Kd 9.png
+
+newmtl gxmat371
+map_Kd 10.png
+
+newmtl gxmat372
+map_Kd 16.png
+
+newmtl gxmat373
+map_Kd 26.png
+
+newmtl gxmat374
+map_Kd 104.png
+
+newmtl gxmat375
+map_Kd 12.png
+
+newmtl gxmat376
+map_Kd 11.png
+
+newmtl gxmat377
+map_Kd 19.png
+
+newmtl gxmat378
+map_Kd 17.png
+
+newmtl gxmat379
+map_Kd 25.png
+
+newmtl gxmat380
+map_Kd 104.png
+
+newmtl gxmat381
+map_Kd 18.png
+
+newmtl gxmat382
+map_Kd 25.png
+
+newmtl gxmat383
+map_Kd 104.png
+
+newmtl gxmat384
+map_Kd 22.png
+
+newmtl gxmat385
+map_Kd 22.png
+
+newmtl gxmat386
+map_Kd 15.png
+
+newmtl gxmat387
+map_Kd 19.png
+
+newmtl gxmat388
+map_Kd 20.png
+
+newmtl gxmat389
+map_Kd 13.png
+
+newmtl gxmat390
+map_Kd 27.png
+
+newmtl gxmat391
+map_Kd 104.png
+
+newmtl gxmat392
+map_Kd 27.png
+
+newmtl gxmat393
+map_Kd 104.png
+
+newmtl gxmat394
+map_Kd 19.png
+
+newmtl gxmat395
+map_Kd 19.png
+
+newmtl gxmat396
+map_Kd 19.png
+
+newmtl gxmat397
+map_Kd 21.png
+
+newmtl gxmat398
+map_Kd 26.png
+
+newmtl gxmat399
+map_Kd 104.png
+
+newmtl gxmat400
+map_Kd 18.png
+
+newmtl gxmat401
+map_Kd 26.png
+
+newmtl gxmat402
+map_Kd 104.png
+
+newmtl gxmat403
+map_Kd 25.png
+
+newmtl gxmat404
+map_Kd 104.png
+
+newmtl gxmat405
+map_Kd 14.png
+
+newmtl gxmat406
+map_Kd 24.png
+
+newmtl gxmat407
+map_Kd 27.png
+
+newmtl gxmat408
+map_Kd 104.png
+
+newmtl gxmat409
+map_Kd 25.png
+
+newmtl gxmat410
+map_Kd 104.png
+
+newmtl gxmat411
+map_Kd 26.png
+
+newmtl gxmat412
+map_Kd 104.png
+
+newmtl gxmat413
+map_Kd 18.png
+
+newmtl gxmat414
+map_Kd 24.png
+
+newmtl gxmat415
+map_Kd 21.png
+
+newmtl gxmat416
+map_Kd 27.png
+
+newmtl gxmat417
+map_Kd 104.png
+
+newmtl gxmat418
+map_Kd 27.png
+
+newmtl gxmat419
+map_Kd 104.png
+
+newmtl gxmat420
+map_Kd 16.png
+
+newmtl gxmat421
+map_Kd 18.png
+
+newmtl gxmat422
+map_Kd 9.png
+
+newmtl gxmat423
+map_Kd 10.png
+
+newmtl gxmat424
+map_Kd 14.png
+
+newmtl gxmat425
+map_Kd 27.png
+
+newmtl gxmat426
+map_Kd 104.png
+
+newmtl gxmat427
+map_Kd 16.png
+
+newmtl gxmat428
+map_Kd 26.png
+
+newmtl gxmat429
+map_Kd 104.png
+
+newmtl gxmat430
+map_Kd 11.png
+
+newmtl gxmat431
+map_Kd 17.png
+
+newmtl gxmat432
+map_Kd 26.png
+
+newmtl gxmat433
+map_Kd 104.png
+
+newmtl gxmat434
+map_Kd 25.png
+
+newmtl gxmat435
+map_Kd 104.png
+
+newmtl gxmat436
+map_Kd 27.png
+
+newmtl gxmat437
+map_Kd 104.png
+
+newmtl gxmat438
+map_Kd 15.png
+
+newmtl gxmat439
+map_Kd 22.png
+
+newmtl gxmat440
+map_Kd 19.png
+
+newmtl gxmat441
+map_Kd 22.png
+
+newmtl gxmat442
+map_Kd 18.png
+
+newmtl gxmat443
+map_Kd 12.png
+
+newmtl gxmat444
+map_Kd 27.png
+
+newmtl gxmat445
+map_Kd 104.png
+
+newmtl gxmat446
+map_Kd 24.png
+
+newmtl gxmat447
+map_Kd 19.png
+
+newmtl gxmat448
+map_Kd 19.png
+
+newmtl gxmat449
+map_Kd 23.png
+
+newmtl gxmat450
+map_Kd 13.png
+
+newmtl gxmat451
+map_Kd 19.png
+
+newmtl gxmat452
+map_Kd 20.png
+
+newmtl gxmat453
+map_Kd 27.png
+
+newmtl gxmat454
+map_Kd 104.png
+
+newmtl gxmat455
+map_Kd 26.png
+
+newmtl gxmat456
+map_Kd 104.png
+
+newmtl gxmat457
+map_Kd 19.png
+
+newmtl gxmat458
+map_Kd 25.png
+
+newmtl gxmat459
+map_Kd 104.png
+
+newmtl gxmat460
+map_Kd 26.png
+
+newmtl gxmat461
+map_Kd 104.png
+
+newmtl gxmat462
+map_Kd 26.png
+
+newmtl gxmat463
+map_Kd 104.png
+
+newmtl gxmat464
+map_Kd 25.png
+
+newmtl gxmat465
+map_Kd 104.png
+
+newmtl gxmat466
+map_Kd 18.png
+
+newmtl gxmat467
+map_Kd 21.png
+
+newmtl gxmat468
+map_Kd 16.png
+
+newmtl gxmat469
+map_Kd 24.png
+
+newmtl gxmat470
+map_Kd 25.png
+
+newmtl gxmat471
+map_Kd 104.png
+
+newmtl gxmat472
+map_Kd 9.png
+
+newmtl gxmat473
+map_Kd 10.png
+
+newmtl gxmat474
+map_Kd 22.png
+
+newmtl gxmat475
+map_Kd 23.png
+
+newmtl gxmat476
+map_Kd 26.png
+
+newmtl gxmat477
+map_Kd 12.png
+
+newmtl gxmat478
+map_Kd 27.png
+
+newmtl gxmat479
+map_Kd 104.png
+
+newmtl gxmat480
+map_Kd 18.png
+
+newmtl gxmat481
+map_Kd 27.png
+
+newmtl gxmat482
+map_Kd 104.png
+
+newmtl gxmat483
+map_Kd 27.png
+
+newmtl gxmat484
+map_Kd 104.png
+
+newmtl gxmat485
+map_Kd 24.png
+
+newmtl gxmat486
+map_Kd 26.png
+
+newmtl gxmat487
+map_Kd 104.png
+
+newmtl gxmat488
+map_Kd 26.png
+
+newmtl gxmat489
+map_Kd 104.png
+
+newmtl gxmat490
+map_Kd 15.png
+
+newmtl gxmat491
+map_Kd 18.png
+
+newmtl gxmat492
+map_Kd 18.png
+
+newmtl gxmat493
+map_Kd 25.png
+
+newmtl gxmat494
+map_Kd 104.png
+
+newmtl gxmat495
+map_Kd 26.png
+
+newmtl gxmat496
+map_Kd 104.png
+
+newmtl gxmat497
+map_Kd 16.png
+
+newmtl gxmat498
+map_Kd 18.png
+
+newmtl gxmat499
+map_Kd 13.png
+
+newmtl gxmat500
+map_Kd 25.png
+
+newmtl gxmat501
+map_Kd 104.png
+
+newmtl gxmat502
+map_Kd 24.png
+
+newmtl gxmat503
+map_Kd 25.png
+
+newmtl gxmat504
+map_Kd 104.png
+
+newmtl gxmat505
+map_Kd 11.png
+
+newmtl gxmat506
+map_Kd 21.png
+
+newmtl gxmat507
+map_Kd 16.png
+
+newmtl gxmat508
+map_Kd 19.png
+
+newmtl gxmat509
+map_Kd 14.png
+
+newmtl gxmat510
+map_Kd 21.png
+
+newmtl gxmat511
+map_Kd 26.png
+
+newmtl gxmat512
+map_Kd 104.png
+
+newmtl gxmat513
+map_Kd 17.png
+
+newmtl gxmat514
+map_Kd 25.png
+
+newmtl gxmat515
+map_Kd 104.png
+
+newmtl gxmat516
+map_Kd 22.png
+
+newmtl gxmat517
+map_Kd 19.png
+
+newmtl gxmat518
+map_Kd 27.png
+
+newmtl gxmat519
+map_Kd 104.png
+
+newmtl gxmat520
+map_Kd 19.png
+
+newmtl gxmat521
+map_Kd 19.png
+
+newmtl gxmat522
+map_Kd 27.png
+
+newmtl gxmat523
+map_Kd 104.png
+
+newmtl gxmat524
+map_Kd 9.png
+
+newmtl gxmat525
+map_Kd 10.png
+
+newmtl gxmat526
+map_Kd 11.png
+
+newmtl gxmat527
+map_Kd 24.png
+
+newmtl gxmat528
+map_Kd 27.png
+
+newmtl gxmat529
+map_Kd 104.png
+
+newmtl gxmat530
+map_Kd 25.png
+
+newmtl gxmat531
+map_Kd 104.png
+
+newmtl gxmat532
+map_Kd 26.png
+
+newmtl gxmat533
+map_Kd 104.png
+
+newmtl gxmat534
+map_Kd 16.png
+
+newmtl gxmat535
+map_Kd 25.png
+
+newmtl gxmat536
+map_Kd 104.png
+
+newmtl gxmat537
+map_Kd 25.png
+
+newmtl gxmat538
+map_Kd 104.png
+
+newmtl gxmat539
+map_Kd 24.png
+
+newmtl gxmat540
+map_Kd 13.png
+
+newmtl gxmat541
+map_Kd 18.png
+
+newmtl gxmat542
+map_Kd 18.png
+
+newmtl gxmat543
+map_Kd 26.png
+
+newmtl gxmat544
+map_Kd 104.png
+
+newmtl gxmat545
+map_Kd 16.png
+
+newmtl gxmat546
+map_Kd 26.png
+
+newmtl gxmat547
+map_Kd 104.png
+
+newmtl gxmat548
+map_Kd 26.png
+
+newmtl gxmat549
+map_Kd 104.png
+
+newmtl gxmat550
+map_Kd 19.png
+
+newmtl gxmat551
+map_Kd 18.png
+
+newmtl gxmat552
+map_Kd 17.png
+
+newmtl gxmat553
+map_Kd 25.png
+
+newmtl gxmat554
+map_Kd 104.png
+
+newmtl gxmat555
+map_Kd 22.png
+
+newmtl gxmat556
+map_Kd 22.png
+
+newmtl gxmat557
+map_Kd 15.png
+
+newmtl gxmat558
+map_Kd 19.png
+
+newmtl gxmat559
+map_Kd 12.png
+
+newmtl gxmat560
+map_Kd 27.png
+
+newmtl gxmat561
+map_Kd 104.png
+
+newmtl gxmat562
+map_Kd 19.png
+
+newmtl gxmat563
+map_Kd 20.png
+
+newmtl gxmat564
+map_Kd 21.png
+
+newmtl gxmat565
+map_Kd 14.png
+
+newmtl gxmat566
+map_Kd 19.png
+
+newmtl gxmat567
+map_Kd 18.png
+
+newmtl gxmat568
+map_Kd 27.png
+
+newmtl gxmat569
+map_Kd 19.png
+
+newmtl gxmat570
+map_Kd 21.png
+
+newmtl gxmat571
+map_Kd 27.png
+
+newmtl gxmat572
+map_Kd 104.png
+
+newmtl gxmat573
+map_Kd 27.png
+
+newmtl gxmat574
+map_Kd 104.png
+
+newmtl gxmat575
+map_Kd 26.png
+
+newmtl gxmat576
+map_Kd 104.png
+
+newmtl gxmat577
+map_Kd 23.png
+
+newmtl gxmat578
+map_Kd 9.png
+
+newmtl gxmat579
+map_Kd 10.png
+
+newmtl gxmat580
+map_Kd 12.png
+
+newmtl gxmat581
+map_Kd 11.png
+
+newmtl gxmat582
+map_Kd 13.png
+
+newmtl gxmat583
+map_Kd 25.png
+
+newmtl gxmat584
+map_Kd 104.png
+
+newmtl gxmat585
+map_Kd 16.png
+
+newmtl gxmat586
+map_Kd 19.png
+
+newmtl gxmat587
+map_Kd 27.png
+
+newmtl gxmat588
+map_Kd 104.png
+
+newmtl gxmat589
+map_Kd 18.png
+
+newmtl gxmat590
+map_Kd 25.png
+
+newmtl gxmat591
+map_Kd 104.png
+
+newmtl gxmat592
+map_Kd 21.png
+
+newmtl gxmat593
+map_Kd 26.png
+
+newmtl gxmat594
+map_Kd 104.png
+
+newmtl gxmat595
+map_Kd 27.png
+
+newmtl gxmat596
+map_Kd 104.png
+
+newmtl gxmat597
+map_Kd 19.png
+
+newmtl gxmat598
+map_Kd 14.png
+
+newmtl gxmat599
+map_Kd 24.png
+
+newmtl gxmat600
+map_Kd 27.png
+
+newmtl gxmat601
+map_Kd 104.png
+
+newmtl gxmat602
+map_Kd 19.png
+
+newmtl gxmat603
+map_Kd 21.png
+
+newmtl gxmat604
+map_Kd 16.png
+
+newmtl gxmat605
+map_Kd 22.png
+
+newmtl gxmat606
+map_Kd 26.png
+
+newmtl gxmat607
+map_Kd 104.png
+
+newmtl gxmat608
+map_Kd 23.png
+
+newmtl gxmat609
+map_Kd 19.png
+
+newmtl gxmat610
+map_Kd 27.png
+
+newmtl gxmat611
+map_Kd 104.png
+
+newmtl gxmat612
+map_Kd 22.png
+
+newmtl gxmat613
+map_Kd 15.png
+
+newmtl gxmat614
+map_Kd 25.png
+
+newmtl gxmat615
+map_Kd 104.png
+
+newmtl gxmat616
+map_Kd 27.png
+
+newmtl gxmat617
+map_Kd 104.png
+
+newmtl gxmat618
+map_Kd 18.png
+
+newmtl gxmat619
+map_Kd 17.png
+
+newmtl gxmat620
+map_Kd 25.png
+
+newmtl gxmat621
+map_Kd 104.png
+
+newmtl gxmat622
+map_Kd 24.png
+
+newmtl gxmat623
+map_Kd 18.png
+
+newmtl gxmat624
+map_Kd 26.png
+
+newmtl gxmat625
+map_Kd 104.png
+
+newmtl gxmat626
+map_Kd 26.png
+
+newmtl gxmat627
+map_Kd 104.png
+
+newmtl gxmat628
+map_Kd 26.png
+
+newmtl gxmat629
+map_Kd 104.png
+
+newmtl gxmat630
+map_Kd 9.png
+
+newmtl gxmat631
+map_Kd 10.png
+
+newmtl gxmat632
+map_Kd 16.png
+
+newmtl gxmat633
+map_Kd 27.png
+
+newmtl gxmat634
+map_Kd 104.png
+
+newmtl gxmat635
+map_Kd 25.png
+
+newmtl gxmat636
+map_Kd 104.png
+
+newmtl gxmat637
+map_Kd 26.png
+
+newmtl gxmat638
+map_Kd 104.png
+
+newmtl gxmat639
+map_Kd 25.png
+
+newmtl gxmat640
+map_Kd 104.png
+
+newmtl gxmat641
+map_Kd 17.png
+
+newmtl gxmat642
+map_Kd 27.png
+
+newmtl gxmat643
+map_Kd 104.png
+
+newmtl gxmat644
+map_Kd 25.png
+
+newmtl gxmat645
+map_Kd 104.png
+
+newmtl gxmat646
+map_Kd 19.png
+
+newmtl gxmat647
+map_Kd 25.png
+
+newmtl gxmat648
+map_Kd 104.png
+
+newmtl gxmat649
+map_Kd 15.png
+
+newmtl gxmat650
+map_Kd 11.png
+
+newmtl gxmat651
+map_Kd 20.png
+
+newmtl gxmat652
+map_Kd 22.png
+
+newmtl gxmat653
+map_Kd 18.png
+
+newmtl gxmat654
+map_Kd 12.png
+
+newmtl gxmat655
+map_Kd 21.png
+
+newmtl gxmat656
+map_Kd 13.png
+
+newmtl gxmat657
+map_Kd 19.png
+
+newmtl gxmat658
+map_Kd 26.png
+
+newmtl gxmat659
+map_Kd 104.png
+
+newmtl gxmat660
+map_Kd 19.png
+
+newmtl gxmat661
+map_Kd 18.png
+
+newmtl gxmat662
+map_Kd 22.png
+
+newmtl gxmat663
+map_Kd 24.png
+
+newmtl gxmat664
+map_Kd 27.png
+
+newmtl gxmat665
+map_Kd 104.png
+
+newmtl gxmat666
+map_Kd 27.png
+
+newmtl gxmat667
+map_Kd 104.png
+
+newmtl gxmat668
+map_Kd 26.png
+
+newmtl gxmat669
+map_Kd 104.png
+
+newmtl gxmat670
+map_Kd 24.png
+
+newmtl gxmat671
+map_Kd 18.png
+
+newmtl gxmat672
+map_Kd 18.png
+
+newmtl gxmat673
+map_Kd 26.png
+
+newmtl gxmat674
+map_Kd 104.png
+
+newmtl gxmat675
+map_Kd 14.png
+
+newmtl gxmat676
+map_Kd 19.png
+
+newmtl gxmat677
+map_Kd 21.png
+
+newmtl gxmat678
+map_Kd 16.png
+
+newmtl gxmat679
+map_Kd 19.png
+
+newmtl gxmat680
+map_Kd 9.png
+
+newmtl gxmat681
+map_Kd 10.png
+
+newmtl gxmat682
+map_Kd 11.png
+
+newmtl gxmat683
+map_Kd 17.png
+
+newmtl gxmat684
+map_Kd 27.png
+
+newmtl gxmat685
+map_Kd 104.png
+
+newmtl gxmat686
+map_Kd 16.png
+
+newmtl gxmat687
+map_Kd 15.png
+
+newmtl gxmat688
+map_Kd 16.png
+
+newmtl gxmat689
+map_Kd 25.png
+
+newmtl gxmat690
+map_Kd 104.png
+
+newmtl gxmat691
+map_Kd 25.png
+
+newmtl gxmat692
+map_Kd 104.png
+
+newmtl gxmat693
+map_Kd 25.png
+
+newmtl gxmat694
+map_Kd 104.png
+
+newmtl gxmat695
+map_Kd 24.png
+
+newmtl gxmat696
+map_Kd 24.png
+
+newmtl gxmat697
+map_Kd 21.png
+
+newmtl gxmat698
+map_Kd 26.png
+
+newmtl gxmat699
+map_Kd 104.png
+
+newmtl gxmat700
+map_Kd 18.png
+
+newmtl gxmat701
+map_Kd 18.png
+
+newmtl gxmat702
+map_Kd 26.png
+
+newmtl gxmat703
+map_Kd 104.png
+
+newmtl gxmat704
+map_Kd 25.png
+
+newmtl gxmat705
+map_Kd 104.png
+
+newmtl gxmat706
+map_Kd 26.png
+
+newmtl gxmat707
+map_Kd 104.png
+
+newmtl gxmat708
+map_Kd 26.png
+
+newmtl gxmat709
+map_Kd 104.png
+
+newmtl gxmat710
+map_Kd 18.png
+
+newmtl gxmat711
+map_Kd 12.png
+
+newmtl gxmat712
+map_Kd 22.png
+
+newmtl gxmat713
+map_Kd 23.png
+
+newmtl gxmat714
+map_Kd 26.png
+
+newmtl gxmat715
+map_Kd 27.png
+
+newmtl gxmat716
+map_Kd 104.png
+
+newmtl gxmat717
+map_Kd 27.png
+
+newmtl gxmat718
+map_Kd 104.png
+
+newmtl gxmat719
+map_Kd 18.png
+
+newmtl gxmat720
+map_Kd 21.png
+
+newmtl gxmat721
+map_Kd 14.png
+
+newmtl gxmat722
+map_Kd 19.png
+
+newmtl gxmat723
+map_Kd 22.png
+
+newmtl gxmat724
+map_Kd 27.png
+
+newmtl gxmat725
+map_Kd 104.png
+
+newmtl gxmat726
+map_Kd 19.png
+
+newmtl gxmat727
+map_Kd 13.png
+
+newmtl gxmat728
+map_Kd 27.png
+
+newmtl gxmat729
+map_Kd 104.png
+
+newmtl gxmat730
+map_Kd 19.png
+
+newmtl gxmat731
+map_Kd 19.png
+
+newmtl gxmat732
+map_Kd 9.png
+
+newmtl gxmat733
+map_Kd 10.png
+
+newmtl gxmat734
+map_Kd 22.png
+
+newmtl gxmat735
+map_Kd 23.png
+
+newmtl gxmat736
+map_Kd 26.png
+
+newmtl gxmat737
+map_Kd 104.png
+
+newmtl gxmat738
+map_Kd 25.png
+
+newmtl gxmat739
+map_Kd 104.png
+
+newmtl gxmat740
+map_Kd 27.png
+
+newmtl gxmat741
+map_Kd 104.png
+
+newmtl gxmat742
+map_Kd 18.png
+
+newmtl gxmat743
+map_Kd 27.png
+
+newmtl gxmat744
+map_Kd 104.png
+
+newmtl gxmat745
+map_Kd 27.png
+
+newmtl gxmat746
+map_Kd 104.png
+
+newmtl gxmat747
+map_Kd 24.png
+
+newmtl gxmat748
+map_Kd 11.png
+
+newmtl gxmat749
+map_Kd 26.png
+
+newmtl gxmat750
+map_Kd 104.png
+
+newmtl gxmat751
+map_Kd 15.png
+
+newmtl gxmat752
+map_Kd 18.png
+
+newmtl gxmat753
+map_Kd 12.png
+
+newmtl gxmat754
+map_Kd 17.png
+
+newmtl gxmat755
+map_Kd 19.png
+
+newmtl gxmat756
+map_Kd 26.png
+
+newmtl gxmat757
+map_Kd 104.png
+
+newmtl gxmat758
+map_Kd 13.png
+
+newmtl gxmat759
+map_Kd 26.png
+
+newmtl gxmat760
+map_Kd 104.png
+
+newmtl gxmat761
+map_Kd 25.png
+
+newmtl gxmat762
+map_Kd 104.png
+
+newmtl gxmat763
+map_Kd 18.png
+
+newmtl gxmat764
+map_Kd 18.png
+
+newmtl gxmat765
+map_Kd 25.png
+
+newmtl gxmat766
+map_Kd 104.png
+
+newmtl gxmat767
+map_Kd 24.png
+
+newmtl gxmat768
+map_Kd 25.png
+
+newmtl gxmat769
+map_Kd 104.png
+
+newmtl gxmat770
+map_Kd 21.png
+
+newmtl gxmat771
+map_Kd 16.png
+
+newmtl gxmat772
+map_Kd 16.png
+
+newmtl gxmat773
+map_Kd 14.png
+
+newmtl gxmat774
+map_Kd 19.png
+
+newmtl gxmat775
+map_Kd 21.png
+
+newmtl gxmat776
+map_Kd 26.png
+
+newmtl gxmat777
+map_Kd 104.png
+
+newmtl gxmat778
+map_Kd 22.png
+
+newmtl gxmat779
+map_Kd 27.png
+
+newmtl gxmat780
+map_Kd 104.png
+
+newmtl gxmat781
+map_Kd 19.png
+
+newmtl gxmat782
+map_Kd 19.png
+
+newmtl gxmat783
+map_Kd 20.png
+
+newmtl gxmat784
+map_Kd 19.png
+
+newmtl gxmat785
+map_Kd 27.png
+
+newmtl gxmat786
+map_Kd 104.png
+
+newmtl gxmat787
+map_Kd 9.png
+
+newmtl gxmat788
+map_Kd 10.png
+
+newmtl gxmat789
+map_Kd 16.png
+
+newmtl gxmat790
+map_Kd 27.png
+
+newmtl gxmat791
+map_Kd 104.png
+
+newmtl gxmat792
+map_Kd 11.png
+
+newmtl gxmat793
+map_Kd 16.png
+
+newmtl gxmat794
+map_Kd 26.png
+
+newmtl gxmat795
+map_Kd 104.png
+
+newmtl gxmat796
+map_Kd 25.png
+
+newmtl gxmat797
+map_Kd 104.png
+
+newmtl gxmat798
+map_Kd 25.png
+
+newmtl gxmat799
+map_Kd 104.png
+
+newmtl gxmat800
+map_Kd 24.png
+
+newmtl gxmat801
+map_Kd 24.png
+
+newmtl gxmat802
+map_Kd 25.png
+
+newmtl gxmat803
+map_Kd 104.png
+
+newmtl gxmat804
+map_Kd 18.png
+
+newmtl gxmat805
+map_Kd 26.png
+
+newmtl gxmat806
+map_Kd 104.png
+
+newmtl gxmat807
+map_Kd 26.png
+
+newmtl gxmat808
+map_Kd 104.png
+
+newmtl gxmat809
+map_Kd 26.png
+
+newmtl gxmat810
+map_Kd 104.png
+
+newmtl gxmat811
+map_Kd 18.png
+
+newmtl gxmat812
+map_Kd 17.png
+
+newmtl gxmat813
+map_Kd 25.png
+
+newmtl gxmat814
+map_Kd 104.png
+
+newmtl gxmat815
+map_Kd 15.png
+
+newmtl gxmat816
+map_Kd 22.png
+
+newmtl gxmat817
+map_Kd 18.png
+
+newmtl gxmat818
+map_Kd 27.png
+
+newmtl gxmat819
+map_Kd 104.png
+
+newmtl gxmat820
+map_Kd 12.png
+
+newmtl gxmat821
+map_Kd 19.png
+
+newmtl gxmat822
+map_Kd 19.png
+
+newmtl gxmat823
+map_Kd 13.png
+
+newmtl gxmat824
+map_Kd 19.png
+
+newmtl gxmat825
+map_Kd 20.png
+
+newmtl gxmat826
+map_Kd 18.png
+
+newmtl gxmat827
+map_Kd 22.png
+
+newmtl gxmat828
+map_Kd 23.png
+
+newmtl gxmat829
+map_Kd 26.png
+
+newmtl gxmat830
+map_Kd 104.png
+
+newmtl gxmat831
+map_Kd 27.png
+
+newmtl gxmat832
+map_Kd 104.png
+
+newmtl gxmat833
+map_Kd 27.png
+
+newmtl gxmat834
+map_Kd 104.png
+
+newmtl gxmat835
+map_Kd 27.png
+
+newmtl gxmat836
+map_Kd 104.png
+
+newmtl gxmat837
+map_Kd 19.png
+
+newmtl gxmat838
+map_Kd 19.png
+
+newmtl gxmat839
+map_Kd 21.png
+
+newmtl gxmat840
+map_Kd 14.png
+
+newmtl gxmat841
+map_Kd 21.png
+
+newmtl gxmat842
+map_Kd 9.png
+
+newmtl gxmat843
+map_Kd 10.png
+
+newmtl gxmat844
+map_Kd 16.png
+
+newmtl gxmat845
+map_Kd 26.png
+
+newmtl gxmat846
+map_Kd 104.png
+
+newmtl gxmat847
+map_Kd 11.png
+
+newmtl gxmat848
+map_Kd 17.png
+
+newmtl gxmat849
+map_Kd 25.png
+
+newmtl gxmat850
+map_Kd 104.png
+
+newmtl gxmat851
+map_Kd 22.png
+
+newmtl gxmat852
+map_Kd 22.png
+
+newmtl gxmat853
+map_Kd 15.png
+
+newmtl gxmat854
+map_Kd 21.png
+
+newmtl gxmat855
+map_Kd 18.png
+
+newmtl gxmat856
+map_Kd 14.png
+
+newmtl gxmat857
+map_Kd 12.png
+
+newmtl gxmat858
+map_Kd 19.png
+
+newmtl gxmat859
+map_Kd 27.png
+
+newmtl gxmat860
+map_Kd 104.png
+
+newmtl gxmat861
+map_Kd 19.png
+
+newmtl gxmat862
+map_Kd 19.png
+
+newmtl gxmat863
+map_Kd 27.png
+
+newmtl gxmat864
+map_Kd 104.png
+
+newmtl gxmat865
+map_Kd 13.png
+
+newmtl gxmat866
+map_Kd 16.png
+
+newmtl gxmat867
+map_Kd 26.png
+
+newmtl gxmat868
+map_Kd 104.png
+
+newmtl gxmat869
+map_Kd 19.png
+
+newmtl gxmat870
+map_Kd 18.png
+
+newmtl gxmat871
+map_Kd 25.png
+
+newmtl gxmat872
+map_Kd 104.png
+
+newmtl gxmat873
+map_Kd 21.png
+
+newmtl gxmat874
+map_Kd 27.png
+
+newmtl gxmat875
+map_Kd 104.png
+
+newmtl gxmat876
+map_Kd 27.png
+
+newmtl gxmat877
+map_Kd 104.png
+
+newmtl gxmat878
+map_Kd 20.png
+
+newmtl gxmat879
+map_Kd 19.png
+
+newmtl gxmat880
+map_Kd 25.png
+
+newmtl gxmat881
+map_Kd 104.png
+
+newmtl gxmat882
+map_Kd 24.png
+
+newmtl gxmat883
+map_Kd 25.png
+
+newmtl gxmat884
+map_Kd 104.png
+
+newmtl gxmat885
+map_Kd 18.png
+
+newmtl gxmat886
+map_Kd 26.png
+
+newmtl gxmat887
+map_Kd 104.png
+
+newmtl gxmat888
+map_Kd 26.png
+
+newmtl gxmat889
+map_Kd 104.png
+
+newmtl gxmat890
+map_Kd 24.png
+
+newmtl gxmat891
+map_Kd 18.png
+
+newmtl gxmat892
+map_Kd 27.png
+
+newmtl gxmat893
+map_Kd 104.png
+
+newmtl gxmat894
+map_Kd 26.png
+
+newmtl gxmat895
+map_Kd 23.png
+
+newmtl gxmat896
+map_Kd 9.png
+
+newmtl gxmat897
+map_Kd 10.png
+
+newmtl gxmat898
+map_Kd 27.png
+
+newmtl gxmat899
+map_Kd 74.png
+
+newmtl gxmat900
+map_Kd 16.png
+
+newmtl gxmat901
+map_Kd 25.png
+
+newmtl gxmat902
+map_Kd 74.png
+
+newmtl gxmat903
+map_Kd 19.png
+
+newmtl gxmat904
+map_Kd 19.png
+
+newmtl gxmat905
+map_Kd 13.png
+
+newmtl gxmat906
+map_Kd 26.png
+
+newmtl gxmat907
+map_Kd 74.png
+
+newmtl gxmat908
+map_Kd 21.png
+
+newmtl gxmat909
+map_Kd 19.png
+
+newmtl gxmat910
+map_Kd 16.png
+
+newmtl gxmat911
+map_Kd 14.png
+
+newmtl gxmat912
+map_Kd 20.png
+
+newmtl gxmat913
+map_Kd 27.png
+
+newmtl gxmat914
+map_Kd 74.png
+
+newmtl gxmat915
+map_Kd 11.png
+
+newmtl gxmat916
+map_Kd 17.png
+
+newmtl gxmat917
+map_Kd 22.png
+
+newmtl gxmat918
+map_Kd 15.png
+
+newmtl gxmat919
+map_Kd 25.png
+
+newmtl gxmat920
+map_Kd 74.png
+
+newmtl gxmat921
+map_Kd 26.png
+
+newmtl gxmat922
+map_Kd 74.png
+
+newmtl gxmat923
+map_Kd 22.png
+
+newmtl gxmat924
+map_Kd 19.png
+
+newmtl gxmat925
+map_Kd 18.png
+
+newmtl gxmat926
+map_Kd 12.png
+
+newmtl gxmat927
+map_Kd 27.png
+
+newmtl gxmat928
+map_Kd 74.png
+
+newmtl gxmat929
+map_Kd 18.png
+
+newmtl gxmat930
+map_Kd 19.png
+
+newmtl gxmat931
+map_Kd 26.png
+
+newmtl gxmat932
+map_Kd 74.png
+
+newmtl gxmat933
+map_Kd 18.png
+
+newmtl gxmat934
+map_Kd 26.png
+
+newmtl gxmat935
+map_Kd 74.png
+
+newmtl gxmat936
+map_Kd 23.png
+
+newmtl gxmat937
+map_Kd 26.png
+
+newmtl gxmat938
+map_Kd 74.png
+
+newmtl gxmat939
+map_Kd 27.png
+
+newmtl gxmat940
+map_Kd 74.png
+
+newmtl gxmat941
+map_Kd 27.png
+
+newmtl gxmat942
+map_Kd 74.png
+
+newmtl gxmat943
+map_Kd 25.png
+
+newmtl gxmat944
+map_Kd 74.png
+
+newmtl gxmat945
+map_Kd 24.png
+
+newmtl gxmat946
+map_Kd 25.png
+
+newmtl gxmat947
+map_Kd 74.png
+
+newmtl gxmat948
+map_Kd 24.png
+
+newmtl gxmat949
+map_Kd 18.png
+
+newmtl gxmat950
+map_Kd 21.png
+
+newmtl gxmat951
+map_Kd 9.png
+
+newmtl gxmat952
+map_Kd 10.png
+
+newmtl gxmat953
+map_Kd 19.png
+
+newmtl gxmat954
+map_Kd 25.png
+
+newmtl gxmat955
+map_Kd 74.png
+
+newmtl gxmat956
+map_Kd 16.png
+
+newmtl gxmat957
+map_Kd 26.png
+
+newmtl gxmat958
+map_Kd 74.png
+
+newmtl gxmat959
+map_Kd 11.png
+
+newmtl gxmat960
+map_Kd 17.png
+
+newmtl gxmat961
+map_Kd 26.png
+
+newmtl gxmat962
+map_Kd 74.png
+
+newmtl gxmat963
+map_Kd 15.png
+
+newmtl gxmat964
+map_Kd 22.png
+
+newmtl gxmat965
+map_Kd 26.png
+
+newmtl gxmat966
+map_Kd 74.png
+
+newmtl gxmat967
+map_Kd 22.png
+
+newmtl gxmat968
+map_Kd 19.png
+
+newmtl gxmat969
+map_Kd 18.png
+
+newmtl gxmat970
+map_Kd 18.png
+
+newmtl gxmat971
+map_Kd 27.png
+
+newmtl gxmat972
+map_Kd 74.png
+
+newmtl gxmat973
+map_Kd 12.png
+
+newmtl gxmat974
+map_Kd 18.png
+
+newmtl gxmat975
+map_Kd 19.png
+
+newmtl gxmat976
+map_Kd 25.png
+
+newmtl gxmat977
+map_Kd 74.png
+
+newmtl gxmat978
+map_Kd 13.png
+
+newmtl gxmat979
+map_Kd 20.png
+
+newmtl gxmat980
+map_Kd 27.png
+
+newmtl gxmat981
+map_Kd 74.png
+
+newmtl gxmat982
+map_Kd 27.png
+
+newmtl gxmat983
+map_Kd 74.png
+
+newmtl gxmat984
+map_Kd 27.png
+
+newmtl gxmat985
+map_Kd 74.png
+
+newmtl gxmat986
+map_Kd 25.png
+
+newmtl gxmat987
+map_Kd 74.png
+
+newmtl gxmat988
+map_Kd 26.png
+
+newmtl gxmat989
+map_Kd 74.png
+
+newmtl gxmat990
+map_Kd 23.png
+
+newmtl gxmat991
+map_Kd 24.png
+
+newmtl gxmat992
+map_Kd 19.png
+
+newmtl gxmat993
+map_Kd 25.png
+
+newmtl gxmat994
+map_Kd 74.png
+
+newmtl gxmat995
+map_Kd 24.png
+
+newmtl gxmat996
+map_Kd 16.png
+
+newmtl gxmat997
+map_Kd 21.png
+
+newmtl gxmat998
+map_Kd 19.png
+
+newmtl gxmat999
+map_Kd 26.png
+
+newmtl gxmat1000
+map_Kd 74.png
+
+newmtl gxmat1001
+map_Kd 18.png
+
+newmtl gxmat1002
+map_Kd 14.png
+
+newmtl gxmat1003
+map_Kd 27.png
+
+newmtl gxmat1004
+map_Kd 74.png
+
+newmtl gxmat1005
+map_Kd 9.png
+
+newmtl gxmat1006
+map_Kd 10.png
+
+newmtl gxmat1007
+map_Kd 22.png
+
+newmtl gxmat1008
+map_Kd 26.png
+
+newmtl gxmat1009
+map_Kd 74.png
+
+newmtl gxmat1010
+map_Kd 16.png
+
+newmtl gxmat1011
+map_Kd 11.png
+
+newmtl gxmat1012
+map_Kd 17.png
+
+newmtl gxmat1013
+map_Kd 15.png
+
+newmtl gxmat1014
+map_Kd 25.png
+
+newmtl gxmat1015
+map_Kd 74.png
+
+newmtl gxmat1016
+map_Kd 18.png
+
+newmtl gxmat1017
+map_Kd 20.png
+
+newmtl gxmat1018
+map_Kd 22.png
+
+newmtl gxmat1019
+map_Kd 19.png
+
+newmtl gxmat1020
+map_Kd 18.png
+
+newmtl gxmat1021
+map_Kd 27.png
+
+newmtl gxmat1022
+map_Kd 74.png
+
+newmtl gxmat1023
+map_Kd 12.png
+
+newmtl gxmat1024
+map_Kd 19.png
+
+newmtl gxmat1025
+map_Kd 13.png
+
+newmtl gxmat1026
+map_Kd 19.png
+
+newmtl gxmat1027
+map_Kd 27.png
+
+newmtl gxmat1028
+map_Kd 74.png
+
+newmtl gxmat1029
+map_Kd 25.png
+
+newmtl gxmat1030
+map_Kd 74.png
+
+newmtl gxmat1031
+map_Kd 25.png
+
+newmtl gxmat1032
+map_Kd 74.png
+
+newmtl gxmat1033
+map_Kd 25.png
+
+newmtl gxmat1034
+map_Kd 74.png
+
+newmtl gxmat1035
+map_Kd 24.png
+
+newmtl gxmat1036
+map_Kd 24.png
+
+newmtl gxmat1037
+map_Kd 18.png
+
+newmtl gxmat1038
+map_Kd 18.png
+
+newmtl gxmat1039
+map_Kd 26.png
+
+newmtl gxmat1040
+map_Kd 74.png
+
+newmtl gxmat1041
+map_Kd 26.png
+
+newmtl gxmat1042
+map_Kd 74.png
+
+newmtl gxmat1043
+map_Kd 26.png
+
+newmtl gxmat1044
+map_Kd 74.png
+
+newmtl gxmat1045
+map_Kd 16.png
+
+newmtl gxmat1046
+map_Kd 23.png
+
+newmtl gxmat1047
+map_Kd 26.png
+
+newmtl gxmat1048
+map_Kd 74.png
+
+newmtl gxmat1049
+map_Kd 27.png
+
+newmtl gxmat1050
+map_Kd 74.png
+
+newmtl gxmat1051
+map_Kd 27.png
+
+newmtl gxmat1052
+map_Kd 74.png
+
+newmtl gxmat1053
+map_Kd 27.png
+
+newmtl gxmat1054
+map_Kd 74.png
+
+newmtl gxmat1055
+map_Kd 19.png
+
+newmtl gxmat1056
+map_Kd 21.png
+
+newmtl gxmat1057
+map_Kd 19.png
+
+newmtl gxmat1058
+map_Kd 14.png
+
+newmtl gxmat1059
+map_Kd 21.png
+
+newmtl gxmat1060
+map_Kd 9.png
+
+newmtl gxmat1061
+map_Kd 10.png
+
+newmtl gxmat1062
+map_Kd 21.png
+
+newmtl gxmat1063
+map_Kd 26.png
+
+newmtl gxmat1064
+map_Kd 74.png
+
+newmtl gxmat1065
+map_Kd 16.png
+
+newmtl gxmat1066
+map_Kd 11.png
+
+newmtl gxmat1067
+map_Kd 17.png
+
+newmtl gxmat1068
+map_Kd 14.png
+
+newmtl gxmat1069
+map_Kd 25.png
+
+newmtl gxmat1070
+map_Kd 74.png
+
+newmtl gxmat1071
+map_Kd 13.png
+
+newmtl gxmat1072
+map_Kd 15.png
+
+newmtl gxmat1073
+map_Kd 22.png
+
+newmtl gxmat1074
+map_Kd 16.png
+
+newmtl gxmat1075
+map_Kd 21.png
+
+newmtl gxmat1076
+map_Kd 22.png
+
+newmtl gxmat1077
+map_Kd 18.png
+
+newmtl gxmat1078
+map_Kd 19.png
+
+newmtl gxmat1079
+map_Kd 27.png
+
+newmtl gxmat1080
+map_Kd 12.png
+
+newmtl gxmat1081
+map_Kd 27.png
+
+newmtl gxmat1082
+map_Kd 74.png
+
+newmtl gxmat1083
+map_Kd 19.png
+
+newmtl gxmat1084
+map_Kd 19.png
+
+newmtl gxmat1085
+map_Kd 19.png
+
+newmtl gxmat1086
+map_Kd 20.png
+
+newmtl gxmat1087
+map_Kd 26.png
+
+newmtl gxmat1088
+map_Kd 74.png
+
+newmtl gxmat1089
+map_Kd 24.png
+
+newmtl gxmat1090
+map_Kd 19.png
+
+newmtl gxmat1091
+map_Kd 25.png
+
+newmtl gxmat1092
+map_Kd 74.png
+
+newmtl gxmat1093
+map_Kd 27.png
+
+newmtl gxmat1094
+map_Kd 74.png
+
+newmtl gxmat1095
+map_Kd 25.png
+
+newmtl gxmat1096
+map_Kd 74.png
+
+newmtl gxmat1097
+map_Kd 25.png
+
+newmtl gxmat1098
+map_Kd 74.png
+
+newmtl gxmat1099
+map_Kd 24.png
+
+newmtl gxmat1100
+map_Kd 18.png
+
+newmtl gxmat1101
+map_Kd 18.png
+
+newmtl gxmat1102
+map_Kd 26.png
+
+newmtl gxmat1103
+map_Kd 74.png
+
+newmtl gxmat1104
+map_Kd 26.png
+
+newmtl gxmat1105
+map_Kd 74.png
+
+newmtl gxmat1106
+map_Kd 18.png
+
+newmtl gxmat1107
+map_Kd 26.png
+
+newmtl gxmat1108
+map_Kd 74.png
+
+newmtl gxmat1109
+map_Kd 23.png
+
+newmtl gxmat1110
+map_Kd 27.png
+
+newmtl gxmat1111
+map_Kd 74.png
+
+newmtl gxmat1112
+map_Kd 27.png
+
+newmtl gxmat1113
+map_Kd 74.png
+
+newmtl gxmat1114
+map_Kd 9.png
+
+newmtl gxmat1115
+map_Kd 10.png
+
+newmtl gxmat1116
+map_Kd 16.png
+
+newmtl gxmat1117
+map_Kd 26.png
+
+newmtl gxmat1118
+map_Kd 74.png
+
+newmtl gxmat1119
+map_Kd 11.png
+
+newmtl gxmat1120
+map_Kd 17.png
+
+newmtl gxmat1121
+map_Kd 25.png
+
+newmtl gxmat1122
+map_Kd 74.png
+
+newmtl gxmat1123
+map_Kd 25.png
+
+newmtl gxmat1124
+map_Kd 74.png
+
+newmtl gxmat1125
+map_Kd 15.png
+
+newmtl gxmat1126
+map_Kd 22.png
+
+newmtl gxmat1127
+map_Kd 19.png
+
+newmtl gxmat1128
+map_Kd 22.png
+
+newmtl gxmat1129
+map_Kd 18.png
+
+newmtl gxmat1130
+map_Kd 27.png
+
+newmtl gxmat1131
+map_Kd 74.png
+
+newmtl gxmat1132
+map_Kd 12.png
+
+newmtl gxmat1133
+map_Kd 19.png
+
+newmtl gxmat1134
+map_Kd 13.png
+
+newmtl gxmat1135
+map_Kd 19.png
+
+newmtl gxmat1136
+map_Kd 20.png
+
+newmtl gxmat1137
+map_Kd 24.png
+
+newmtl gxmat1138
+map_Kd 27.png
+
+newmtl gxmat1139
+map_Kd 74.png
+
+newmtl gxmat1140
+map_Kd 25.png
+
+newmtl gxmat1141
+map_Kd 74.png
+
+newmtl gxmat1142
+map_Kd 25.png
+
+newmtl gxmat1143
+map_Kd 74.png
+
+newmtl gxmat1144
+map_Kd 24.png
+
+newmtl gxmat1145
+map_Kd 18.png
+
+newmtl gxmat1146
+map_Kd 18.png
+
+newmtl gxmat1147
+map_Kd 26.png
+
+newmtl gxmat1148
+map_Kd 74.png
+
+newmtl gxmat1149
+map_Kd 26.png
+
+newmtl gxmat1150
+map_Kd 74.png
+
+newmtl gxmat1151
+map_Kd 26.png
+
+newmtl gxmat1152
+map_Kd 74.png
+
+newmtl gxmat1153
+map_Kd 18.png
+
+newmtl gxmat1154
+map_Kd 27.png
+
+newmtl gxmat1155
+map_Kd 74.png
+
+newmtl gxmat1156
+map_Kd 27.png
+
+newmtl gxmat1157
+map_Kd 74.png
+
+newmtl gxmat1158
+map_Kd 9.png
+
+newmtl gxmat1159
+map_Kd 10.png
+
+newmtl gxmat1160
+map_Kd 102.png
+
+newmtl gxmat1161
+map_Kd 103.png
+
+newmtl gxmat1162
+map_Kd 77.png
+
+newmtl gxmat1163
+map_Kd 77.png
+
+newmtl gxmat1164
+map_Kd 76.png
+
+newmtl gxmat1165
+map_Kd 36.png
+
+newmtl gxmat1166
+map_Kd 74.png
+
+newmtl gxmat1167
+map_Kd 76.png
+
+newmtl gxmat1168
+map_Kd 74.png
+
+newmtl gxmat1169
+map_Kd 36.png
+
+newmtl gxmat1170
+map_Kd 76.png
+
+newmtl gxmat1171
+map_Kd 36.png
+
+newmtl gxmat1172
+map_Kd 74.png
+
+newmtl gxmat1173
+map_Kd 95.png
+
+newmtl gxmat1174
+map_Kd 90.png
+
+newmtl gxmat1175
+map_Kd 90.png
+
+newmtl gxmat1176
+map_Kd 95.png
+
+newmtl gxmat1177
+map_Kd 90.png
+
+newmtl gxmat1178
+map_Kd 90.png
+
+newmtl gxmat1179
+map_Kd 95.png
+
+newmtl gxmat1180
+map_Kd 90.png
+
+newmtl gxmat1181
+map_Kd 52.png
+
+newmtl gxmat1182
+map_Kd 50.png
+
+newmtl gxmat1183
+map_Kd 54.png
+
+newmtl gxmat1184
+map_Kd 74.png
+
+newmtl gxmat1185
+map_Kd 53.png
+
+newmtl gxmat1186
+map_Kd 74.png
+
+newmtl gxmat1187
+map_Kd 50.png
+
+newmtl gxmat1188
+map_Kd 50.png
+
+newmtl gxmat1189
+map_Kd 52.png
+
+newmtl gxmat1190
+map_Kd 50.png
+
+newmtl gxmat1191
+map_Kd 100.png
+
+newmtl gxmat1192
+map_Kd 74.png
+
+newmtl gxmat1193
+map_Kd 99.png
+
+newmtl gxmat1194
+map_Kd 74.png
+
+newmtl gxmat1195
+map_Kd 101.png
+
+newmtl gxmat1196
+map_Kd 74.png
+
+newmtl gxmat1197
+map_Kd 109.png
+
+newmtl gxmat1198
+map_Kd 105.png
+
+newmtl gxmat1199
+map_Kd 106.png
+
+newmtl gxmat1200
+map_Kd 105.png
+
+newmtl gxmat1201
+map_Kd 106.png
+
+newmtl gxmat1202
+map_Kd 106.png
+
+newmtl gxmat1203
+map_Kd 96.png
+
+newmtl gxmat1204
+map_Kd 96.png
+
+newmtl gxmat1205
+map_Kd 93.png
+
+newmtl gxmat1206
+map_Kd 82.png
+
+newmtl gxmat1207
+map_Kd 74.png
+
+newmtl gxmat1208
+map_Kd 83.png
+
+newmtl gxmat1209
+map_Kd 74.png
+
+newmtl gxmat1210
+map_Kd 54.png
+
+newmtl gxmat1211
+map_Kd 74.png
+
+newmtl gxmat1212
+map_Kd 53.png
+
+newmtl gxmat1213
+map_Kd 74.png
+
+newmtl gxmat1214
+map_Kd 82.png
+
+newmtl gxmat1215
+map_Kd 74.png
+
+newmtl gxmat1216
+map_Kd 69.png
+
+newmtl gxmat1217
+map_Kd 74.png
+
+newmtl gxmat1218
+map_Kd 68.png
+
+newmtl gxmat1219
+map_Kd 74.png
+
+newmtl gxmat1220
+map_Kd 70.png
+
+newmtl gxmat1221
+map_Kd 74.png
+
+newmtl gxmat1222
+map_Kd 72.png
+
+newmtl gxmat1223
+map_Kd 71.png
+
+newmtl gxmat1224
+map_Kd 73.png
+
+newmtl gxmat1225
+map_Kd 74.png
+
+newmtl gxmat1226
+map_Kd 73.png
+
+newmtl gxmat1227
+map_Kd 74.png
+
+newmtl gxmat1228
+map_Kd 69.png
+
+newmtl gxmat1229
+map_Kd 70.png
+
+newmtl gxmat1230
+map_Kd 74.png
+
+newmtl gxmat1231
+map_Kd 59.png
+
+newmtl gxmat1232
+map_Kd 74.png
+
+newmtl gxmat1233
+map_Kd 58.png
+
+newmtl gxmat1234
+map_Kd 74.png
+
+newmtl gxmat1235
+map_Kd 56.png
+
+newmtl gxmat1236
+map_Kd 74.png
+
+newmtl gxmat1237
+map_Kd 56.png
+
+newmtl gxmat1238
+map_Kd 74.png
+
+newmtl gxmat1239
+map_Kd 57.png
+
+newmtl gxmat1240
+map_Kd 74.png
+
+newmtl gxmat1241
+map_Kd 55.png
+
+newmtl gxmat1242
+map_Kd 74.png
+
+newmtl gxmat1243
+map_Kd 59.png
+
+newmtl gxmat1244
+map_Kd 74.png
+
+newmtl gxmat1245
+map_Kd 58.png
+
+newmtl gxmat1246
+map_Kd 74.png
+
+newmtl gxmat1247
+map_Kd 56.png
+
+newmtl gxmat1248
+map_Kd 74.png
+
+newmtl gxmat1249
+map_Kd 56.png
+
+newmtl gxmat1250
+map_Kd 74.png
+
+newmtl gxmat1251
+map_Kd 57.png
+
+newmtl gxmat1252
+map_Kd 74.png
+
+newmtl gxmat1253
+map_Kd 55.png
+
+newmtl gxmat1254
+map_Kd 74.png
+
+newmtl gxmat1255
+map_Kd 63.png
+
+newmtl gxmat1256
+map_Kd 74.png
+
+newmtl gxmat1257
+map_Kd 63.png
+
+newmtl gxmat1258
+map_Kd 74.png
+
+newmtl gxmat1259
+map_Kd 62.png
+
+newmtl gxmat1260
+map_Kd 74.png
+
+newmtl gxmat1261
+map_Kd 62.png
+
+newmtl gxmat1262
+map_Kd 74.png
+
+newmtl gxmat1263
+map_Kd 61.png
+
+newmtl gxmat1264
+map_Kd 74.png
+
+newmtl gxmat1265
+map_Kd 60.png
+
+newmtl gxmat1266
+map_Kd 74.png
+
+newmtl gxmat1267
+map_Kd 63.png
+
+newmtl gxmat1268
+map_Kd 74.png
+
+newmtl gxmat1269
+map_Kd 63.png
+
+newmtl gxmat1270
+map_Kd 74.png
+
+newmtl gxmat1271
+map_Kd 60.png
+
+newmtl gxmat1272
+map_Kd 74.png
+
+newmtl gxmat1273
+map_Kd 61.png
+
+newmtl gxmat1274
+map_Kd 74.png
+
+newmtl gxmat1275
+map_Kd 62.png
+
+newmtl gxmat1276
+map_Kd 74.png
+
+newmtl gxmat1277
+map_Kd 62.png
+
+newmtl gxmat1278
+map_Kd 74.png
+
+newmtl gxmat1279
+map_Kd 66.png
+
+newmtl gxmat1280
+map_Kd 74.png
+
+newmtl gxmat1281
+map_Kd 66.png
+
+newmtl gxmat1282
+map_Kd 74.png
+
+newmtl gxmat1283
+map_Kd 66.png
+
+newmtl gxmat1284
+map_Kd 74.png
+
+newmtl gxmat1285
+map_Kd 80.png
+
+newmtl gxmat1286
+map_Kd 81.png
+
+newmtl gxmat1287
+map_Kd 81.png
+
+newmtl gxmat1288
+map_Kd 81.png
+
+newmtl gxmat1289
+map_Kd 81.png
+
+newmtl gxmat1290
+map_Kd 81.png
+
+newmtl gxmat1291
+map_Kd 81.png
+
+newmtl gxmat1292
+map_Kd 81.png
+
+newmtl gxmat1293
+map_Kd 81.png
+
+newmtl gxmat1294
+map_Kd 81.png
+
+newmtl gxmat1295
+map_Kd 52.png
+
+newmtl gxmat1296
+map_Kd 50.png
+
+newmtl gxmat1297
+map_Kd 52.png
+
+newmtl gxmat1298
+map_Kd 74.png
+
+newmtl gxmat1299
+map_Kd 50.png
+
+newmtl gxmat1300
+map_Kd 74.png
+
+newmtl gxmat1301
+map_Kd 51.png
+
+newmtl gxmat1302
+map_Kd 74.png
+
+newmtl gxmat1303
+map_Kd 51.png
+
+newmtl gxmat1304
+map_Kd 74.png
+
+newmtl gxmat1305
+map_Kd 109.png
+
+newmtl gxmat1306
+map_Kd 105.png
+
+newmtl gxmat1307
+map_Kd 107.png
+
+newmtl gxmat1308
+map_Kd 105.png
+
+newmtl gxmat1309
+map_Kd 107.png
+
+newmtl gxmat1310
+map_Kd 107.png
+
+newmtl gxmat1311
+map_Kd 109.png
+
+newmtl gxmat1312
+map_Kd 105.png
+
+newmtl gxmat1313
+map_Kd 108.png
+
+newmtl gxmat1314
+map_Kd 105.png
+
+newmtl gxmat1315
+map_Kd 108.png
+
+newmtl gxmat1316
+map_Kd 108.png
+
+newmtl gxmat1317
+map_Kd 110.png
+
+newmtl gxmat1318
+map_Kd 85.png
+
+newmtl gxmat1319
+map_Kd 86.png
+
+newmtl gxmat1320
+map_Kd 84.png
+
