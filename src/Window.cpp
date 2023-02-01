@@ -106,9 +106,6 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
 
     ::SetWindowLongPtr(hwnd_, GWLP_USERDATA, reinterpret_cast<LONG_PTR> (this));
 
-    // Show the window and paint its contents.
-    ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
-
     // Init Imgui
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -116,6 +113,9 @@ Window::Window(const std::string& title, const int width, const int height, D3D1
     ImGui::StyleColorsDark();
     //ImGui::StyleColorsLight(); For light theme
     ImGui_ImplWin32_Init(hwnd_);
+
+    // Show the window and paint its contents.
+    ::ShowWindow(hwnd_, SW_SHOWDEFAULT);
 
     // Initialize the sample to run
     sample->Run(width, height, hwnd_);
