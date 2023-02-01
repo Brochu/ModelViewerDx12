@@ -23,7 +23,6 @@
 #include "D3D12Sample.h"
 #include "ImageIO.h"
 
-#include "Tracy.hpp"
 #include "TracyD3D12.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
@@ -364,7 +363,6 @@ void D3D12Sample::InitializeImpl (ID3D12GraphicsCommandList * /*uploadCommandLis
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Shutdown ()
 {
-    TracyMessage("Shutting down sample app", 24);
     TracyD3D12Destroy(tracyCtx_);
 
     for (auto event : frameFenceEvents_) {
@@ -409,7 +407,6 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     swapChain_ = renderEnv.swapChain;
 
     // Initialize the context object for Tracy to track GPU info
-    TracyMessage("Initialize TracyD3D12 context object", 36);
     tracyCtx_ = TracyD3D12Context(device_.Get(), commandQueue_.Get());
     TracyD3D12ContextName(tracyCtx_, "TracyContext", 12);
 
