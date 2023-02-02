@@ -335,7 +335,7 @@ void D3D12TexturedQuad::CreateRootSignature ()
     parameters[0].InitAsDescriptorTable (1, &range);
 
     // Our constant buffer view
-    parameters[1].InitAsConstantBufferView (0, 0, D3D12_SHADER_VISIBILITY_VERTEX);
+    parameters[1].InitAsConstantBufferView (0);
 
     // We don't use another descriptor heap for the sampler, instead we use a
     // static sampler
