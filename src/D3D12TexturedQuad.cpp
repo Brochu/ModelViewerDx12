@@ -120,8 +120,8 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
 
-    ImGui::ShowDemoWindow(&showWindow_);
     {
+        // Main debug parameters window
         ImGui::Begin("ModelViewer - Parameters");
 
         ImGui::Separator();
