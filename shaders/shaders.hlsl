@@ -83,6 +83,7 @@ SamplerState texureSampler      : register(s0);
 float4 PS_main (float4 position : SV_POSITION,
 				float2 uv : TEXCOORD) : SV_TARGET
 {
-	return anteruTexture.Sample (texureSampler, uv);
+	float4 tint = float4(scale.y, scale.z, scale.w, 1.0);
+	return tint * anteruTexture.Sample (texureSampler, uv);
 }
 #endif
