@@ -62,6 +62,7 @@ private:
     // Debug parameters
     bool showWindow_ = true;
     float scale_ = 0.5f;
+    float tintColor_[4] = { 1.0, 1.0, 1.0, 1.0 };
 
     std::vector<std::string> models_;
     int modelIndex_ = 0;

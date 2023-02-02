@@ -131,6 +131,8 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Separator();
         ImGui::Text("Background");
         ImGui::ColorEdit3("clear color", clearColor_);
+        ImGui::Text("Tint");
+        ImGui::ColorEdit3("tint color", tintColor_);
 
         ImGui::Separator();
         ImGui::Text("Model Viewer");
@@ -320,6 +322,9 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);
     float* f = static_cast<float*>(p);
     f[0] = scale_;
+    f[1] = tintColor_[0];
+    f[2] = tintColor_[1];
+    f[3] = tintColor_[2];
     constantBuffers_[GetQueueSlot ()]->Unmap (0, nullptr);
 }
 
