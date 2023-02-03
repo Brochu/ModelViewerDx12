@@ -25,6 +25,10 @@
 #include "RubyTexture.h"
 #include "Utility.h"
 
+#include "assimp/Importer.hpp"
+#include "assimp/scene.h"
+#include "assimp/mesh.h"
+
 #include "d3dx12.h"
 #include "d3dcompiler.h"
 #include "imgui.h"
@@ -201,6 +205,25 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     };
 
     //TODO: Trying to load vertices and indices from selected OBJ file
+    Assimp::Importer importer;
+    const aiScene *scene = importer.ReadFile("data/models/Pagoda/model.obj", 0);
+
+    std::vector<aiNode*> stack;
+    stack.push_back(scene->mRootNode);
+    while (stack.size() > 0) {
+        aiNode *current = stack.back();
+        stack.pop_back();
+
+        std::string out(current->mName.C_Str());
+        out.append(" : " + std::to_string(current->mNumMeshes));
+
+        TracyMessage(out.c_str(), out.size());
+        for (unsigned int i = 0; i < current->mNumChildren; i++) {
+            stack.push_back(current->mChildren[i]);
+        }
+    }
+    // ---------------------------------------------------------
+
     static const Vertex vertices[4] = {
         // Upper Left
         { { -1.0f, 1.0f, 0 },{ 0, 0 } },
