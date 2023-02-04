@@ -215,24 +215,50 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
                                              aiProcessPreset_TargetRealtime_MaxQuality);
 
     std::vector<aiNode*> stack;
+    std::vector<aiVector3D> vert;
+    std::vector<unsigned int> ind;
+
     stack.push_back(scene->mRootNode);
     while (stack.size() > 0) {
         aiNode *current = stack.back();
         stack.pop_back();
 
-        std::string out(current->mName.C_Str());
-        out.append(" : " + std::to_string(current->mNumMeshes));
+        for (unsigned int i = 0; i < current->mNumMeshes; i++) {
+            // Extract all the indices
+            aiMesh *m = scene->mMeshes[current->mMeshes[i]];
 
-        if (current->mNumMeshes > 0) {
-            aiMesh *mesh = scene->mMeshes[current->mMeshes[0]];
-            out.append(" : " + std::to_string(mesh->mNumFaces));
-            out.append(" : " + std::to_string(mesh->mNumVertices));
+            for (unsigned int j = 0; j < m->mNumVertices; j++) {
+                vert.push_back(m->mVertices[j]);
+            }
+
+            for (unsigned int j = 0; j < m->mNumFaces; j++) {
+                aiFace f = m->mFaces[j];
+
+                for (unsigned int k = 0; k < f.mNumIndices; k++) {
+                    ind.push_back(f.mIndices[k]);
+                }
+            }
         }
 
-        TracyMessage(out.c_str(), out.size());
         for (unsigned int i = 0; i < current->mNumChildren; i++) {
+            // We want to search through all nodes
             stack.push_back(current->mChildren[i]);
         }
+    }
+
+    std::string out("We have ");
+    out.append(std::to_string(ind.size()));
+    out.append(" indices");
+    TracyMessage(out.c_str(), out.size());
+
+    out = "We have ";
+    out.append(std::to_string(vert.size()));
+    out.append(" vertices");
+    TracyMessage(out.c_str(), out.size());
+
+    for (const auto i : ind) {
+        std::string t(std::to_string(i));
+        TracyMessage(t.c_str(), t.size());
     }
     // ---------------------------------------------------------
 
