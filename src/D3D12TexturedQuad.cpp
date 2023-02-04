@@ -217,6 +217,12 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         std::string out(current->mName.C_Str());
         out.append(" : " + std::to_string(current->mNumMeshes));
 
+        if (current->mNumMeshes > 0) {
+            aiMesh *mesh = scene->mMeshes[current->mMeshes[0]];
+            out.append(" : " + std::to_string(mesh->mNumFaces));
+            out.append(" : " + std::to_string(mesh->mNumVertices));
+        }
+
         TracyMessage(out.c_str(), out.size());
         for (unsigned int i = 0; i < current->mNumChildren; i++) {
             stack.push_back(current->mChildren[i]);
