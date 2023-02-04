@@ -214,10 +214,11 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
                                              aiProcess_ConvertToLeftHanded |
                                              aiProcessPreset_TargetRealtime_MaxQuality);
 
-    std::vector<aiNode*> stack;
     std::vector<aiVector3D> vert;
+    std::vector<aiVector3D> uvs;
     std::vector<unsigned int> ind;
 
+    std::vector<aiNode*> stack;
     stack.push_back(scene->mRootNode);
     while (stack.size() > 0) {
         aiNode *current = stack.back();
@@ -229,6 +230,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
                 vert.push_back(m->mVertices[j]);
+                uvs.push_back(m->mTextureCoords[0][j]);
             }
 
             for (unsigned int j = 0; j < m->mNumFaces; j++) {
@@ -256,10 +258,15 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     out.append(" vertices");
     TracyMessage(out.c_str(), out.size());
 
-    for (const auto i : ind) {
-        std::string t(std::to_string(i));
-        TracyMessage(t.c_str(), t.size());
-    }
+    out = "We have ";
+    out.append(std::to_string(uvs.size()));
+    out.append(" uvs");
+    TracyMessage(out.c_str(), out.size());
+
+    //for (const auto i : ind) {
+    //    std::string t(std::to_string(i));
+    //    TracyMessage(t.c_str(), t.size());
+    //}
     // ---------------------------------------------------------
 
     static const Vertex vertices[4] = {
