@@ -28,6 +28,7 @@
 #include "assimp/Importer.hpp"
 #include "assimp/scene.h"
 #include "assimp/mesh.h"
+#include "assimp/postprocess.h"
 
 #include "d3dx12.h"
 #include "d3dcompiler.h"
@@ -198,15 +199,20 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList)
 {
+    //TODO: How do we call this again after changing the selected model
     struct Vertex
     {
         float position[3];
         float uv[2];
     };
 
-    //TODO: Trying to load vertices and indices from selected OBJ file
     Assimp::Importer importer;
-    const aiScene *scene = importer.ReadFile("data/models/Pagoda/model.obj", 0);
+    std::string path = "data/models/";
+    path.append(models_[modelIndex_]);
+    path.append("/model.obj");
+    const aiScene *scene = importer.ReadFile(path.c_str(),
+                                             aiProcess_ConvertToLeftHanded |
+                                             aiProcessPreset_TargetRealtime_MaxQuality);
 
     std::vector<aiNode*> stack;
     stack.push_back(scene->mRootNode);
