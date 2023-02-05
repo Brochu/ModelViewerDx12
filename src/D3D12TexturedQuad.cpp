@@ -249,6 +249,8 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         }
     }
 
+    vertexCount_ = (UINT) vertices.size();
+    indexCount_ = (UINT) indices.size();
 
     static const int uploadBufferSize = sizeof (vertices) + sizeof (indices);
     static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
