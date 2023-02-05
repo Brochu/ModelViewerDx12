@@ -59,6 +59,9 @@ private:
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    srvDescriptorHeap_;
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    imguiDescriptorHeap_;
 
+    unsigned int vertexCount_;
+    unsigned int indexCount_;
+
     // Debug parameters
     bool showWindow_ = true;
     float scale_ = 0.5f;
