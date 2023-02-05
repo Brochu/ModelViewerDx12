@@ -214,9 +214,8 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
                                              aiProcess_ConvertToLeftHanded |
                                              aiProcessPreset_TargetRealtime_MaxQuality);
 
-    std::vector<aiVector3D> vert;
-    std::vector<aiVector3D> uvs;
-    std::vector<unsigned int> ind;
+    std::vector<Vertex> vertices;
+    std::vector<unsigned int> indices;
 
     std::vector<aiNode*> stack;
     stack.push_back(scene->mRootNode);
@@ -229,15 +228,17 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
             aiMesh *m = scene->mMeshes[current->mMeshes[i]];
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
-                vert.push_back(m->mVertices[j]);
-                uvs.push_back(m->mTextureCoords[0][j]);
+                auto pos = m->mVertices[j];
+                auto uv = m->mTextureCoords[0][j];
+
+                vertices.push_back( {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
             }
 
             for (unsigned int j = 0; j < m->mNumFaces; j++) {
                 aiFace f = m->mFaces[j];
 
                 for (unsigned int k = 0; k < f.mNumIndices; k++) {
-                    ind.push_back(f.mIndices[k]);
+                    indices.push_back(f.mIndices[k]);
                 }
             }
         }
@@ -248,21 +249,6 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         }
     }
 
-
-    static const Vertex vertices[4] = {
-        // Upper Left
-        { { -1.0f, 1.0f, 0 },{ 0, 0 } },
-        // Upper Right
-        { { 1.0f, 1.0f, 0 },{ 1, 0 } },
-        // Bottom right
-        { { 1.0f, -1.0f, 0 },{ 1, 1 } },
-        // Bottom left
-        { { -1.0f, -1.0f, 0 },{ 0, 1 } }
-    };
-
-    static const int indices[6] = {
-        0, 1, 2, 2, 3, 0
-    };
 
     static const int uploadBufferSize = sizeof (vertices) + sizeof (indices);
     static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
