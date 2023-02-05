@@ -118,7 +118,7 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
     commandList->IASetIndexBuffer (&indexBufferView_);
-    commandList->DrawIndexedInstanced (6, 1, 0, 0, 0);
+    commandList->DrawIndexedInstanced (indexCount_, 1, 0, 0, 0);
 
     // Imgui logic ---------------------
     ImGui_ImplDX12_NewFrame();
