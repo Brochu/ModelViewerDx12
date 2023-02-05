@@ -248,26 +248,6 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         }
     }
 
-    std::string out("We have ");
-    out.append(std::to_string(ind.size()));
-    out.append(" indices");
-    TracyMessage(out.c_str(), out.size());
-
-    out = "We have ";
-    out.append(std::to_string(vert.size()));
-    out.append(" vertices");
-    TracyMessage(out.c_str(), out.size());
-
-    out = "We have ";
-    out.append(std::to_string(uvs.size()));
-    out.append(" uvs");
-    TracyMessage(out.c_str(), out.size());
-
-    //for (const auto i : ind) {
-    //    std::string t(std::to_string(i));
-    //    TracyMessage(t.c_str(), t.size());
-    //}
-    // ---------------------------------------------------------
 
     static const Vertex vertices[4] = {
         // Upper Left
