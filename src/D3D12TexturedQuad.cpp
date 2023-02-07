@@ -214,29 +214,37 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
             std::vector<unsigned int> &indices,
             auto&& ExtractAiScene) -> void
         {
-            for (unsigned int i = 0; i < node->mNumMeshes; i++) {
-                // Extract all the indices
-                aiMesh *m = scene->mMeshes[node->mMeshes[i]];
+            std::vector<aiNode*> stack;
+            stack.push_back(node);
 
-                for (unsigned int j = 0; j < m->mNumVertices; j++) {
-                    auto pos = m->mVertices[j];
-                    auto uv = m->mTextureCoords[0][j];
+            while (stack.size() > 0) {
+                aiNode *current = stack.back();
+                stack.pop_back();
 
-                    vertices.push_back( {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
-                }
+                for (unsigned int i = 0; i < current->mNumMeshes; i++) {
+                    // Extract all the indices
+                    aiMesh *m = scene->mMeshes[current->mMeshes[i]];
 
-                for (unsigned int j = 0; j < m->mNumFaces; j++) {
-                    aiFace f = m->mFaces[j];
+                    for (unsigned int j = 0; j < m->mNumVertices; j++) {
+                        auto pos = m->mVertices[j];
+                        auto uv = m->mTextureCoords[0][j];
 
-                    for (unsigned int k = 0; k < f.mNumIndices; k++) {
-                        indices.push_back(f.mIndices[k]);
+                        vertices.insert(vertices.begin(), {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
+                    }
+
+                    for (unsigned int j = 0; j < m->mNumFaces; j++) {
+                        aiFace f = m->mFaces[j];
+
+                        for (unsigned int k = 0; k < f.mNumIndices; k++) {
+                            indices.insert(indices.begin(), f.mIndices[k]);
+                        }
                     }
                 }
-            }
 
-            for (unsigned int i = 0; i < node->mNumChildren; i++) {
-                // We want to search through all nodes
-                ExtractAiScene(scene, node->mChildren[i], vertices, indices, ExtractAiScene);
+                for (unsigned int i = 0; i < current->mNumChildren; i++) {
+                    // We want to search through all nodes
+                    stack.push_back(current->mChildren[i]);
+                }
             }
         };
 
