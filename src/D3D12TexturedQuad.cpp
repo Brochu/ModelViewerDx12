@@ -24,7 +24,6 @@
 #include "ImageIO.h"
 #include "RubyTexture.h"
 #include "Utility.h"
-#include "AiWrapper.h"
 
 #include <cmath>
 #include <d3dx12.h>
@@ -112,7 +111,8 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
     commandList->IASetIndexBuffer (&indexBufferView_);
-    commandList->DrawIndexedInstanced (indexCount_, 1, 0, 0, 0);
+    //TODO: Change this to loop through collected draw calls from assimp loaded model
+    commandList->DrawIndexedInstanced (6, 1, 0, 0, 0);
 
     // Imgui logic ---------------------
     ImGui_ImplDX12_NewFrame();
@@ -198,12 +198,12 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
-    ExtractAiScene(path.c_str(), vertices, indices);
+    draws_ = ExtractAiScene(path.c_str(), vertices, indices);
 
-    vertexCount_ = (UINT) vertices.size();
-    indexCount_ = (UINT) indices.size();
+    unsigned int vertexCount = (UINT) vertices.size();
+    unsigned int indexCount = (UINT) indices.size();
 
-    static const int uploadBufferSize = vertexCount_ * sizeof(Vertex) + indexCount_ * sizeof(unsigned int);
+    static const int uploadBufferSize = vertexCount * sizeof(Vertex) + indexCount * sizeof(unsigned int);
     static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
     static const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
 
@@ -220,7 +220,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     // so we don't have to transition into this before copying into them
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
-    static const auto vertexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (vertexCount_ * sizeof(Vertex));
+    static const auto vertexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (vertexCount * sizeof(Vertex));
     device_->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &vertexBufferDesc,
@@ -228,7 +228,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         nullptr,
         IID_PPV_ARGS (&vertexBuffer_));
 
-    static const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount_ * sizeof(unsigned int));
+    static const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount * sizeof(unsigned int));
     device_->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &indexBufferDesc,
@@ -238,27 +238,27 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
 
     // Create buffer views
     vertexBufferView_.BufferLocation = vertexBuffer_->GetGPUVirtualAddress ();
-    vertexBufferView_.SizeInBytes = vertexCount_ * sizeof(Vertex);
+    vertexBufferView_.SizeInBytes = vertexCount * sizeof(Vertex);
     vertexBufferView_.StrideInBytes = sizeof (Vertex);
 
     indexBufferView_.BufferLocation = indexBuffer_->GetGPUVirtualAddress ();
-    indexBufferView_.SizeInBytes = indexCount_ * sizeof(unsigned int);
+    indexBufferView_.SizeInBytes = indexCount * sizeof(unsigned int);
     indexBufferView_.Format = DXGI_FORMAT_R32_UINT;
 
     // Copy data on CPU into the upload buffer
     void* p;
     uploadBuffer_->Map (0, nullptr, &p);
-    ::memcpy (p, vertices.data(), vertexCount_ * sizeof(Vertex));
-    ::memcpy (static_cast<unsigned char*>(p) + vertexCount_ * sizeof(Vertex),
-        indices.data(), indexCount_ * sizeof(unsigned int));
+    ::memcpy (p, vertices.data(), vertexCount * sizeof(Vertex));
+    ::memcpy (static_cast<unsigned char*>(p) + vertexCount * sizeof(Vertex),
+        indices.data(), indexCount * sizeof(unsigned int));
     uploadBuffer_->Unmap (0, nullptr);
 
     // Copy data from upload buffer on CPU into the index/vertex buffer on 
     // the GPU
     uploadCommandList->CopyBufferRegion (vertexBuffer_.Get (), 0,
-        uploadBuffer_.Get (), 0, vertexCount_ * sizeof(Vertex));
+        uploadBuffer_.Get (), 0, vertexCount * sizeof(Vertex));
     uploadCommandList->CopyBufferRegion (indexBuffer_.Get (), 0,
-        uploadBuffer_.Get (), vertexCount_ * sizeof(Vertex), indexCount_ * sizeof(unsigned int));
+        uploadBuffer_.Get (), vertexCount * sizeof(Vertex), indexCount * sizeof(unsigned int));
 
     // Barriers, batch them together
     const CD3DX12_RESOURCE_BARRIER barriers[2] = {

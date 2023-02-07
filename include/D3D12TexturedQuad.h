@@ -24,6 +24,7 @@
 #define AMD_TEXTURED_QUAD_D3D12_SAMPLE_H_
 
 #include "D3D12Sample.h"
+#include "AiWrapper.h"
 
 #include <vector>
 
@@ -61,9 +62,7 @@ private:
 
     std::vector<std::string> models_;
     int modelIndex_ = 0;
-
-    unsigned int vertexCount_;
-    unsigned int indexCount_;
+    Draws draws_;
 
     // Debug parameters
     bool showWindow_ = true;
