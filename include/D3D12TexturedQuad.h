@@ -59,6 +59,9 @@ private:
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    srvDescriptorHeap_;
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    imguiDescriptorHeap_;
 
+    std::vector<std::string> models_;
+    int modelIndex_ = 0;
+
     unsigned int vertexCount_;
     unsigned int indexCount_;
 
@@ -66,9 +69,6 @@ private:
     bool showWindow_ = true;
     float scale_ = 0.5f;
     float tintColor_[4] = { 1.0, 1.0, 1.0, 1.0 };
-
-    std::vector<std::string> models_;
-    int modelIndex_ = 0;
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";
