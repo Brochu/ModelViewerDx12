@@ -13,5 +13,5 @@ struct Draws {
     std::vector<unsigned int> indexOffsets;
 };
 
-void ExtractAiScene();
+void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices);
 }
