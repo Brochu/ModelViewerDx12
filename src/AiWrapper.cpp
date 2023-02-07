@@ -9,7 +9,8 @@
 
 namespace AMD {
 void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
-    const aiScene *scene = Assimp::Importer().ReadFile(path,
+    Assimp::Importer importer;
+    const aiScene *scene = importer.ReadFile(path,
                                              aiProcess_ConvertToLeftHanded |
                                              aiProcessPreset_TargetRealtime_MaxQuality);
 
@@ -40,7 +41,7 @@ void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector
                 auto pos = m->mVertices[j];
                 auto uv = m->mTextureCoords[0][j];
 
-                vertices.insert(vertices.begin(), {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
+                vertices.push_back({{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
             }
 
             for (unsigned int j = 0; j < m->mNumFaces; j++) {
@@ -50,7 +51,7 @@ void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector
                     std::string out (std::to_string(f.mIndices[k]));
                     TracyMessage(out.c_str(), out.size());
 
-                    indices.insert(indices.begin(), f.mIndices[k]);
+                    indices.push_back(f.mIndices[k]);
                 }
             }
         }

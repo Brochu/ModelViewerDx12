@@ -24,21 +24,15 @@
 #include "ImageIO.h"
 #include "RubyTexture.h"
 #include "Utility.h"
-
-#include "assimp/Importer.hpp"
-#include "assimp/scene.h"
-#include "assimp/mesh.h"
-#include "assimp/postprocess.h"
-
-#include "d3dx12.h"
-#include "d3dcompiler.h"
-#include "imgui.h"
-#include "imgui_impl_dx12.h"
-#include "imgui_impl_win32.h"
-#include "Tracy.hpp"
+#include "AiWrapper.h"
 
 #include <cmath>
+#include <d3dx12.h>
+#include <d3dcompiler.h>
 #include <fstream>
+#include <imgui.h>
+#include <imgui_impl_dx12.h>
+#include <imgui_impl_win32.h>
 #include <string>
 
 using namespace Microsoft::WRL;
@@ -200,80 +194,11 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
 void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList)
 {
     //TODO: How do we call this again after changing the selected model
-
-    struct Vertex
-    {
-        float position[3];
-        float uv[2];
-    };
-
-    auto ExtractAiScene =
-        [&](const aiScene *scene,
-            aiNode *node,
-            std::vector<Vertex> &vertices,
-            std::vector<unsigned int> &indices,
-            auto&& ExtractAiScene) -> void
-        {
-            std::vector<aiNode*> stack;
-            stack.push_back(node);
-
-            while (stack.size() > 0) {
-                aiNode *current = stack.back();
-                stack.pop_back();
-
-                std::string out("Found ");
-                out.append(std::to_string(current->mNumChildren));
-                out.append(" Children currents from ");
-                out.append(current->mName.C_Str());
-                TracyMessage(out.c_str(), out.size());
-
-                out = "Found ";
-                out.append(std::to_string(current->mNumMeshes));
-                out.append(" Meshes from ");
-                out.append(current->mName.C_Str());
-                TracyMessage(out.c_str(), out.size());
-
-                for (unsigned int i = 0; i < current->mNumMeshes; i++) {
-                    // Extract all the indices
-                    aiMesh *m = scene->mMeshes[current->mMeshes[i]];
-
-                    for (unsigned int j = 0; j < m->mNumVertices; j++) {
-                        auto pos = m->mVertices[j];
-                        auto uv = m->mTextureCoords[0][j];
-
-                        vertices.insert(vertices.begin(), {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
-                    }
-
-                    for (unsigned int j = 0; j < m->mNumFaces; j++) {
-                        aiFace f = m->mFaces[j];
-
-                        for (unsigned int k = 0; k < f.mNumIndices; k++) {
-                            std::string out (std::to_string(f.mIndices[k]));
-                            TracyMessage(out.c_str(), out.size());
-
-                            indices.insert(indices.begin(), f.mIndices[k]);
-                        }
-                    }
-                }
-
-                for (unsigned int i = 0; i < current->mNumChildren; i++) {
-                    stack.push_back(current->mChildren[i]);
-                }
-            }
-        };
-
-    Assimp::Importer importer;
-    std::string path = "data/models/";
-    path.append(models_[modelIndex_]);
-    path.append("/model.obj");
-    const aiScene *scene = importer.ReadFile(path.c_str(),
-                                             aiProcess_ConvertToLeftHanded |
-                                             aiProcessPreset_TargetRealtime_MaxQuality);
-
+    std::string path = "data/models/" + models_[modelIndex_] + "/model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
-    ExtractAiScene(scene, scene->mRootNode, vertices, indices, ExtractAiScene);
+    ExtractAiScene(path.c_str(), vertices, indices);
 
     vertexCount_ = (UINT) vertices.size();
     indexCount_ = (UINT) indices.size();
