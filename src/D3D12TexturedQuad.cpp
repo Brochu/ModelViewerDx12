@@ -379,14 +379,11 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::UpdateConstantBuffer ()
 {
-    void* p;
+    float cb[4] { scale_, tintColor_[0], tintColor_[1], tintColor_[2] };
 
+    void* p;
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);
-    float* f = static_cast<float*>(p);
-    f[0] = scale_;
-    f[1] = tintColor_[0];
-    f[2] = tintColor_[1];
-    f[3] = tintColor_[2];
+    ::memcpy(p, cb, 4 * sizeof(float));
     constantBuffers_[GetQueueSlot ()]->Unmap (0, nullptr);
 }
 
