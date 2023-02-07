@@ -5,10 +5,10 @@
 #include "assimp/mesh.h"
 #include "assimp/postprocess.h"
 
-#include "Tracy.hpp"
-
 namespace AMD {
 Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
+    Draws draws;
+
     Assimp::Importer importer;
     const aiScene *scene = importer.ReadFile(path,
                                              aiProcess_ConvertToLeftHanded |
@@ -21,20 +21,10 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
         aiNode *current = stack.back();
         stack.pop_back();
 
-        std::string out("Found ");
-        out.append(std::to_string(current->mNumChildren));
-        out.append(" Children currents from ");
-        out.append(current->mName.C_Str());
-        TracyMessage(out.c_str(), out.size());
-
-        out = "Found ";
-        out.append(std::to_string(current->mNumMeshes));
-        out.append(" Meshes from ");
-        out.append(current->mName.C_Str());
-        TracyMessage(out.c_str(), out.size());
-
         for (unsigned int i = 0; i < current->mNumMeshes; i++) {
-            // Extract all the indices
+            draws.vertexOffsets.push_back(vertices.size());
+            draws.indexOffsets.push_back(indices.size());
+
             aiMesh *m = scene->mMeshes[current->mMeshes[i]];
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
@@ -48,12 +38,12 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
                 aiFace f = m->mFaces[j];
 
                 for (unsigned int k = 0; k < f.mNumIndices; k++) {
-                    std::string out (std::to_string(f.mIndices[k]));
-                    TracyMessage(out.c_str(), out.size());
-
                     indices.push_back(f.mIndices[k]);
                 }
             }
+
+            draws.indexCounts.push_back(indices.size() - draws.indexOffsets[draws.indexOffsets.size() - 1]);
+            draws.numDraws++;
         }
 
         for (unsigned int i = 0; i < current->mNumChildren; i++) {
@@ -62,6 +52,6 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
     }
 
     //TODO: Fill draw calls in return struct
-    return Draws();
+    return draws;
 }
 }

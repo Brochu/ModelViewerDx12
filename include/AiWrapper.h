@@ -7,10 +7,10 @@ struct Vertex {
 };
 
 struct Draws {
-    std::vector<unsigned int> indexCounts;
+    std::vector<size_t> indexCounts;
 
-    std::vector<unsigned int> vertexOffsets;
-    std::vector<unsigned int> indexOffsets;
+    std::vector<size_t> vertexOffsets;
+    std::vector<size_t> indexOffsets;
 
     unsigned int numDraws;
 };
