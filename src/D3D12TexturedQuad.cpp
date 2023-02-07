@@ -217,6 +217,18 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
             std::vector<aiNode*> stack;
             stack.push_back(node);
 
+            std::string out("Found ");
+            out.append(std::to_string(node->mNumChildren));
+            out.append(" Children nodes from ");
+            out.append(node->mName.C_Str());
+            TracyMessage(out.c_str(), out.size());
+
+            out = "Found ";
+            out.append(std::to_string(node->mNumMeshes));
+            out.append(" Meshes from ");
+            out.append(node->mName.C_Str());
+            TracyMessage(out.c_str(), out.size());
+
             while (stack.size() > 0) {
                 aiNode *current = stack.back();
                 stack.pop_back();
@@ -242,7 +254,6 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
                 }
 
                 for (unsigned int i = 0; i < current->mNumChildren; i++) {
-                    // We want to search through all nodes
                     stack.push_back(current->mChildren[i]);
                 }
             }
@@ -252,9 +263,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::string path = "data/models/";
     path.append(models_[modelIndex_]);
     path.append("/model.obj");
-    const aiScene *scene = importer.ReadFile(path.c_str(),
-                                             aiProcess_ConvertToLeftHanded |
-                                             aiProcessPreset_TargetRealtime_MaxQuality);
+    const aiScene *scene = importer.ReadFile(path.c_str(), aiProcess_PreTransformVertices);
 
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
