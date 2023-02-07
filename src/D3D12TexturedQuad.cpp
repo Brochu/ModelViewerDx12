@@ -112,8 +112,15 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
     commandList->IASetIndexBuffer (&indexBufferView_);
-    //TODO: Change this to loop through collected draw calls from assimp loaded model
-    commandList->DrawIndexedInstanced (6, 1, 0, 0, 0);
+    for (size_t i = 0; i < draws_.numDraws; i++) {
+        commandList->DrawIndexedInstanced (
+            (INT)draws_.indexCounts[i],
+            1,
+            (INT)draws_.indexOffsets[i],
+            (INT)draws_.vertexOffsets[i],
+            0
+        );
+    }
 
     // Imgui logic ---------------------
     ImGui_ImplDX12_NewFrame();
