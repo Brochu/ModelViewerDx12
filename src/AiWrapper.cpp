@@ -2,8 +2,11 @@
 
 #include "assimp/Importer.hpp"
 #include "assimp/scene.h"
+#include "assimp/material.h"
 #include "assimp/mesh.h"
 #include "assimp/postprocess.h"
+
+#include "Tracy.hpp"
 
 namespace AMD {
 Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
@@ -28,6 +31,17 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
             draws.indexOffsets.push_back(indices.size());
 
             aiMesh *m = scene->mMeshes[current->mMeshes[i]];
+            aiMaterial *mat = scene->mMaterials[m->mMaterialIndex];
+
+            std::string out("Mesh ");
+            out.append(m->mName.C_Str());
+            out.append(" material idx = ");
+            out.append(std::to_string(m->mMaterialIndex));
+            out.append("; material name = ");
+            out.append(mat->GetName().C_Str());
+            out.append("; textures count = ");
+            out.append(std::to_string(mat->GetTextureCount(aiTextureType_DIFFUSE)));
+            TracyMessage(out.c_str(), out.size());
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
                 const auto pos = m->mVertices[j];
