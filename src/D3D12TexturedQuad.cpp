@@ -200,11 +200,53 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
 void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList)
 {
     //TODO: How do we call this again after changing the selected model
+
     struct Vertex
     {
         float position[3];
         float uv[2];
     };
+
+    auto ExtractAiScene =
+        [&](const aiScene *scene,
+            aiNode *node,
+            std::vector<Vertex> &vertices,
+            std::vector<unsigned int> &indices,
+            auto&& ExtractAiScene) -> void
+        {
+            std::vector<aiNode*> stack;
+            stack.push_back(node);
+
+            while (stack.size() > 0) {
+                aiNode *current = stack.back();
+                stack.pop_back();
+
+                for (unsigned int i = 0; i < current->mNumMeshes; i++) {
+                    // Extract all the indices
+                    aiMesh *m = scene->mMeshes[current->mMeshes[i]];
+
+                    for (unsigned int j = 0; j < m->mNumVertices; j++) {
+                        auto pos = m->mVertices[j];
+                        auto uv = m->mTextureCoords[0][j];
+
+                        vertices.push_back( {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
+                    }
+
+                    for (unsigned int j = 0; j < m->mNumFaces; j++) {
+                        aiFace f = m->mFaces[j];
+
+                        for (unsigned int k = 0; k < f.mNumIndices; k++) {
+                            indices.push_back(f.mIndices[k]);
+                        }
+                    }
+                }
+
+                for (unsigned int i = 0; i < current->mNumChildren; i++) {
+                    // We want to search through all nodes
+                    stack.push_back(current->mChildren[i]);
+                }
+            }
+        };
 
     Assimp::Importer importer;
     std::string path = "data/models/";
@@ -217,37 +259,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
-    std::vector<aiNode*> stack;
-    stack.push_back(scene->mRootNode);
-    while (stack.size() > 0) {
-        aiNode *current = stack.back();
-        stack.pop_back();
-
-        for (unsigned int i = 0; i < current->mNumMeshes; i++) {
-            // Extract all the indices
-            aiMesh *m = scene->mMeshes[current->mMeshes[i]];
-
-            for (unsigned int j = 0; j < m->mNumVertices; j++) {
-                auto pos = m->mVertices[j];
-                auto uv = m->mTextureCoords[0][j];
-
-                vertices.push_back( {{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
-            }
-
-            for (unsigned int j = 0; j < m->mNumFaces; j++) {
-                aiFace f = m->mFaces[j];
-
-                for (unsigned int k = 0; k < f.mNumIndices; k++) {
-                    indices.push_back(f.mIndices[k]);
-                }
-            }
-        }
-
-        for (unsigned int i = 0; i < current->mNumChildren; i++) {
-            // We want to search through all nodes
-            stack.push_back(current->mChildren[i]);
-        }
-    }
+    ExtractAiScene(scene, scene->mRootNode, vertices, indices, ExtractAiScene);
 
     vertexCount_ = (UINT) vertices.size();
     indexCount_ = (UINT) indices.size();
