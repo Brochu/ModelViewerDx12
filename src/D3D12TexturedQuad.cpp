@@ -217,21 +217,21 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
             std::vector<aiNode*> stack;
             stack.push_back(node);
 
-            std::string out("Found ");
-            out.append(std::to_string(node->mNumChildren));
-            out.append(" Children nodes from ");
-            out.append(node->mName.C_Str());
-            TracyMessage(out.c_str(), out.size());
-
-            out = "Found ";
-            out.append(std::to_string(node->mNumMeshes));
-            out.append(" Meshes from ");
-            out.append(node->mName.C_Str());
-            TracyMessage(out.c_str(), out.size());
-
             while (stack.size() > 0) {
                 aiNode *current = stack.back();
                 stack.pop_back();
+
+                std::string out("Found ");
+                out.append(std::to_string(current->mNumChildren));
+                out.append(" Children currents from ");
+                out.append(current->mName.C_Str());
+                TracyMessage(out.c_str(), out.size());
+
+                out = "Found ";
+                out.append(std::to_string(current->mNumMeshes));
+                out.append(" Meshes from ");
+                out.append(current->mName.C_Str());
+                TracyMessage(out.c_str(), out.size());
 
                 for (unsigned int i = 0; i < current->mNumMeshes; i++) {
                     // Extract all the indices
@@ -248,6 +248,9 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
                         aiFace f = m->mFaces[j];
 
                         for (unsigned int k = 0; k < f.mNumIndices; k++) {
+                            std::string out (std::to_string(f.mIndices[k]));
+                            TracyMessage(out.c_str(), out.size());
+
                             indices.insert(indices.begin(), f.mIndices[k]);
                         }
                     }
@@ -263,7 +266,9 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::string path = "data/models/";
     path.append(models_[modelIndex_]);
     path.append("/model.obj");
-    const aiScene *scene = importer.ReadFile(path.c_str(), aiProcess_PreTransformVertices);
+    const aiScene *scene = importer.ReadFile(path.c_str(),
+                                             aiProcess_ConvertToLeftHanded |
+                                             aiProcessPreset_TargetRealtime_MaxQuality);
 
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
