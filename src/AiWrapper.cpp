@@ -7,7 +7,7 @@
 
 namespace AMD {
 Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
-    Draws draws;
+    Draws draws { };
 
     Assimp::Importer importer;
     const aiScene *scene = importer.ReadFile(path,
