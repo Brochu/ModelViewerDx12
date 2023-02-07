@@ -6,16 +6,17 @@ Since Dx12 is a very lightweight API, I will start off of a hello world project 
 
 The toolset I would like to use to compile and link this project as well as fine tune performance
 
-* (X) Cmake
-* (X) Clang/Clangd or MSBuild
-* ( ) [Orbit](https://github.com/google/orbit) (Performance profiling from Google)
+* (X) Cmake - build system
+* (X) MSBuild - compiler
+* ( ) [Orbit](https://github.com/google/orbit) - Performance profiling from Google
 
 I would also like to link to the following libraries to help with development
 
-* (X) DirectX 12 (Main graphics API)
-* ( ) ImGUI (Immediate mode UI)
-* ( ) Assimp (Help to load 3d model files)
-* (X) Tracy (Performance profiling)
+* (X) DirectX 12 - Main graphics API
+* ( ) [DirectX Math](https://github.com/microsoft/DirectXMath) - Vector and matrix math helpers
+* (X) [ImGUI](https://github.com/ocornut/imgui) - Immediate mode UI
+* (X) [Assimp](https://github.com/assimp/assimp) - Help to load 3d model files
+* (X) [Tracy](https://github.com/wolfpld/tracy) - Performance profiling
 
 I would like to use the [Dx12 hello world project](https://gpuopen.com/learn/hellod3d12-directx-12-sdk-sample/) from GPUOpen to start off. I had to adapt this project a little bit as by default the behaviour of this application is to run for a given amount on frames before closing automatically.
 
