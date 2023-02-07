@@ -15,5 +15,5 @@ struct Draws {
     unsigned int numDraws;
 };
 
-void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices);
+Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices);
 }

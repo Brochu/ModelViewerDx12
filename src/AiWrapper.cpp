@@ -8,7 +8,7 @@
 #include "Tracy.hpp"
 
 namespace AMD {
-void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
+Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
     Assimp::Importer importer;
     const aiScene *scene = importer.ReadFile(path,
                                              aiProcess_ConvertToLeftHanded |
@@ -60,5 +60,8 @@ void ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector
             stack.push_back(current->mChildren[i]);
         }
     }
+
+    //TODO: Fill draw calls in return struct
+    return Draws();
 }
 }
