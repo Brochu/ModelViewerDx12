@@ -24,6 +24,7 @@
 #include "ImageIO.h"
 #include "RubyTexture.h"
 #include "Utility.h"
+#include "Tracy.hpp"
 
 #include <cmath>
 #include <d3dx12.h>
@@ -199,6 +200,20 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::vector<unsigned int> indices;
 
     draws_ = ExtractAiScene(path.c_str(), vertices, indices);
+    for (size_t i = 0; i < draws_.numDraws; i++) {
+        std::string out("Draw call - ");
+        out.append("Vertex Offset : ");
+        out.append(std::to_string(draws_.vertexOffsets[i]));
+        out.append(", ");
+
+        out.append("Index Offset : ");
+        out.append(std::to_string(draws_.indexOffsets[i]));
+        out.append(", ");
+
+        out.append("Index Count : ");
+        out.append(std::to_string(draws_.indexCounts[i]));
+        TracyMessage(out.c_str(), out.size());
+    }
 
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
