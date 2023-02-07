@@ -12,7 +12,8 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
     Assimp::Importer importer;
     const aiScene *scene = importer.ReadFile(path,
                                              aiProcess_ConvertToLeftHanded |
-                                             aiProcessPreset_TargetRealtime_MaxQuality);
+                                             aiProcessPreset_TargetRealtime_MaxQuality | 
+                                             aiProcess_PreTransformVertices);
 
     std::vector<aiNode*> stack;
     stack.push_back(scene->mRootNode);
@@ -22,14 +23,15 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
         stack.pop_back();
 
         for (unsigned int i = 0; i < current->mNumMeshes; i++) {
+            // Track vert/ind offsets for next draw call
             draws.vertexOffsets.push_back(vertices.size());
             draws.indexOffsets.push_back(indices.size());
 
             aiMesh *m = scene->mMeshes[current->mMeshes[i]];
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
-                auto pos = m->mVertices[j];
-                auto uv = m->mTextureCoords[0][j];
+                const auto pos = m->mVertices[j];
+                const auto uv = m->mTextureCoords[0][j];
 
                 vertices.push_back({{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
             }
@@ -42,16 +44,17 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
                 }
             }
 
+            // Indices that were added need to be drawn
             draws.indexCounts.push_back(indices.size() - draws.indexOffsets[draws.indexOffsets.size() - 1]);
             draws.numDraws++;
         }
 
         for (unsigned int i = 0; i < current->mNumChildren; i++) {
+            // Breath first traversal of assimp tree
             stack.push_back(current->mChildren[i]);
         }
     }
 
-    //TODO: Fill draw calls in return struct
     return draws;
 }
 }
