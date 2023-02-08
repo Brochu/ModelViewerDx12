@@ -23,6 +23,7 @@
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX
 #include <windows.h>
+#include <string>
 
 #include "Window.h"
 #include "D3D12Sample.h"
@@ -39,7 +40,12 @@ int WinMain (
     int       nCmdShow
 )
 {
-    std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12TexturedQuad);
+    int modelOverride = 0;
+    if (__argc > 1) {
+        modelOverride = std::stoi(lpCmdLine);
+    }
+
+    std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12TexturedQuad(modelOverride));
     std::unique_ptr<AMD::Window> window (new AMD::Window(TITLE, WIDTH, HEIGHT, sample.get()));
 
     return 0;
