@@ -73,9 +73,9 @@ private:
     float scale_ = 0.5f;
     float tintColor_[4] = { 1.0, 1.0, 1.0, 1.0 };
     // Transforms
-    float translate[3] { 0.0, 0.0, 0.0 };
-    float rotate[3] { 0.0, 0.0, 0.0 };
-    float scale[3] { 1.0, 1.0, 1.0 };
+    float translate_[3] { 0.0, 0.0, 0.0 };
+    float rotate_[3] { 0.0, 0.0, 0.0 };
+    float scaling_[3] { 1.0, 1.0, 1.0 };
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";
