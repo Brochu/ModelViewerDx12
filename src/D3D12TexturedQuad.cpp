@@ -38,6 +38,11 @@
 using namespace Microsoft::WRL;
 
 namespace AMD {
+D3D12TexturedQuad::D3D12TexturedQuad() { }
+D3D12TexturedQuad::D3D12TexturedQuad(int modelOverride) {
+    modelIndex_ = modelOverride;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
 {

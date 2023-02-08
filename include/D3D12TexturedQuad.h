@@ -31,6 +31,10 @@
 namespace AMD {
 class D3D12TexturedQuad : public D3D12Sample
 {
+public:
+    D3D12TexturedQuad();
+    D3D12TexturedQuad(int modelOverride);
+
 private:
     void CreateTexture (ID3D12GraphicsCommandList* uploadCommandList);
     void CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList);
