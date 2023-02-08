@@ -158,7 +158,13 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
             // Start thinking on how to reload model data when selecting a new model
         }
 
-        //TODO: Adding controls for camera & light positions+orientation
+        ImGui::Separator();
+        ImGui::Text("Transform");
+        ImGui::InputFloat3("translate", translate_);
+        ImGui::InputFloat3("rotate", rotate_);
+        ImGui::InputFloat3("scale", scaling_);
+
+        //TODO: Add controls for light position/orientation
 
         ImGui::Separator();
         ImGui::End();
