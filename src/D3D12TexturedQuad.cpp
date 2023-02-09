@@ -167,9 +167,9 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
 
         ImGui::Separator();
         ImGui::Text("Transform");
-        ImGui::InputFloat3("translate", translate_);
-        ImGui::InputFloat3("rotate", rotate_);
-        ImGui::InputFloat3("scale", scaling_);
+        ImGui::DragFloat3("translate", translate_, 0.1f, -100.f, 100.f);
+        ImGui::DragFloat3("rotate", rotate_, 1.f, -359.f, 359.f);
+        ImGui::DragFloat3("scale", scaling_, 0.01f, 0.f, 10.f);
 
         //TODO: Add controls for light position/orientation
 
