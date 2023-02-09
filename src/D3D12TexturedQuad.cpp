@@ -53,6 +53,7 @@ D3D12TexturedQuad::D3D12TexturedQuad(int modelOverride) {
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
 {
+    //TODO: Use this as a base to upload texture data from assimp import
     int width = 0, height = 0;
 
     imageData_ = LoadImageFromMemory (RubyTexture, sizeof (RubyTexture),
@@ -62,7 +63,7 @@ void D3D12TexturedQuad::CreateTexture (ID3D12GraphicsCommandList * uploadCommand
     const auto resourceDesc = CD3DX12_RESOURCE_DESC::Tex2D (DXGI_FORMAT_R8G8B8A8_UNORM_SRGB, width, height, 1, 1);
 
     device_->CreateCommittedResource (&defaultHeapProperties,
-        D3D12_HEAP_FLAG_NONE,
+        D3D12_HEAP_FLAG_CREATE_NOT_ZEROED,
         &resourceDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
         nullptr,
