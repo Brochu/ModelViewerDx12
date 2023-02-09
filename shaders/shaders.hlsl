@@ -16,8 +16,7 @@ VertexShaderOutput VS_main(
 {
     VertexShaderOutput output;
 
-    output.position = position;
-    output.position.xy *= scale.x;
+    output.position = mul(mvp, position);
     output.uv = uv;
 
     return output;

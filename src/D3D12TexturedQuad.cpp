@@ -345,7 +345,30 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
 void D3D12TexturedQuad::UpdateConstantBuffer ()
 {
     //TODO: Calculate transform matrix here based off of debug values
-    DirectX::XMFLOAT4X4A mvp { };
+    DirectX::XMMATRIX mvpMat = DirectX::XMMatrixIdentity();
+
+    // View
+    DirectX::XMFLOAT4A camPos { camPos_[0], camPos_[1], camPos_[2], 1.0f };
+    DirectX::XMFLOAT4A lookAt { lookAt_[0], lookAt_[1], lookAt_[2], 1.0f };
+    DirectX::XMFLOAT4A up { 0.0, 1.0, 0.0, 0.0 };
+    DirectX::XMMATRIX viewMat = DirectX::XMMatrixLookAtLH(
+            DirectX::XMLoadFloat4A(&camPos),
+            DirectX::XMLoadFloat4A(&lookAt),
+            DirectX::XMLoadFloat4A(&up)
+        );
+    mvpMat = DirectX::XMMatrixMultiply(mvpMat, viewMat);
+
+    // Projection
+    mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixPerspectiveFovLH(45.f, 4.f/3.f, 0.1f, 10000.0f));
+
+    // Model
+    mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixScaling(scaling_[0], scaling_[1], scaling_[2]));
+    mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixRotationRollPitchYaw(0.0, 0.0, 0.0));
+    mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixTranslation(translate_[0], translate_[1], translate_[2]));
+
+    DirectX::XMFLOAT4X4A mvp;
+    DirectX::XMStoreFloat4x4A(&mvp, mvpMat);
+
     ConstantBuffer cb { scale_, tintColor_[0], tintColor_[1], tintColor_[2], mvp };
 
     void* p;
