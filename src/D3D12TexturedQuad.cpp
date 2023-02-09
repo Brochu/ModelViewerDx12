@@ -39,6 +39,12 @@
 using namespace Microsoft::WRL;
 
 namespace AMD {
+struct ConstantBuffer
+{
+    float x, y, z, w;
+    DirectX::XMFLOAT4X4A mvp;
+};
+
 D3D12TexturedQuad::D3D12TexturedQuad() { }
 D3D12TexturedQuad::D3D12TexturedQuad(int modelOverride) {
     modelIndex_ = modelOverride;
@@ -308,12 +314,6 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateConstantBuffer ()
 {
-    struct ConstantBuffer
-    {
-        float x, y, z, w;
-        DirectX::XMFLOAT4X4A mvp;
-    };
-
     // Default transform
     static const DirectX::XMMATRIX identity = DirectX::XMMatrixIdentity();
     DirectX::XMFLOAT4X4A mat;
@@ -344,12 +344,13 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::UpdateConstantBuffer ()
 {
-    float cb[4] { scale_, tintColor_[0], tintColor_[1], tintColor_[2] };
     //TODO: Calculate transform matrix here based off of debug values
+    DirectX::XMFLOAT4X4A mvp { };
+    ConstantBuffer cb { scale_, tintColor_[0], tintColor_[1], tintColor_[2], mvp };
 
     void* p;
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);
-    ::memcpy(p, cb, 4 * sizeof(float));
+    ::memcpy(p, &cb, sizeof(ConstantBuffer));
     constantBuffers_[GetQueueSlot ()]->Unmap (0, nullptr);
 }
 
