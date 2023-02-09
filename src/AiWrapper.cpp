@@ -48,6 +48,7 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
                 const auto pos = m->mVertices[j];
                 const auto uv = m->mTextureCoords[0][j];
 
+                //TODO: Need to also extract normals
                 vertices.push_back({{ pos.x, pos.y, pos.z },{ uv.x, uv.y }} );
             }
 
