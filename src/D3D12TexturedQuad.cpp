@@ -171,6 +171,11 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::DragFloat3("rotate", rotate_, 1.f, -359.f, 359.f);
         ImGui::DragFloat3("scale", scaling_, 0.01f, 0.f, 10.f);
 
+        ImGui::Separator();
+        ImGui::Text("Camera");
+        ImGui::DragFloat3("position", camPos_, 1.f, -500.f, 500.f);
+        ImGui::DragFloat3("focus", lookAt_, 1.f, -500.f, 500.f);
+
         //TODO: Add controls for light position/orientation
 
         ImGui::Separator();
