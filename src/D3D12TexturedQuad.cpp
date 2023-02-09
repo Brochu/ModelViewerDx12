@@ -347,6 +347,9 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
     //TODO: Calculate transform matrix here based off of debug values
     DirectX::XMMATRIX mvpMat = DirectX::XMMatrixIdentity();
 
+    // Projection
+    mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixPerspectiveFovLH(100.f, 4.f/3.f, 0.1f, 10000.0f));
+
     // View
     DirectX::XMFLOAT4A camPos { camPos_[0], camPos_[1], camPos_[2], 1.0f };
     DirectX::XMFLOAT4A lookAt { lookAt_[0], lookAt_[1], lookAt_[2], 1.0f };
@@ -357,9 +360,6 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
             DirectX::XMLoadFloat4A(&up)
         );
     mvpMat = DirectX::XMMatrixMultiply(mvpMat, viewMat);
-
-    // Projection
-    mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixPerspectiveFovLH(45.f, 4.f/3.f, 0.1f, 10000.0f));
 
     // Model
     mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixScaling(scaling_[0], scaling_[1], scaling_[2]));
