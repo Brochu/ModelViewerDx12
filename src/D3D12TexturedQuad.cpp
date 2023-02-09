@@ -396,7 +396,6 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     };
 
     static const D3D_SHADER_MACRO macros[] = {
-        { "D3D12_SAMPLE_TEXTURE", "1" },
         { nullptr, nullptr }
     };
 

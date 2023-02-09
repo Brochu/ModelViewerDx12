@@ -1,7 +1,7 @@
-#ifdef D3D12_SAMPLE_TEXTURE
 cbuffer PerFrameConstants : register (b0)
 {
     float4 scale;
+    float4x4 mvp;
 }
 
 struct VertexShaderOutput
@@ -32,4 +32,3 @@ float4 PS_main (float4 position : SV_POSITION,
     float4 tint = float4(scale.y, scale.z, scale.w, 1.0);
     return tint * anteruTexture.Sample (texureSampler, uv);
 }
-#endif
