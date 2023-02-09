@@ -33,6 +33,7 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
             aiMesh *m = scene->mMeshes[current->mMeshes[i]];
             aiMaterial *mat = scene->mMaterials[m->mMaterialIndex];
 
+            //TODO: Need to handle extracting texture information
             std::string out("Mesh ");
             out.append(m->mName.C_Str());
             out.append(" material idx = ");
