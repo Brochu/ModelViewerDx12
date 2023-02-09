@@ -29,6 +29,7 @@
 #include <cmath>
 #include <d3dx12.h>
 #include <d3dcompiler.h>
+#include <DirectXMath.h>
 #include <fstream>
 #include <imgui.h>
 #include <imgui_impl_dx12.h>
@@ -310,10 +311,15 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
     struct ConstantBuffer
     {
         float x, y, z, w;
+        DirectX::XMFLOAT4X4A mvp;
     };
-    //TODO: Add transform matrix to ConstantBuffer
 
-    static const ConstantBuffer cb = { 0, 0, 0, 0 };
+    // Default transform
+    static const DirectX::XMMATRIX identity = DirectX::XMMatrixIdentity();
+    DirectX::XMFLOAT4X4A mat;
+    DirectX::XMStoreFloat4x4A(&mat, identity);
+
+    static const ConstantBuffer cb = { 0, 0, 0, 0, mat };
 
     for (int i = 0; i < GetQueueSlotCount (); ++i) {
         static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
