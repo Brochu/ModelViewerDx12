@@ -73,7 +73,7 @@ private:
     // Transforms
     float translate_[3] { 0.0, 0.0, 0.0 };
     float rotate_[3] { 0.0, 0.0, 0.0 };
-    float scaling_[3] { 1.0, 1.0, 1.0 };
+    float scale_[3] { 1.0, 1.0, 1.0 };
     // Camera
     float camPos_[3] { 0.0, 0.0, -10.0 };
     float lookAt_[3] { 0.0, 0.0, 0.0 };

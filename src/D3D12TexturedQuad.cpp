@@ -163,7 +163,7 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Text("Transform");
         ImGui::DragFloat3("translate", translate_, 0.1f, -100.f, 100.f);
         ImGui::DragFloat3("rotate", rotate_, 1.f, -359.f, 359.f);
-        ImGui::DragFloat3("scale", scaling_, 0.01f, 0.f, 10.f);
+        ImGui::DragFloat3("scale", scale_, 0.01f, 0.f, 10.f);
 
         ImGui::Separator();
         ImGui::Text("Camera");
@@ -339,11 +339,22 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
 void D3D12TexturedQuad::UpdateConstantBuffer ()
 {
     using namespace DirectX;
-    //TODO: Calculate transform matrix here based off of debug values
 
-    XMMATRIX model = DirectX::XMMatrixScaling(scaling_[0], scaling_[1], scaling_[2]);
-    //mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixRotationRollPitchYaw(0.0, 0.0, 0.0));
-    //mvpMat = DirectX::XMMatrixMultiply(mvpMat, DirectX::XMMatrixTranslation(translate_[0], translate_[1], translate_[2]));
+    XMMATRIX model = DirectX::XMMatrixScaling(
+            scale_[0],
+            scale_[1],
+            scale_[2]
+        );
+    model = DirectX::XMMatrixMultiply(model, DirectX::XMMatrixRotationRollPitchYaw(
+                                          DirectX::XMConvertToRadians(rotate_[0]),
+                                          DirectX::XMConvertToRadians(rotate_[1]),
+                                          DirectX::XMConvertToRadians(rotate_[2])
+                                      ));
+    model = DirectX::XMMatrixMultiply(model, DirectX::XMMatrixTranslation(
+                                          translate_[0],
+                                          translate_[1],
+                                          translate_[2]
+                                      ));
 
     XMVECTOR camPos = XMVectorSet(camPos_[0], camPos_[1], camPos_[2], 1.0f);
     XMVECTOR lookAt = XMVectorSet(lookAt_[0], lookAt_[1], lookAt_[2], 1.0f );
@@ -351,8 +362,8 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
     XMMATRIX view = DirectX::XMMatrixLookAtLH(camPos, lookAt, up);
 
     // Projection
-    float aspect = 1280.f / 720.f;
-    XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(45.f), aspect, 0.1f, 10000.f);
+    float aspect = 1280.f / 720.f; //TODO: Get the viewport dimensions from params
+    XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(fov_), aspect, 0.1f, 100000.f);
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
