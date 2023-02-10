@@ -41,7 +41,6 @@ using namespace Microsoft::WRL;
 namespace AMD {
 struct ConstantBuffer
 {
-    float x, y, z, w;
     DirectX::XMMATRIX mvp;
 };
 
@@ -145,14 +144,8 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Begin("ModelViewer - Parameters");
 
         ImGui::Separator();
-        ImGui::Text("Image");
-        ImGui::SliderFloat("Scale", &scale_, 0.0f, 1.0f);
-
-        ImGui::Separator();
         ImGui::Text("Background");
         ImGui::ColorEdit3("clear color", clearColor_);
-        ImGui::Text("Tint");
-        ImGui::ColorEdit3("tint color", tintColor_);
 
         ImGui::Separator();
         ImGui::Text("Model Viewer");
@@ -320,7 +313,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateConstantBuffer ()
 {
-    static const ConstantBuffer cb = { 0, 0, 0, 0, DirectX::XMMatrixIdentity() };
+    static const ConstantBuffer cb = { DirectX::XMMatrixIdentity() };
 
     for (int i = 0; i < GetQueueSlotCount (); ++i) {
         static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
@@ -364,7 +357,7 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
 
-    ConstantBuffer cb { scale_, tintColor_[0], tintColor_[1], tintColor_[2], mvp };
+    ConstantBuffer cb { mvp };
 
     void* p;
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);

@@ -70,8 +70,6 @@ private:
 
     // Debug parameters
     bool showWindow_ = true;
-    float scale_ = 0.5f;
-    float tintColor_[4] = { 1.0, 1.0, 1.0, 1.0 };
     // Transforms
     float translate_[3] { 0.0, 0.0, 0.0 };
     float rotate_[3] { 0.0, 0.0, 0.0 };
