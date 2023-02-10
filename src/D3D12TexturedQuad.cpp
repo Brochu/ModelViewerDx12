@@ -171,7 +171,9 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::DragFloat3("focus", lookAt_, 1.f, -500.f, 500.f);
         ImGui::DragFloat("FOV", &fov_, 0.25f, 5.f, 110.f);
 
-        //TODO: Add controls for light position/orientation
+        ImGui::Separator();
+        ImGui::Text("Light");
+        ImGui::DragFloat3("pos", lightPos_, 1.f, -500.f, 500.f);
 
         ImGui::Separator();
         ImGui::End();
