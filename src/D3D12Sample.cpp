@@ -69,7 +69,7 @@ RenderEnvironment CreateDeviceAndSwapChainHelper (
     }
 
     ComPtr<IDXGIFactory4> dxgiFactory;
-    hr = CreateDXGIFactory1 (IID_PPV_ARGS (&dxgiFactory));
+    hr = CreateDXGIFactory2 (DXGI_CREATE_FACTORY_DEBUG, IID_PPV_ARGS (&dxgiFactory));
 
     if (FAILED (hr)) {
         throw std::runtime_error ("DXGI factory creation failed.");
