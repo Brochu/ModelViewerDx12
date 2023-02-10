@@ -24,10 +24,8 @@
 #include "ImageIO.h"
 
 #include "TracyD3D12.hpp"
-#include "Tracy.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
-#include "string"
 
 using namespace Microsoft::WRL;
 
