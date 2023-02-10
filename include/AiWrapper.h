@@ -3,7 +3,7 @@
 namespace AMD {
 struct Vertex {
     float position[3];
-    //TODO: Need to add normals
+    float normal[3];
     float uv[2];
 };
 

@@ -80,7 +80,7 @@ private:
     float lookAt_[3] { 0.0, 0.0, 0.0 };
     float fov_ = 45.f;
     // Light
-    float lightPos_[3] { 3.0, 5.0, -12.0 };
+    float lightPos_[3] { 1.0, 1.0, 0.0 };
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";
