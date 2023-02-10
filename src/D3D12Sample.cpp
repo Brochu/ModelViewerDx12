@@ -20,10 +20,10 @@
 // THE SOFTWARE.
 //
 
+#define NOMINMAX
 #include "D3D12Sample.h"
 #include "ImageIO.h"
 
-#include "TracyD3D12.hpp"
 #include "Tracy.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
@@ -139,8 +139,6 @@ void D3D12Sample::PrepareRender ()
     commandList->ClearRenderTargetView (renderTargetHandle,
         clearColor_, 0, nullptr);
     commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
-
-    TracyD3D12Zone(tracyCtx_, commandList, "Cleared main RenderTarget");
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -185,8 +183,6 @@ void D3D12Sample::FinalizeRender ()
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
     commandList->ResourceBarrier (1, &barrier);
 
-    TracyD3D12Zone(tracyCtx_, commandList, "Finalize rendering");
-
     commandList->Close ();
 
     // Execute our commands
@@ -217,8 +213,6 @@ void D3D12Sample::Run (int w, int h, HWND hwnd)
 void D3D12Sample::Step ()
 {
     FrameMarkNamed("Frame");
-    TracyD3D12NewFrame(tracyCtx_);
-
     ZoneScopedN("Sample::Step");
 
     WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
@@ -417,8 +411,6 @@ void D3D12Sample::InitializeImpl (ID3D12GraphicsCommandList * /*uploadCommandLis
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Shutdown ()
 {
-    TracyD3D12Destroy(tracyCtx_);
-
     for (auto event : frameFenceEvents_) {
         CloseHandle (event);
     }
@@ -461,10 +453,6 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     device_ = renderEnv.device;
     commandQueue_ = renderEnv.queue;
     swapChain_ = renderEnv.swapChain;
-
-    // Initialize the context object for Tracy to track GPU info
-    tracyCtx_ = TracyD3D12Context(device_.Get(), commandQueue_.Get());
-    TracyD3D12ContextName(tracyCtx_, "TracyContext", 12);
 
     renderTargetViewDescriptorSize_ =
         device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_RTV);

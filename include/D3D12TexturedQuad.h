@@ -26,7 +26,8 @@
 #include "D3D12Sample.h"
 #include "AiWrapper.h"
 
-#include <vector>
+#include "string"
+#include "vector"
 
 namespace AMD {
 class D3D12TexturedQuad : public D3D12Sample
