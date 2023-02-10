@@ -42,6 +42,7 @@ namespace AMD {
 struct ConstantBuffer
 {
     DirectX::XMMATRIX mvp;
+    DirectX::XMVECTOR lightPos;
 };
 
 D3D12TexturedQuad::D3D12TexturedQuad() { }
@@ -316,7 +317,10 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateConstantBuffer ()
 {
-    static const ConstantBuffer cb = { DirectX::XMMatrixIdentity() };
+    static const ConstantBuffer cb = {
+        DirectX::XMMatrixIdentity(),
+        DirectX::XMVectorSet(0.0 ,0.0, 0.0, 1.0)
+    };
 
     for (int i = 0; i < GetQueueSlotCount (); ++i) {
         static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
@@ -371,7 +375,7 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
 
-    ConstantBuffer cb { mvp };
+    ConstantBuffer cb { mvp, XMVectorSet(lightPos_[0], lightPos_[1], lightPos_[2], 1.f) };
 
     void* p;
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);

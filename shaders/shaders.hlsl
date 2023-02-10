@@ -1,6 +1,7 @@
 cbuffer PerFrameConstants : register (b0)
 {
     float4x4 mvp;
+    float4 lightPos;
 }
 
 struct VertexShaderOutput
