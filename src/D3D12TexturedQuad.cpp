@@ -447,7 +447,7 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     psoDesc.pRootSignature = rootSignature_.Get ();
     psoDesc.NumRenderTargets = 1;
     psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
-    psoDesc.DSVFormat = DXGI_FORMAT_UNKNOWN;
+    psoDesc.DSVFormat = DXGI_FORMAT_D32_FLOAT;
     psoDesc.InputLayout.NumElements = std::extent<decltype(layout)>::value;
     psoDesc.InputLayout.pInputElementDescs = layout;
     psoDesc.RasterizerState = CD3DX12_RASTERIZER_DESC (D3D12_DEFAULT);

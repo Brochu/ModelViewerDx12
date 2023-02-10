@@ -138,8 +138,7 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ClearRenderTargetView (renderTargetHandle,
         clearColor_, 0, nullptr);
-    //TODO: Fix this DEPTH
-    //commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
+    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 
     TracyD3D12Zone(tracyCtx_, commandList, "Cleared main RenderTarget");
 }
@@ -287,13 +286,12 @@ void D3D12Sample::SetupRenderTargets ()
     };
 
     for (int i = 0; i < GetQueueSlotCount(); i++) {
-        D3D12_DEPTH_STENCIL_VIEW_DESC viewDesc;
+        D3D12_DEPTH_STENCIL_VIEW_DESC viewDesc {};
         viewDesc.Format = DXGI_FORMAT_D32_FLOAT;
         viewDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
         viewDesc.Texture2D.MipSlice = 0;
-
-        //TODO: Fix this DEPTH
-        //device_->CreateDepthStencilView(depthStencil_[i].Get(), &viewDesc, dsvHandle);
+        
+        device_->CreateDepthStencilView(depthStencil_[i].Get(), &viewDesc, dsvHandle);
         dsvHandle.Offset (depthStencilViewDescriptorSize_);
     }
 }
