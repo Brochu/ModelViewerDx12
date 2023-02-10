@@ -24,8 +24,10 @@
 #include "ImageIO.h"
 
 #include "TracyD3D12.hpp"
+#include "Tracy.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
+#include "string"
 
 using namespace Microsoft::WRL;
 
@@ -115,7 +117,12 @@ void D3D12Sample::PrepareRender ()
         renderTargetDescriptorHeap_->GetCPUDescriptorHandleForHeapStart (),
         currentBackBuffer_, renderTargetViewDescriptorSize_);
 
-    commandList->OMSetRenderTargets (1, &renderTargetHandle, true, nullptr);
+    D3D12_CPU_DESCRIPTOR_HANDLE depthStencilHandle;
+    CD3DX12_CPU_DESCRIPTOR_HANDLE::InitOffsetted(depthStencilHandle,
+        depthStencilDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
+        currentBackBuffer_, depthStencilViewDescriptorSize_);
+
+    commandList->OMSetRenderTargets (1, &renderTargetHandle, true, &depthStencilHandle);
     commandList->RSSetViewports (1, &viewport_);
     commandList->RSSetScissorRects (1, &rectScissor_);
 
@@ -132,6 +139,7 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ClearRenderTargetView (renderTargetHandle,
         clearColor_, 0, nullptr);
+    //commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 
     TracyD3D12Zone(tracyCtx_, commandList, "Cleared main RenderTarget");
 }
@@ -251,7 +259,8 @@ void D3D12Sample::SetupRenderTargets ()
     device_->CreateDescriptorHeap (&heapDesc, IID_PPV_ARGS (&renderTargetDescriptorHeap_));
 
     CD3DX12_CPU_DESCRIPTOR_HANDLE rtvHandle{ 
-        renderTargetDescriptorHeap_->GetCPUDescriptorHandleForHeapStart () };
+        renderTargetDescriptorHeap_->GetCPUDescriptorHandleForHeapStart ()
+    };
 
     for (int i = 0; i < GetQueueSlotCount (); ++i) {
         D3D12_RENDER_TARGET_VIEW_DESC viewDesc;
@@ -264,6 +273,27 @@ void D3D12Sample::SetupRenderTargets ()
             rtvHandle);
 
         rtvHandle.Offset (renderTargetViewDescriptorSize_);
+    }
+
+    // Depth Stencil Views
+    D3D12_DESCRIPTOR_HEAP_DESC depthHeapDesc = {};
+    depthHeapDesc.NumDescriptors = GetQueueSlotCount();
+    depthHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_DSV;
+    depthHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
+    device_->CreateDescriptorHeap(&depthHeapDesc, IID_PPV_ARGS(&depthStencilDescriptorHeap_));
+
+    CD3DX12_CPU_DESCRIPTOR_HANDLE dsvHandle {
+        depthStencilDescriptorHeap_->GetCPUDescriptorHandleForHeapStart()
+    };
+
+    for (int i = 0; i < GetQueueSlotCount(); i++) {
+        D3D12_DEPTH_STENCIL_VIEW_DESC viewDesc;
+        viewDesc.Format = DXGI_FORMAT_D32_FLOAT;
+        viewDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
+        viewDesc.Texture2D.MipSlice = 0;
+
+        device_->CreateDepthStencilView(depthStencil_[i].Get(), &viewDesc, dsvHandle);
+        dsvHandle.Offset (depthStencilViewDescriptorSize_);
     }
 }
 
@@ -307,6 +337,31 @@ void D3D12Sample::SetupSwapChain ()
 
     for (int i = 0; i < GetQueueSlotCount (); ++i) {
         swapChain_->GetBuffer (i, IID_PPV_ARGS (&renderTargets_ [i]));
+    }
+
+    auto depthProp = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
+    auto depthDesc = CD3DX12_RESOURCE_DESC::Tex2D(
+            DXGI_FORMAT_D32_FLOAT,
+            width_, height_,
+            1, 0, 1, 0,
+            D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL
+        );
+
+    D3D12_CLEAR_VALUE depthClearValue = {};
+    depthClearValue.Format = DXGI_FORMAT_D32_FLOAT;
+    depthClearValue.DepthStencil.Depth = 1.f;
+    depthClearValue.DepthStencil.Stencil = 0;
+
+    for (int i = 0; i < GetQueueSlotCount(); i++) {
+        HRESULT hr = device_->CreateCommittedResource(
+                &depthProp,
+                D3D12_HEAP_FLAG_NONE,
+                &depthDesc,
+                D3D12_RESOURCE_STATE_DEPTH_WRITE,
+                &depthClearValue,
+                __uuidof(ID3D12Resource),
+                &depthStencil_[i]
+            );
     }
 
     SetupRenderTargets ();
@@ -412,6 +467,8 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
 
     renderTargetViewDescriptorSize_ =
         device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+    depthStencilViewDescriptorSize_ =
+        device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_DSV);
 
     SetupSwapChain ();
 }

@@ -64,6 +64,7 @@ protected:
     Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Resource> depthStencil_ [QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
 
     HANDLE frameFenceEvents_ [QUEUE_SLOT_COUNT];
@@ -72,6 +73,7 @@ protected:
     UINT64 fenceValues_[QUEUE_SLOT_COUNT];
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> renderTargetDescriptorHeap_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> depthStencilDescriptorHeap_;
 
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
     Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
@@ -109,6 +111,7 @@ private:
     HWND hwnd_;
     
     std::int32_t renderTargetViewDescriptorSize_;
+    std::int32_t depthStencilViewDescriptorSize_;
 };
 }
 

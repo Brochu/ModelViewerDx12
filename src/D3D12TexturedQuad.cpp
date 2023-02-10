@@ -462,8 +462,7 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     psoDesc.BlendState.RenderTarget[0].BlendOpAlpha = D3D12_BLEND_OP_ADD;
     psoDesc.BlendState.RenderTarget[0].RenderTargetWriteMask = D3D12_COLOR_WRITE_ENABLE_ALL;
     psoDesc.SampleDesc.Count = 1;
-    psoDesc.DepthStencilState.DepthEnable = false;
-    psoDesc.DepthStencilState.StencilEnable = false;
+    psoDesc.DepthStencilState = CD3DX12_DEPTH_STENCIL_DESC(D3D12_DEFAULT);
     psoDesc.SampleMask = 0xFFFFFFFF;
     psoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
