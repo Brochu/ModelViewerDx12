@@ -24,6 +24,7 @@
 #include "ImageIO.h"
 
 #include "TracyD3D12.hpp"
+#include "Tracy.hpp"
 #include "dxgi1_4.h"
 #include "d3dx12.h"
 
@@ -137,6 +138,7 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ClearRenderTargetView (renderTargetHandle,
         clearColor_, 0, nullptr);
+    //TODO: Fix this DEPTH
     //commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 
     TracyD3D12Zone(tracyCtx_, commandList, "Cleared main RenderTarget");
@@ -290,7 +292,8 @@ void D3D12Sample::SetupRenderTargets ()
         viewDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
         viewDesc.Texture2D.MipSlice = 0;
 
-        device_->CreateDepthStencilView(depthStencil_[i].Get(), &viewDesc, dsvHandle);
+        //TODO: Fix this DEPTH
+        //device_->CreateDepthStencilView(depthStencil_[i].Get(), &viewDesc, dsvHandle);
         dsvHandle.Offset (depthStencilViewDescriptorSize_);
     }
 }
@@ -431,9 +434,11 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     // open settings, Apps, Apps & Features, Optional features, Add Feature,
     // and add the graphics tools
 #ifdef _DEBUG
+    TracyMessage("DEBUG ONLY MODE START", 22);
     ComPtr<ID3D12Debug> debugController;
     D3D12GetDebugInterface (IID_PPV_ARGS (&debugController));
     debugController->EnableDebugLayer ();
+    TracyMessage("DEBUG ONLY MODE END", 20);
 #endif
 
     DXGI_SWAP_CHAIN_DESC swapChainDesc;
