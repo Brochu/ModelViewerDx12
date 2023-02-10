@@ -82,6 +82,9 @@ protected:
 
     float clearColor_[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
 
+    int width_ = -1;
+    int height_ = -1;
+
     virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
     virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
 
@@ -106,8 +109,6 @@ private:
     Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
 
     int currentBackBuffer_ = 0;
-    int width_ = -1;
-    int height_ = -1;
     HWND hwnd_;
     
     std::int32_t renderTargetViewDescriptorSize_;

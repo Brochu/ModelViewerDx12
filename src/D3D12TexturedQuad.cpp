@@ -363,7 +363,7 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
     XMMATRIX view = DirectX::XMMatrixLookAtLH(camPos, lookAt, up);
 
     // Projection
-    float aspect = 1280.f / 720.f; //TODO: Get the viewport dimensions from params
+    float aspect = (float)width_ / (float)height_;
     XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(fov_), aspect, 0.1f, 100000.f);
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
