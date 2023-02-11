@@ -225,8 +225,9 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::string path = "data/models/" + models_[modelIndex_] + "/model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
+    std::vector<Material> materials;
 
-    draws_ = ExtractAiScene(path.c_str(), vertices, indices);
+    draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials);
 
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();

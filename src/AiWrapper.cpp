@@ -9,10 +9,12 @@
 #include "Tracy.hpp"
 
 namespace AMD {
+
 Draws ExtractAiScene(
     const char *path,
     std::vector<Vertex> &vertices,
-    std::vector<unsigned int> &indices)
+    std::vector<unsigned int> &indices,
+    std::vector<Material> &materials)
 {
     Draws draws { };
 
