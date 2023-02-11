@@ -40,6 +40,7 @@ namespace AMD {
 struct ConstantBuffer
 {
     DirectX::XMMATRIX mvp;
+    DirectX::XMMATRIX world;
     DirectX::XMVECTOR lightPos;
 };
 
@@ -303,6 +304,7 @@ void D3D12TexturedQuad::CreateConstantBuffer ()
 {
     static const ConstantBuffer cb = {
         DirectX::XMMatrixIdentity(),
+        DirectX::XMMatrixIdentity(),
         DirectX::XMVectorSet(0.0 ,0.0, 0.0, 1.0)
     };
 
@@ -358,8 +360,9 @@ void D3D12TexturedQuad::UpdateConstantBuffer ()
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
+    XMMATRIX world = XMMatrixTranspose(model); // Need to convert local space to world space
 
-    ConstantBuffer cb { mvp, XMVectorSet(lightPos_[0], lightPos_[1], lightPos_[2], 1.f) };
+    ConstantBuffer cb { mvp, world, XMVectorSet(lightPos_[0], lightPos_[1], lightPos_[2], 1.f) };
 
     void* p;
     constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);

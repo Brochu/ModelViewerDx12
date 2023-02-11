@@ -1,12 +1,14 @@
 cbuffer PerFrameConstants : register (b0)
 {
     float4x4 mvp;
+    float4x4 world;
     float4 lightPos;
 }
 
 struct VertexShaderOutput
 {
     float4 position : SV_POSITION;
+    float4 worldpos : POSITION;
     float4 normal : NORMAL;
     float2 uv : TEXCOORD;
 };
@@ -19,6 +21,7 @@ VertexShaderOutput VS_main(
     VertexShaderOutput output;
 
     output.position = mul(mvp, position);
+    output.worldpos = mul(world, position);
     output.normal = normal;
     output.uv = uv;
 
@@ -28,9 +31,7 @@ VertexShaderOutput VS_main(
 Texture2D<float4> anteruTexture : register(t0);
 SamplerState texureSampler      : register(s0);
 
-float4 PS_main (float4 position : SV_POSITION,
-                float4 normal: NORMAL,
-                float2 uv : TEXCOORD) : SV_TARGET
+float4 PS_main (VertexShaderOutput input) : SV_TARGET
 {
     //return anteruTexture.Sample (texureSampler, uv);
 
