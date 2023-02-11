@@ -33,10 +33,23 @@ SamplerState texureSampler      : register(s0);
 
 float4 PS_main (VertexShaderOutput input) : SV_TARGET
 {
-    //return anteruTexture.Sample (texureSampler, uv);
+    input.normal = normalize(input.normal);
 
-    float factor = saturate(dot(normal.xyz, lightPos.xyz));
-    factor += 0.1; //Abient
+    float3 ambient = float3(0.02, 0.02, 0.02);
+    float3 color = float3(0.3, 0.3, 0.3);
+    float3 final = float3(0.0, 0.0, 0.0);
 
-    return float4(factor, factor, factor, 1.0);
+    float3 light2pix = lightPos.xyz - input.worldpos.xyz;
+    float dist = length(light2pix);
+
+    light2pix /= dist;
+    float3 att = float3(0.0, 0.01, 0.0);
+    float theta = dot(light2pix, input.normal);
+    if (theta > 0.0) {
+        final += theta * color;
+        final /= att.x + (att.y * dist) + (att.z * (dist * dist));
+    }
+
+    final = saturate(final + ambient);
+    return float4(final, 1.0);
 }
