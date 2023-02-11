@@ -1,4 +1,5 @@
 #include <vector>
+#include <string>
 
 namespace AMD {
 struct Vertex {
@@ -7,11 +8,17 @@ struct Vertex {
     float uv[2];
 };
 
+struct Material {
+    std::string textureName;
+};
+
 struct Draws {
     std::vector<size_t> indexCounts;
 
     std::vector<size_t> vertexOffsets;
     std::vector<size_t> indexOffsets;
+
+    std::vector<size_t> materialIndices;
 
     unsigned int numDraws;
 };

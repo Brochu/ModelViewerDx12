@@ -9,7 +9,11 @@
 #include "Tracy.hpp"
 
 namespace AMD {
-Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vector<unsigned int> &indices) {
+Draws ExtractAiScene(
+    const char *path,
+    std::vector<Vertex> &vertices,
+    std::vector<unsigned int> &indices)
+{
     Draws draws { };
 
     Assimp::Importer importer;
@@ -40,8 +44,12 @@ Draws ExtractAiScene(const char *path, std::vector<Vertex> &vertices, std::vecto
             out.append(std::to_string(m->mMaterialIndex));
             out.append("; material name = ");
             out.append(mat->GetName().C_Str());
-            out.append("; textures count = ");
-            out.append(std::to_string(mat->GetTextureCount(aiTextureType_DIFFUSE)));
+            out.append("; textures name = ");
+
+            aiString texName {};
+            auto tex = mat->GetTexture(aiTextureType_DIFFUSE, 0, &texName);
+            out.append(texName.C_Str());
+
             TracyMessage(out.c_str(), out.size());
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
