@@ -23,10 +23,11 @@
 #define NOMINMAX
 #include "D3D12Sample.h"
 #include "ImageIO.h"
-
 #include "Tracy.hpp"
+
 #include "dxgi1_4.h"
 #include "d3dx12.h"
+#include "stdexcept"
 
 using namespace Microsoft::WRL;
 
@@ -424,11 +425,9 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     // open settings, Apps, Apps & Features, Optional features, Add Feature,
     // and add the graphics tools
 #ifdef _DEBUG
-    TracyMessage("DEBUG ONLY MODE START", 22);
     ComPtr<ID3D12Debug> debugController;
     D3D12GetDebugInterface (IID_PPV_ARGS (&debugController));
     debugController->EnableDebugLayer ();
-    TracyMessage("DEBUG ONLY MODE END", 20);
 #endif
 
     DXGI_SWAP_CHAIN_DESC swapChainDesc;

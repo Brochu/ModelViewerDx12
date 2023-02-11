@@ -38,18 +38,12 @@ Draws ExtractAiScene(
             aiMaterial *mat = scene->mMaterials[m->mMaterialIndex];
 
             //TODO: Need to handle extracting texture information
-            std::string out("Mesh ");
-            out.append(m->mName.C_Str());
-            out.append(" material idx = ");
+            std::string out("MatIdx = ");
             out.append(std::to_string(m->mMaterialIndex));
-            out.append("; material name = ");
-            out.append(mat->GetName().C_Str());
             out.append("; textures name = ");
-
             aiString texName {};
             auto tex = mat->GetTexture(aiTextureType_DIFFUSE, 0, &texName);
             out.append(texName.C_Str());
-
             TracyMessage(out.c_str(), out.size());
 
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
