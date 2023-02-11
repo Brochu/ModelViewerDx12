@@ -1,10 +1,10 @@
 #include "AiWrapper.h"
 
 #include "assimp/Importer.hpp"
-#include "assimp/scene.h"
 #include "assimp/material.h"
 #include "assimp/mesh.h"
 #include "assimp/postprocess.h"
+#include "assimp/scene.h"
 
 #include "Tracy.hpp"
 
