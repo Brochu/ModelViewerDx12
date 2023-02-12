@@ -6,10 +6,7 @@
 #include "assimp/postprocess.h"
 #include "assimp/scene.h"
 
-#include "Tracy.hpp"
-
 namespace AMD {
-
 Draws ExtractAiScene(
     const char *path,
     std::vector<Vertex> &vertices,
@@ -58,15 +55,7 @@ Draws ExtractAiScene(
                 }
             }
 
-            aiMaterial *mat = scene->mMaterials[m->mMaterialIndex];
-            //TODO: Need to handle extracting texture information
-            std::string out("MatIdx = ");
-            out.append(std::to_string(m->mMaterialIndex));
-            out.append("; textures name = ");
-            aiString texName {};
-            auto tex = mat->GetTexture(aiTextureType_DIFFUSE, 0, &texName);
-            out.append(texName.C_Str());
-            TracyMessage(out.c_str(), out.size());
+            draws.materialIndices.push_back(m->mMaterialIndex);
 
             // Indices that were added need to be drawn
             draws.indexCounts.push_back(indices.size() - draws.indexOffsets[draws.indexOffsets.size() - 1]);
@@ -77,6 +66,16 @@ Draws ExtractAiScene(
             // Breath first traversal of assimp tree
             stack.push_back(current->mChildren[i]);
         }
+    }
+
+    // To load the textures needed later, we need to extract the materials' data
+    for (unsigned int i = 0; i < scene->mNumMaterials; i++) {
+        //TODO: Maybe handle different texture types ?
+        // All the models I test now use the DIFFUSE textures only
+        aiString texPath;
+        scene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, 0, &texPath);
+
+        materials.push_back({ texPath.C_Str() });
     }
 
     return draws;
