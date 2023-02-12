@@ -20,10 +20,13 @@
 // THE SOFTWARE.
 //
 
+#define NOMINMAX
 #include "D3D12TexturedQuad.h"
 #include "ImageIO.h"
 #include "RubyTexture.h"
 #include "Utility.h"
+
+#include "Tracy.hpp"
 
 #include <cmath>
 #include <d3dx12.h>
@@ -228,6 +231,20 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::vector<Material> materials;
 
     draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials);
+    for (unsigned int i = 0; i < draws_.numDraws; i++) {
+        std::string out("[Draw ");
+        out.append(std::to_string(i));
+        out.append("]");
+        TracyMessage(out.c_str(), out.size());
+
+        out = "    Mat Index: ";
+        out.append(std::to_string(draws_.materialIndices[i]));
+        TracyMessage(out.c_str(), out.size());
+
+        out = "    Texture: ";
+        out.append(materials[draws_.materialIndices[i]].textureName);
+        TracyMessage(out.c_str(), out.size());
+    }
 
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
