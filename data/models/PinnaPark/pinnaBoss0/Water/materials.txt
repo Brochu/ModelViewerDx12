@@ -1,0 +1,16 @@
+_m08
+====
+  Textures:
+    - B_ENKEIwave
+        Offset: 0.6603030562400818, 0.6603030562400818
+        Scale: 5, 5
+    - B_ENKEIwave
+        Offset: 0, 0.8496310114860535
+        Scale: 4, 4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255

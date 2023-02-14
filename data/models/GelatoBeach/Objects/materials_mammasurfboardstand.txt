@@ -1,0 +1,85 @@
+_mat1
+=====
+  Textures:
+    - J_ita
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mat2
+=====
+  Textures:
+    - J_ita
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mat3
+=====
+  Textures:
+    - J_ita
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mat4
+=====
+  Textures:
+    - J_ita
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mat5
+=====
+  Textures:
+    - J_ita
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o2074
+======
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+
+  Material Colors:
+    - 253, 253, 255, 255
+    - 253, 253, 255, 255
+
+  Color Registers:
+    - 0, 20, 70, 140

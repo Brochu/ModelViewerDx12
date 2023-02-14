@@ -1,0 +1,33 @@
+_kan_env2
+=========
+  Textures:
+    - A_arrow
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - A_ekitekari
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 2.48046875, 1.81640625
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 62, 60, 59, 224
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Material Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Color Registers:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0

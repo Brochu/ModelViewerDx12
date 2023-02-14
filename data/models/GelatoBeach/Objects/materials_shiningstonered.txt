@@ -1,0 +1,12 @@
+_o31_1
+======
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 255, 100, 100, 255
+
+
+

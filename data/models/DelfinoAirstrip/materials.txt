@@ -1,0 +1,366 @@
+_00yuka_op
+==========
+  Textures:
+    - A_port_ji03
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Constant Colors:
+    - 255, 255, 255, 227
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+
+
+_body_5
+=======
+  Textures:
+    - B_airplane
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - B_KAGEtoon
+
+  Constant Colors:
+    - 76, 108, 97, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Color Registers:
+    - 150, 150, 180, 161
+    - 157, 161, 169, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0
+
+
+
+_engin_5
+========
+  Textures:
+    - B_airplane
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - B_KAGEtoon
+
+  Constant Colors:
+    - 76, 108, 97, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Color Registers:
+    - 150, 150, 180, 161
+    - 157, 161, 169, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0
+
+
+
+_env0
+=====
+  Textures:
+    - A_tankmetal_01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - A_ekitekari
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 4.0478515625, 0.908203125
+        Rotation: 0
+
+  Constant Colors:
+    - 62, 60, 59, 224
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+
+
+_kage
+=====
+  Textures:
+    - A_kikage07_2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_kage2
+======
+  Textures:
+    - A_portkage
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m00billkabe_2
+==============
+  Textures:
+    - A_dptsmall32128
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m00suna
+========
+  Textures:
+    - A_suna_sire
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m00yuka4
+=========
+  Textures:
+    - A_pirtji01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m_kusa_4
+=========
+  Textures:
+    - A_portnaka_nuki01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m_poster
+=========
+  Textures:
+    - poster_s9
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m_water
+========
+  Textures:
+    - B_ENKEIwave
+        Offset: 0.9201281666755676, 0.9201281666755676
+        Center: 0.5, 0.5
+        Scale: 5, 5
+        Rotation: 0
+    - B_ENKEIwave
+        Offset: 0, 0.9201281666755676
+        Center: 0.5, 0.5
+        Scale: 4, 4
+        Rotation: 0
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0
+
+
+
+_mat115_1
+=========
+  Textures:
+    - A_corona_airport
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o1085
+======
+  Textures:
+    - A_tent03
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o1144
+======
+  Textures:
+    - A_portobj02
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o1153
+======
+  Textures:
+
+
+
+_o1159_4
+========
+  Textures:
+    - A_portkabe02
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o750_2
+=======
+  Textures:
+    - A_portkabe01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o840
+=====
+  Textures:
+    - A_portyane02
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o846
+=====
+  Textures:
+    - A_saku01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o91
+====
+  Textures:
+    - A_portnaka01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_sky_5
+======
+  Textures:
+    - B_windowsky
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1.54296875, 1.54296875
+        Rotation: 0
+
+
+
+_00yuka_op(2)
+=============
+  Textures:
+    - A_port_ji03
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Constant Colors:
+    - 255, 255, 255, 227
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+
+
+_m00yuka4(2)
+============
+  Textures:
+    - A_pirtji01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_m_kusa_4(2)
+============
+  Textures:
+    - A_portnaka_nuki01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o1085(2)
+=========
+  Textures:
+    - A_tent03
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o1153(2)
+=========
+  Textures:
+
+
+
+_o1159_4(2)
+===========
+  Textures:
+    - A_portkabe02
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+
+
+_o91(2)
+=======
+  Textures:
+    - A_portnaka01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0

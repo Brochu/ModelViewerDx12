@@ -1,0 +1,504 @@
+_BaseOfHotelSide
+================
+  Textures:
+    - D_brock_sire_4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_CameraNukeBlue_m
+=================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Corona3TevGreen
+================
+  Textures:
+    - corona
+    - greenMT_UV3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_DistantGreen
+=============
+  Textures:
+    - greenMT_UV3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Door
+=====
+  Textures:
+    - D_WallHotel
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Fanicher
+=========
+  Textures:
+    - D_PoolSideBedWhite
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_FireStand
+==========
+  Textures:
+    - D_WhiteWall
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Fish
+=====
+  Textures:
+    - D_WhiteWall
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_FishMark
+=========
+  Textures:
+    - D_HotelWindow
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Flower
+=======
+  Textures:
+    - J_hana
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Fram_Hotel
+===========
+  Textures:
+    - D_Woody_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_HightLight_Grass
+=================
+  Textures:
+    - B_wave
+        Offset: 0, 0
+        Center: 1, 1
+        Scale: 2, 0.5
+        Rotation: 0
+    - B_wave
+        Offset: 0, 0
+        Center: 0, 0
+        Scale: 0.5, 2
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Material Colors:
+    - 255, 255, 0, 255
+    - 255, 255, 0, 255
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0
+
+
+
+_PutOut_3TevGreen
+=================
+  Textures:
+    - D_nuki_kusa_sire
+    - greenMT_UV3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_PutOut_3TevSand
+================
+  Textures:
+    - D_nuki_kusa_sire
+    - D_suna_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_Roof_Hotel_4
+=============
+  Textures:
+    - D_RoofHotel
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Sand3Tev
+=========
+  Textures:
+    - D_suna_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Tail07Pool
+===========
+  Textures:
+    - TailPool
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Tile3TevSand
+=============
+  Textures:
+    - D_brock_sire4
+    - D_suna_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_gake3TevGreen
+==============
+  Textures:
+    - D_gake_sire
+    - greenMT_UV3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_gake3TevSand
+=============
+  Textures:
+    - D_gake_sire
+    - D_suna_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_green3TvSand
+=============
+  Textures:
+    - greenMT_UV3
+    - D_suna_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_mat20
+======
+  Textures:
+    - J_hana
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_roof_shop_1
+============
+  Textures:
+    - D_ShopRoof_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_sakuSiro
+=========
+  Textures:
+    - D_WoodyWhite_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_tail01s
+========
+  Textures:
+    - D_brock_sire6
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_tail02
+=======
+  Textures:
+    - D_rocktail_cream2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_tail03
+=======
+  Textures:
+    - D_rocktail_cream
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_tail06PoolSide
+===============
+  Textures:
+    - D_circle20_tail_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_wall1
+======
+  Textures:
+    - D_HotelWall
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_wall_3
+=======
+  Textures:
+    - D_brock_sire5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_water_Pool_1
+=============
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Material Colors:
+    - 25, 25, 40, 255
+    - 25, 25, 40, 255
+
+
+
+_Fram_Hotel(2)
+==============
+  Textures:
+    - D_Woody_sire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_CameraNukeBlue_m(2)
+====================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+  Material Colors:
+    - 0, 10, 30, 0
+    - 0, 10, 30, 0
+
+
+
+_BaseOfHotelSide(2)
+===================
+  Textures:
+    - D_brock_sire_4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_CameraNukeBlue_m(3)
+====================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_FireStand(2)
+=============
+  Textures:
+    - D_WhiteWall
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_FishMark(2)
+============
+  Textures:
+    - D_HotelWindow
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_tail03(2)
+==========
+  Textures:
+    - D_rocktail_cream
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_wall1(2)
+=========
+  Textures:
+    - D_HotelWall
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0

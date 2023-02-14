@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>J3D Ripoff Exporter</authoring_tool>
+        </contributor>
+        <created>2023-01-28T01:40:07.170Z</created>
+        <modified>2023-01-28T01:40:07.170Z</modified>
+		<unit meter="0.01" name="centimeter" ></unit>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="tex0">
+            <init_from>B_ENKEIwave_s.png</init_from>
+        </image>
+        <image id="tex1">
+            <init_from>B_ENKEIwave_s.png</init_from>
+        </image>
+        <image id="tex2">
+            <init_from>B_taki_s.png</init_from>
+        </image>
+        <image id="tex3">
+            <init_from>B_taki_s.png</init_from>
+        </image>
+        <image id="tex4">
+            <init_from>B_ENKEIwave_s.png</init_from>
+        </image>
+        <image id="tex5">
+            <init_from>B_ENKEIwave_s.png</init_from>
+        </image>
+        <image id="tex_vc">
+            <init_from>vertexColors.png</init_from>
+        </image>
+    </library_images>
+    <library_effects>
+        <effect id="effect0">
+            <profile_COMMON>
+                <newparam sid="surface0">
+                    <surface type="2D">
+                        <init_from>tex4</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler0">
+                    <sampler2D>
+                        <source>surface0</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler0" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="effect1">
+            <profile_COMMON>
+                <newparam sid="surface1">
+                    <surface type="2D">
+                        <init_from>tex2</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler1">
+                    <sampler2D>
+                        <source>surface1</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler1" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="effect2">
+            <profile_COMMON>
+                <newparam sid="surface2">
+                    <surface type="2D">
+                        <init_from>tex0</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler2">
+                    <sampler2D>
+                        <source>surface2</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler2" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect id="effect_vc">
+            <profile_COMMON>
+                <newparam sid="surface_vc">
+                    <surface type="2D">
+                        <init_from>tex_vc</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler_vc">
+                    <sampler2D>
+                        <source>surface_vc</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler_vc" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="mat0" name="_Pool">
+            <instance_effect url="#effect0"></instance_effect>
+        </material>
+        <material id="mat1" name="_Taki">
+            <instance_effect url="#effect1"></instance_effect>
+        </material>
+        <material id="mat2" name="_enkei_sea">
+            <instance_effect url="#effect2"></instance_effect>
+        </material>
+        <material id="mat_vc" name="vertexColors">
+            <instance_effect url="#effect_vc"></instance_effect>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="mesh0">
+            <mesh>
+                <source id="points0">
+                    <float_array id="pointarray0" count="213">5464.60888671875 1610 -8978.8583984375 7649.568359375 1610 -6793.8984375 5464.60888671875 2218.333251953125 -8978.8583984375 7649.568359375 2218.333251953125 -6793.8984375 5323.1875 2526.666748046875 -8978.8583984375 7649.5693359375 2526.666748046875 -6652.4765625 5464.60888671875 2218.333251953125 -8978.8583984375 7649.568359375 2218.333251953125 -6793.8984375 5464.60888671875 2826.66650390625 -8978.8583984375 7649.568359375 2826.66650390625 -6793.8984375 5323.1875 3135 -8978.8583984375 7649.5693359375 3135 -6652.4765625 5464.60888671875 2826.66650390625 -8978.8583984375 7649.568359375 2826.66650390625 -6793.8984375 5464.60888671875 3435 -8978.8583984375 7649.568359375 3435 -6793.8984375 5323.1875 3743.33349609375 -8978.8583984375 7649.5693359375 3743.33349609375 -6652.4765625 5464.60888671875 3435 -8978.8583984375 7649.568359375 3435 -6793.8984375 5464.60888671875 4043.33349609375 -8978.8583984375 7649.568359375 4043.33349609375 -6793.8984375 5323.1875 4351.66650390625 -8978.8583984375 7649.5693359375 4351.66650390625 -6652.4765625 5464.60888671875 1310 -8978.8583984375 7649.5693359375 1310 -6793.8984375 5464.60888671875 1610 -8978.8583984375 7649.568359375 1610 -6793.8984375 5323.1875 1918.333251953125 -8978.8583984375 7649.5693359375 1918.333251953125 -6652.4765625 6026.7587890625 4351.66650390625 -9682.4296875 6097.4697265625 4043.33349609375 -9611.71875 6097.4697265625 3435 -9611.71875 6026.7587890625 3743.33349609375 -9682.4296875 6097.4697265625 3435 -9611.71875 6097.4697265625 2826.6669921875 -9611.71875 6026.7587890625 3135 -9682.4296875 6097.4697265625 2826.6669921875 -9611.71875 6097.4697265625 2218.33349609375 -9611.71875 6026.7587890625 1918.333251953125 -9682.4296875 6097.4697265625 1610 -9611.71875 6097.4697265625 1310 -9611.71875 8353.1396484375 4960 -7356.048828125 7649.5693359375 4960 -6652.4765625 8282.4296875 4651.66650390625 -7426.7587890625 7649.5693359375 4651.66650390625 -6793.8984375 8282.4296875 4043.33349609375 -7426.7587890625 7649.568359375 4043.33349609375 -6793.8984375 8353.1396484375 4351.66650390625 -7356.048828125 8282.4296875 4043.33349609375 -7426.7587890625 8282.4296875 3435 -7426.759765625 8353.1396484375 3743.33349609375 -7356.048828125 8282.4296875 3435 -7426.759765625 8282.4296875 2826.66650390625 -7426.759765625 8353.1396484375 3135 -7356.048828125 8282.4296875 2826.66650390625 -7426.759765625 8282.4296875 2218.333251953125 -7426.759765625 8353.1396484375 2526.666748046875 -7356.048828125 8282.4296875 2218.333251953125 -7426.759765625 8282.4296875 1610 -7426.759765625 8353.1396484375 1918.333251953125 -7356.048828125 8282.4296875 1610 -7426.759765625 8282.4296875 1310 -7426.7587890625 5464.60888671875 4043.33349609375 -8978.8583984375 5464.60888671875 4651.66650390625 -8978.8583984375 6097.4697265625 1610 -9611.71875 6097.4697265625 4651.66650390625 -9611.71875 6026.7587890625 4960 -9682.4296875 5323.1875 4960 -8978.8583984375 6026.7587890625 2526.666748046875 -9682.4296875 6097.4697265625 2218.33349609375 -9611.71875</float_array>
+                    <technique_common>
+                        <accessor count="71" source="#pointarray0" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs0">
+                    <float_array id="uvarray0" count="216">-0.51171875 1.94140625 -4.1953125 1.94140625 -0.51171875 2.12109375 -4.1953125 2.12109375 -0.41015625 3.15234375 -4.30078125 3.15234375 -1.33984375 3.41796875 -5.0234375 3.41796875 -1.33984375 3.59765625 -5.0234375 3.59765625 -1.23828125 4.625 -5.125 4.625 -0.03125 6.90234375 -3.71484375 6.90234375 -0.03125 7.08203125 -3.71484375 7.08203125 0.06640625 8.109375 -3.81640625 8.109375 -0.51171875 8.02734375 -4.1953125 8.02734375 -0.51171875 8.20703125 -4.1953125 8.20703125 -0.41015625 9.234375 -4.30078125 9.234375 -0.5 1.234375 -4.18359375 1.234375 -0.5 1.33203125 -4.18359375 1.33203125 -0.3984375 2.359375 -4.28515625 2.359375 0.01171875 10.13671875 1.18359375 10.13671875 0.140625 9.109375 1.18359375 9.109375 0.140625 8.9296875 1.18359375 8.9296875 -2.2421875 6.0859375 -1.0703125 6.0859375 -2.11328125 5.05859375 -1.0703125 5.05859375 -2.11328125 4.87890625 -1.0703125 4.87890625 0.01171875 6.08203125 1.18359375 6.08203125 0.140625 5.0546875 1.18359375 5.0546875 0.140625 4.87109375 1.18359375 4.87109375 0.01171875 2.02734375 1.18359375 2.02734375 0.140625 1 1.18359375 1 0.140625 0.90234375 1.18359375 0.90234375 -5.89453125 11.59765625 -4.72265625 11.59765625 -5.89453125 10.5703125 -4.84765625 10.5703125 -5.89453125 10.38671875 -4.84765625 10.38671875 -6.25390625 8.68359375 -5.078125 8.68359375 -6.25390625 7.65234375 -5.203125 7.65234375 -6.25390625 7.47265625 -5.203125 7.47265625 -4.9453125 8.109375 -3.76953125 8.109375 -4.9453125 7.08203125 -3.8984375 7.08203125 -4.9453125 6.90234375 -3.8984375 6.90234375 -4.9453125 6.08203125 -3.76953125 6.08203125 -4.9453125 5.0546875 -3.8984375 5.0546875 -4.9453125 4.87109375 -3.8984375 4.87109375 -4.9453125 4.0546875 -3.76953125 4.0546875 -4.9453125 3.02734375 -3.8984375 3.02734375 -4.9453125 2.84375 -3.8984375 2.84375 -6.25390625 0.57421875 -5.078125 0.57421875 -6.25390625 -0.453125 -5.203125 -0.453125 -6.25390625 -0.55078125 -5.203125 -0.55078125 -1.33984375 9.5 -5.0234375 9.5 -1.33984375 9.68359375 -5.0234375 9.68359375 -5.125 10.7109375 -1.1640625 1.5703125 -0.1171875 1.5703125 -1.1640625 1.390625 -0.1171875 1.390625 0.140625 11.13671875 1.18359375 11.13671875 0.140625 10.95703125 1.18359375 10.95703125 1.18359375 12.1640625 0.01171875 12.1640625 -1.29296875 2.59765625 -0.1171875 2.59765625 -1.23828125 10.7109375</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray0" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices0">
+                    <input semantic="POSITION" source="#points0"/>
+                </vertices>
+                <polylist count="72" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices0"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs0" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 2 1 1 0 0 3 3 1 1 2 2 4 4 3 3 2 2 5 5 3 3 4 4 8 8 7 7 6 6 9 9 7 7 8 8 10 10 9 9 8 8 11 11 9 9 10 10 14 14 13 13 12 12 15 15 13 13 14 14 16 16 15 15 14 14 17 17 15 15 16 16 20 20 19 19 18 18 21 21 19 19 20 20 22 22 21 21 20 20 23 23 21 21 22 22 26 26 25 25 24 24 27 27 25 25 26 26 28 28 27 27 26 26 29 29 27 27 28 28 20 32 30 31 22 30 31 33 30 31 20 32 18 34 31 33 20 32 32 35 31 33 18 34 14 38 33 37 16 36 34 39 33 37 14 38 12 40 34 39 14 38 35 41 34 39 12 40 8 44 36 43 10 42 37 45 36 43 8 44 6 46 37 45 8 44 38 47 37 45 6 46 26 50 39 49 28 48 40 51 39 49 26 50 24 52 40 51 26 50 41 53 40 51 24 52 44 56 43 55 42 54 45 57 43 55 44 56 46 58 45 57 44 56 47 59 45 57 46 58 49 62 23 61 48 60 21 63 23 61 49 62 50 64 21 63 49 62 19 65 21 63 50 64 52 68 17 67 51 66 15 69 17 67 52 68 53 70 15 69 52 68 13 71 15 69 53 70 55 74 11 73 54 72 9 75 11 73 55 74 56 76 9 75 55 74 7 77 9 75 56 76 58 80 5 79 57 78 3 81 5 79 58 80 59 82 3 81 58 80 1 83 3 81 59 82 61 86 29 85 60 84 27 87 29 85 61 86 62 88 27 87 61 86 25 89 27 87 62 88 64 92 47 91 63 90 45 93 47 91 64 92 43 94 45 93 64 92 0 97 38 96 2 95 65 98 38 96 0 97 63 101 66 100 64 99 31 102 66 100 63 101 68 104 66 100 67 103 64 99 66 100 68 104 2 95 69 106 4 105 70 96 69 106 2 95 68 107 43 94 64 92</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="mesh0_VC">
+            <mesh>
+                <source id="points0_VC">
+                    <float_array id="pointarray0_VC" count="213">5464.60888671875 1610 -8978.8583984375 7649.568359375 1610 -6793.8984375 5464.60888671875 2218.333251953125 -8978.8583984375 7649.568359375 2218.333251953125 -6793.8984375 5323.1875 2526.666748046875 -8978.8583984375 7649.5693359375 2526.666748046875 -6652.4765625 5464.60888671875 2218.333251953125 -8978.8583984375 7649.568359375 2218.333251953125 -6793.8984375 5464.60888671875 2826.66650390625 -8978.8583984375 7649.568359375 2826.66650390625 -6793.8984375 5323.1875 3135 -8978.8583984375 7649.5693359375 3135 -6652.4765625 5464.60888671875 2826.66650390625 -8978.8583984375 7649.568359375 2826.66650390625 -6793.8984375 5464.60888671875 3435 -8978.8583984375 7649.568359375 3435 -6793.8984375 5323.1875 3743.33349609375 -8978.8583984375 7649.5693359375 3743.33349609375 -6652.4765625 5464.60888671875 3435 -8978.8583984375 7649.568359375 3435 -6793.8984375 5464.60888671875 4043.33349609375 -8978.8583984375 7649.568359375 4043.33349609375 -6793.8984375 5323.1875 4351.66650390625 -8978.8583984375 7649.5693359375 4351.66650390625 -6652.4765625 5464.60888671875 1310 -8978.8583984375 7649.5693359375 1310 -6793.8984375 5464.60888671875 1610 -8978.8583984375 7649.568359375 1610 -6793.8984375 5323.1875 1918.333251953125 -8978.8583984375 7649.5693359375 1918.333251953125 -6652.4765625 6026.7587890625 4351.66650390625 -9682.4296875 6097.4697265625 4043.33349609375 -9611.71875 6097.4697265625 3435 -9611.71875 6026.7587890625 3743.33349609375 -9682.4296875 6097.4697265625 3435 -9611.71875 6097.4697265625 2826.6669921875 -9611.71875 6026.7587890625 3135 -9682.4296875 6097.4697265625 2826.6669921875 -9611.71875 6097.4697265625 2218.33349609375 -9611.71875 6026.7587890625 1918.333251953125 -9682.4296875 6097.4697265625 1610 -9611.71875 6097.4697265625 1310 -9611.71875 8353.1396484375 4960 -7356.048828125 7649.5693359375 4960 -6652.4765625 8282.4296875 4651.66650390625 -7426.7587890625 7649.5693359375 4651.66650390625 -6793.8984375 8282.4296875 4043.33349609375 -7426.7587890625 7649.568359375 4043.33349609375 -6793.8984375 8353.1396484375 4351.66650390625 -7356.048828125 8282.4296875 4043.33349609375 -7426.7587890625 8282.4296875 3435 -7426.759765625 8353.1396484375 3743.33349609375 -7356.048828125 8282.4296875 3435 -7426.759765625 8282.4296875 2826.66650390625 -7426.759765625 8353.1396484375 3135 -7356.048828125 8282.4296875 2826.66650390625 -7426.759765625 8282.4296875 2218.333251953125 -7426.759765625 8353.1396484375 2526.666748046875 -7356.048828125 8282.4296875 2218.333251953125 -7426.759765625 8282.4296875 1610 -7426.759765625 8353.1396484375 1918.333251953125 -7356.048828125 8282.4296875 1610 -7426.759765625 8282.4296875 1310 -7426.7587890625 5464.60888671875 4043.33349609375 -8978.8583984375 5464.60888671875 4651.66650390625 -8978.8583984375 6097.4697265625 1610 -9611.71875 6097.4697265625 4651.66650390625 -9611.71875 6026.7587890625 4960 -9682.4296875 5323.1875 4960 -8978.8583984375 6026.7587890625 2526.666748046875 -9682.4296875 6097.4697265625 2218.33349609375 -9611.71875</float_array>
+                    <technique_common>
+                        <accessor count="71" source="#pointarray0_VC" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs0_VC">
+                    <float_array id="uvarray0_VC" count="4">0.0625 0.99609375 0.0625 0.00390625</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray0_VC" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices0_VC">
+                    <input semantic="POSITION" source="#points0_VC"/>
+                </vertices>
+                <polylist count="72" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices0_VC"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs0_VC" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 0 1 1 0 1 3 0 1 1 2 0 4 1 3 0 2 0 5 1 3 0 4 1 8 0 7 1 6 1 9 0 7 1 8 0 10 1 9 0 8 0 11 1 9 0 10 1 14 0 13 1 12 1 15 0 13 1 14 0 16 1 15 0 14 0 17 1 15 0 16 1 20 0 19 1 18 1 21 0 19 1 20 0 22 1 21 0 20 0 23 1 21 0 22 1 26 0 25 1 24 1 27 0 25 1 26 0 28 1 27 0 26 0 29 1 27 0 28 1 20 0 30 1 22 1 31 1 30 1 20 0 18 1 31 1 20 0 32 1 31 1 18 1 14 0 33 1 16 1 34 0 33 1 14 0 12 1 34 0 14 0 35 1 34 0 12 1 8 0 36 1 10 1 37 0 36 1 8 0 6 1 37 0 8 0 38 1 37 0 6 1 26 0 39 1 28 1 40 0 39 1 26 0 24 1 40 0 26 0 41 1 40 0 24 1 44 0 43 1 42 1 45 0 43 1 44 0 46 1 45 0 44 0 47 1 45 0 46 1 49 0 23 1 48 1 21 0 23 1 49 0 50 1 21 0 49 0 19 1 21 0 50 1 52 0 17 1 51 1 15 0 17 1 52 0 53 1 15 0 52 0 13 1 15 0 53 1 55 0 11 1 54 1 9 0 11 1 55 0 56 1 9 0 55 0 7 1 9 0 56 1 58 0 5 1 57 1 3 0 5 1 58 0 59 1 3 0 58 0 1 1 3 0 59 1 61 0 29 1 60 1 27 0 29 1 61 0 62 1 27 0 61 0 25 1 27 0 62 1 64 0 47 1 63 1 45 0 47 1 64 0 43 1 45 0 64 0 0 1 38 1 2 0 65 1 38 1 0 1 63 1 66 0 64 0 31 1 66 0 63 1 68 1 66 0 67 1 64 0 66 0 68 1 2 0 69 1 4 1 70 0 69 1 2 0 68 1 43 1 64 0</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="mesh1">
+            <mesh>
+                <source id="points1">
+                    <float_array id="pointarray1" count="72">-3275 570 -14408.3642578125 -725 570 -14408.3642578125 -4550 570 -12200 550 570 -12200 -3275 570 -9991.634765625 -725 570 -9991.634765625 4550 715 -5900 4118.17236328125 715 -4488.3974609375 1754.29248046875 715 -6156.4677734375 3038.3974609375 715 -3481.82763671875 1600 715 -3150 188.3974609375 715 -3581.82763671875 -818.17236328125 715 -4661.6025390625 -1150 715 -6100 -668.17236328125 715 -7511.6025390625 411.6025390625 715 -8468.1728515625 1700 715 -8750 2205.80126953125 715 -8384.0859375 3411.6025390625 715 -8218.1728515625 4218.17236328125 715 -7338.3974609375 7649.5693359375 1350 -6645.40576171875 5316.1162109375 1350 -8978.8583984375 8356.67578125 1350 -7352.5126953125 6023.22314453125 1350 -9685.96484375</float_array>
+                    <technique_common>
+                        <accessor count="24" source="#pointarray1" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs1">
+                    <float_array id="uvarray1" count="48">-0.5 0.8671875 0 1.73046875 0 0 1 1.73046875 1 0 1.5 0.8671875 0.08203125 1.6484375 0.515625 2.05078125 1 1 1.08984375 2.1796875 1.65625 2.0078125 2.05859375 1.57421875 2.1875 1 2.015625 0.4375 1.5625 0.046875 1 -0.06640625 0.49609375 0.09375 0.39453125 0.3203125 0.01171875 0.62109375 -0.0859375 1.0859375 -0.19921875 0.6015625 1.1171875 0.6015625 -0.19921875 0.203125 1.1171875 0.203125</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray1" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices1">
+                    <input semantic="POSITION" source="#points1"/>
+                </vertices>
+                <polylist count="19" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices1"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs1" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 2 1 1 0 0 3 3 1 1 2 2 4 4 3 3 2 2 5 5 3 3 4 4 8 8 7 7 6 6 9 9 7 7 8 8 10 10 9 9 8 8 8 8 11 11 10 10 12 12 11 11 8 8 13 13 12 12 8 8 8 8 14 14 13 13 15 15 14 14 8 8 16 16 15 15 8 8 8 8 17 17 16 16 18 18 17 17 8 8 19 19 18 18 8 8 22 22 21 21 20 20 23 23 21 21 22 22 6 6 19 19 8 8</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="mesh1_VC">
+            <mesh>
+                <source id="points1_VC">
+                    <float_array id="pointarray1_VC" count="72">-3275 570 -14408.3642578125 -725 570 -14408.3642578125 -4550 570 -12200 550 570 -12200 -3275 570 -9991.634765625 -725 570 -9991.634765625 4550 715 -5900 4118.17236328125 715 -4488.3974609375 1754.29248046875 715 -6156.4677734375 3038.3974609375 715 -3481.82763671875 1600 715 -3150 188.3974609375 715 -3581.82763671875 -818.17236328125 715 -4661.6025390625 -1150 715 -6100 -668.17236328125 715 -7511.6025390625 411.6025390625 715 -8468.1728515625 1700 715 -8750 2205.80126953125 715 -8384.0859375 3411.6025390625 715 -8218.1728515625 4218.17236328125 715 -7338.3974609375 7649.5693359375 1350 -6645.40576171875 5316.1162109375 1350 -8978.8583984375 8356.67578125 1350 -7352.5126953125 6023.22314453125 1350 -9685.96484375</float_array>
+                    <technique_common>
+                        <accessor count="24" source="#pointarray1_VC" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs1_VC">
+                    <float_array id="uvarray1_VC" count="4">0.0625 0.00390625 0.5625 0.99609375</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray1_VC" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices1_VC">
+                    <input semantic="POSITION" source="#points1_VC"/>
+                </vertices>
+                <polylist count="19" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices1_VC"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs1_VC" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 0 1 0 0 0 3 0 1 0 2 0 4 0 3 0 2 0 5 0 3 0 4 0 8 0 7 0 6 0 9 0 7 0 8 0 10 0 9 0 8 0 8 0 11 0 10 0 12 0 11 0 8 0 13 0 12 0 8 0 8 0 14 0 13 0 15 0 14 0 8 0 16 0 15 0 8 0 8 0 17 0 16 0 18 0 17 0 8 0 19 0 18 0 8 0 22 1 21 1 20 1 23 1 21 1 22 1 6 0 19 0 8 0</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="mesh2">
+            <mesh>
+                <source id="points2">
+                    <float_array id="pointarray2" count="51">0 0 -67688.7421875 26190.3125 0 -63229.0078125 0 0 0 47863.16796875 0 -47863.16796875 63229.0078125 0 -26190.3125 67688.7421875 0 0 63229.0078125 0 26190.3125 47863.16796875 0 47863.16796875 26190.3125 0 63229.0078125 0 0 67688.7421875 -26190.3125 0 63229.0078125 -47863.16796875 0 47863.16796875 -63229.0078125 0 26190.3125 -67688.7421875 0 0 -47863.16796875 0 -47863.16796875 -63229.0078125 0 -26190.3125 -26190.3125 0 -63229.0078125</float_array>
+                    <technique_common>
+                        <accessor count="17" source="#pointarray2" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs2">
+                    <float_array id="uvarray2" count="34">1 -5.58984375 3.734375 -5.2109375 1 0.18359375 6 -3.8984375 7.6015625 -2.05078125 8.0703125 0.18359375 7.6015625 2.41796875 6 4.265625 3.734375 5.578125 1 5.95703125 -1.734375 5.578125 -4 4.265625 -5.6015625 2.41796875 -6.0703125 0.18359375 -4 -3.8984375 -5.6015625 -2.05078125 -1.734375 -5.2109375</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray2" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices2">
+                    <input semantic="POSITION" source="#points2"/>
+                </vertices>
+                <polylist count="16" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices2"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs2" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 2 1 1 0 0 3 3 1 1 2 2 4 4 3 3 2 2 2 2 5 5 4 4 6 6 5 5 2 2 7 7 6 6 2 2 2 2 8 8 7 7 9 9 8 8 2 2 10 10 9 9 2 2 2 2 11 11 10 10 12 12 11 11 2 2 13 13 12 12 2 2 15 15 2 2 14 14 13 13 2 2 15 15 16 16 2 2 0 0 14 14 2 2 16 16</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry id="mesh2_VC">
+            <mesh>
+                <source id="points2_VC">
+                    <float_array id="pointarray2_VC" count="51">0 0 -67688.7421875 26190.3125 0 -63229.0078125 0 0 0 47863.16796875 0 -47863.16796875 63229.0078125 0 -26190.3125 67688.7421875 0 0 63229.0078125 0 26190.3125 47863.16796875 0 47863.16796875 26190.3125 0 63229.0078125 0 0 67688.7421875 -26190.3125 0 63229.0078125 -47863.16796875 0 47863.16796875 -63229.0078125 0 26190.3125 -67688.7421875 0 0 -47863.16796875 0 -47863.16796875 -63229.0078125 0 -26190.3125 -26190.3125 0 -63229.0078125</float_array>
+                    <technique_common>
+                        <accessor count="17" source="#pointarray2_VC" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs2_VC">
+                    <float_array id="uvarray2_VC" count="4">0.3125 0.99609375 0.3125 0.00390625</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray2_VC" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices2_VC">
+                    <input semantic="POSITION" source="#points2_VC"/>
+                </vertices>
+                <polylist count="16" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices2_VC"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs2_VC" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 0 1 1 0 1 3 1 1 1 2 0 4 1 3 1 2 0 2 0 5 1 4 1 6 1 5 1 2 0 7 1 6 1 2 0 2 0 8 1 7 1 9 1 8 1 2 0 10 1 9 1 2 0 2 0 11 1 10 1 12 1 11 1 2 0 13 1 12 1 2 0 15 1 2 0 14 1 13 1 2 0 15 1 16 1 2 0 0 1 14 1 2 0 16 1</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="VisualSceneNode">
+            <node id="node0" name="m0" type="NODE">
+                <instance_geometry url="#mesh0">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat1">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+            <node id="node0_VC" name="m0_VC" type="NODE">
+                <instance_geometry url="#mesh0_VC">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat_vc">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+            <node id="node1" name="m1" type="NODE">
+                <instance_geometry url="#mesh1">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat0">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+            <node id="node1_VC" name="m1_VC" type="NODE">
+                <instance_geometry url="#mesh1_VC">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat_vc">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+            <node id="node2" name="m2" type="NODE">
+                <instance_geometry url="#mesh2">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat2">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+            <node id="node2_VC" name="m2_VC" type="NODE">
+                <instance_geometry url="#mesh2_VC">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat_vc">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#VisualSceneNode"></instance_visual_scene>
+    </scene>
+</COLLADA>

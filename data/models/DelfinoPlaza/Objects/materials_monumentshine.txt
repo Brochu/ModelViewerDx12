@@ -1,0 +1,74 @@
+_mat_shine_body
+===============
+  Textures:
+    - H_shane_monument_rak_s3tc
+        Offset: 0.20000000298023224, 0.2490234375
+        Center: 0.5, 0.5
+        Scale: 1.600000023841858, 1.600000023841858
+        Rotation: 0.1694082461012604
+    - P_ms_radgrad_i
+        Offset: -0.2490234375, -0.166015625
+        Center: 0.5, 0.5
+        Scale: 1.03515625, 1.03515625
+        Rotation: 0
+    - P_ms_radgrad_i
+        Offset: 0.37109375, 0.498046875
+        Center: 0.5, 0.5
+        Scale: 2.126953125, 2
+        Rotation: 0
+    - H_shinemonument_polmask1_i4
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 62, 54, 38, 100
+    - 79, 51, 73, 98
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Material Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Color Registers:
+    - 194, 161, 44, 16
+    - 157, 161, 169, 255
+    - 28, 52, 12, 255
+    - 0, 0, 0, 0
+
+
+
+_mat_shine_eyes
+===============
+  Textures:
+    - H_shine_eye01_8ia
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Material Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Color Registers:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0

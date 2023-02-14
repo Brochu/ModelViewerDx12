@@ -1,0 +1,53 @@
+_mat_gate1
+==========
+  Textures:
+    - dummy_8x8i4
+        Offset: 0, -0.3199999928474426
+        Center: 0.5, 0.5
+        Scale: 1, 0.30000001192092896
+        Rotation: 0
+    - dummy_8x8i4
+        Offset: 0, -0.3199999928474426
+        Center: 0.5, 0.5
+        Scale: 1, 0.30000001192092896
+        Rotation: 0
+    - dummy_8x8i4
+        Offset: 0, -0.3199999928474426
+        Center: 0.5, 0.5
+        Scale: 1, 0.30000001192092896
+        Rotation: 0
+    - P_gate_spec2s3tc
+        Offset: 0.71916663646698, 0.71916663646698
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - P_ms_indwp1_ia
+        Offset: 0.6118083000183105, -0.7923442721366882
+        Center: 0.5, 0.5
+        Scale: 1.4382002353668213, 1.4382002353668213
+        Rotation: 0
+    - P_gate_msk_m2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 0.9100000262260437, 0.9100000262260437
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 0, 0, 226, 88
+    - 179, 0, 0, 182
+    - 255, 0, 255, 128
+    - 255, 130, 255, 255
+
+  Material Colors:
+    - 255, 255, 255, 252
+    - 255, 255, 255, 252
+
+  Color Registers:
+    - -90, 0, -114, 135
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0

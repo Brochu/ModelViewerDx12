@@ -1,0 +1,29 @@
+_o658
+=====
+  Textures:
+    - P_dokan_amienv1
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 0.4541015625, 0.4541015625
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 17, 33, 57, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+
+
+_o659
+=====
+  Textures:
+    - A_cock02
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0

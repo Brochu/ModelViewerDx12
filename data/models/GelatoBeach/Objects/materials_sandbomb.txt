@@ -1,0 +1,103 @@
+_eye
+====
+  Textures:
+    - M_bom_eye01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - H_toon_2_4i
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 61, 74, 97, 255
+
+  Color Registers:
+    - 255, 255, 255, 0
+    - 173, 161, 169, 255
+
+
+
+_face
+=====
+  Textures:
+    - H_toon_2_4i
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 124, 128, 97, 255
+
+  Color Registers:
+    - 303, 206, 52, 161
+    - 10, -200, 60, 255
+    - 149, 165, 255, 255
+
+
+
+_ha
+===
+  Textures:
+    - M_ha01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - H_toon_2_4i
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 61, 74, 97, 255
+
+  Color Registers:
+    - 335, 364, 339, 161
+    - 173, 161, 169, 255
+
+
+
+_hoho
+=====
+  Textures:
+    - M_mi_hope
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - H_toon_2_4i
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 61, 74, 97, 255
+
+  Color Registers:
+    - 125, -20, 100, 0
+    - 173, 161, 169, 255
+
+
+
+_mouth
+======
+  Textures:
+    - M_bom_mouth01
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - H_toon_2_4i
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 61, 74, 97, 255
+
+  Color Registers:
+    - 255, 255, 255, 0
+    - 173, 161, 169, 255

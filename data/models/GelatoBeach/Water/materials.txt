@@ -1,0 +1,92 @@
+_EnKeI
+======
+  Textures:
+    - B_ENKEIwave
+        Offset: 0.8238052129745483, 0.8238052129745483
+        Center: 0.5, 0.5
+        Scale: 5, 5
+        Rotation: 0
+    - B_ENKEIwave
+        Offset: 0, 0.8238052129745483
+        Center: 0.5, 0.5
+        Scale: 4, 4
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_NaMi
+=====
+  Textures:
+    - B_BeachRipple_ss
+        Offset: 2.0427544116973877, -0.9053192734718323
+        Center: 0.5, 0
+        Scale: 1, 1.2000000476837158
+        Rotation: 0
+    - B_BeachRipple_ss
+        Offset: -2.0361082553863525, -0.9487142562866211
+        Center: 0.5, 0
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_namiuchigiwa
+=============
+  Textures:
+    - B_ENKEIwave
+        Offset: 0, 1.0811814069747925
+        Center: 0.5, 0.5
+        Scale: 1.5, 1
+        Rotation: 0
+    - B_ENKEIwave
+        Offset: 0, 0.5405907034873962
+        Center: 0.5, 0.5
+        Scale: 0.5, 1.2000000476837158
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_nure
+=====
+  Textures:
+    - B_BeachRipple_ss
+        Offset: 0, 0
+        Center: 0, 0
+        Scale: 1, 1
+        Rotation: 0
+    - B_BeachRipple_ss
+        Offset: 0, -0.2099609375
+        Center: 1, 1
+        Scale: -0.8740234375, 0.4150390625
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 20, 20, 20, 255
+
+  Color Registers:
+    - 0, 0, 0, 255
+    - 0, 0, 0, 255

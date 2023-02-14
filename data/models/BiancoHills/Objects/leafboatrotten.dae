@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>J3D Ripoff Exporter</authoring_tool>
+        </contributor>
+        <created>2022-10-02T17:56:01.839Z</created>
+        <modified>2022-10-02T17:56:01.839Z</modified>
+		<unit meter="0.01" name="centimeter" ></unit>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="tex0">
+            <init_from>J_leafBoat.png</init_from>
+        </image>
+        <image id="tex1">
+            <init_from>H_ma_polmask_sample_i4.png</init_from>
+        </image>
+    </library_images>
+    <library_effects>
+        <effect id="effect0">
+            <profile_COMMON>
+                <newparam sid="surface0">
+                    <surface type="2D">
+                        <init_from>tex0</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler0">
+                    <sampler2D>
+                        <source>surface0</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler0" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="mat0" name="_mat3">
+            <instance_effect url="#effect0"></instance_effect>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="mesh0">
+            <mesh>
+                <source id="points0">
+                    <float_array id="pointarray0" count="63">264.328125 0.84375 0 132.15625 12.671875 0 213.84375 0.84375 -155.359375 106.921875 10.28125 -77.671875 81.671875 0.84375 -251.390625 40.828125 10.28125 -125.6875 -81.671875 0.84375 -251.390625 -40.828125 10.28125 -125.6875 -213.84375 0.84375 -155.359375 -106.921875 10.28125 -77.671875 -264.328125 0.84375 0 -132.15625 12.671875 0 -106.921875 10.28125 77.671875 37.109375 8.359375 0 -40.828125 10.28125 125.6875 40.828125 10.28125 125.6875 81.671875 0.84375 251.390625 213.84375 0.84375 155.359375 106.921875 10.28125 77.671875 -213.84375 0.84375 155.359375 -81.671875 0.84375 251.390625</float_array>
+                    <technique_common>
+                        <accessor count="21" source="#pointarray0" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs0">
+                    <float_array id="uvarray0" count="42">-0.008302000351250172 0.0160369873046875 0.23785799741744995 0.01214897632598877 0.06797999888658524 0.3276500105857849 0.2759990096092224 0.19529902935028076 0.3031739890575409 0.4886689782142639 0.40140900015830994 0.28752702474594116 0.6736339926719666 0.48983097076416016 0.5944510102272034 0.3037340044975281 0.9385719895362854 0.3054109811782837 0.7308260202407837 0.18418002128601074 1.0075880289077759 0.016108989715576172 0.7692409753799438 0.012184977531433105 0.730571985244751 0.1851789951324463 0.46518298983573914 0.0115470290184021 0.5941849946975708 0.30374598503112793 0.4016749858856201 0.2875159978866577 0.3026599884033203 0.4886919856071472 0.06746499985456467 0.32763898372650146 0.27627700567245483 0.196274995803833 0.9390860199928284 0.3053539991378784 0.6741480231285095 0.48980897665023804</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray0" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="colors0">
+                    <float_array id="colorarray0" count="8">1 0.9058823529411765 0.6235294117647059 1 1 1 1 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#colorarray0" stride="4">
+                            <param name="R" type="float"/>
+                            <param name="G" type="float"/>
+                            <param name="B" type="float"/>
+                            <param name="A" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices0">
+                    <input semantic="POSITION" source="#points0"/>
+                </vertices>
+                <polylist count="30" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices0"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs0" set="0"/>
+                    <input offset="2" semantic="COLOR" source="#colors0" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 2 0 1 1 1 0 0 0 3 3 1 1 1 1 2 2 0 4 4 0 3 3 1 2 2 0 5 5 1 3 3 1 4 4 0 6 6 0 5 5 1 4 4 0 7 7 1 5 5 1 6 6 0 8 8 0 7 7 1 6 6 0 9 9 1 7 7 1 8 8 0 10 10 0 9 9 1 8 8 0 11 11 0 9 9 1 10 10 0 12 12 1 11 11 0 10 10 0 13 13 0 11 11 0 12 12 1 14 14 1 13 13 0 12 12 1 15 15 1 13 13 0 14 14 1 16 16 0 15 15 1 14 14 1 17 17 0 15 15 1 16 16 0 13 13 0 9 9 1 11 11 0 7 7 1 9 9 1 13 13 0 5 5 1 7 7 1 13 13 0 18 18 1 13 13 0 15 15 1 1 1 1 13 13 0 18 18 1 0 0 0 1 1 1 18 18 1 19 19 0 12 12 1 10 10 0 20 20 0 12 12 1 19 19 0 20 20 0 14 14 1 12 12 1 16 16 0 14 14 1 20 20 0 3 3 1 13 13 0 1 1 1 5 5 1 13 13 0 3 3 1 17 17 0 18 18 1 15 15 1 0 0 0 18 18 1 17 17 0</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="VisualSceneNode">
+            <node id="node0" name="m0" type="NODE">
+                <instance_geometry url="#mesh0">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat0">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#VisualSceneNode"></instance_visual_scene>
+    </scene>
+</COLLADA>

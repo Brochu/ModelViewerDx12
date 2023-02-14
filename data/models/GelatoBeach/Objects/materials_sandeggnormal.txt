@@ -1,0 +1,42 @@
+_MainBody_m
+===========
+  Textures:
+    - CenterBuildingMamma
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_egg
+====
+  Textures:
+    - D_SandEgg
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_grss_3
+=======
+  Textures:
+    - kankyouHight
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 0.5, 0.5
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 50, 80, 100, 255

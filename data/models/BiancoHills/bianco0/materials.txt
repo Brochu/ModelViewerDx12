@@ -1,0 +1,473 @@
+_Corona
+=======
+  Textures:
+    - corona
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_DistDolpic
+===========
+  Textures:
+    - A_dptsmall32128
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Green_01_Slop
+==============
+  Textures:
+    - D_green_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_IwaGreen3tev_Slop
+==================
+  Textures:
+    - D_gake_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - D_green_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_IwakabeWhite3tev
+=================
+  Textures:
+    - D_gake_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - D_grey
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_Rico
+=====
+  Textures:
+    - Dist_RicoAlmostMarge
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_RockGround
+===========
+  Textures:
+    - D_RockGround
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_SubwruMIzu1_NureMask
+=====================
+  Textures:
+    - D_WaterOnGround2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Material Colors:
+    - 55, 40, 30, 50
+    - 55, 40, 30, 50
+
+
+
+_SubwruMIzu2_NureMask
+=====================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Material Colors:
+    - 55, 40, 30, 50
+    - 55, 40, 30, 50
+
+
+
+_UnderWater_1
+=============
+  Textures:
+    - D_UnderWaterGround
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_WhiteRoad_01_Slop
+==================
+  Textures:
+    - D_grey
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_WhiteWall_02_wall
+==================
+  Textures:
+    - D_WhiteWall2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Windmillwall_Kakine
+====================
+  Textures:
+    - D_kabe_bia6
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_ZPutOut_Rico
+=============
+  Textures:
+    - Dist_A_ricconuki03
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_ZPutOut_Roof2
+==============
+  Textures:
+    - D_roof_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_ZPutOut_houseT1
+================
+  Textures:
+    - D_houseWall_bia501
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_ZPutOut_houseT4
+================
+  Textures:
+    - D_houseWall_bia504
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_ZPutout_1cUpRSide_Slop
+=======================
+  Textures:
+    - D_sideGreen_bia
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_kage_02_Wall
+=============
+  Textures:
+    - D_shadowTree
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Material Colors:
+    - 253, 253, 255, 255
+    - 253, 253, 255, 255
+
+  Color Registers:
+    - 0, 40, 70, 428
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0
+
+
+
+_merikomi_02_Wall
+=================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_roof3
+======
+  Textures:
+    - D_roofWindmill
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_merikomi_02_Wall(2)
+====================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_ZPutout_1cUpRSide_Slop(2)
+==========================
+  Textures:
+    - D_sideGreen_bia
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_Green_01_Slop(2)
+=================
+  Textures:
+    - D_green_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_WhiteRoad_01_Slop(2)
+=====================
+  Textures:
+    - D_grey
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_WhiteWall_02_wall(2)
+=====================
+  Textures:
+    - D_WhiteWall2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_merikomi_02_Wall(3)
+====================
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+
+
+_IwaGreen3tev_Slop(2)
+=====================
+  Textures:
+    - D_gake_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - D_green_bia2
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 255, 255, 255, 127
+
+
+
+_kage_02_Wall(2)
+================
+  Textures:
+    - D_shadowTree
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Material Colors:
+    - 253, 253, 255, 255
+    - 253, 253, 255, 255
+
+  Color Registers:
+    - 0, 40, 70, 428
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0

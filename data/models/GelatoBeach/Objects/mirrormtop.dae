@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>J3D Ripoff Exporter</authoring_tool>
+        </contributor>
+        <created>2023-01-11T03:16:02.748Z</created>
+        <modified>2023-01-11T03:16:02.748Z</modified>
+		<unit meter="0.01" name="centimeter" ></unit>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="tex0">
+            <init_from>D_MirrorDamy.png</init_from>
+        </image>
+    </library_images>
+    <library_effects>
+        <effect id="effect0">
+            <profile_COMMON>
+                <newparam sid="surface0">
+                    <surface type="2D">
+                        <init_from>tex0</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler0">
+                    <sampler2D>
+                        <source>surface0</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler0" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="mat0" name="_topM_1">
+            <instance_effect url="#effect0"></instance_effect>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="mesh0">
+            <mesh>
+                <source id="points0">
+                    <float_array id="pointarray0" count="60">-0.00007999999797903001 408.6667175292969 1250 -386.2713317871094 408.6667175292969 1188.8206787109375 386.2711181640625 408.6667175292969 1188.8206787109375 734.7314453125 408.6667175292969 1011.2713012695312 1011.2711181640625 408.6667175292969 734.7315673828125 1188.820556640625 408.6667175292969 386.27130126953125 1249.9998779296875 408.6667175292969 0.00005999999848427251 1188.820556640625 408.6667175292969 -386.27117919921875 1011.2711181640625 408.6667175292969 -734.7314453125 734.7314453125 408.6667175292969 -1011.2711181640625 386.2711181640625 408.6667175292969 -1188.820556640625 -0.00007999999797903001 408.6667175292969 -1249.9998779296875 -386.2713317871094 408.6667175292969 -1188.820556640625 -734.7315673828125 408.6667175292969 -1011.2711181640625 -1011.2713012695312 408.6667175292969 -734.7314453125 -1188.8206787109375 408.6667175292969 -386.27117919921875 -1250.0001220703125 408.6667175292969 0.00005999999848427251 -1188.8206787109375 408.6667175292969 386.27130126953125 -1011.2713012695312 408.6667175292969 734.7315673828125 -734.7315673828125 408.6667175292969 1011.2713012695312</float_array>
+                    <technique_common>
+                        <accessor count="20" source="#pointarray0" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs0">
+                    <float_array id="uvarray0" count="40">0.4301320016384125 0.08162599802017212 0.304610013961792 0.1224219799041748 0.5621140003204346 0.08162599802017212 0.6876369714736938 0.1224219799041748 0.7944129705429077 0.20002001523971558 0.8719900250434875 0.3068240284919739 0.9127749800682068 0.4323800206184387 0.9127749800682068 0.5643979907035828 0.8719900250434875 0.68995401263237 0.7944129705429077 0.7967579960823059 0.6876369714736938 0.8743560016155243 0.5621140003204346 0.9151510000228882 0.4301320016384125 0.9151510000228882 0.304610013961792 0.8743560016155243 0.19783399999141693 0.7967579960823059 0.12025699764490128 0.68995401263237 0.07947199791669846 0.5643979907035828 0.07947199791669846 0.4323800206184387 0.12025699764490128 0.3068240284919739 0.19783399999141693 0.20002001523971558</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray0" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices0">
+                    <input semantic="POSITION" source="#points0"/>
+                </vertices>
+                <polylist count="18" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices0"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs0" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 2 1 1 0 0 3 3 1 1 2 2 4 4 1 1 3 3 5 5 1 1 4 4 6 6 1 1 5 5 7 7 1 1 6 6 8 8 1 1 7 7 9 9 1 1 8 8 10 10 1 1 9 9 11 11 1 1 10 10 12 12 1 1 11 11 13 13 1 1 12 12 14 14 1 1 13 13 15 15 1 1 14 14 16 16 1 1 15 15 17 17 1 1 16 16 18 18 1 1 17 17 19 19 1 1 18 18</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="VisualSceneNode">
+            <node id="node0" name="m0" type="NODE">
+                <instance_geometry url="#mesh0">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat0">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#VisualSceneNode"></instance_visual_scene>
+    </scene>
+</COLLADA>

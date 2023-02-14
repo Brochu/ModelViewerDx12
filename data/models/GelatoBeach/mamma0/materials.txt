@@ -1,0 +1,417 @@
+_BaseOfJump
+===========
+  Textures:
+    - D_wall04mam
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Bottol
+=======
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 255, 100
+    - 255, 255, 255, 100
+
+  Color Registers:
+    - 50, 80, 100, 255
+
+
+
+_BrownBrock
+===========
+  Textures:
+    - D_brock_ma3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_CenterTableTHB
+===============
+  Textures:
+    - CenterTable
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_FenceReRoofTeaHouseA
+=====================
+  Textures:
+    - D_Net
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_FloorTeaHouseA
+===============
+  Textures:
+    - D_woody_mam2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Gake01
+=======
+  Textures:
+    - D_sunagake_man02
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_Gake02
+=======
+  Textures:
+    - D_kusagake_man
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_Gake03
+=======
+  Textures:
+    - D_sunagake_man03
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_Gake04
+=======
+  Textures:
+    - D_sunagake_man01
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_GreenGround
+============
+  Textures:
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_JumpCloth
+==========
+  Textures:
+    - CenterBuildingMamma
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Jump_GreenGround3Tev
+=====================
+  Textures:
+    - D_green_man02
+    - D_suna
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_ObjTeaHouseA
+=============
+  Textures:
+    - THouseTable
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_OutGreen3Tev
+=============
+  Textures:
+    - D_green_man02
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_PO_Sand_Green
+==============
+  Textures:
+    - D_GreenToSand
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_PO_SideGreen
+=============
+  Textures:
+    - D_sideGreen_mam
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_PO_SunaGake
+============
+  Textures:
+    - D_PickOut_sunagake_man
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_PickOutHandrail
+================
+  Textures:
+    - D_HandrailPickOutTHA
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_PickOut_THB_detail
+===================
+  Textures:
+    - detailTHB
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_ReRoofKanshi
+=============
+  Textures:
+    - D_RoofTHouseB
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_RoofTeaHouseA
+==============
+  Textures:
+    - D_KayaRoofTHouseA
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Sand
+=====
+  Textures:
+    - suna
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Stage
+======
+  Textures:
+    - D_TheaterStair
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_TreeTrunk
+==========
+  Textures:
+    - D_PalmMiki
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_WhiteTHB
+=========
+  Textures:
+    - D_BrownWoody_mam
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_YellowPire_1
+=============
+  Textures:
+    - D_YellowWoody_mam
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_corona3TevGreen
+================
+  Textures:
+    - corona
+    - D_green_man02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_kage_tree
+==========
+  Textures:
+    - DA_shadow01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 253, 253, 255, 255
+    - 253, 253, 255, 255
+
+  Color Registers:
+    - 0, 20, 70, 140
+
+
+
+_merikomi
+=========
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_nuki_1
+=======
+  Textures:
+    - detailTHB
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_pile_m_16
+==========
+  Textures:
+    - H_pile_main_s3tc
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_pillarTeaHouseA
+================
+  Textures:
+    - D_PillarTHA
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex0
+=====
+  Textures:
+    - DistSire
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex1
+=====
+  Textures:
+    - DistRico
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex6
+=====
+  Textures:
+    - DistGake
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex8
+=====
+  Textures:
+    - DistHoses
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_woodyKanshi
+============
+  Textures:
+    - D_mihari
+
+  Ambient Colors:
+    - 128, 128, 128, 50

@@ -1,0 +1,23 @@
+_ShiningStoneOutSide
+====================
+  Textures:
+    - P_glow1
+        Offset: 0, 0
+        Center: 0, 0
+        Scale: 2, 2
+        Rotation: 0
+    - P_gate_spec1
+        Offset: 0.7485710382461548, 0
+        Center: 0.5, 0.5
+        Scale: 1.5, 1.5
+        Rotation: 0.315561387981811
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 74, 54, 39, 255
+
+  Material Colors:
+    - 63, 63, 63, 120
+    - 63, 63, 63, 120

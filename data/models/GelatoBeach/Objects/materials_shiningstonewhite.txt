@@ -1,0 +1,26 @@
+_hantoumei
+==========
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 128, 255, 255, 25
+    - 128, 255, 255, 25
+
+
+
+_o32_1
+======
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 251, 161, 255
+    - 255, 251, 161, 255
+
+  Color Registers:
+    - 255, 100, 100, 255

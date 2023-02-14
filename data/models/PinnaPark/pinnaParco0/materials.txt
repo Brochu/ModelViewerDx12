@@ -1,0 +1,561 @@
+_Bhasira_30
+===========
+  Textures:
+    - L_pina_Hasira_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_EnterBlock
+===========
+  Textures:
+    - D_pina_tail_L_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_EnterStairBlock
+================
+  Textures:
+    - L_pina_isigaki_sq02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_GAKEKUSA
+=========
+  Textures:
+    - D_pina_iwakabe00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_GAKE_under
+===========
+  Textures:
+    - L_pina_yama01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_GateOrnament
+=============
+  Textures:
+    - A_dummy01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Green_Sand_Tev3
+================
+  Textures:
+    - L_pina_kusa02
+    - D_pina_sand_m
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_GroundCafe
+===========
+  Textures:
+    - L_pina_conkuri_t01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_IvoryBlock
+===========
+  Textures:
+    - L_pina_conkuri01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_IvoryWall
+==========
+  Textures:
+    - L_pina_conkuri
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_KUSA00
+=======
+  Textures:
+    - L_pina_kusa02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_KanaamiWoodFrame
+=================
+  Textures:
+    - L_pina_wood00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_MITI
+=====
+  Textures:
+    - D_TailMarutubu
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_MerryGGround
+=============
+  Textures:
+    - L_pina_conkuri_t00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_MonteTree
+==========
+  Textures:
+    - L_pina_montree
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_RedFramKanaani
+===============
+  Textures:
+    - L_fence_edge
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Renga
+======
+  Textures:
+    - L_pina_renga
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_RockGrond
+==========
+  Textures:
+    - L_pina_orangetail_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_SideBrock
+==========
+  Textures:
+    - L_pina_isigaki_sq
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_StairGate
+==========
+  Textures:
+    - L_pina_isitail01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_UE_1
+=====
+  Textures:
+    - L_pina_house_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_kageTree
+===========
+  Textures:
+    - ougi_palm
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 253, 253, 255, 255
+    - 253, 253, 255, 255
+
+  Color Registers:
+    - 180, 150, 80, 100
+
+
+
+_Z_nuki0
+========
+  Textures:
+    - L_pina_sima_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_nuki1
+========
+  Textures:
+    - L_pina_sukasi
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_nuki2
+========
+  Textures:
+    - L_pina_sima_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_nuki3
+========
+  Textures:
+    - L_pina_sima_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_nuki4_kanaami
+================
+  Textures:
+    - L_fence_s3tc64M
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_nuki5_pipe
+=============
+  Textures:
+    - L_pina_pipe00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Z_nuki_MonteTree
+=================
+  Textures:
+    - J_tree_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_ana
+====
+  Textures:
+    - L_pina_steel00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_bouhatei
+=========
+  Textures:
+    - L_pina_isigaki
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_funsui_s_22
+============
+  Textures:
+    - L_pina_tail_L_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kanabn
+=======
+  Textures:
+    - L_pina_kanban_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kanban_maru
+============
+  Textures:
+    - L_pina_kanban_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o13018_20
+==========
+  Textures:
+    - D_pina_kusatail
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o15425
+=======
+  Textures:
+    - L_pina_isigaki_sqsand
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o15516
+=======
+  Textures:
+    - L_pina_conkuri00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o22559_1
+=========
+  Textures:
+    - L_pina_conkuri03
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o22625
+=======
+  Textures:
+    - L_pina_house_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o23393
+=======
+  Textures:
+    - L_pina_conkuri02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o25834
+=======
+  Textures:
+    - L_pina_sima
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_oMTR
+=====
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_sand_
+======
+  Textures:
+    - D_pina_sand_m
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tail
+=====
+  Textures:
+    - L_pina_isitail02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tail00
+=======
+  Textures:
+    - L_pina_ground_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex0
+=====
+  Textures:
+    - A_sirena_s
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex1
+=====
+  Textures:
+    - A_ricco_s
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex3
+=====
+  Textures:
+    - A_monte_s
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex5
+=====
+  Textures:
+    - A_corona
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex6
+=====
+  Textures:
+    - A_pinna_gake
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex8
+=====
+  Textures:
+    - A_dolpic_s
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tex_2
+======
+  Textures:
+    - A_mamma_s
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o25834(2)
+==========
+  Textures:
+    - L_pina_sima
+    - L_pina_sima
+        Offset: 0, 0.058920301496982574
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_KUSA00(2)
+==========
+  Textures:
+    - L_pina_kusa02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_sand_(2)
+=========
+  Textures:
+    - D_pina_sand_m
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:

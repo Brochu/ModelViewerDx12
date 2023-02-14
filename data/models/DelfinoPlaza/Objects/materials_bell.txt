@@ -1,0 +1,43 @@
+_mat_body
+=========
+  Textures:
+    - H_shane_monument_rak_s3tc
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+    - P_ms_radgrad_i
+        Offset: -0.166015625, -0.1220703125
+        Center: 0.5, 0.5
+        Scale: 1.279296875, 0.869140625
+        Rotation: 0
+    - P_ms_radgrad_i
+        Offset: 0.4150390625, 0.2880859375
+        Center: 0.5, 0.5
+        Scale: 1.572265625, 1.572265625
+        Rotation: 0
+    - H_shinemonument_polmask1_i4
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+    - 0, 0, 0, 0
+
+  Constant Colors:
+    - 92, 30, 12, 100
+    - 234, 192, 115, 77
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Material Colors:
+    - 255, 255, 255, 255
+    - 255, 255, 255, 255
+
+  Color Registers:
+    - 117, 76, 8, 169
+    - 169, 161, 169, 238
+    - 255, 255, 255, 255
+    - 0, 0, 0, 0

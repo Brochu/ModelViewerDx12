@@ -1,0 +1,18 @@
+_mat1
+=====
+  Textures:
+    - P_gate_spec2s3tc
+        Offset: 0.3633333444595337, 0.3633333444595337
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: -0.7267372661519211
+    - P_msm_indwp1_ia
+        Offset: 0.6816666722297668, -0.6816666722297668
+        Center: 0.5, 0.5
+        Scale: 1, 1
+        Rotation: -0.6367076631977294
+    - P_ms_radgrad_i
+        Offset: 0, 0
+        Center: 0.5, 0.5
+        Scale: 0.7861328125, 0.7861328125
+        Rotation: 0

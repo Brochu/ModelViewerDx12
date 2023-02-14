@@ -1,0 +1,318 @@
+_P_down_1
+=========
+  Textures:
+    - L_pina_merry_YOSIp_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 26, 0, 18, 255
+    - 255, 220, 255, 255
+
+
+
+_Y_down_1
+=========
+  Textures:
+    - L_pina_merry_YOSIy_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 28, 0, 14, 255
+    - 255, 255, 230, 255
+
+
+
+_bar_down_1
+===========
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kinoko_22___3
+==============
+  Textures:
+    - l_pina_merry_kinoko
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mizutama_22___3
+================
+  Textures:
+    - L_pina_merry_do01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mizutama_kage_22___2
+=====================
+  Textures:
+    - L_pina_merry_do01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 167, 191, 251, 255
+    - 167, 191, 251, 255
+
+
+
+_rasen_22___3
+=============
+  Textures:
+    - L_pina_uzu01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_rasen_kage_22___2
+==================
+  Textures:
+    - L_pina_uzu01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 167, 191, 251, 255
+    - 167, 191, 251, 255
+
+
+
+_shede_11___2
+=============
+  Textures:
+    - L_yossi_shede00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 0, 60, 105, 66
+    - 0, 60, 105, 66
+
+
+
+_tenjo_22___3
+=============
+  Textures:
+    - L_pina_panel_32
+        Scale: 3, 1
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 167, 191, 251, 255
+    - 167, 191, 251, 255
+
+
+
+_teppan_22___3
+==============
+  Textures:
+    - L_pina_teppan_16
+        Scale: 5, 1
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_bar_down_1(2)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_bar_down_1(3)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Y_down_1(2)
+============
+  Textures:
+    - L_pina_merry_YOSIy_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 28, 0, 14, 255
+    - 255, 255, 230, 255
+
+
+
+_bar_down_1(4)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Y_down_1(3)
+============
+  Textures:
+    - L_pina_merry_YOSIy_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 28, 0, 14, 255
+    - 255, 255, 230, 255
+
+
+
+_bar_down_1(5)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_P_down_1(2)
+============
+  Textures:
+    - L_pina_merry_YOSIp_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 26, 0, 18, 255
+    - 255, 220, 255, 255
+
+
+
+_bar_down_1(6)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Y_down_1(4)
+============
+  Textures:
+    - L_pina_merry_YOSIy_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 28, 0, 14, 255
+    - 255, 255, 230, 255
+
+
+
+_bar_down_1(7)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_P_down_1(3)
+============
+  Textures:
+    - L_pina_merry_YOSIp_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 26, 0, 18, 255
+    - 255, 220, 255, 255
+
+
+_bar_down_1(8)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_P_down_1(4)
+============
+  Textures:
+    - L_pina_merry_YOSIp_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 26, 0, 18, 255
+    - 255, 220, 255, 255
+
+
+_bar_down_1(9)
+==============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_Y_down_1(5)
+============
+  Textures:
+    - L_pina_merry_YOSIy_128
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 28, 0, 14, 255
+    - 255, 255, 230, 255
+
+
+_bar_down_1(10)
+===============
+  Textures:
+    - L_pina_sima16x32
+
+  Ambient Colors:
+    - 128, 128, 128, 50

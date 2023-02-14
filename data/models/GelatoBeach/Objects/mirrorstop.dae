@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>J3D Ripoff Exporter</authoring_tool>
+        </contributor>
+        <created>2023-01-11T03:16:08.604Z</created>
+        <modified>2023-01-11T03:16:08.604Z</modified>
+		<unit meter="0.01" name="centimeter" ></unit>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="tex0">
+            <init_from>D_MirrorDamy.png</init_from>
+        </image>
+    </library_images>
+    <library_effects>
+        <effect id="effect0">
+            <profile_COMMON>
+                <newparam sid="surface0">
+                    <surface type="2D">
+                        <init_from>tex0</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="sampler0">
+                    <sampler2D>
+                        <source>surface0</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="sampler0" texcoord="UVSET0"></texture>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="mat0" name="_topS_1">
+            <instance_effect url="#effect0"></instance_effect>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="mesh0">
+            <mesh>
+                <source id="points0">
+                    <float_array id="pointarray0" count="60">-0.00005999999848427251 325.3334045410156 1000.0000610351562 -309.0170593261719 325.3334045410156 951.0565795898438 309.0169677734375 325.3334045410156 951.0565795898438 587.7852172851562 325.3334045410156 809.01708984375 809.0169677734375 325.3334045410156 587.7852783203125 951.0565185546875 325.3334045410156 309.0170593261719 1000 325.3334045410156 0.00004999999873689376 951.0565185546875 325.3334045410156 -309.0169677734375 809.0169677734375 325.3334045410156 -587.7852172851562 587.7852172851562 325.3334045410156 -809.0169677734375 309.0169677734375 325.3334045410156 -951.0565185546875 -0.00005999999848427251 325.3334045410156 -1000 -309.0170593261719 325.3334045410156 -951.0565185546875 -587.7853393554688 325.3334045410156 -809.0169677734375 -809.01708984375 325.3334045410156 -587.7852172851562 -951.0565795898438 325.3334045410156 -309.0169677734375 -1000.0000610351562 325.3334045410156 0.00004999999873689376 -951.0565795898438 325.3334045410156 309.0170593261719 -809.01708984375 325.3334045410156 587.7852783203125 -587.7853393554688 325.3334045410156 809.01708984375</float_array>
+                    <technique_common>
+                        <accessor count="20" source="#pointarray0" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="uvs0">
+                    <float_array id="uvarray0" count="40">0.4433310031890869 0.1649789810180664 0.3429130017757416 0.19761502742767334 0.5489159822463989 0.1649789810180664 0.6493340134620667 0.19761502742767334 0.7347549796104431 0.25969398021698 0.7968170046806335 0.34513700008392334 0.8294439911842346 0.44558197259902954 0.8294439911842346 0.5511960089206696 0.7968170046806335 0.6516410112380981 0.7347549796104431 0.7370840013027191 0.6493340134620667 0.7991629987955093 0.5489159822463989 0.8317990005016327 0.4433310031890869 0.8317990005016327 0.3429130017757416 0.7991629987955093 0.2574920058250427 0.7370840013027191 0.1954299956560135 0.6516410112380981 0.16280199587345123 0.5511960089206696 0.16280199587345123 0.44558197259902954 0.1954299956560135 0.34513700008392334 0.2574920058250427 0.25969398021698</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#uvarray0" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="vertices0">
+                    <input semantic="POSITION" source="#points0"/>
+                </vertices>
+                <polylist count="18" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#vertices0"/>
+                    <input offset="1" semantic="TEXCOORD" source="#uvs0" set="0"/>
+                    <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</vcount>
+                    <p>2 2 1 1 0 0 3 3 1 1 2 2 4 4 1 1 3 3 5 5 1 1 4 4 6 6 1 1 5 5 7 7 1 1 6 6 8 8 1 1 7 7 9 9 1 1 8 8 10 10 1 1 9 9 11 11 1 1 10 10 12 12 1 1 11 11 13 13 1 1 12 12 14 14 1 1 13 13 15 15 1 1 14 14 16 16 1 1 15 15 17 17 1 1 16 16 18 18 1 1 17 17 19 19 1 1 18 18</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_visual_scenes>
+        <visual_scene id="VisualSceneNode">
+            <node id="node0" name="m0" type="NODE">
+                <instance_geometry url="#mesh0">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#mat0">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"></bind_vertex_input>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_geometry>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#VisualSceneNode"></instance_visual_scene>
+    </scene>
+</COLLADA>

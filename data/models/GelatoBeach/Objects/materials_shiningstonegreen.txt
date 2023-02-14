@@ -1,0 +1,9 @@
+_o27_2
+======
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 100, 255, 100, 255
