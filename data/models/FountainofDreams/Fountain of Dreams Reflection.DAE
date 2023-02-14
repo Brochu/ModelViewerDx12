@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>RandomTBush</author>
+      <authoring_tool>OpenCOLLADA for 3ds Max;  Version: 1.3.1;  Revision: 847M;  Platform: x64;  Configuration: Release_Max2010_static</authoring_tool>
+    </contributor>
+    <created>2016-05-24T18:11:32</created>
+    <modified>2016-05-24T18:11:32</modified>
+    <unit name="inch" meter="0.0254"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="_68c8c231_dds">
+      <profile_COMMON>
+        <newparam sid="_8c8c231_png-surface">
+          <surface type="2D">
+            <init_from>_8c8c231_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_8c8c231_png-sampler">
+          <sampler2D>
+            <source>_8c8c231_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_8c8c231_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_8c8c231_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="e5b99a4b_dds">
+      <profile_COMMON>
+        <newparam sid="e5b99a4b_png-surface">
+          <surface type="2D">
+            <init_from>e5b99a4b_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="e5b99a4b_png-sampler">
+          <sampler2D>
+            <source>e5b99a4b_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="e5b99a4b_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="e5b99a4b_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_7b9415d6_dds">
+      <profile_COMMON>
+        <newparam sid="_b9415d6_png-surface">
+          <surface type="2D">
+            <init_from>_b9415d6_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_b9415d6_png-sampler">
+          <sampler2D>
+            <source>_b9415d6_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_b9415d6_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_b9415d6_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="a32f4867_dds">
+      <profile_COMMON>
+        <newparam sid="a32f4867_png-surface">
+          <surface type="2D">
+            <init_from>a32f4867_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="a32f4867_png-sampler">
+          <sampler2D>
+            <source>a32f4867_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="a32f4867_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="a32f4867_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_62642898_dds">
+      <profile_COMMON>
+        <newparam sid="_2642898_png-surface">
+          <surface type="2D">
+            <init_from>_2642898_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_2642898_png-sampler">
+          <sampler2D>
+            <source>_2642898_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_2642898_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_2642898_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_068a431d_dds">
+      <profile_COMMON>
+        <newparam sid="_68a431d_png-surface">
+          <surface type="2D">
+            <init_from>_68a431d_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_68a431d_png-sampler">
+          <sampler2D>
+            <source>_68a431d_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_68a431d_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_68a431d_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_3fcb60a6_dds">
+      <profile_COMMON>
+        <newparam sid="_fcb60a6_png-surface">
+          <surface type="2D">
+            <init_from>_fcb60a6_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_fcb60a6_png-sampler">
+          <sampler2D>
+            <source>_fcb60a6_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_fcb60a6_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_fcb60a6_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="_fcb60a6_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_3e6bb02c_dds">
+      <profile_COMMON>
+        <newparam sid="_e6bb02c_png-surface">
+          <surface type="2D">
+            <init_from>_e6bb02c_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_e6bb02c_png-sampler">
+          <sampler2D>
+            <source>_e6bb02c_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_e6bb02c_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_e6bb02c_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="_e6bb02c_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="fc365f59_dds">
+      <profile_COMMON>
+        <newparam sid="fc365f59_png-surface">
+          <surface type="2D">
+            <init_from>fc365f59_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="fc365f59_png-sampler">
+          <sampler2D>
+            <source>fc365f59_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="fc365f59_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="fc365f59_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="fc365f59_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_706ff9ac_dds">
+      <profile_COMMON>
+        <newparam sid="_06ff9ac_png-surface">
+          <surface type="2D">
+            <init_from>_06ff9ac_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_06ff9ac_png-sampler">
+          <sampler2D>
+            <source>_06ff9ac_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_06ff9ac_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_06ff9ac_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="_06ff9ac_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_5d464492_dds">
+      <profile_COMMON>
+        <newparam sid="_d464492_png-surface">
+          <surface type="2D">
+            <init_from>_d464492_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_d464492_png-sampler">
+          <sampler2D>
+            <source>_d464492_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_d464492_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_d464492_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="_d464492_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="e79d7060_dds">
+      <profile_COMMON>
+        <newparam sid="e79d7060_png-surface">
+          <surface type="2D">
+            <init_from>e79d7060_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="e79d7060_png-sampler">
+          <sampler2D>
+            <source>e79d7060_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="e79d7060_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="e79d7060_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="e79d7060_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="_1a599515_dds">
+      <profile_COMMON>
+        <newparam sid="_a599515_png-surface">
+          <surface type="2D">
+            <init_from>_a599515_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_a599515_png-sampler">
+          <sampler2D>
+            <source>_a599515_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="_a599515_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="_a599515_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="_a599515_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="d7bb67d6_dds">
+      <profile_COMMON>
+        <newparam sid="d7bb67d6_png-surface">
+          <surface type="2D">
+            <init_from>d7bb67d6_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="d7bb67d6_png-sampler">
+          <sampler2D>
+            <source>d7bb67d6_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <texture texture="d7bb67d6_png-sampler" texcoord="CHANNEL1"/>
+            </ambient>
+            <diffuse>
+              <texture texture="d7bb67d6_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.1 0.1 0.1 1</color>
+            </specular>
+            <shininess>
+              <float>9.999999</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <texture texture="d7bb67d6_png-sampler" texcoord="CHANNEL1"/>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Material__303">
+      <profile_COMMON>
+        <newparam sid="FountainGold_png-surface">
+          <surface type="2D">
+            <init_from>FountainGold_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="FountainGold_png-sampler">
+          <sampler2D>
+            <source>FountainGold_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0.588 0.588 0.588 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="FountainGold_png-sampler" texcoord="CHANNEL1"/>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>10</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="OpenCOLLADA3dsMax">
+          <extended_shader>
+            <apply_reflection_dimming>0</apply_reflection_dimming>
+            <dim_level>0</dim_level>
+            <falloff_type>0</falloff_type>
+            <index_of_refraction>1.5</index_of_refraction>
+            <opacity_type>0</opacity_type>
+            <reflection_level>3</reflection_level>
+            <wire_size>1</wire_size>
+            <wire_units>0</wire_units>
+          </extended_shader>
+          <shader>
+            <ambient_diffuse_lock>1</ambient_diffuse_lock>
+            <ambient_diffuse_texture_lock>1</ambient_diffuse_texture_lock>
+            <diffuse_specular_lock>0</diffuse_specular_lock>
+            <soften>0.1</soften>
+            <use_self_illum_color>0</use_self_illum_color>
+          </shader>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="_68c8c231_dds-material" name="_68c8c231_dds">
+      <instance_effect url="#_68c8c231_dds"/>
+    </material>
+    <material id="e5b99a4b_dds-material" name="e5b99a4b_dds">
+      <instance_effect url="#e5b99a4b_dds"/>
+    </material>
+    <material id="_7b9415d6_dds-material" name="_7b9415d6_dds">
+      <instance_effect url="#_7b9415d6_dds"/>
+    </material>
+    <material id="a32f4867_dds-material" name="a32f4867_dds">
+      <instance_effect url="#a32f4867_dds"/>
+    </material>
+    <material id="_62642898_dds-material" name="_62642898_dds">
+      <instance_effect url="#_62642898_dds"/>
+    </material>
+    <material id="_068a431d_dds-material" name="_068a431d_dds">
+      <instance_effect url="#_068a431d_dds"/>
+    </material>
+    <material id="_3fcb60a6_dds-material" name="_3fcb60a6_dds">
+      <instance_effect url="#_3fcb60a6_dds"/>
+    </material>
+    <material id="_3e6bb02c_dds-material" name="_3e6bb02c_dds">
+      <instance_effect url="#_3e6bb02c_dds"/>
+    </material>
+    <material id="fc365f59_dds-material" name="fc365f59_dds">
+      <instance_effect url="#fc365f59_dds"/>
+    </material>
+    <material id="_706ff9ac_dds-material" name="_706ff9ac_dds">
+      <instance_effect url="#_706ff9ac_dds"/>
+    </material>
+    <material id="_5d464492_dds-material" name="_5d464492_dds">
+      <instance_effect url="#_5d464492_dds"/>
+    </material>
+    <material id="e79d7060_dds-material" name="e79d7060_dds">
+      <instance_effect url="#e79d7060_dds"/>
+    </material>
+    <material id="_1a599515_dds-material" name="_1a599515_dds">
+      <instance_effect url="#_1a599515_dds"/>
+    </material>
+    <material id="d7bb67d6_dds-material" name="d7bb67d6_dds">
+      <instance_effect url="#d7bb67d6_dds"/>
+    </material>
+    <material id="Material__303-material" name="Material__303">
+      <instance_effect url="#Material__303"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="geom-Fountain_of_Dreams_Reflection" name="Fountain_of_Dreams_Reflection">
+      <mesh>
+        <source id="geom-Fountain_of_Dreams_Reflection-positions">
+          <float_array id="geom-Fountain_of_Dreams_Reflection-positions-array" count="1314">-13.15244 -8.469682 42.58283 -13.86884 -7.318981 44.66853 -14.29584 -16.91989 46.31263 -13.51374 -16.59349 43.97402 14.17556 -18.14998 46.52332 13.45916 -17.75888 44.17362 14.60256 -8.549082 44.87913 13.82046 -9.634981 42.78233 -20.61214 -11.52188 18.37563 -48.36714 -11.44238 16.07933 -49.08354 -10.29178 18.16503 -49.51043 -19.89257 19.80923 -48.72834 -19.56628 17.47053 -21.03904 -21.12268 20.01982 -21.75544 -20.73159 17.67013 -21.39424 -12.60778 16.27893 49.81716 -13.55188 24.81063 22.06216 -13.47248 22.51433 21.34576 -12.32178 24.60003 20.91886 -21.92269 26.24423 21.70086 -21.59639 23.90553 49.39026 -23.15278 26.45483 48.67386 -22.76168 24.10513 49.03506 -14.63788 22.71393 15.16736 8.557812 19.27653 15.17806 8.287014 17.83673 17.05526 2.741719 20.27263 17.06696 2.493917 18.82883 14.65836 -2.889285 21.23693 14.67106 -3.113986 19.78923 8.606861 -6.824786 21.91093 8.620663 -7.026385 20.45923 0.5310626 -8.013582 22.11443 0.5335612 -8.20318 20.66073 -7.408341 -6.132884 21.79243 -7.417939 -6.333483 20.34053 -13.08724 -1.690586 21.03163 -13.09794 -1.914288 19.58373 -14.97514 4.125514 20.03563 -14.98684 3.878819 18.59173 -12.57824 9.75662 19.07123 -12.59094 9.486814 17.63133 -6.526741 13.69201 18.39733 -6.540539 13.39911 16.96132 1.549062 14.88082 18.19372 1.546564 14.57592 16.75982 9.488461 13.00012 18.51583 9.498063 12.70622 17.07992 4.13586 2.168812 3.357023 4.528763 0.4523125 3.651026 3.020462 2.492113 8.568627 3.276062 1.382716 8.758626 3.985061 -1.223782 3.938025 2.922962 0.2996168 8.94413 2.65356 -2.414981 4.142025 2.068061 -0.4612856 9.074432 2.236362 3.323718 8.426225 2.915264 3.470219 3.134122 1.137561 3.671817 8.366624 1.190963 3.995617 3.044225 0.01205971 3.419818 8.409827 -0.573441 3.620914 3.108331 -0.8428407 2.659015 8.540128 -1.904938 2.429813 3.312323 -1.195938 1.575915 8.725526 -2.448639 0.7537117 3.599424 -0.9403405 0.4665174 8.915531 -2.055741 -0.9627876 3.893322 -0.1562409 -0.3651857 9.05793 -0.8351407 -2.264187 4.116224 0.9425597 -0.7131853 9.11763 0.8891615 -2.789584 4.206228 7.455463 -0.2873878 0.09192562 6.740963 2.899815 -0.4538765 4.490463 5.309414 -0.8664703 1.320262 6.290318 -1.03447 -1.924942 5.586613 -0.9139709 -4.380639 3.380315 -0.536171 -5.37534 0.2669191 -0.002978325 -4.660836 -2.920283 0.5428305 -2.41034 -5.329783 0.9555254 0.7598624 -6.310786 1.12353 4.005062 -5.606982 1.003026 6.460762 -3.400783 0.6251287 4.030262 5.507915 10.18033 6.019363 3.814915 10.47033 6.671162 1.590115 10.85133 5.824364 -0.5700855 11.22123 3.692661 -2.085086 11.48073 0.8450618 -2.551684 11.56063 -1.950142 -1.84128 11.43893 -3.93924 -0.14818 11.14903 -4.591042 2.076619 10.76803 -3.74424 4.236813 10.39803 1.235061 6.218418 10.05873 -1.612542 5.751713 10.13863 13.20366 1.873617 14.20313 11.78266 6.582813 13.39663 7.484863 10.16761 12.78273 1.452665 11.67692 12.52433 -4.690437 10.69362 12.69263 -9.289941 7.493215 13.24073 -11.12354 2.924619 14.02313 -9.702538 -1.784586 14.82963 -5.404739 -5.36938 15.44353 0.6274619 -6.878679 15.70203 6.770561 -5.89538 15.53363 11.37006 -2.694987 14.98553 62.05496 1.793324 -0.2643776 54.26447 4.384517 -0.7080688 62.05496 10.26352 49.19532 54.26447 12.85462 48.75153 43.77676 14.11001 -2.373676 43.77676 22.58023 47.08602 33.17706 17.88622 -3.020273 33.17706 26.35642 46.43932 19.87675 20.80782 -3.520678 19.87676 29.27802 45.93894 2.09506 23.71502 -4.018576 2.09506 32.18522 45.44114 -15.97494 20.13701 -3.405777 -15.97494 28.60713 46.05384 -30.65984 8.80512 -1.465172 -30.65984 17.27521 47.99453 -42.56604 0.08171463 0.02872181 -42.56604 8.551816 49.48843 -59.01513 -5.554973 0.994029 -59.01513 2.915216 50.45373 -70.15055 -13.56017 2.365026 -70.15055 -5.089983 51.82462 14.50796 -4.85818 1.09093 14.50796 -4.85818 2.457326 15.87426 -4.85818 2.457326 15.87426 -4.85818 1.09093 -38.71493 -18.67798 -2.09967 -38.71493 -18.67798 4.900329 -31.71524 -18.67798 4.900329 -31.71524 -18.67797 -2.09967 -38.81553 -17.67598 12.36813 -38.81553 -17.67598 17.53343 -33.65043 -17.67598 17.53343 -33.65043 -17.67598 12.36813 32.24337 -21.89158 -1.58447 32.24337 -21.89149 5.415528 39.24306 -21.89158 5.415528 39.24306 -21.89149 -1.58447 31.14646 -18.98979 18.02453 31.14646 -18.98979 23.14893 36.27076 -18.98979 23.14893 36.27076 -18.98979 18.02453 -2.584137 14.79692 -2.320377 -2.584137 14.79692 -0.7387705 -1.002541 14.79692 -0.7387705 -1.002541 14.79692 -2.320377 -40.69014 -15.76088 11.88523 -40.69014 -15.76088 18.47053 -34.10514 -15.76088 18.47053 -34.10514 -15.76088 11.88523 30.70826 -20.04519 18.50083 30.70826 -20.04519 24.14423 36.35136 -20.04519 24.14423 36.35136 -20.04518 18.50083 4.531965 14.30242 -2.828676 4.531965 14.30242 -0.0887785 7.271764 14.30242 -0.0887785 7.271764 14.30242 -2.828676 -39.90184 -17.29378 14.01683 -39.90184 -17.29378 18.01683 -35.90203 -17.29389 18.01683 -35.90203 -17.29378 14.01683 30.95946 -20.27629 19.89573 30.95946 -20.27629 23.89573 34.95926 -20.27629 23.89573 34.95926 -20.27629 19.89573 -8.255739 -12.17588 1.603029 -8.255739 -12.17588 4.368929 -5.489937 -12.17588 4.368929 -5.489937 -12.17588 1.603029 -14.23804 4.774318 -1.261971 -14.23804 4.774318 1.428329 -11.54784 4.774318 1.428329 -11.54784 4.774318 -1.261971 -40.78363 -15.34918 13.98823 -40.78363 -15.34918 18.26093 -36.51104 -15.34918 18.26093 -36.51104 -15.34918 13.98823 31.10186 -21.64078 20.15903 31.10186 -21.64078 24.43183 35.37436 -21.64078 24.43183 35.37436 -21.64078 20.15903 -38.64853 -18.36949 -1.085772 -38.64853 -18.36949 5.914229 -31.64884 -18.36949 5.914229 -31.64884 -18.36949 -1.085772 -34.32033 -13.98329 13.80853 -34.32033 -13.98328 18.08133 -30.04784 -13.98329 18.08133 -30.04784 -13.98329 13.80853 32.03997 -21.33388 -0.575675 32.03997 -21.33388 6.424325 39.03957 -21.33388 6.424325 39.03957 -21.33388 -0.575675 29.97676 -20.31598 20.09163 29.97676 -20.31598 24.36433 34.24926 -20.31598 24.36433 34.24926 -20.31598 20.09163 -37.26094 -18.66238 -1.000971 -37.26084 -18.66239 5.99903 -30.26124 -18.66239 5.99903 -30.26124 -18.66238 -1.000971 -34.85994 -19.69058 14.92513 -34.85994 -19.69059 19.47053 -30.31474 -19.69058 19.47053 -30.31474 -19.69058 14.92513 30.18906 -22.55488 -0.6384706 30.18906 -22.55488 6.361528 37.18876 -22.55488 6.361528 37.18876 -22.55488 -0.6384706 31.45866 -22.60079 20.50313 31.45866 -22.60079 25.04863 36.00396 -22.60079 25.04863 36.00396 -22.60079 20.50313 9.102861 -10.95398 0.04012871 9.102861 -10.95398 4.697329 13.75986 -10.95398 4.697329 13.75986 -10.95398 0.04012871 -36.89663 -10.93648 13.20413 -36.89663 -10.93648 18.02233 -32.07864 -10.93648 18.02233 -32.07864 -10.93648 13.20413 31.73016 -23.25489 20.87673 31.73016 -23.25489 25.69493 36.54816 -23.25489 25.69493 36.54816 -23.25489 20.87673 -11.90984 -10.34768 -0.2890711 -11.90984 -10.34768 4.182628 -7.438339 -10.34768 4.182628 -7.438339 -10.34768 -0.2890711 -10.27944 11.63742 -3.789177 -10.27944 11.63742 0.1526232 -6.337738 11.63742 0.1526232 -6.337738 11.63742 -3.789177 -41.98094 -20.49729 14.60403 -41.98094 -20.49739 19.69493 -36.89023 -20.49739 19.69493 -36.89023 -20.49739 14.60403 38.00556 -15.04458 19.16373 38.00556 -15.04458 24.25463 43.09626 -15.04458 24.25463 43.09626 -15.04458 19.16373 -1.331738 -14.28988 -0.4874706 -1.331738 -14.28988 4.942728 4.098262 -14.28988 4.942728 4.098262 -14.28988 -0.4874706 -30.63994 -17.06598 13.55983 -30.63994 -17.06598 18.92343 -25.27654 -17.06598 18.92343 -25.27654 -17.06598 13.55983 35.75157 -24.39138 20.62113 35.75157 -24.39138 25.98473 41.11497 -24.39138 25.98473 41.11497 -24.39138 20.62113 -36.78413 -19.51208 -0.5361729 -36.78413 -19.51208 6.463828 -29.78444 -19.51208 6.463828 -29.78444 -19.51208 -0.5361729 -34.45584 -9.95048 12.32963 -34.45584 -9.95048 17.69323 -29.09244 -9.95048 17.69323 -29.09244 -9.95048 12.32963 34.30717 -24.44419 -0.9270716 34.30717 -24.44419 6.072927 41.30687 -24.44419 6.072927 41.30687 -24.44419 -0.9270716 38.75296 -14.65098 18.58493 38.75296 -14.65098 23.94853 44.11636 -14.65098 23.94853 44.11636 -14.65098 18.58493 -38.83673 -22.71839 15.70043 -38.83673 -22.71839 21.33683 -33.20063 -22.71839 21.33683 -33.20063 -22.71839 15.70043 32.13387 -10.92848 18.38463 32.13387 -10.92848 24.02103 37.76996 -10.92848 24.02103 37.76996 -10.92848 18.38463 -45.72184 -20.35708 13.46623 -45.72184 -20.35708 19.37533 -39.81303 -20.35708 19.37533 -39.81303 -20.35708 13.46623 40.82666 -16.95918 18.63863 40.82666 -16.95919 24.54763 46.73547 -16.95919 24.54763 46.73547 -16.95918 18.63863 -44.59703 -23.14818 13.61903 -44.59703 -23.14818 19.80083 -38.41553 -23.14818 19.80083 -38.41553 -23.14818 13.61903 24.63166 -16.40419 19.98413 24.63166 -16.40419 26.16593 30.81326 -16.40418 26.16593 30.81326 -16.40418 19.98413 -33.57924 -23.07099 15.30213 -33.57924 -23.07099 21.75673 -27.12494 -23.07099 21.75673 -27.12494 -23.07099 15.30213 22.14976 -19.03638 18.20263 22.14976 -19.03638 24.65723 28.60406 -19.03638 24.65723 28.60406 -19.03638 18.20263 -31.95044 -9.103587 11.68023 -31.95044 -9.103586 18.13473 -25.49614 -9.103586 18.13473 -25.49614 -9.103586 11.68023 35.05967 -26.50178 20.94303 35.05967 -26.50178 27.39753 41.51387 -26.50178 27.39753 41.51387 -26.50178 20.94303 -32.89494 -7.979983 11.40433 -32.89494 -7.979983 18.13153 -26.16794 -7.979983 18.13153 -26.16794 -7.979983 11.40433 23.07886 -13.85018 17.80203 23.07886 -13.85018 24.52933 29.80586 -13.85018 24.52933 29.80586 -13.85018 17.80203 -46.96273 -8.280086 9.179129 -46.96273 -8.280086 16.17913 -39.96303 -8.280085 16.17913 -39.96303 -8.280085 9.179129 36.08957 -29.32949 18.60243 36.08957 -29.32948 25.60243 43.08927 -29.32948 25.60243 43.08927 -29.32949 18.60243 -28.67464 -23.85998 11.47853 -28.67464 -23.85998 18.75123 -21.40224 -23.85998 18.75123 -21.40224 -23.85998 11.47853 26.30446 -9.716486 17.24323 26.30446 -9.716486 24.51593 33.57686 -9.716486 24.51593 33.57686 -9.716487 17.24323 -25.63344 -19.02539 9.517529 -25.63344 -19.02538 17.06303 -18.08834 -19.02539 17.06303 -18.08834 -19.02539 9.517529 18.72036 -21.32268 15.78343 18.72036 -21.32268 23.32883 26.26556 -21.32268 23.32883 26.26556 -21.32268 15.78343 -48.38684 -8.768382 9.325529 -48.38684 -8.768381 16.87093 -40.84173 -8.768381 16.87093 -40.84173 -8.768381 9.325529 18.42516 -16.55828 14.53003 18.42516 -16.55828 22.07553 25.97026 -16.55828 22.07553 25.97026 -16.55829 14.53003 -26.78104 -9.629886 6.858426 -26.78104 -9.629885 14.67653 -18.96324 -9.629885 14.67653 -18.96324 -9.629886 6.858426 18.74666 -12.82009 12.92663 18.74666 -12.82009 20.74483 26.56456 -12.82009 20.74483 26.56456 -12.82009 12.92663 -34.75863 -30.43678 10.45303 -34.75863 -30.43678 18.54392 -26.66804 -30.43679 18.54392 -26.66804 -30.43679 10.45303 39.13177 -31.89569 15.05913 39.13177 -31.89568 23.15003 47.22227 -31.89568 23.15003 47.22227 -31.89569 15.05913 -23.54854 -18.30768 6.422328 -23.54854 -18.30768 14.78603 -15.18524 -18.30768 14.78603 -15.18524 -18.30768 6.422328 18.74256 -21.62319 16.24863 18.74256 -21.62319 24.61223 27.10586 -21.62319 24.61223 27.10586 -21.62319 16.24863 -39.38933 -29.86657 11.34203 -39.38933 -29.86657 19.97832 -30.75334 -29.86658 19.97832 -30.75334 -29.86658 11.34203 23.13986 -5.108385 8.188725 23.13986 -5.108385 16.82503 31.77586 -5.108385 16.82503 31.77586 -5.108385 8.188725 -32.65334 -3.538882 4.65103 -32.65334 -3.538882 13.28743 -24.01734 -3.538882 13.28743 -24.01734 -3.538882 4.65103 19.40606 -12.07608 13.56183 19.40606 -12.07608 22.19823 28.04196 -12.07608 22.19823 28.04196 -12.07608 13.56183 -25.54784 -8.664683 3.647929 -25.54784 -8.664682 12.55703 -16.63914 -8.664682 12.55703 -16.63914 -8.664682 3.647929 43.33717 -25.68308 14.85263 43.33717 -25.68309 23.76173 52.24587 -25.68309 23.76173 52.24587 -25.68308 14.85263 -52.60733 -6.57838 2.361325 -52.60733 -6.578387 11.54313 -43.42594 -6.578387 11.54313 -43.42594 -6.57838 2.361325 25.99286 -4.520281 9.02663 25.99286 -4.52028 18.20843 35.17426 -4.52028 18.20843 35.17426 -4.520281 9.02663 -23.07284 -10.77288 1.168429 -23.07284 -10.77288 10.62293 -13.61874 -10.77288 10.62293 -13.61874 -10.77288 1.168429 39.69106 -6.710384 8.960928 39.69106 -6.710383 18.41553 49.14516 -6.710383 18.41553 49.14516 -6.710383 8.960928 -46.03293 -0.09127426 -2.592579 -46.03293 -0.09127522 7.134726 -36.30613 -0.09128284 7.134726 -36.30613 -0.09127426 -2.592579 16.78266 -32.34118 9.370428 16.78266 -32.34118 19.09773 26.50956 -32.34118 19.09773 26.50956 -32.34118 9.370428 -48.05033 -3.154475 1.336026 -48.05033 -3.154482 11.06323 -38.32354 -3.154483 11.06323 -38.32354 -3.154483 1.336026 25.85456 -1.383785 2.024725 25.85456 -1.383783 11.75203 35.58136 -1.383783 11.75203 35.58136 -1.383784 2.024725</float_array>
+          <technique_common>
+            <accessor source="#geom-Fountain_of_Dreams_Reflection-positions-array" count="438" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Fountain_of_Dreams_Reflection-normals">
+          <float_array id="geom-Fountain_of_Dreams_Reflection-normals-array" count="1422">-0.947777 -0.01242161 -0.3186917 -0.9477769 -0.01242197 -0.3186924 -0.9477756 -0.01242367 -0.3186959 -0.9477752 -0.0124242 -0.318697 -0.04154385 -0.9875491 -0.1517262 -0.04154393 -0.9875493 -0.1517253 -0.04154564 -0.9875519 -0.1517084 -0.04154577 -0.987552 -0.151707 0.9477763 -0.09432786 -0.3046679 0.9477763 -0.09432787 -0.3046677 0.9477764 -0.09432794 -0.3046671 0.9477765 -0.09432796 -0.3046669 0.04154383 0.8808062 -0.4716509 0.04154371 0.8808056 -0.4716519 0.0415413 0.8807943 -0.4716733 0.04154111 0.8807935 -0.4716749 4.95056e-9 -0.1688001 -0.9856504 5.35724e-7 -0.1688021 -0.9856499 -1.74487e-6 -0.1687934 -0.9856514 -2.27565e-6 -0.1687913 -0.9856518 -0.9477791 -0.01243437 -0.3186852 -0.947779 -0.01243446 -0.3186854 -0.9477787 -0.01243491 -0.3186864 -0.9477786 -0.01243505 -0.3186867 -0.04154558 -0.9875565 -0.1516776 -0.04154544 -0.9875563 -0.151679 -0.0415427 -0.9875523 -0.1517062 -0.04154249 -0.9875519 -0.1517083 0.9477773 -0.09431966 -0.3046674 0.9477764 -0.09431938 -0.3046698 0.9477727 -0.09431801 -0.3046817 0.9477716 -0.09431759 -0.3046854 0.04154354 0.8807965 -0.4716689 0.04154368 0.8807972 -0.4716676 0.0415465 0.8808105 -0.4716425 0.04154671 0.8808116 -0.4716406 1.4154e-6 -0.1687925 -0.9856516 1.50604e-6 -0.1687929 -0.9856516 1.1166e-6 -0.1687913 -0.9856517 1.02596e-6 -0.168791 -0.9856519 -0.9477794 -0.01243304 -0.3186843 -0.947781 -0.01243073 -0.3186795 -0.9477888 -0.01241966 -0.3186568 -0.9477912 -0.01241623 -0.3186498 -0.0415451 -0.9875565 -0.1516779 -0.04154495 -0.9875563 -0.1516793 -0.04154219 -0.9875522 -0.151707 -0.04154197 -0.9875519 -0.1517091 0.9477775 -0.0943184 -0.3046668 0.9477769 -0.09431819 -0.3046686 0.9477742 -0.09431717 -0.3046774 0.9477733 -0.09431686 -0.3046801 0.04154306 0.880779 -0.4717017 0.04154321 0.8807797 -0.4717004 0.04154598 0.8807927 -0.4716758 0.04154618 0.8807938 -0.4716738 1.48554e-6 -0.168792 -0.9856517 1.58578e-6 -0.1687924 -0.9856516 1.15509e-6 -0.1687908 -0.9856519 1.05486e-6 -0.1687904 -0.985652 0.7961469 0.4741783 -0.3759055 0.8200939 0.5632932 -0.1007311 0.9990368 -0.04132776 0.01474772 0.9490585 -0.09488468 -0.3004745 0.7672762 -0.6326042 0.1053526 0.7450311 -0.6392345 -0.1905461 0.3539131 -0.9258049 0.1327814 0.359136 -0.9280842 -0.09839264 -0.04448713 -0.99056 0.1296609 -0.04133195 -0.9972142 -0.06209274 -0.4346883 -0.8917882 0.1255383 -0.4351873 -0.8950345 -0.09759849 -0.8200917 -0.5647179 0.09242979 -0.7961454 -0.5722375 -0.1967153 -0.9990373 0.04387048 1.58361e-4 -0.9490599 -0.01050558 -0.3149204 -0.7672738 0.6316152 -0.111145 -0.7450302 0.5394081 -0.3923888 -0.3539093 0.9172358 -0.1828298 -0.3591335 0.8424652 -0.4015914 0.04448787 0.9772595 -0.2073278 0.04133213 0.9197321 -0.3903646 0.4346884 0.8827485 -0.1783289 0.4351873 0.8115639 -0.3898411 0.8883027 0.0393729 0.4575676 0.7874708 0.484601 0.3808567 0.8031987 0.3673734 -0.4689442 0.907958 -0.1138541 -0.4032986 0.7480077 -0.396564 0.5321856 0.7623482 -0.5768451 -0.2933854 0.4068395 -0.7021256 0.5843811 0.415307 -0.889689 -0.1896676 0.4841361 0.7312496 -0.4805063 0.4748775 0.8186254 0.3230229 0.03376569 0.8796238 -0.4744702 0.03907568 0.9533646 0.2992806 -0.4153188 0.7758746 -0.474899 -0.4068361 0.8565711 0.3174434 -0.7623177 0.4463773 -0.4686353 -0.7479981 0.5510637 0.3699023 -0.9079628 -0.02682323 -0.4181914 -0.8883033 0.1151258 0.4445935 -0.8032144 -0.5024445 -0.3199939 -0.7874721 -0.3302494 0.5204067 -0.484113 -0.8494841 -0.2097888 -0.4748784 -0.6644954 0.5770065 -0.03379568 -0.9873732 -0.154764 -0.0390997 -0.7994487 0.5994606 0.7773803 0.07278273 0.624806 0.6889115 0.460694 0.5596088 0.4157055 0.7528076 0.5103623 0.03433524 0.8708045 0.490429 -0.357097 0.7864176 0.5040129 -0.6551192 0.5190504 0.5490041 -0.7773802 0.1392671 0.6134207 -0.6889083 -0.2482397 0.6810157 -0.4157093 -0.5400876 0.7317727 -0.03434638 -0.6579876 0.7522451 0.3571064 -0.573893 0.736968 0.6551151 -0.306789 0.690438 0.2713315 0.3761533 -0.885939 0.4376899 0.1355442 -0.8888506 0.4860894 -0.1699023 -0.8572341 0.4079132 -0.4599967 -0.788676 0.224143 -0.6663347 -0.7111666 -0.02482046 -0.7392726 -0.6729487 -0.2713285 -0.649517 -0.7102877 -0.4376942 -0.4235807 -0.7930972 -0.4860898 -0.1250264 -0.8649191 -0.4079085 0.1713503 -0.8967997 0.02481078 0.4732237 -0.8805929 -0.2241369 0.3917212 -0.8923661 0.566071 0.2600877 -0.7822519 0.6514315 -0.1593753 -0.7417792 0.3302981 0.5492207 -0.7676326 0.03125334 0.656325 -0.7538307 -0.2734405 0.5781687 -0.7687335 -0.5315099 0.3143897 -0.7865471 -0.6514341 -0.09653725 -0.7525385 -0.5660712 -0.5055603 -0.6511314 -0.3303007 -0.7733496 -0.5411392 -0.03125274 -0.8697582 -0.4924876 0.2734427 -0.801015 -0.532545 0.5315083 -0.5581977 -0.637114 -0.5142938 -0.8453081 0.1447622 -0.3197364 -0.9339106 0.1599365 -0.3197287 -0.9339134 0.1599356 -0.5142918 -0.8453093 0.1447623 -0.5234329 -0.8398405 0.1438262 -0.5234343 -0.8398395 0.1438267 -0.2792903 -0.9464284 0.1620806 -0.2792906 -0.9464284 0.1620806 -0.1906541 -0.9675713 0.1657014 -0.1906538 -0.9675713 0.1657013 0.01693654 -0.9855093 0.1687732 0.01693852 -0.9855094 0.1687725 0.4179983 -0.8954125 0.1533428 0.4180003 -0.8954116 0.1533418 0.6065614 -0.7836288 0.1341986 0.6065617 -0.7836286 0.1341984 0.4678968 -0.8711018 0.1491784 0.4678949 -0.8711026 0.1491792 0.4638852 -0.8731836 0.1495358 0.4638833 -0.8731844 0.1495368 0.5892752 -0.7963392 0.1363766 0.5892744 -0.7963398 0.136377 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 -1.08991e-6 1.36249e-7 -1 -1.22616e-6 1.36241e-7 -1 -1.22615e-6 2.7249e-7 -1 -1.36239e-6 0 -1 3.69262e-7 1.84643e-7 -1 1.84626e-7 1.84634e-7 -1 1.84636e-7 3.69276e-7 -1 0 -1.41695e-5 -1 1.41689e-5 3.85616e-10 -1 -3.86195e-10 -3.85616e-10 -1 3.86195e-10 1.41695e-5 -1 -1.41689e-5 3.72216e-7 -1 -3.72209e-7 3.72216e-7 -1 -3.72209e-7 3.72216e-7 -1 -3.72209e-7 3.72216e-7 -1 -3.72209e-7 0 -1 1.20596e-6 0 -1 1.20596e-6 0 -1 1.20596e-6 0 -1 1.20596e-6 0 -1 1.44819e-7 7.24147e-8 -1 7.24072e-8 7.24105e-8 -1 7.24114e-8 1.44825e-7 -1 0 3.37996e-7 -1 -3.37979e-7 3.37996e-7 -1 -3.37979e-7 3.37996e-7 -1 -3.37979e-7 3.37996e-7 -1 -3.37979e-7 0 -1 6.96139e-7 0 -1 6.96139e-7 0 -1 6.96139e-7 0 -1 6.96139e-7 -2.67042e-5 -1 4.76837e-7 -1.33517e-5 -1 -1.2875e-5 -1.33525e-5 -1 -1.28742e-5 0 -1 -2.62261e-5 4.76861e-7 -1 0 4.76861e-7 -1 0 4.76861e-7 -1 0 4.76861e-7 -1 0 0 -1 -3.44797e-7 0 -1 -3.44797e-7 0 -1 -3.44797e-7 0 -1 -3.44797e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 4.46425e-7 -1 0 4.46425e-7 -1 0 4.46425e-7 -1 0 4.46425e-7 -1 0 0 -1 2.72478e-7 1.36249e-7 -1 1.36235e-7 1.36241e-7 -1 1.36243e-7 2.7249e-7 -1 0 -2.23212e-7 -1 2.23197e-7 -2.23212e-7 -1 2.23197e-7 -2.23212e-7 -1 2.23197e-7 -2.23212e-7 -1 2.23197e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 4.46424e-7 -1 0 4.46424e-7 -1 0 4.46424e-7 -1 0 4.46424e-7 -1 0 0 -1 -1.08991e-6 1.3625e-7 -1 -1.22616e-6 1.36241e-7 -1 -1.22615e-6 2.7249e-7 -1 -1.36239e-6 4.19641e-7 -1 -4.19622e-7 2.09814e-7 -1 -2.09805e-7 2.09826e-7 -1 -2.09817e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 4.19631e-7 -1 0 4.19631e-7 -1 0 4.19631e-7 -1 0 4.19631e-7 -1 0 -2.04783e-7 -1 0 -1.02389e-7 -1 -1.0239e-7 -1.02394e-7 -1 -1.02384e-7 0 -1 -2.04774e-7 -1.9794e-7 -1 0 -1.9794e-7 -1 0 -1.9794e-7 -1 0 -1.9794e-7 -1 0 3.95879e-7 -1 0 3.95879e-7 -1 0 3.95879e-7 -1 0 3.95879e-7 -1 0 -2.13279e-7 -1 -2.13269e-7 -2.13279e-7 -1 -2.13269e-7 -2.13279e-7 -1 -2.13269e-7 -2.13279e-7 -1 -2.13269e-7 0 -1 4.83878e-7 0 -1 4.83878e-7 0 -1 4.83878e-7 0 -1 4.83878e-7 0 -1 -1.98569e-5 -9.74173e-6 -1 -1.01155e-5 -9.74126e-6 -1 -1.0116e-5 -1.9483e-5 -1 -3.74658e-7 1.87337e-7 -1 -1.87329e-7 9.3666e-8 -1 -9.36622e-8 9.36707e-8 -1 -9.3667e-8 0 -1 0 0 -1 -1.75624e-7 0 -1 -1.75624e-7 0 -1 -1.75624e-7 0 -1 -1.75624e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1.36249e-7 -1 -1.36243e-7 1.36241e-7 -1 -1.36235e-7 2.7249e-7 -1 -2.72478e-7 0 -1 0 -8.89079e-8 -1 8.89046e-8 -8.89037e-8 -1 8.89004e-8 -1.77812e-7 -1 1.77805e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 -3.38398e-7 0 -1 -3.38398e-7 0 -1 -3.38398e-7 0 -1 -3.38398e-7 -1.69208e-7 -1 1.69199e-7 -8.46013e-8 -1 8.45967e-8 -8.46071e-8 -1 8.46025e-8 0 -1 0 0 -1 -3.22782e-7 0 -1 -3.22782e-7 0 -1 -3.22782e-7 0 -1 -3.22782e-7 0 -1 -3.22787e-7 0 -1 -3.22787e-7 0 -1 -3.22787e-7 0 -1 -3.22787e-7 0 -1 -3.08543e-7 0 -1 -3.08543e-7 0 -1 -3.08543e-7 0 -1 -3.08543e-7 3.08552e-7 -1 0 3.08552e-7 -1 0 3.08552e-7 -1 0 3.08552e-7 -1 0 2.95516e-7 -1 -2.95502e-7 1.47754e-7 -1 -1.47747e-7 1.47763e-7 -1 -1.47756e-7 0 -1 0 0 -1 -2.95502e-7 0 -1 -2.95502e-7 0 -1 -2.95502e-7 0 -1 -2.95502e-7 0 -1 1.47753e-7 7.38805e-8 -1 7.38752e-8 7.38775e-8 -1 7.38782e-8 1.47758e-7 -1 0 0 -1 2.95507e-7 0 -1 2.95507e-7 0 -1 2.95507e-7 0 -1 2.95507e-7 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1.36245e-7 -1 0 1.36245e-7 -1 0 1.36245e-7 -1 0 1.36245e-7 -1 0 0 -1 5.44957e-7 0 -1 5.44957e-7 0 -1 5.44957e-7 0 -1 5.44957e-7 -2.62272e-7 -1 0 -2.62272e-7 -1 0 -2.62272e-7 -1 0 -2.62272e-7 -1 0 0 -1 0 -6.55698e-8 -1 6.55671e-8 -6.55663e-8 -1 6.55636e-8 -1.31136e-7 -1 1.31131e-7 -2.52793e-7 -1 2.5278e-7 -2.52793e-7 -1 2.5278e-7 -2.52793e-7 -1 2.5278e-7 -2.52793e-7 -1 2.5278e-7 -2.5279e-7 -1 -2.52783e-7 -2.5279e-7 -1 -2.52783e-7 -2.5279e-7 -1 -2.52783e-7 -2.5279e-7 -1 -2.52783e-7 0 -1 1.26392e-7 6.31998e-8 -1 6.31942e-8 6.31966e-8 -1 6.31973e-8 1.26396e-7 -1 0 -2.52793e-7 -1 2.5278e-7 -2.52793e-7 -1 2.5278e-7 -2.52793e-7 -1 2.5278e-7 -2.52793e-7 -1 2.5278e-7 0 -1 1.21983e-7 0 -1 1.21983e-7 0 -1 1.21983e-7 0 -1 1.21983e-7 0 -1 1.21981e-7 6.09945e-8 -1 6.09892e-8 6.09915e-8 -1 6.09921e-8 1.21986e-7 -1 0 -9.42996e-7 -1 0 -9.42996e-7 -1 0 -9.42996e-7 -1 0 -9.42996e-7 -1 0 0 -1 4.7148e-7 0 -1 4.7148e-7 0 -1 4.7148e-7 0 -1 4.7148e-7 -2.28062e-7 -1 0 -2.28062e-7 -1 0 -2.28062e-7 -1 0 -2.28062e-7 -1 0 -2.28062e-7 -1 -2.28054e-7 -2.28062e-7 -1 -2.28054e-7 -2.28062e-7 -1 -2.28054e-7 -2.28062e-7 -1 -2.28054e-7 -8.83442e-7 -1 0 -8.83442e-7 -1 0 -8.83442e-7 -1 0 -8.83442e-7 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 -5.52125e-8 0 -1 -5.52125e-8 0 -1 -5.52125e-8 0 -1 -5.52125e-8 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 1.07045e-7 5.35264e-8 -1 5.3521e-8 5.35234e-8 -1 5.3524e-8 1.0705e-7 -1 0 0 -1 -2.1409e-7 0 -1 -2.1409e-7 0 -1 -2.1409e-7 0 -1 -2.1409e-7 0 -1 -8.30926e-7 0 -1 -8.30926e-7 0 -1 -8.30926e-7 0 -1 -8.30926e-7 0 -1 1.03866e-7 0 -1 1.03866e-7 0 -1 1.03866e-7 0 -1 1.03866e-7 1.00874e-7 -1 -1.0087e-7 1.00874e-7 -1 -1.0087e-7 1.00874e-7 -1 -1.0087e-7 1.00874e-7 -1 -1.0087e-7 0 -1 1.00869e-7 5.04388e-8 -1 5.04327e-8 5.04354e-8 -1 5.04361e-8 1.00874e-7 -1 0 -7.84369e-7 -1 -9.8041e-8 -3.92171e-7 -1 -4.90218e-7 -3.92197e-7 -1 -4.90192e-7 0 -1 -8.82369e-7 3.9218e-7 -1 0 3.9218e-7 -1 0 3.9218e-7 -1 0 3.9218e-7 -1 0 -9.8046e-8 -1 -6.86294e-7 -4.41216e-7 -1 -3.43138e-7 -4.41198e-7 -1 -3.43156e-7 -7.84368e-7 -1 0 0 -1 1.96082e-7 4.90246e-8 -1 1.4706e-7 4.90214e-8 -1 1.47063e-7 9.8046e-8 -1 9.8041e-8</float_array>
+          <technique_common>
+            <accessor source="#geom-Fountain_of_Dreams_Reflection-normals-array" count="474" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="geom-Fountain_of_Dreams_Reflection-map1">
+          <float_array id="geom-Fountain_of_Dreams_Reflection-map1-array" count="1527">0 1 0 0.2305 0 0 3 1 0 2.7695 0 0 0.2617 0 0 10 1 0 9.7383 0 0 19.4727 0.3086 0 19.4727 3.6914 0 0.5273 3.6914 0 0.5273 0.3086 0 0 1 0 0.2305 0 0 3 1 0 2.7695 0 0 0.2617 0 0 10 1 0 9.7383 0 0 19.4727 0.3086 0 19.4727 3.6914 0 0.5273 3.6914 0 0.5273 0.3086 0 0 1 0 0.2305 0 0 3 1 0 2.7695 0 0 0.2617 0 0 10 1 0 9.7383 0 0 19.4727 0.3086 0 19.4727 3.6914 0 0.5273 3.6914 0 0.5273 0.3086 0 16.5039 0 0 16.5078 1 0 15.4961 1 0 15.4961 0 0 14.4883 1 0 14.4922 0 0 13.2109 1 0 13.2188 0 0 11.4961 1 0 11.4961 0 0 9.7852 1 0 9.7773 0 0 8.5078 1 0 8.5039 0 0 7.4961 1 0 7.4961 0 0 6.4883 1 0 6.4922 0 0 5.2109 1 0 5.2188 0 0 3.4961 1 0 3.4961 0 0 1.7852 1 0 1.7773 0 0 0.5078 1 0 0.5039 0 0 3.8359 0 0 4.1641 0 0 4.168 1 0 3.8359 1 0 3.5078 0 0 3.5039 1 0 3.1719 0 0 3.1719 1 0 0.5 1 0 0.168 1 0 0.1641 0 0 0.5 0 0 0.8359 1 0 0.8359 0 0 1.1719 1 0 1.1719 0 0 1.5039 1 0 1.5078 0 0 1.8359 1 0 1.8359 0 0 2.168 1 0 2.1641 0 0 2.5 1 0 2.5 0 0 2.8359 1 0 2.8359 0 0 0.7344 0.3672 0 1 0.5 0 0.9336 0.25 0 0.6367 0.26565 0 0.75 0.0664 0 0.5 0.23045 0 0.5 0 0 0.3633 0.26565 0 0.25 0.0664 0 0.26565 0.3672 0 0.0664 0.25 0 0.23045 0.5 0 0 0.5 0 0.26565 0.6328 0 0.0664 0.75 0 0.3633 0.7344 0 0.25 0.9336 0 0.5 0.76955 0 0.5 1 0 0.6367 0.7344 0 0.75 0.9336 0 0.7344 0.6328 0 0.9336 0.75 0 0.76955 0.5 0 33.279 -30.9458 0 35.0729 -32.7 0 37.0621 -32.9899 0 34.0631 -31.0882 0 37.7139 -33.3709 0 34.3187 -31.2782 0 36.8671 -33.7408 0 33.9656 -31.4637 0 34.7353 -34.0003 0 33.1107 -31.594 0 31.8876 -34.0802 0 31.9851 -31.6372 0 29.0923 -33.9585 0 30.8862 -31.5776 0 27.1031 -33.6686 0 30.1021 -31.4351 0 26.4513 -33.2876 0 29.8465 -31.2451 0 27.2981 -32.9176 0 30.1996 -31.0597 0 32.1801 -30.8862 0 32.2776 -32.5783 0 31.0546 -30.9294 0 29.4299 -32.6582 0 0.9336 0.25 0 1 0.5 0 0.6992 0.3828 0 0.6172 0.2969 0 0.75 0.0664 0 0.5 0.26565 0 0.5 0 0 0.3828 0.2969 0 0.25 0.0664 0 0.3008 0.3828 0 0.0664 0.25 0 0.26955 0.5 0 0 0.5 0 0.3008 0.6172 0 0.0664 0.75 0 0.3828 0.70315 0 0.25 0.9336 0 0.5 0.7344 0 0.5 1 0 0.6172 0.70315 0 0.75 0.9336 0 0.6992 0.6172 0 0.9336 0.75 0 0.73045 0.5 0 4 0 0 4 1 0 3.75 1 0 3.7305 0 0 3.4297 1 0 3.4063 0 0 3 1 0 3 0 0 2.5703 1 0 2.5898 0 0 2.25 1 0 2.2656 0 0 2 1 0 2 0 0 1.75 1 0 1.7305 0 0 1.4297 1 0 1.4063 0 0 1 1 0 1 0 0 0.5703 1 0 0.5898 0 0 0.25 1 0 0.2656 0 0 0 1 0 0 0 0 0.9609 0 0 1.0234 0 0 1.0234 1 0 0.9609 1 0 0.8594 0 0 0.8594 1 0 0.7734 0 0 0.7734 1 0 0.668 0 0 0.668 1 0 0.5391 0 0 0.5391 1 0 0.3984 0 0 0.3984 1 0 0.2813 0 0 0.2813 1 0 0.207 0 0 0.207 1 0 0.0586 0 0 0.0586 1 0 -0.0273 0 0 -0.0273 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#geom-Fountain_of_Dreams_Reflection-map1-array" count="509" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="geom-Fountain_of_Dreams_Reflection-vertices">
+          <input semantic="POSITION" source="#geom-Fountain_of_Dreams_Reflection-positions"/>
+        </vertices>
+        <triangles material="_68c8c231_dds" count="24">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>1 0 0 0 1 1 2 2 2 2 2 2 0 1 1 3 3 3 2 4 0 3 5 4 4 6 5 4 6 5 3 5 4 5 7 6 4 8 2 5 9 3 6 10 0 6 10 0 5 9 3 7 11 1 6 12 5 7 13 6 1 14 0 1 14 0 7 13 6 0 15 4 10 20 11 9 21 12 11 22 13 11 22 13 9 21 12 12 23 14 11 24 11 12 25 15 13 26 16 13 26 16 12 25 15 14 27 17 13 28 13 14 29 14 8 30 11 8 30 11 14 29 14 15 31 12 8 32 16 15 33 17 10 34 11 10 34 11 15 33 17 9 35 15 18 40 22 17 41 23 19 42 24 19 42 24 17 41 23 20 43 25 19 44 22 20 45 26 21 46 27 21 46 27 20 45 26 22 47 28 21 48 24 22 49 25 16 50 22 16 50 22 22 49 25 23 51 23 16 52 27 23 53 28 18 54 22 18 54 22 23 53 28 17 55 26</p>
+        </triangles>
+        <triangles material="e5b99a4b_dds" count="6">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>7 16 7 5 17 8 3 18 9 0 19 10 7 16 7 3 18 9 15 36 18 14 37 19 12 38 20 9 39 21 15 36 18 12 38 20 23 56 29 22 57 30 20 58 31 17 59 32 23 56 29 20 58 31</p>
+        </triangles>
+        <triangles material="_7b9415d6_dds" count="24">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>25 60 33 24 61 34 26 62 35 27 63 36 25 60 33 26 62 35 27 63 36 26 62 35 28 64 37 29 65 38 27 63 36 28 64 37 29 65 38 28 64 37 30 66 39 31 67 40 29 65 38 30 66 39 31 67 40 30 66 39 32 68 41 33 69 42 31 67 40 32 68 41 33 69 42 32 68 41 34 70 43 35 71 44 33 69 42 34 70 43 35 71 44 34 70 43 36 72 45 37 73 46 35 71 44 36 72 45 37 73 46 36 72 45 38 74 47 39 75 48 37 73 46 38 74 47 39 75 48 38 74 47 40 76 49 41 77 50 39 75 48 40 76 49 41 77 50 40 76 49 42 78 51 43 79 52 41 77 50 42 78 51 43 79 52 42 78 51 44 80 53 45 81 54 43 79 52 44 80 53 45 81 54 44 80 53 46 82 55 47 83 56 45 81 54 46 82 55 47 83 56 46 82 55 24 61 57 25 60 58 47 83 56 24 61 57</p>
+        </triangles>
+        <triangles material="a32f4867_dds" count="24">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>49 84 59 48 85 60 50 86 61 49 84 59 50 86 61 51 87 62 52 88 63 49 84 59 51 87 62 52 88 63 51 87 62 53 89 64 54 90 65 52 88 63 53 89 64 54 90 65 53 89 64 55 91 66 56 92 67 50 86 68 48 85 69 56 92 67 48 85 69 57 93 70 58 94 71 56 92 67 57 93 70 58 94 71 57 93 70 59 95 72 60 96 73 58 94 71 59 95 72 60 96 73 59 95 72 61 97 74 62 98 75 60 96 73 61 97 74 62 98 75 61 97 74 63 99 76 64 100 77 62 98 75 63 99 76 64 100 77 63 99 76 65 101 78 66 102 79 64 100 77 65 101 78 66 102 79 65 101 78 67 103 80 68 104 81 66 102 79 67 103 80 68 104 81 67 103 80 69 105 82 70 106 83 68 104 81 69 105 82 70 106 83 69 105 82 71 107 84 55 91 66 70 106 83 71 107 84 55 91 66 71 107 84 54 90 65</p>
+        </triangles>
+        <triangles material="_62642898_dds" count="48">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>48 85 85 72 108 86 73 109 87 57 93 88 48 85 85 73 109 87 57 93 88 73 109 87 74 110 89 59 95 90 57 93 88 74 110 89 59 95 90 74 110 89 75 111 91 61 97 92 59 95 90 75 111 91 61 97 92 75 111 91 76 112 93 63 99 94 61 97 92 76 112 93 63 99 94 76 112 93 77 113 95 65 101 96 63 99 94 77 113 95 65 101 96 77 113 95 78 114 97 67 103 98 65 101 96 78 114 97 67 103 98 78 114 97 79 115 99 69 105 100 67 103 98 79 115 99 69 105 100 79 115 99 80 116 101 71 107 102 69 105 100 80 116 101 71 107 102 80 116 101 81 117 103 54 90 104 71 107 102 81 117 103 54 90 104 81 117 103 82 118 105 52 88 106 54 90 104 82 118 105 52 88 106 82 118 105 83 119 107 49 84 108 52 88 106 83 119 107 49 84 108 83 119 107 72 108 86 48 85 85 49 84 108 72 108 86 97 132 133 96 133 134 85 121 135 97 132 133 85 121 135 84 120 136 98 134 137 97 132 133 84 120 136 98 134 137 84 120 136 94 130 138 99 135 139 98 134 137 94 130 138 99 135 139 94 130 138 95 131 140 100 136 141 99 135 139 95 131 140 100 136 141 95 131 140 93 129 142 101 137 143 100 136 141 93 129 142 101 137 143 93 129 142 92 128 144 102 138 145 101 137 143 92 128 144 102 138 145 92 128 144 91 127 146 103 139 147 102 138 145 91 127 146 103 139 147 91 127 146 90 126 148 104 140 149 103 139 147 90 126 148 104 140 149 90 126 148 89 125 150 105 141 151 104 140 149 89 125 150 105 141 151 89 125 150 88 124 152 106 142 153 105 141 151 88 124 152 106 142 153 88 124 152 87 123 154 107 143 155 106 142 153 87 123 154 107 143 155 87 123 154 86 122 156 96 133 134 107 143 155 86 122 156 96 133 134 86 122 156 85 121 135</p>
+        </triangles>
+        <triangles material="Material__303_1" count="24">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>56 92 109 84 120 110 85 121 111 50 86 112 56 92 109 85 121 111 50 86 112 85 121 111 86 122 113 51 87 114 50 86 112 86 122 113 51 87 114 86 122 113 87 123 115 53 89 116 51 87 114 87 123 115 53 89 116 87 123 115 88 124 117 55 91 118 53 89 116 88 124 117 55 91 118 88 124 117 89 125 119 70 106 120 55 91 118 89 125 119 70 106 120 89 125 119 90 126 121 68 104 122 70 106 120 90 126 121 68 104 122 90 126 121 91 127 123 66 102 124 68 104 122 91 127 123 66 102 124 91 127 123 92 128 125 64 100 126 66 102 124 92 128 125 64 100 126 92 128 125 93 129 127 62 98 128 64 100 126 93 129 127 84 120 110 56 92 109 58 94 129 94 130 130 84 120 110 58 94 129 94 130 130 58 94 129 60 96 131 95 131 132 94 130 130 60 96 131 95 131 132 60 96 131 62 98 128 93 129 127 95 131 132 62 98 128</p>
+        </triangles>
+        <triangles material="_068a431d_dds" count="24">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>96 133 157 27 63 158 29 65 159 107 143 160 96 133 157 29 65 159 107 143 160 29 65 159 31 67 161 106 142 162 107 143 160 31 67 161 106 142 162 31 67 161 33 69 163 105 141 164 106 142 162 33 69 163 105 141 164 33 69 163 35 71 165 104 140 166 105 141 164 35 71 165 104 140 166 35 71 165 37 73 167 103 139 168 104 140 166 37 73 167 103 139 168 37 73 167 39 75 169 102 138 170 103 139 168 39 75 169 102 138 170 39 75 169 41 77 171 101 137 172 102 138 170 41 77 171 101 137 172 41 77 171 43 79 173 100 136 174 101 137 172 43 79 173 100 136 174 43 79 173 45 81 175 99 135 176 100 136 174 45 81 175 99 135 176 45 81 175 47 83 177 98 134 178 99 135 176 47 83 177 98 134 178 47 83 177 25 60 179 97 132 180 98 134 178 25 60 179 97 132 180 25 60 179 27 63 181 96 133 182 97 132 180 27 63 181</p>
+        </triangles>
+        <triangles material="_3fcb60a6_dds" count="20">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>109 144 183 108 145 184 110 146 185 109 144 183 110 146 185 111 147 186 112 148 187 109 144 183 111 147 186 112 148 187 111 147 186 113 149 188 114 150 189 112 148 187 113 149 188 114 150 189 113 149 188 115 151 190 116 152 191 114 150 189 115 151 190 116 152 191 115 151 190 117 153 192 118 154 193 116 152 191 117 153 192 118 154 193 117 153 192 119 155 194 120 156 195 118 154 193 119 155 194 120 156 195 119 155 194 121 157 196 122 158 197 120 156 195 121 157 196 122 158 197 121 157 196 123 159 198 124 160 199 122 158 197 123 159 198 124 160 199 123 159 198 125 161 200 126 162 201 124 160 199 125 161 200 126 162 201 125 161 200 127 163 202 128 164 203 126 162 201 127 163 202 128 164 203 127 163 202 129 165 204</p>
+        </triangles>
+        <triangles material="_3e6bb02c_dds" count="4">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>131 166 205 130 167 206 132 168 207 132 168 207 130 167 206 133 169 208 151 186 225 150 187 226 152 188 227 152 188 227 150 187 226 153 189 228</p>
+        </triangles>
+        <triangles material="fc365f59_dds" count="96">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>135 170 209 134 171 210 136 172 211 136 172 211 134 171 210 137 173 212 139 174 213 138 175 214 140 176 215 140 176 215 138 175 214 141 177 216 143 178 217 142 179 218 144 180 219 144 180 219 142 179 218 145 181 220 147 182 221 146 183 222 148 184 223 148 184 223 146 183 222 149 185 224 155 190 229 154 191 230 156 192 231 156 192 231 154 191 230 157 193 232 159 194 232 158 195 231 160 196 230 160 196 230 158 195 231 161 197 229 167 202 237 166 203 238 168 204 239 168 204 239 166 203 238 169 205 240 171 206 241 170 207 242 172 208 243 172 208 243 170 207 242 173 209 244 183 218 253 182 219 254 184 220 255 184 220 255 182 219 254 185 221 256 187 222 257 186 223 258 188 224 259 188 224 259 186 223 258 189 225 260 191 226 261 190 227 262 192 228 263 192 228 263 190 227 262 193 229 264 195 230 265 194 231 266 196 232 267 196 232 267 194 231 266 197 233 268 199 234 269 198 235 270 200 236 271 200 236 271 198 235 270 201 237 272 203 238 273 202 239 274 204 240 275 204 240 275 202 239 274 205 241 276 211 246 281 210 247 282 212 248 283 212 248 283 210 247 282 213 249 284 219 254 289 218 255 290 220 256 291 220 256 291 218 255 290 221 257 292 227 262 297 226 263 298 228 264 299 228 264 299 226 263 298 229 265 300 231 266 301 230 267 302 232 268 303 232 268 303 230 267 302 233 269 304 243 278 313 242 279 314 244 280 315 244 280 315 242 279 314 245 281 316 247 282 317 246 283 318 248 284 319 248 284 319 246 283 318 249 285 320 255 290 325 254 291 326 256 292 327 256 292 327 254 291 326 257 293 328 259 294 329 258 295 330 260 296 331 260 296 331 258 295 330 261 297 332 267 302 337 266 303 338 268 304 339 268 304 339 266 303 338 269 305 340 275 310 345 274 311 346 276 312 347 276 312 347 274 311 346 277 313 348 279 314 349 278 315 350 280 316 351 280 316 351 278 315 350 281 317 352 283 318 353 282 319 354 284 320 355 284 320 355 282 319 354 285 321 356 287 322 357 286 323 358 288 324 359 288 324 359 286 323 358 289 325 360 291 326 361 290 327 362 292 328 363 292 328 363 290 327 362 293 329 364 295 330 365 294 331 366 296 332 367 296 332 367 294 331 366 297 333 368 299 334 369 298 335 370 300 336 371 300 336 371 298 335 370 301 337 372 303 338 373 302 339 374 304 340 375 304 340 375 302 339 374 305 341 376 307 342 377 306 343 378 308 344 379 308 344 379 306 343 378 309 345 380 311 346 381 310 347 382 312 348 383 312 348 383 310 347 382 313 349 384 315 350 385 314 351 386 316 352 387 316 352 387 314 351 386 317 353 388 319 354 389 318 355 390 320 356 391 320 356 391 318 355 390 321 357 392 323 358 393 322 359 394 324 360 395 324 360 395 322 359 394 325 361 396 327 362 397 326 363 398 328 364 399 328 364 399 326 363 398 329 365 400 331 366 401 330 367 402 332 368 403 332 368 403 330 367 402 333 369 404 335 370 405 334 371 406 336 372 407 336 372 407 334 371 406 337 373 408 339 374 409 338 375 410 340 376 411 340 376 411 338 375 410 341 377 412 343 378 413 342 379 414 344 380 415 344 380 415 342 379 414 345 381 416 347 382 417 346 383 418 348 384 419 348 384 419 346 383 418 349 385 420 351 386 421 350 387 422 352 388 423 352 388 423 350 387 422 353 389 424 355 390 425 354 391 426 356 392 427 356 392 427 354 391 426 357 393 428 359 394 429 358 395 430 360 396 431 360 396 431 358 395 430 361 397 432 363 398 433 362 399 434 364 400 435 364 400 435 362 399 434 365 401 436 367 402 437 366 403 438 368 404 439 368 404 439 366 403 438 369 405 440 371 406 441 370 407 442 372 408 443 372 408 443 370 407 442 373 409 444</p>
+        </triangles>
+        <triangles material="_706ff9ac_dds" count="2">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>163 198 233 162 199 234 164 200 235 164 200 235 162 199 234 165 201 236</p>
+        </triangles>
+        <triangles material="_5d464492_dds" count="4">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>175 210 245 174 211 246 176 212 247 176 212 247 174 211 246 177 213 248 179 214 249 178 215 250 180 216 251 180 216 251 178 215 250 181 217 252</p>
+        </triangles>
+        <triangles material="e79d7060_dds" count="40">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>207 242 277 206 243 278 208 244 279 208 244 279 206 243 278 209 245 280 215 250 285 214 251 286 216 252 287 216 252 287 214 251 286 217 253 288 263 298 333 262 299 334 264 300 335 264 300 335 262 299 334 265 301 336 271 306 341 270 307 342 272 308 343 272 308 343 270 307 342 273 309 344 375 410 445 374 411 446 376 412 447 376 412 447 374 411 446 377 413 448 379 414 449 378 415 450 380 416 451 380 416 451 378 415 450 381 417 452 383 418 453 382 419 454 384 420 455 384 420 455 382 419 454 385 421 456 387 422 457 386 423 458 388 424 459 388 424 459 386 423 458 389 425 460 391 426 461 390 427 462 392 428 463 392 428 463 390 427 462 393 429 464 395 430 465 394 431 466 396 432 467 396 432 467 394 431 466 397 433 468 399 434 469 398 435 470 400 436 471 400 436 471 398 435 470 401 437 472 403 438 473 402 439 474 404 440 475 404 440 475 402 439 474 405 441 476 407 442 477 406 443 478 408 444 479 408 444 479 406 443 478 409 445 480 411 446 481 410 447 482 412 448 483 412 448 483 410 447 482 413 449 484 415 450 485 414 451 486 416 452 487 416 452 487 414 451 486 417 453 488 419 454 489 418 455 490 420 456 491 420 456 491 418 455 490 421 457 492 423 458 493 422 459 494 424 460 495 424 460 495 422 459 494 425 461 496 427 462 497 426 463 498 428 464 499 428 464 499 426 463 498 429 465 500 431 466 501 430 467 502 432 468 503 432 468 503 430 467 502 433 469 504 435 470 505 434 471 506 436 472 507 436 472 507 434 471 506 437 473 508</p>
+        </triangles>
+        <triangles material="_1a599515_dds" count="2">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>223 258 293 222 259 294 224 260 295 224 260 295 222 259 294 225 261 296</p>
+        </triangles>
+        <triangles material="d7bb67d6_dds" count="6">
+          <input semantic="VERTEX" source="#geom-Fountain_of_Dreams_Reflection-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#geom-Fountain_of_Dreams_Reflection-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#geom-Fountain_of_Dreams_Reflection-map1" offset="2" set="0"/>
+          <p>235 270 305 234 271 306 236 272 307 236 272 307 234 271 306 237 273 308 239 274 309 238 275 310 240 276 311 240 276 311 238 275 310 241 277 312 251 286 321 250 287 322 252 288 323 252 288 323 250 287 322 253 289 324</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_lights>
+    <light id="EnvironmentAmbientLight" name="EnvironmentAmbientLight">
+      <technique_common>
+        <ambient>
+          <color>0 0 0</color>
+        </ambient>
+      </technique_common>
+    </light>
+  </library_lights>
+  <library_images>
+    <image id="_68a431d_png">
+      <init_from>./068a431d.png</init_from>
+    </image>
+    <image id="_a599515_png">
+      <init_from>./1a599515.png</init_from>
+    </image>
+    <image id="_e6bb02c_png">
+      <init_from>./3e6bb02c.png</init_from>
+    </image>
+    <image id="_fcb60a6_png">
+      <init_from>./3fcb60a6.png</init_from>
+    </image>
+    <image id="_d464492_png">
+      <init_from>./5d464492.png</init_from>
+    </image>
+    <image id="_2642898_png">
+      <init_from>./62642898.png</init_from>
+    </image>
+    <image id="_8c8c231_png">
+      <init_from>./68c8c231.png</init_from>
+    </image>
+    <image id="_06ff9ac_png">
+      <init_from>./706ff9ac.png</init_from>
+    </image>
+    <image id="_b9415d6_png">
+      <init_from>./7b9415d6.png</init_from>
+    </image>
+    <image id="FountainGold_png">
+      <init_from>./FountainGold.png</init_from>
+    </image>
+    <image id="a32f4867_png">
+      <init_from>./a32f4867.png</init_from>
+    </image>
+    <image id="d7bb67d6_png">
+      <init_from>./d7bb67d6.png</init_from>
+    </image>
+    <image id="e5b99a4b_png">
+      <init_from>./e5b99a4b.png</init_from>
+    </image>
+    <image id="e79d7060_png">
+      <init_from>./e79d7060.png</init_from>
+    </image>
+    <image id="fc365f59_png">
+      <init_from>./fc365f59.png</init_from>
+    </image>
+  </library_images>
+  <library_visual_scenes>
+    <visual_scene id="MaxScene">
+      <node name="EnvironmentAmbientLight">
+        <instance_light url="#EnvironmentAmbientLight"/>
+      </node>
+      <node id="node-Fountain_of_Dreams_Reflection" name="Fountain_of_Dreams_Reflection">
+        <instance_geometry url="#geom-Fountain_of_Dreams_Reflection">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material__303_1" target="#Material__303-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_1a599515_dds" target="#_1a599515_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="d7bb67d6_dds" target="#d7bb67d6_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_62642898_dds" target="#_62642898_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="e79d7060_dds" target="#e79d7060_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_068a431d_dds" target="#_068a431d_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="a32f4867_dds" target="#a32f4867_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_68c8c231_dds" target="#_68c8c231_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_3e6bb02c_dds" target="#_3e6bb02c_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="fc365f59_dds" target="#fc365f59_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_3fcb60a6_dds" target="#_3fcb60a6_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_706ff9ac_dds" target="#_706ff9ac_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_5d464492_dds" target="#_5d464492_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_7b9415d6_dds" target="#_7b9415d6_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="e5b99a4b_dds" target="#e5b99a4b_dds-material">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#MaxScene"/>
+  </scene>
+</COLLADA>
