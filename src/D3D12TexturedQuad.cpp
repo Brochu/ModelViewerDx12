@@ -145,6 +145,7 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
     commandList->IASetIndexBuffer (&indexBufferView_);
     for (size_t i = 0; i < draws_.numDraws; i++) {
+        commandList->SetGraphicsRoot32BitConstant(2, 0, 0);
         commandList->DrawIndexedInstanced (
             (INT)draws_.indexCounts[i],
             1,
@@ -394,7 +395,7 @@ void D3D12TexturedQuad::CreateRootSignature ()
 {
     // We have two root parameters, one is a pointer to a descriptor heap
     // with a SRV, the second is a constant buffer view
-    CD3DX12_ROOT_PARAMETER parameters[2];
+    CD3DX12_ROOT_PARAMETER parameters[3];
 
     // Create a descriptor table with one entry in our descriptor heap
     CD3DX12_DESCRIPTOR_RANGE range{ D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 256, 0 };
@@ -402,6 +403,9 @@ void D3D12TexturedQuad::CreateRootSignature ()
 
     // Our constant buffer view
     parameters[1].InitAsConstantBufferView (0);
+
+    // Per draw texture index
+    parameters[2].InitAsConstants(4, 1);
 
     // We don't use another descriptor heap for the sampler, instead we use a
     // static sampler
@@ -411,7 +415,7 @@ void D3D12TexturedQuad::CreateRootSignature ()
     CD3DX12_ROOT_SIGNATURE_DESC descRootSignature;
 
     // Create the root signature
-    descRootSignature.Init (2, parameters,
+    descRootSignature.Init (3, parameters,
         1, samplers, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
     ComPtr<ID3DBlob> rootBlob;
