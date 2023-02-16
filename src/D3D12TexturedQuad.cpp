@@ -230,21 +230,6 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::vector<unsigned int> indices;
 
     draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
-    for (unsigned int i = 0; i < draws_.numDraws; i++) {
-        std::string out("[Draw ");
-        out.append(std::to_string(i));
-        out.append("]");
-        TracyMessage(out.c_str(), out.size());
-
-        out = "    Mat Index: ";
-        out.append(std::to_string(draws_.materialIndices[i]));
-        TracyMessage(out.c_str(), out.size());
-
-        out = "    Texture: ";
-        out.append(materials_[draws_.materialIndices[i]].textureName);
-        TracyMessage(out.c_str(), out.size());
-    }
-
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
 
