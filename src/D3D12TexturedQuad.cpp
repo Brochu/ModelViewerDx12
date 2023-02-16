@@ -55,9 +55,6 @@ D3D12TexturedQuad::D3D12TexturedQuad(int modelOverride) {
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12TexturedQuad::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
 {
-    size_t uploadSize = 0;
-    std::vector<std::uint8_t> data;
-
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
     for (size_t i = 0; i < materials_.size(); i++) {
@@ -114,8 +111,13 @@ void D3D12TexturedQuad::CreateTexture (ID3D12GraphicsCommandList * uploadCommand
         shaderResourceViewDesc.Texture2D.MostDetailedMip = 0;
         shaderResourceViewDesc.Texture2D.ResourceMinLODClamp = 0.0f;
 
-        device_->CreateShaderResourceView (image_[i].Get (), &shaderResourceViewDesc,
-            srvDescriptorHeap_->GetCPUDescriptorHandleForHeapStart ());
+        UINT incrementSize = device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+        D3D12_CPU_DESCRIPTOR_HANDLE srvHandle;
+        CD3DX12_CPU_DESCRIPTOR_HANDLE::InitOffsetted (srvHandle,
+            srvDescriptorHeap_->GetCPUDescriptorHandleForHeapStart (),
+            (UINT)i, incrementSize);
+
+        device_->CreateShaderResourceView (image_[i].Get (), &shaderResourceViewDesc, srvHandle);
     }
 }
 
@@ -212,7 +214,7 @@ void D3D12TexturedQuad::InitializeImpl (ID3D12GraphicsCommandList * uploadComman
     // We need one descriptor heap to store our texture SRV which cannot go
     // into the root signature. So create a SRV type heap with one entry
     D3D12_DESCRIPTOR_HEAP_DESC descriptorHeapDesc = {};
-    descriptorHeapDesc.NumDescriptors = 1;
+    descriptorHeapDesc.NumDescriptors = 256;
     // This heap contains SRV, UAV or CBVs -- in our case one SRV
     descriptorHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
     descriptorHeapDesc.NodeMask = 0;
@@ -395,7 +397,7 @@ void D3D12TexturedQuad::CreateRootSignature ()
     CD3DX12_ROOT_PARAMETER parameters[2];
 
     // Create a descriptor table with one entry in our descriptor heap
-    CD3DX12_DESCRIPTOR_RANGE range{ D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 1, 0 };
+    CD3DX12_DESCRIPTOR_RANGE range{ D3D12_DESCRIPTOR_RANGE_TYPE_SRV, 256, 0 };
     parameters[0].InitAsDescriptorTable (1, &range);
 
     // Our constant buffer view
