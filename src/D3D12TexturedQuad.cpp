@@ -228,9 +228,8 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
     std::string path = "data/models/" + models_[modelIndex_] + "/model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
-    std::vector<Material> materials;
 
-    draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials);
+    draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
     for (unsigned int i = 0; i < draws_.numDraws; i++) {
         std::string out("[Draw ");
         out.append(std::to_string(i));
@@ -242,7 +241,7 @@ void D3D12TexturedQuad::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadComm
         TracyMessage(out.c_str(), out.size());
 
         out = "    Texture: ";
-        out.append(materials[draws_.materialIndices[i]].textureName);
+        out.append(materials_[draws_.materialIndices[i]].textureName);
         TracyMessage(out.c_str(), out.size());
     }
 
