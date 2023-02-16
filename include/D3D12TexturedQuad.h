@@ -30,6 +30,10 @@
 #include "vector"
 
 namespace AMD {
+
+typedef Microsoft::WRL::ComPtr<ID3D12Resource> ResPtr;
+typedef Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> HeapPtr;
+
 class D3D12TexturedQuad : public D3D12Sample
 {
 public:
@@ -48,23 +52,22 @@ private:
     void RenderImpl (ID3D12GraphicsCommandList* commandList) override;
     void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList) override;
 
-    Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
+    ResPtr uploadBuffer_;
 
-    Microsoft::WRL::ComPtr<ID3D12Resource> vertexBuffer_;
+    ResPtr vertexBuffer_;
     D3D12_VERTEX_BUFFER_VIEW vertexBufferView_;
 
-    Microsoft::WRL::ComPtr<ID3D12Resource> indexBuffer_;
+    ResPtr indexBuffer_;
     D3D12_INDEX_BUFFER_VIEW indexBufferView_;
 
-    std::vector<Material>                       materials_;
-    std::vector<std::uint8_t>			imageData_;
-    Microsoft::WRL::ComPtr<ID3D12Resource>	image_;
-    Microsoft::WRL::ComPtr<ID3D12Resource>	uploadImage_;
+    std::vector<Material> materials_;
+    std::vector<ResPtr> image_;
+    std::vector<ResPtr> uploadImage_;
 
-    Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
+    ResPtr constantBuffers_[QUEUE_SLOT_COUNT];
 
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    srvDescriptorHeap_;
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>    imguiDescriptorHeap_;
+    HeapPtr srvDescriptorHeap_;
+    HeapPtr imguiDescriptorHeap_;
 
     std::vector<std::string> models_;
     int modelIndex_ = 0;
