@@ -5,6 +5,11 @@ cbuffer PerFrameConstants : register (b0)
     float4 lightPos;
 }
 
+cbuffer PerDrawConstants : register (b1)
+{
+    uint texIndex;
+}
+
 struct VertexShaderOutput
 {
     float4 position : SV_POSITION;
