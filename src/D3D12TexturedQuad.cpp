@@ -454,13 +454,13 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     ComPtr<ID3DBlob> vertexShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
-        "VS_main", "vs_5_2", 0, 0, &vertexShader, &error);
+        "VS_main", "vs_5_1", 0, 0, &vertexShader, &error);
     //unsigned char *vserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
 
     ComPtr<ID3DBlob> pixelShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
-        "PS_main", "ps_5_2", 0, 0, &pixelShader, &error);
+        "PS_main", "ps_5_1", 0, 0, &pixelShader, &error);
     //unsigned char *pserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
 
     D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc = {};
