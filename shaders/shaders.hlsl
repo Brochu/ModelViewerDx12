@@ -40,7 +40,7 @@ float4 PS_main (VertexShaderOutput input) : SV_TARGET
 {
     input.normal = normalize(input.normal);
 
-    float3 ambient = float3(0.02, 0.02, 0.02);
+    float3 ambient = float3(0.0, 0.0, 0.0);
     float3 color = anteruTexture.Sample(texureSampler, input.uv).xyz;
     float3 final = float3(0.0, 0.0, 0.0);
 
