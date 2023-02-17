@@ -38,6 +38,8 @@ SamplerState texureSampler      : register(s0);
 
 float4 PS_main (VertexShaderOutput input) : SV_TARGET
 {
+    return anteruTexture.Sample(texureSampler, input.uv);
+
     input.normal = normalize(input.normal);
 
     float3 ambient = float3(0.02, 0.02, 0.02);
