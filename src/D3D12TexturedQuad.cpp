@@ -453,12 +453,12 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     ComPtr<ID3DBlob> vertexShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
-        "VS_main", "vs_5_0", 0, 0, &vertexShader, nullptr);
+        "VS_main", "vs_5_1", 0, 0, &vertexShader, nullptr);
 
     ComPtr<ID3DBlob> pixelShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
-        "PS_main", "ps_5_0", 0, 0, &pixelShader, nullptr);
+        "PS_main", "ps_5_1", 0, 0, &pixelShader, nullptr);
 
     D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc = {};
     psoDesc.VS.BytecodeLength = vertexShader->GetBufferSize ();
