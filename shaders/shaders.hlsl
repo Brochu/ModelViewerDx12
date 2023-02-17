@@ -33,7 +33,7 @@ VertexShaderOutput VS_main(
     return output;
 }
 
-Texture2D<float4> anteruTexture : register(t0);
+Texture2D<float4> anteruTexture[256] : register(t0);
 SamplerState texureSampler      : register(s0);
 
 float4 PS_main (VertexShaderOutput input) : SV_TARGET
@@ -41,7 +41,7 @@ float4 PS_main (VertexShaderOutput input) : SV_TARGET
     input.normal = normalize(input.normal);
 
     float3 ambient = float3(0.0, 0.0, 0.0);
-    float3 color = anteruTexture.Sample(texureSampler, input.uv).xyz;
+    float3 color = anteruTexture[texIndex].Sample(texureSampler, input.uv).xyz;
     float3 final = float3(0.0, 0.0, 0.0);
 
     float3 light2pix = lightPos.xyz - input.worldpos.xyz;

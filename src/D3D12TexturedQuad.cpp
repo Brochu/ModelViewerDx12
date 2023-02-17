@@ -131,6 +131,10 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     ID3D12DescriptorHeap* heaps[] = { srvDescriptorHeap_.Get () };
     commandList->SetDescriptorHeaps (1, heaps);
 
+    // Set slot 0 of our root signature to point to our descriptor heap with
+    // the texture SRV
+    commandList->SetGraphicsRootDescriptorTable (0, srvDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
+
     // Set slot 1 of our root signature to the constant buffer view
     commandList->SetGraphicsRootConstantBufferView (1,
         constantBuffers_[GetQueueSlot ()]->GetGPUVirtualAddress ());
@@ -139,16 +143,7 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
     commandList->IASetIndexBuffer (&indexBufferView_);
     for (size_t i = 0; i < draws_.numDraws; i++) {
-        //TODO: Find out how I can use texture arrays later, just want to know if texture memory is okay
-        // Set slot 0 of our root signature to point to our descriptor heap with
-        // the texture SRV
-        UINT incSize = device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
-        D3D12_GPU_DESCRIPTOR_HANDLE start = srvDescriptorHeap_->GetGPUDescriptorHandleForHeapStart();
-        CD3DX12_GPU_DESCRIPTOR_HANDLE srvHandle {};
-        srvHandle.InitOffsetted(start, (INT)draws_.materialIndices[i], incSize);
-        commandList->SetGraphicsRootDescriptorTable (0, srvHandle);
-
-        commandList->SetGraphicsRoot32BitConstant(2, 0, 0);
+        commandList->SetGraphicsRoot32BitConstant(2, draws_.materialIndices[i], 0);
         commandList->DrawIndexedInstanced (
             (INT)draws_.indexCounts[i],
             1,
@@ -455,13 +450,13 @@ void D3D12TexturedQuad::CreatePipelineStateObject ()
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "VS_main", "vs_5_1", 0, 0, &vertexShader, &error);
-    //unsigned char *vserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
+    unsigned char *vserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
 
     ComPtr<ID3DBlob> pixelShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "PS_main", "ps_5_1", 0, 0, &pixelShader, &error);
-    //unsigned char *pserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
+    unsigned char *pserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
 
     D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc = {};
     psoDesc.VS.BytecodeLength = vertexShader->GetBufferSize ();
