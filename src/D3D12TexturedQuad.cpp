@@ -145,7 +145,7 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         UINT incSize = device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
         D3D12_GPU_DESCRIPTOR_HANDLE start = srvDescriptorHeap_->GetGPUDescriptorHandleForHeapStart();
         CD3DX12_GPU_DESCRIPTOR_HANDLE srvHandle {};
-        srvHandle.InitOffsetted(start, 1, incSize);
+        srvHandle.InitOffsetted(start, textureIndex_, incSize);
         commandList->SetGraphicsRootDescriptorTable (0, srvHandle);
 
         commandList->SetGraphicsRoot32BitConstant(2, 0, 0);
@@ -198,6 +198,10 @@ void D3D12TexturedQuad::RenderImpl (ID3D12GraphicsCommandList * commandList)
         ImGui::Separator();
         ImGui::Text("Light");
         ImGui::DragFloat3("pos", lightPos_, 1.f, -500.f, 500.f);
+
+        ImGui::Separator();
+        ImGui::Text("Textures");
+        ImGui::SliderInt("index", &textureIndex_, 0, 256);
 
         ImGui::Separator();
         ImGui::End();
