@@ -18,7 +18,7 @@ struct Draws {
     std::vector<size_t> vertexOffsets;
     std::vector<size_t> indexOffsets;
 
-    std::vector<size_t> materialIndices;
+    std::vector<unsigned int> materialIndices;
 
     unsigned int numDraws;
 };
