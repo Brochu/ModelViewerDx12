@@ -85,8 +85,6 @@ private:
     float fov_ = 45.f;
     // Light
     float lightPos_[3] { 1.0, 1.0, 0.0 };
-    // Textures
-    int textureIndex_ = 0;
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";

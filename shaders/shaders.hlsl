@@ -38,12 +38,10 @@ SamplerState texureSampler      : register(s0);
 
 float4 PS_main (VertexShaderOutput input) : SV_TARGET
 {
-    return anteruTexture.Sample(texureSampler, input.uv);
-
     input.normal = normalize(input.normal);
 
     float3 ambient = float3(0.02, 0.02, 0.02);
-    float3 color = float3(0.3, 0.3, 0.3);
+    float3 color = anteruTexture.Sample(texureSampler, input.uv).xyz;
     float3 final = float3(0.0, 0.0, 0.0);
 
     float3 light2pix = lightPos.xyz - input.worldpos.xyz;
