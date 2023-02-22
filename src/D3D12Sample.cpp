@@ -40,19 +40,13 @@
 using namespace Microsoft::WRL;
 
 namespace AMD {
+
 namespace {
 struct RenderEnvironment
 {
     ComPtr<ID3D12Device> device;
     ComPtr<ID3D12CommandQueue> queue;
     ComPtr<IDXGISwapChain> swapChain;
-};
-
-struct ConstantBuffer
-{
-    DirectX::XMMATRIX mvp;
-    DirectX::XMMATRIX world;
-    DirectX::XMVECTOR lightPos;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -107,6 +101,31 @@ RenderEnvironment CreateDeviceAndSwapChainHelper (
 }
 }
 
+struct ConstantBuffer {
+    DirectX::XMMATRIX mvp;
+    DirectX::XMMATRIX world;
+    DirectX::XMVECTOR lightPos;
+};
+
+struct DebugParams {
+    bool showWindow = true;
+    float clearColor[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
+
+    // Transforms
+    float translate[3] { 0.0, 0.0, 0.0 };
+    float rotate[3] { 0.0, 0.0, 0.0 };
+    float scale[3] { 1.0, 1.0, 1.0 };
+
+    // Camera
+    float camPos[3] { 0.0, 0.0, -10.0 };
+    float lookAt[3] { 0.0, 0.0, 0.0 };
+    float fov = 45.f;
+
+    // Light
+    float lightPos[3] { 1.0, 1.0, 0.0 };
+};
+DebugParams dparams = {};
+
 ///////////////////////////////////////////////////////////////////////////////
 D3D12Sample::D3D12Sample ()
 {
@@ -158,7 +177,7 @@ void D3D12Sample::PrepareRender ()
     commandList->ResourceBarrier (1, &barrier);
 
     commandList->ClearRenderTargetView (renderTargetHandle,
-        clearColor_, 0, nullptr);
+        dparams.clearColor, 0, nullptr);
     commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 }
 
@@ -225,7 +244,7 @@ void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
 
         ImGui::Separator();
         ImGui::Text("Background");
-        ImGui::ColorEdit3("clear color", clearColor_);
+        ImGui::ColorEdit3("clear color", dparams.clearColor);
 
         ImGui::Separator();
         ImGui::Text("Model Viewer");
@@ -241,19 +260,19 @@ void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
 
         ImGui::Separator();
         ImGui::Text("Transform");
-        ImGui::DragFloat3("translate", translate_, 0.1f, -100.f, 100.f);
-        ImGui::DragFloat3("rotate", rotate_, 1.f, -359.f, 359.f);
-        ImGui::DragFloat3("scale", scale_, 0.01f, 0.f, 10.f);
+        ImGui::DragFloat3("translate", dparams.translate, 0.1f, -100.f, 100.f);
+        ImGui::DragFloat3("rotate", dparams.rotate, 1.f, -359.f, 359.f);
+        ImGui::DragFloat3("scale", dparams.scale, 0.01f, 0.f, 10.f);
 
         ImGui::Separator();
         ImGui::Text("Camera");
-        ImGui::DragFloat3("position", camPos_, 1.f, -500.f, 500.f);
-        ImGui::DragFloat3("focus", lookAt_, 1.f, -500.f, 500.f);
-        ImGui::DragFloat("FOV", &fov_, 0.25f, 5.f, 110.f);
+        ImGui::DragFloat3("position", dparams.camPos, 1.f, -500.f, 500.f);
+        ImGui::DragFloat3("focus", dparams.lookAt, 1.f, -500.f, 500.f);
+        ImGui::DragFloat("FOV", &dparams.fov, 0.25f, 5.f, 110.f);
 
         ImGui::Separator();
         ImGui::Text("Light");
-        ImGui::DragFloat3("pos", lightPos_, 1.f, -500.f, 500.f);
+        ImGui::DragFloat3("pos", dparams.lightPos, 1.f, -500.f, 500.f);
 
         ImGui::Separator();
         ImGui::End();
@@ -852,35 +871,35 @@ void D3D12Sample::UpdateConstantBuffer ()
     using namespace DirectX;
 
     XMMATRIX model = DirectX::XMMatrixScaling(
-            scale_[0],
-            scale_[1],
-            scale_[2]
+            dparams.scale[0],
+            dparams.scale[1],
+            dparams.scale[2]
         );
     model = DirectX::XMMatrixMultiply(model, DirectX::XMMatrixRotationRollPitchYaw(
-                                          DirectX::XMConvertToRadians(rotate_[0]),
-                                          DirectX::XMConvertToRadians(rotate_[1]),
-                                          DirectX::XMConvertToRadians(rotate_[2])
+                                          DirectX::XMConvertToRadians(dparams.rotate[0]),
+                                          DirectX::XMConvertToRadians(dparams.rotate[1]),
+                                          DirectX::XMConvertToRadians(dparams.rotate[2])
                                       ));
     model = DirectX::XMMatrixMultiply(model, DirectX::XMMatrixTranslation(
-                                          translate_[0],
-                                          translate_[1],
-                                          translate_[2]
+                                          dparams.translate[0],
+                                          dparams.translate[1],
+                                          dparams.translate[2]
                                       ));
 
-    XMVECTOR camPos = XMVectorSet(camPos_[0], camPos_[1], camPos_[2], 1.0f);
-    XMVECTOR lookAt = XMVectorSet(lookAt_[0], lookAt_[1], lookAt_[2], 1.0f );
+    XMVECTOR camPos = XMVectorSet(dparams.camPos[0], dparams.camPos[1], dparams.camPos[2], 1.0f);
+    XMVECTOR lookAt = XMVectorSet(dparams.lookAt[0], dparams.lookAt[1], dparams.lookAt[2], 1.0f );
     XMVECTOR up = XMVectorSet(0.0, 1.0, 0.0, 0.0);
     XMMATRIX view = DirectX::XMMatrixLookAtLH(camPos, lookAt, up);
 
     // Projection
     float aspect = (float)width_ / (float)height_;
-    XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(fov_), aspect, 0.1f, 100000.f);
+    XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(dparams.fov), aspect, 0.1f, 100000.f);
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
     XMMATRIX world = XMMatrixTranspose(model); // Need to convert local space to world space
 
-    ConstantBuffer cb { mvp, world, XMVectorSet(lightPos_[0], lightPos_[1], lightPos_[2], 1.f) };
+    ConstantBuffer cb { mvp, world, XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f) };
 
     void* p;
     constantBuffers_[currentBackBuffer_]->Map (0, nullptr, &p);
