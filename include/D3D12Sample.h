@@ -49,9 +49,11 @@ private:
     void Initialize ();
     void Shutdown ();
 
+    //TODO: Remove these as we don't need virtual calls anymore
     virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
     virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
 
+    //TODO: Check if this is still needed
     void PrepareRender ();
     void FinalizeRender ();
 
@@ -65,8 +67,10 @@ private:
     void SetupSwapChain ();
     void SetupRenderTargets ();
 
+    //TODO: Move these to a separate helper namespace
     void CreateTexture (ID3D12GraphicsCommandList* uploadCommandList);
     void CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList);
+
     void CreateConstantBuffer ();
     void UpdateConstantBuffer ();
     void CreateRootSignature ();
@@ -80,13 +84,13 @@ private:
     int height_ = -1;
     int modelIndex_ = 0;
 
-    D3D12_VIEWPORT viewport_;
-    D3D12_RECT rectScissor_;
     Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12Resource> depthStencil_ [QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
+    D3D12_VIEWPORT viewport_;
+    D3D12_RECT rectScissor_;
 
     HANDLE frameFenceEvents_ [QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12Fence> frameFences_ [QUEUE_SLOT_COUNT];
@@ -94,30 +98,28 @@ private:
     UINT64 fenceValues_[QUEUE_SLOT_COUNT];
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> renderTargetDescriptorHeap_;
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> depthStencilDescriptorHeap_;
-
-    Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
-    Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
-
-    Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
-    Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
-    
     std::int32_t renderTargetViewDescriptorSize_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> depthStencilDescriptorHeap_;
     std::int32_t depthStencilViewDescriptorSize_;
 
-    Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
+    //TODO: Find a way to split this into a pass structure?
+    Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
+    Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
+    Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
 
+    //TODO: Try to move these to an upload pass namespace
+    Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
     Microsoft::WRL::ComPtr<ID3D12Resource> vertexBuffer_;
     D3D12_VERTEX_BUFFER_VIEW vertexBufferView_;
-
     Microsoft::WRL::ComPtr<ID3D12Resource> indexBuffer_;
     D3D12_INDEX_BUFFER_VIEW indexBufferView_;
 
+    //TODO: Try to move these to an upload pass namespace
     std::vector<Material> materials_;
-    std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
     std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> uploadImage_;
-
-    Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
+    std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap_;
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> imguiDescriptorHeap_;
