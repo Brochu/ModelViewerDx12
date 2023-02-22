@@ -13,7 +13,6 @@ set (headers
     ${CMAKE_CURRENT_LIST_DIR}/include/AiWrapper.h
 
     ${CMAKE_CURRENT_LIST_DIR}/include/D3D12Sample.h
-    ${CMAKE_CURRENT_LIST_DIR}/include/D3D12TexturedQuad.h
 )
 set (imgui_headers
     ${CMAKE_CURRENT_LIST_DIR}/include/imgui/imconfig.h
@@ -35,7 +34,6 @@ set (source
     ${CMAKE_CURRENT_LIST_DIR}/src/AiWrapper.cpp
 
     ${CMAKE_CURRENT_LIST_DIR}/src/D3D12Sample.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/D3D12TexturedQuad.cpp
 )
 set (imgui_source
     ${CMAKE_CURRENT_LIST_DIR}/src/imgui/imgui.cpp

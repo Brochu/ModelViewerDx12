@@ -27,7 +27,6 @@
 
 #include "Window.h"
 #include "D3D12Sample.h"
-#include "D3D12TexturedQuad.h"
 
 const std::string TITLE = "[Dx12] Model Viewer";
 const int WIDTH = 1280;
@@ -45,7 +44,7 @@ int WinMain (
         modelOverride = std::stoi(lpCmdLine);
     }
 
-    std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12TexturedQuad(modelOverride));
+    std::unique_ptr<AMD::D3D12Sample> sample (new AMD::D3D12Sample(modelOverride));
     std::unique_ptr<AMD::Window> window (new AMD::Window(TITLE, WIDTH, HEIGHT, sample.get()));
 
     return 0;

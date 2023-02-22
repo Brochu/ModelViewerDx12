@@ -22,11 +22,18 @@
 
 #ifndef ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
 #define ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
+#include "AiWrapper.h"
 
 #include <d3d12.h>
 #include <dxgi.h>
 #include <wrl.h>
 #include <memory>
+
+#include "string"
+#include "vector"
+
+typedef Microsoft::WRL::ComPtr<ID3D12Resource> ResPtr;
+typedef Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> HeapPtr;
 
 namespace AMD {
 
@@ -38,6 +45,7 @@ public:
     D3D12Sample& operator= (const D3D12Sample&) = delete;
 
     D3D12Sample ();
+    D3D12Sample (int modelOverride);
     virtual ~D3D12Sample ();
 
     void Run (int w, int h, HWND hwnd);
@@ -81,6 +89,8 @@ protected:
     int width_ = -1;
     int height_ = -1;
 
+    int modelIndex_ = 0;
+
     virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
     virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
 
@@ -101,6 +111,13 @@ private:
     void SetupSwapChain ();
     void SetupRenderTargets ();
 
+    void CreateTexture (ID3D12GraphicsCommandList* uploadCommandList);
+    void CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList);
+    void CreateConstantBuffer ();
+    void UpdateConstantBuffer ();
+    void CreateRootSignature ();
+    void LoadConfig ();
+
     Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
 
@@ -109,6 +126,43 @@ private:
     
     std::int32_t renderTargetViewDescriptorSize_;
     std::int32_t depthStencilViewDescriptorSize_;
+
+    ResPtr uploadBuffer_;
+
+    ResPtr vertexBuffer_;
+    D3D12_VERTEX_BUFFER_VIEW vertexBufferView_;
+
+    ResPtr indexBuffer_;
+    D3D12_INDEX_BUFFER_VIEW indexBufferView_;
+
+    std::vector<Material> materials_;
+    std::vector<ResPtr> image_;
+    std::vector<ResPtr> uploadImage_;
+
+    ResPtr constantBuffers_[QUEUE_SLOT_COUNT];
+
+    HeapPtr srvDescriptorHeap_;
+    HeapPtr imguiDescriptorHeap_;
+
+    std::vector<std::string> models_;
+    Draws draws_;
+
+    // Debug parameters
+    bool showWindow_ = true;
+    // Transforms
+    float translate_[3] { 0.0, 0.0, 0.0 };
+    float rotate_[3] { 0.0, 0.0, 0.0 };
+    float scale_[3] { 1.0, 1.0, 1.0 };
+    // Camera
+    float camPos_[3] { 0.0, 0.0, -10.0 };
+    float lookAt_[3] { 0.0, 0.0, 0.0 };
+    float fov_ = 45.f;
+    // Light
+    float lightPos_[3] { 1.0, 1.0, 0.0 };
+
+    // Paths
+    const char *shaderFile_ = "shaders/shaders.hlsl";
+    const char *configFile_ = "config.ini";
 };
 }
 

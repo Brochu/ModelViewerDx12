@@ -31,11 +31,6 @@
 },
 {
   "directory": "C:/Users/Alex/Documents/ModelViewerDx12/build",
-  "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DTRACY_ENABLE -DTRACY_ENABLE=ON -IC:/Users/Alex/Documents/ModelViewerDx12/include -IC:/Users/Alex/Documents/ModelViewerDx12/include/imgui -IC:/Users/Alex/Documents/ModelViewerDx12/tracy/public/tracy -isystem C:/Users/Alex/Documents/ModelViewerDx12/tracy/public -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -std=gnu++17 -o CMakeFiles\\ModelViewerDx12.dir\\src\\D3D12TexturedQuad.cpp.obj -c C:\\Users\\Alex\\Documents\\ModelViewerDx12\\src\\D3D12TexturedQuad.cpp",
-  "file": "C:\\Users\\Alex\\Documents\\ModelViewerDx12\\src\\D3D12TexturedQuad.cpp"
-},
-{
-  "directory": "C:/Users/Alex/Documents/ModelViewerDx12/build",
   "command": "C:\\PROGRA~1\\LLVM\\bin\\CLANG_~1.EXE -DTRACY_ENABLE -DTRACY_ENABLE=ON -IC:/Users/Alex/Documents/ModelViewerDx12/include -IC:/Users/Alex/Documents/ModelViewerDx12/include/imgui -IC:/Users/Alex/Documents/ModelViewerDx12/tracy/public/tracy -isystem C:/Users/Alex/Documents/ModelViewerDx12/tracy/public -g -Xclang -gcodeview -O0 -D_DEBUG -D_DLL -D_MT -Xclang --dependent-lib=msvcrtd -std=gnu++17 -o CMakeFiles\\ModelViewerDx12.dir\\src\\imgui\\imgui.cpp.obj -c C:\\Users\\Alex\\Documents\\ModelViewerDx12\\src\\imgui\\imgui.cpp",
   "file": "C:\\Users\\Alex\\Documents\\ModelViewerDx12\\src\\imgui\\imgui.cpp"
 },
