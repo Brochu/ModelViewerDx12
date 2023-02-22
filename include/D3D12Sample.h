@@ -27,15 +27,10 @@
 #include <d3d12.h>
 #include <dxgi.h>
 #include <wrl.h>
-#include <memory>
-
-#include "string"
-#include "vector"
-
-typedef Microsoft::WRL::ComPtr<ID3D12Resource> ResPtr;
-typedef Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> HeapPtr;
 
 namespace AMD {
+typedef Microsoft::WRL::ComPtr<ID3D12Resource> ResPtr;
+typedef Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> HeapPtr;
 
 ///////////////////////////////////////////////////////////////////////////////
 class D3D12Sample

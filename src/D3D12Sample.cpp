@@ -24,20 +24,18 @@
 #include "D3D12Sample.h"
 #include "ImageIO.h"
 #include "Utility.h"
+
 #include "Tracy.hpp"
+#include "imgui.h"
+#include "imgui_impl_dx12.h"
+#include "imgui_impl_win32.h"
 
-#include "dxgi1_4.h"
-#include "d3dx12.h"
-#include "stdexcept"
-
-#include <cmath>
 #include <d3dx12.h>
+#include <dxgi1_4.h>
 #include <d3dcompiler.h>
 #include <DirectXMath.h>
+
 #include <fstream>
-#include <imgui.h>
-#include <imgui_impl_dx12.h>
-#include <imgui_impl_win32.h>
 
 using namespace Microsoft::WRL;
 
