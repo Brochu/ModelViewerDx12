@@ -198,7 +198,7 @@ void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
 
     // Set slot 1 of our root signature to the constant buffer view
     commandList->SetGraphicsRootConstantBufferView (1,
-        constantBuffers_[GetQueueSlot ()]->GetGPUVirtualAddress ());
+        constantBuffers_[currentBackBuffer_]->GetGPUVirtualAddress ());
 
     commandList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
@@ -314,8 +314,8 @@ void D3D12Sample::Step ()
     FrameMarkNamed("Frame");
     ZoneScopedN("Sample::Step");
 
-    WaitForFence (frameFences_[GetQueueSlot ()].Get (), 
-        fenceValues_[GetQueueSlot ()], frameFenceEvents_[GetQueueSlot ()]);
+    WaitForFence (frameFences_[currentBackBuffer_].Get (), 
+        fenceValues_[currentBackBuffer_], frameFenceEvents_[currentBackBuffer_]);
     
     Render ();
     Present ();
@@ -328,7 +328,7 @@ void D3D12Sample::Step ()
 void D3D12Sample::Stop ()
 {
     // Drain the queue, wait for everything to finish
-    for (int i = 0; i < GetQueueSlotCount (); ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
         WaitForFence (frameFences_[i].Get (), fenceValues_[i], frameFenceEvents_[i]);
     }
 
@@ -345,7 +345,7 @@ _SRGB.
 void D3D12Sample::SetupRenderTargets ()
 {
     D3D12_DESCRIPTOR_HEAP_DESC heapDesc = {};
-    heapDesc.NumDescriptors = GetQueueSlotCount ();
+    heapDesc.NumDescriptors = QUEUE_SLOT_COUNT;
     heapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV;
     heapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
     device_->CreateDescriptorHeap (&heapDesc, IID_PPV_ARGS (&renderTargetDescriptorHeap_));
@@ -354,7 +354,7 @@ void D3D12Sample::SetupRenderTargets ()
         renderTargetDescriptorHeap_->GetCPUDescriptorHandleForHeapStart ()
     };
 
-    for (int i = 0; i < GetQueueSlotCount (); ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
         D3D12_RENDER_TARGET_VIEW_DESC viewDesc;
         viewDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
         viewDesc.ViewDimension = D3D12_RTV_DIMENSION_TEXTURE2D;
@@ -369,7 +369,7 @@ void D3D12Sample::SetupRenderTargets ()
 
     // Depth Stencil Views
     D3D12_DESCRIPTOR_HEAP_DESC depthHeapDesc = {};
-    depthHeapDesc.NumDescriptors = GetQueueSlotCount();
+    depthHeapDesc.NumDescriptors = QUEUE_SLOT_COUNT;
     depthHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_DSV;
     depthHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
     device_->CreateDescriptorHeap(&depthHeapDesc, IID_PPV_ARGS(&depthStencilDescriptorHeap_));
@@ -378,7 +378,7 @@ void D3D12Sample::SetupRenderTargets ()
         depthStencilDescriptorHeap_->GetCPUDescriptorHandleForHeapStart()
     };
 
-    for (int i = 0; i < GetQueueSlotCount(); i++) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
         D3D12_DEPTH_STENCIL_VIEW_DESC viewDesc {};
         viewDesc.Format = DXGI_FORMAT_D32_FLOAT;
         viewDesc.ViewDimension = D3D12_DSV_DIMENSION_TEXTURE2D;
@@ -406,7 +406,7 @@ void D3D12Sample::Present ()
     ++currentFenceValue_;
 
     // Take the next back buffer from our chain
-    currentBackBuffer_ = (currentBackBuffer_ + 1) % GetQueueSlotCount ();
+    currentBackBuffer_ = (currentBackBuffer_ + 1) % QUEUE_SLOT_COUNT;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -420,14 +420,14 @@ void D3D12Sample::SetupSwapChain ()
 
     // Create fences for each frame so we can protect resources and wait for
     // any given frame
-    for (int i = 0; i < GetQueueSlotCount (); ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
         frameFenceEvents_ [i] = CreateEvent (nullptr, FALSE, FALSE, nullptr);
         fenceValues_ [i] = 0;
         device_->CreateFence (0, D3D12_FENCE_FLAG_NONE, 
             IID_PPV_ARGS (&frameFences_ [i]));
     }
 
-    for (int i = 0; i < GetQueueSlotCount (); ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
         swapChain_->GetBuffer (i, IID_PPV_ARGS (&renderTargets_ [i]));
     }
 
@@ -444,7 +444,7 @@ void D3D12Sample::SetupSwapChain ()
     depthClearValue.DepthStencil.Depth = 1.f;
     depthClearValue.DepthStencil.Stencil = 0;
 
-    for (int i = 0; i < GetQueueSlotCount(); i++) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
         HRESULT hr = device_->CreateCommittedResource(
                 &depthProp,
                 D3D12_HEAP_FLAG_NONE,
@@ -558,7 +558,7 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     DXGI_SWAP_CHAIN_DESC swapChainDesc;
     ::ZeroMemory (&swapChainDesc, sizeof (swapChainDesc));
 
-    swapChainDesc.BufferCount = GetQueueSlotCount ();
+    swapChainDesc.BufferCount = QUEUE_SLOT_COUNT;
     // This is _UNORM but we'll use a _SRGB view on this. See 
     // SetupRenderTargets() for details, it must match what
     // we specify here
@@ -589,7 +589,7 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::CreateAllocatorsAndCommandLists ()
 {
-    for (int i = 0; i < GetQueueSlotCount (); ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
         device_->CreateCommandAllocator (D3D12_COMMAND_LIST_TYPE_DIRECT,
             IID_PPV_ARGS (&commandAllocators_ [i]));
         device_->CreateCommandList (0, D3D12_COMMAND_LIST_TYPE_DIRECT,
@@ -827,7 +827,7 @@ void D3D12Sample::CreateConstantBuffer ()
         DirectX::XMVectorSet(0.0 ,0.0, 0.0, 1.0)
     };
 
-    for (int i = 0; i < GetQueueSlotCount (); ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
         static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
         static const auto constantBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (sizeof (ConstantBuffer));
 
@@ -883,9 +883,9 @@ void D3D12Sample::UpdateConstantBuffer ()
     ConstantBuffer cb { mvp, world, XMVectorSet(lightPos_[0], lightPos_[1], lightPos_[2], 1.f) };
 
     void* p;
-    constantBuffers_[GetQueueSlot ()]->Map (0, nullptr, &p);
+    constantBuffers_[currentBackBuffer_]->Map (0, nullptr, &p);
     ::memcpy(p, &cb, sizeof(ConstantBuffer));
-    constantBuffers_[GetQueueSlot ()]->Unmap (0, nullptr);
+    constantBuffers_[currentBackBuffer_]->Unmap (0, nullptr);
 }
 
 void D3D12Sample::CreateRootSignature ()

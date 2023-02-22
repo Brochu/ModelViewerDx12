@@ -48,17 +48,7 @@ public:
     void Stop ();
 
 protected:
-    int GetQueueSlot () const
-    {
-        return currentBackBuffer_;
-    }
-
     static const int QUEUE_SLOT_COUNT = 3;
-
-    static constexpr int GetQueueSlotCount ()
-    {
-        return QUEUE_SLOT_COUNT;
-    }
 
     D3D12_VIEWPORT viewport_;
     D3D12_RECT rectScissor_;
