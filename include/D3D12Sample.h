@@ -29,8 +29,6 @@
 #include <wrl.h>
 
 namespace AMD {
-typedef Microsoft::WRL::ComPtr<ID3D12Resource> ResPtr;
-typedef Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> HeapPtr;
 
 ///////////////////////////////////////////////////////////////////////////////
 class D3D12Sample
@@ -47,41 +45,12 @@ public:
     void Step ();
     void Stop ();
 
-protected:
-    static const int QUEUE_SLOT_COUNT = 3;
-
-    D3D12_VIEWPORT viewport_;
-    D3D12_RECT rectScissor_;
-    Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
-    Microsoft::WRL::ComPtr<ID3D12Device> device_;
-    Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
-    Microsoft::WRL::ComPtr<ID3D12Resource> depthStencil_ [QUEUE_SLOT_COUNT];
-    Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
-
-    HANDLE frameFenceEvents_ [QUEUE_SLOT_COUNT];
-    Microsoft::WRL::ComPtr<ID3D12Fence> frameFences_ [QUEUE_SLOT_COUNT];
-    UINT64 currentFenceValue_;
-    UINT64 fenceValues_[QUEUE_SLOT_COUNT];
-
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> renderTargetDescriptorHeap_;
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> depthStencilDescriptorHeap_;
-
-    Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
-    Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
-
-    float clearColor_[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
-
-    int width_ = -1;
-    int height_ = -1;
-
-    int modelIndex_ = 0;
-
-    virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
-    virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
-
 private:
     void Initialize ();
     void Shutdown ();
+
+    virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
+    virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
 
     void PrepareRender ();
     void FinalizeRender ();
@@ -103,37 +72,62 @@ private:
     void CreateRootSignature ();
     void LoadConfig ();
 
+    static const int QUEUE_SLOT_COUNT = 3;
+    int currentBackBuffer_ = 0;
+
+    HWND hwnd_;
+    int width_ = -1;
+    int height_ = -1;
+    int modelIndex_ = 0;
+
+    D3D12_VIEWPORT viewport_;
+    D3D12_RECT rectScissor_;
+    Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
+    Microsoft::WRL::ComPtr<ID3D12Device> device_;
+    Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Resource> depthStencil_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
+
+    HANDLE frameFenceEvents_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Fence> frameFences_ [QUEUE_SLOT_COUNT];
+    UINT64 currentFenceValue_;
+    UINT64 fenceValues_[QUEUE_SLOT_COUNT];
+
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> renderTargetDescriptorHeap_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> depthStencilDescriptorHeap_;
+
+    Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
+    Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
+
     Microsoft::WRL::ComPtr<ID3D12CommandAllocator> commandAllocators_[QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> commandLists_[QUEUE_SLOT_COUNT];
-
-    int currentBackBuffer_ = 0;
-    HWND hwnd_;
     
     std::int32_t renderTargetViewDescriptorSize_;
     std::int32_t depthStencilViewDescriptorSize_;
 
-    ResPtr uploadBuffer_;
+    Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
 
-    ResPtr vertexBuffer_;
+    Microsoft::WRL::ComPtr<ID3D12Resource> vertexBuffer_;
     D3D12_VERTEX_BUFFER_VIEW vertexBufferView_;
 
-    ResPtr indexBuffer_;
+    Microsoft::WRL::ComPtr<ID3D12Resource> indexBuffer_;
     D3D12_INDEX_BUFFER_VIEW indexBufferView_;
 
     std::vector<Material> materials_;
-    std::vector<ResPtr> image_;
-    std::vector<ResPtr> uploadImage_;
+    std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
+    std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> uploadImage_;
 
-    ResPtr constantBuffers_[QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
 
-    HeapPtr srvDescriptorHeap_;
-    HeapPtr imguiDescriptorHeap_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap_;
+    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> imguiDescriptorHeap_;
 
     std::vector<std::string> models_;
     Draws draws_;
 
     // Debug parameters
     bool showWindow_ = true;
+    float clearColor_[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
     // Transforms
     float translate_[3] { 0.0, 0.0, 0.0 };
     float rotate_[3] { 0.0, 0.0, 0.0 };
