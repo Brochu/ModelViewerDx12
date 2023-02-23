@@ -11,6 +11,7 @@ set (headers
     ${CMAKE_CURRENT_LIST_DIR}/include/Utility.h
     ${CMAKE_CURRENT_LIST_DIR}/include/ImageIO.h
     ${CMAKE_CURRENT_LIST_DIR}/include/AiWrapper.h
+    ${CMAKE_CURRENT_LIST_DIR}/include/Config.h
 
     ${CMAKE_CURRENT_LIST_DIR}/include/D3D12Sample.h
 )
@@ -32,6 +33,7 @@ set (source
     ${CMAKE_CURRENT_LIST_DIR}/src/Utility.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/ImageIO.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/AiWrapper.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/Config.cpp
 
     ${CMAKE_CURRENT_LIST_DIR}/src/D3D12Sample.cpp
 )

@@ -240,12 +240,13 @@ void D3D12Sample::Render ()
         ImGui::Separator();
         ImGui::Text("Model Viewer");
 
-        assert(models_.size() <= 32);
+        std::vector<std::string> m = config_.models;
+        assert(m.size() <= 32);
         char* models[32];
-        for (int i = 0; i < models_.size(); i++) {
-            models[i] = models_[i].data();
+        for (int i = 0; i < m.size(); i++) {
+            models[i] = m[i].data();
         }
-        if (ImGui::Combo("Model", &modelIndex_, models, (int)models_.size())) {
+        if (ImGui::Combo("Model", &modelIndex_, models, (int)m.size())) {
             // Start thinking on how to reload model data when selecting a new model
         }
 
@@ -494,7 +495,7 @@ void D3D12Sample::Initialize ()
         IID_PPV_ARGS (&uploadCommandList));
 
     //---------------------------------------
-    LoadConfig ();
+    config_ = ParseConfig();
 
     // We need one descriptor heap to store our texture SRV which cannot go
     // into the root signature. So create a SRV type heap with one entry
@@ -695,7 +696,7 @@ void D3D12Sample::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
         if (m.textureName.size() <= 0) continue;
 
         int width = 0, height = 0;
-        std::string path = "data/models/" + models_[modelIndex_] + "/" + m.textureName;
+        std::string path = "data/models/" + config_.models[modelIndex_] + "/" + m.textureName;
         std::vector<std::uint8_t> imgdata = LoadImageFromFile(path.c_str(), 1, &width, &height);
 
         std::string out(path);
@@ -753,7 +754,7 @@ void D3D12Sample::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
 void D3D12Sample::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList)
 {
     //TODO: How do we call this again after changing the selected model
-    std::string path = "data/models/" + models_[modelIndex_] + "/model.obj";
+    std::string path = "data/models/" + config_.models[modelIndex_] + "/model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
@@ -933,23 +934,5 @@ void D3D12Sample::CreateRootSignature ()
     device_->CreateRootSignature (0,
         rootBlob->GetBufferPointer (),
         rootBlob->GetBufferSize (), IID_PPV_ARGS (&rootSignature_));
-}
-
-void D3D12Sample::LoadConfig ()
-{
-    std::fstream fs(configFile_);
-    std::string line;
-
-    while (std::getline(fs, line)) {
-        if (line[0] == '[' && line.find("models") != std::string::npos) {
-            // Parsing possible models to render
-            std::string line;
-
-            while (std::getline(fs, line)) {
-                if (line.size() == 0) break;
-                models_.push_back(line);
-            }
-        }
-    }
 }
 }

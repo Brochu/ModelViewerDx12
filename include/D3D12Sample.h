@@ -23,6 +23,7 @@
 #ifndef ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
 #define ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
 #include "AiWrapper.h"
+#include "Config.h"
 
 #include <d3d12.h>
 #include <dxgi.h>
@@ -70,7 +71,6 @@ private:
     void CreateConstantBuffer ();
     void UpdateConstantBuffer ();
     void CreateRootSignature ();
-    void LoadConfig ();
 
     static const int QUEUE_SLOT_COUNT = 3;
     int currentBackBuffer_ = 0;
@@ -79,6 +79,7 @@ private:
     int width_ = -1;
     int height_ = -1;
     int modelIndex_ = 0;
+    Config config_;
 
     Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
@@ -120,12 +121,10 @@ private:
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap_;
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> imguiDescriptorHeap_;
 
-    std::vector<std::string> models_;
     Draws draws_;
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";
-    const char *configFile_ = "config.ini";
 };
 }
 
