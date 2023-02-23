@@ -24,6 +24,7 @@
 #include "D3D12Sample.h"
 #include "ImageIO.h"
 #include "Utility.h"
+#include "UploadPass.h"
 
 #include "Tracy.hpp"
 #include "imgui.h"
@@ -512,8 +513,10 @@ void D3D12Sample::Initialize ()
     CreateRootSignature ();
     CreatePipelineStateObject ();
     CreateConstantBuffer ();
-    CreateMeshBuffers (uploadCommandList.Get());
-    CreateTexture (uploadCommandList.Get());
+
+    //TODO: How do we call this again after changing the selected model
+    LoadContent(uploadCommandList.Get());
+    //---------------------------------
 
     // Imgui render side init
     ImGui_ImplDX12_Init(device_.Get(),
@@ -683,20 +686,36 @@ void D3D12Sample::CreatePipelineStateObject ()
     device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
 }
 
-void D3D12Sample::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
+void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
+    //TODO: Extract mesh info
+    CreateMeshBuffers (uploadCommandList);
+    CreateTexture (
+            "data/models/" + config_.models[modelIndex_] + "/",
+            materials_,
+            image_,
+            uploadImage_,
+            uploadCommandList);
+}
+
+void D3D12Sample::CreateTexture (
+        const std::string &folder,
+        const std::vector<Material> &mats,
+        std::vector<ComPtr<ID3D12Resource>> &imgs,
+        std::vector<ComPtr<ID3D12Resource>> &uploadImgs,
+        ID3D12GraphicsCommandList * uploadCommandList)
 {
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
-    for (size_t i = 0; i < materials_.size(); i++) {
+    for (size_t i = 0; i < mats.size(); i++) {
         //TODO: This is pretty ugly, why do we have textures with empty names?
-        image_.emplace_back();
-        uploadImage_.emplace_back();
+        imgs.emplace_back();
+        uploadImgs.emplace_back();
         
-        Material m = materials_[i];
+        Material m = mats[i];
         if (m.textureName.size() <= 0) continue;
 
         int width = 0, height = 0;
-        std::string path = "data/models/" + config_.models[modelIndex_] + "/" + m.textureName;
+        std::string path = folder + m.textureName;
         std::vector<std::uint8_t> imgdata = LoadImageFromFile(path.c_str(), 1, &width, &height);
 
         std::string out(path);
@@ -710,10 +729,10 @@ void D3D12Sample::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
             &resourceDesc,
             D3D12_RESOURCE_STATE_COPY_DEST,
             nullptr,
-            IID_PPV_ARGS (&image_[i]));
+            IID_PPV_ARGS (&imgs[i]));
 
         static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
-        const auto uploadBufferSize = GetRequiredIntermediateSize (image_[i].Get (), 0, 1);
+        const auto uploadBufferSize = GetRequiredIntermediateSize (imgs[i].Get (), 0, 1);
         const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
 
         device_->CreateCommittedResource (&uploadHeapProperties,
@@ -721,15 +740,15 @@ void D3D12Sample::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
             &uploadBufferDesc,
             D3D12_RESOURCE_STATE_GENERIC_READ,
             nullptr,
-            IID_PPV_ARGS (&uploadImage_[i]));
+            IID_PPV_ARGS (&uploadImgs[i]));
 
         D3D12_SUBRESOURCE_DATA srcData;
         srcData.pData = imgdata.data ();
         srcData.RowPitch = width * 4;
         srcData.SlicePitch = width * height * 4;
 
-        UpdateSubresources (uploadCommandList, image_[i].Get (), uploadImage_[i].Get (), 0, 0, 1, &srcData);
-        const auto transition = CD3DX12_RESOURCE_BARRIER::Transition (image_[i].Get (),
+        UpdateSubresources (uploadCommandList, imgs[i].Get (), uploadImgs[i].Get (), 0, 0, 1, &srcData);
+        const auto transition = CD3DX12_RESOURCE_BARRIER::Transition (imgs[i].Get (),
             D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
         uploadCommandList->ResourceBarrier (1, &transition);
 
@@ -747,13 +766,12 @@ void D3D12Sample::CreateTexture (ID3D12GraphicsCommandList * uploadCommandList)
             srvDescriptorHeap_->GetCPUDescriptorHandleForHeapStart (),
             (UINT)i, incrementSize);
 
-        device_->CreateShaderResourceView (image_[i].Get (), &shaderResourceViewDesc, srvHandle);
+        device_->CreateShaderResourceView (imgs[i].Get (), &shaderResourceViewDesc, srvHandle);
     }
 }
 
 void D3D12Sample::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList)
 {
-    //TODO: How do we call this again after changing the selected model
     std::string path = "data/models/" + config_.models[modelIndex_] + "/model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;

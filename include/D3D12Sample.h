@@ -63,8 +63,14 @@ private:
     void SetupSwapChain ();
     void SetupRenderTargets ();
 
+    void LoadContent (ID3D12GraphicsCommandList* uploadCommandList);
     //TODO: Move these to a separate helper namespace
-    void CreateTexture (ID3D12GraphicsCommandList* uploadCommandList);
+    void CreateTexture (
+            const std::string &folder,
+            const std::vector<Material> &mats,
+            std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
+            std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs,
+            ID3D12GraphicsCommandList* uploadCommandList);
     void CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList);
 
     void CreateConstantBuffer ();
