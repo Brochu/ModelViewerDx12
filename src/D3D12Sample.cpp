@@ -189,16 +189,7 @@ void D3D12Sample::Render ()
     
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
 
-    RenderImpl (commandList);
-    
-    FinalizeRender ();
-}
-
-///////////////////////////////////////////////////////////////////////////////
-void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
-{
-    ZoneScopedN("Sample::RenderImpl");
-
+    // --------------------------------------
     // Set our state (shaders, etc.)
     commandList->SetPipelineState (pso_.Get ());
 
@@ -282,6 +273,9 @@ void D3D12Sample::RenderImpl (ID3D12GraphicsCommandList* commandList)
     ID3D12DescriptorHeap* imguiHeaps[] = { imguiDescriptorHeap_.Get() };
     commandList->SetDescriptorHeaps(1, imguiHeaps);
     ImGui_ImplDX12_RenderDrawData(ImGui::GetDrawData(), commandList);
+    // --------------------------------------
+    
+    FinalizeRender ();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -499,7 +493,35 @@ void D3D12Sample::Initialize ()
         uploadCommandAllocator.Get (), nullptr,
         IID_PPV_ARGS (&uploadCommandList));
 
-    InitializeImpl (uploadCommandList.Get ());
+    //---------------------------------------
+    LoadConfig ();
+
+    // We need one descriptor heap to store our texture SRV which cannot go
+    // into the root signature. So create a SRV type heap with one entry
+    D3D12_DESCRIPTOR_HEAP_DESC descriptorHeapDesc = {};
+    descriptorHeapDesc.NumDescriptors = 256;
+    // This heap contains SRV, UAV or CBVs -- in our case one SRV
+    descriptorHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
+    descriptorHeapDesc.NodeMask = 0;
+    descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
+
+    device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&srvDescriptorHeap_));
+    device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&imguiDescriptorHeap_));
+
+    CreateRootSignature ();
+    CreatePipelineStateObject ();
+    CreateConstantBuffer ();
+    CreateMeshBuffers (uploadCommandList.Get());
+    CreateTexture (uploadCommandList.Get());
+
+    // Imgui render side init
+    ImGui_ImplDX12_Init(device_.Get(),
+                        QUEUE_SLOT_COUNT,
+                        DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
+                        imguiDescriptorHeap_.Get(),
+                        imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
+                        imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
+    //---------------------------------------
 
     uploadCommandList->Close ();
 
@@ -520,37 +542,6 @@ void D3D12Sample::Initialize ()
     uploadCommandAllocator->Reset ();
 
     CloseHandle (waitEvent);
-}
-
-void D3D12Sample::InitializeImpl (ID3D12GraphicsCommandList * uploadCommandList)
-{
-    LoadConfig ();
-
-    // We need one descriptor heap to store our texture SRV which cannot go
-    // into the root signature. So create a SRV type heap with one entry
-    D3D12_DESCRIPTOR_HEAP_DESC descriptorHeapDesc = {};
-    descriptorHeapDesc.NumDescriptors = 256;
-    // This heap contains SRV, UAV or CBVs -- in our case one SRV
-    descriptorHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
-    descriptorHeapDesc.NodeMask = 0;
-    descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
-
-    device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&srvDescriptorHeap_));
-    device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&imguiDescriptorHeap_));
-
-    CreateRootSignature ();
-    CreatePipelineStateObject ();
-    CreateConstantBuffer ();
-    CreateMeshBuffers (uploadCommandList);
-    CreateTexture (uploadCommandList);
-
-    // Imgui render side init
-    ImGui_ImplDX12_Init(device_.Get(),
-                        QUEUE_SLOT_COUNT,
-                        DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
-                        imguiDescriptorHeap_.Get(),
-                        imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
-                        imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
 }
 
 ///////////////////////////////////////////////////////////////////////////////

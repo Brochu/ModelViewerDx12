@@ -49,10 +49,6 @@ private:
     void Initialize ();
     void Shutdown ();
 
-    //TODO: Remove these as we don't need virtual calls anymore
-    virtual void InitializeImpl (ID3D12GraphicsCommandList* uploadCommandList);
-    virtual void RenderImpl (ID3D12GraphicsCommandList* commandList);
-
     //TODO: Check if this is still needed
     void PrepareRender ();
     void FinalizeRender ();
