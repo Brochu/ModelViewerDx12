@@ -50,7 +50,6 @@ private:
     void Initialize ();
     void Shutdown ();
 
-    //TODO: Check if this is still needed
     void PrepareRender ();
     void FinalizeRender ();
 
