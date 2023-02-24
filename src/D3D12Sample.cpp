@@ -127,6 +127,8 @@ struct DebugParams {
 };
 DebugParams dparams = {};
 
+const size_t MAX_MODEL_COUNT = 64;
+
 ///////////////////////////////////////////////////////////////////////////////
 D3D12Sample::D3D12Sample ()
 {
@@ -242,8 +244,8 @@ void D3D12Sample::Render ()
         ImGui::Text("Model Viewer");
 
         std::vector<std::string> m = config_.models;
-        assert(m.size() <= 32);
-        char* models[32];
+        assert(m.size() <= MAX_MODEL_COUNT);
+        char* models[MAX_MODEL_COUNT];
         for (int i = 0; i < m.size(); i++) {
             models[i] = m[i].data();
         }
