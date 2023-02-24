@@ -691,6 +691,8 @@ void D3D12Sample::CreatePipelineStateObject ()
 void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
     //TODO: Extract mesh info before uploading data
 
+    //TODO: Simplify the parameter we have to send here
+    // We should only send some raw data through for upload
     CreateMeshBuffers (
             "data/models/" + config_.models[modelIndex_],
             device_,
@@ -698,8 +700,6 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
             vertexBuffer_, vertexBufferView_,
             indexBuffer_, indexBufferView_,
             uploadCommandList);
-    //TODO: Simplify the parameter we have to send here
-    // We should only send some raw data through for upload
     Textures::UploadTextures(
             "data/models/" + config_.models[modelIndex_] + "/",
             device_, srvDescriptorHeap_,
@@ -712,10 +712,10 @@ void D3D12Sample::CreateMeshBuffers (
             const Microsoft::WRL::ComPtr<ID3D12Device> &device,
             Draws &draws,
             std::vector<Material> &mats,
-            Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuf,
-            D3D12_VERTEX_BUFFER_VIEW vertexBufView,
-            Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuf,
-            D3D12_INDEX_BUFFER_VIEW indexBufView,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
+            D3D12_VERTEX_BUFFER_VIEW vertexBufferView,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
+            D3D12_INDEX_BUFFER_VIEW indexBufferView,
             ID3D12GraphicsCommandList* uploadCommandList)
 {
     std::string path = folder + "/model.obj";
@@ -749,7 +749,7 @@ void D3D12Sample::CreateMeshBuffers (
         &vertexBufferDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
         nullptr,
-        IID_PPV_ARGS (&vertexBuf));
+        IID_PPV_ARGS (&vertexBuffer));
 
     static const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount * sizeof(unsigned int));
     device->CreateCommittedResource (&defaultHeapProperties,
@@ -757,7 +757,7 @@ void D3D12Sample::CreateMeshBuffers (
         &indexBufferDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
         nullptr,
-        IID_PPV_ARGS (&indexBuf));
+        IID_PPV_ARGS (&indexBuffer));
 
     // Create buffer views
     vertexBufferView_.BufferLocation = vertexBuffer_->GetGPUVirtualAddress ();

@@ -70,10 +70,10 @@ private:
             const Microsoft::WRL::ComPtr<ID3D12Device> &device,
             Draws &draws,
             std::vector<Material> &mats,
-            Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuf,
-            D3D12_VERTEX_BUFFER_VIEW vertexBufView,
-            Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuf,
-            D3D12_INDEX_BUFFER_VIEW indexBufView,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
+            D3D12_VERTEX_BUFFER_VIEW vertexBufferView,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
+            D3D12_INDEX_BUFFER_VIEW indexBufferView,
             ID3D12GraphicsCommandList* uploadCommandList);
 
     void CreateConstantBuffer ();
