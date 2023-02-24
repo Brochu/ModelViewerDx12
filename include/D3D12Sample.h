@@ -65,7 +65,16 @@ private:
 
     void LoadContent (ID3D12GraphicsCommandList* uploadCommandList);
     //TODO: Move these to a separate helper namespace
-    void CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList);
+    void CreateMeshBuffers (
+            const std::string &folder,
+            const Microsoft::WRL::ComPtr<ID3D12Device> &device,
+            Draws &draws,
+            std::vector<Material> &mats,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuf,
+            D3D12_VERTEX_BUFFER_VIEW vertexBufView,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuf,
+            D3D12_INDEX_BUFFER_VIEW indexBufView,
+            ID3D12GraphicsCommandList* uploadCommandList);
 
     void CreateConstantBuffer ();
     void UpdateConstantBuffer ();

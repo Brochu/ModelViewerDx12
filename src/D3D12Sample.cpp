@@ -687,8 +687,17 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
-    //TODO: Extract mesh info
-    CreateMeshBuffers (uploadCommandList);
+    //TODO: Extract mesh info before uploading data
+
+    CreateMeshBuffers (
+            "data/models/" + config_.models[modelIndex_],
+            device_,
+            draws_, materials_,
+            vertexBuffer_, vertexBufferView_,
+            indexBuffer_, indexBufferView_,
+            uploadCommandList);
+    //TODO: Simplify the parameter we have to send here
+    // We should only send some raw data through for upload
     Textures::UploadTextures(
             "data/models/" + config_.models[modelIndex_] + "/",
             device_, srvDescriptorHeap_,
@@ -696,13 +705,22 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
             uploadCommandList);
 }
 
-void D3D12Sample::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandList)
+void D3D12Sample::CreateMeshBuffers (
+            const std::string &folder,
+            const Microsoft::WRL::ComPtr<ID3D12Device> &device,
+            Draws &draws,
+            std::vector<Material> &mats,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuf,
+            D3D12_VERTEX_BUFFER_VIEW vertexBufView,
+            Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuf,
+            D3D12_INDEX_BUFFER_VIEW indexBufView,
+            ID3D12GraphicsCommandList* uploadCommandList)
 {
-    std::string path = "data/models/" + config_.models[modelIndex_] + "/model.obj";
+    std::string path = folder + "/model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
-    draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
+    draws = ExtractAiScene(path.c_str(), vertices, indices, mats);
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
 
@@ -711,7 +729,7 @@ void D3D12Sample::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandLis
     static const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
 
     // Create upload buffer on CPU
-    device_->CreateCommittedResource (&uploadHeapProperties,
+    device->CreateCommittedResource (&uploadHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &uploadBufferDesc,
         D3D12_RESOURCE_STATE_GENERIC_READ,
@@ -724,20 +742,20 @@ void D3D12Sample::CreateMeshBuffers (ID3D12GraphicsCommandList* uploadCommandLis
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
     static const auto vertexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (vertexCount * sizeof(Vertex));
-    device_->CreateCommittedResource (&defaultHeapProperties,
+    device->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &vertexBufferDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
         nullptr,
-        IID_PPV_ARGS (&vertexBuffer_));
+        IID_PPV_ARGS (&vertexBuf));
 
     static const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount * sizeof(unsigned int));
-    device_->CreateCommittedResource (&defaultHeapProperties,
+    device->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &indexBufferDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
         nullptr,
-        IID_PPV_ARGS (&indexBuffer_));
+        IID_PPV_ARGS (&indexBuf));
 
     // Create buffer views
     vertexBufferView_.BufferLocation = vertexBuffer_->GetGPUVirtualAddress ();
