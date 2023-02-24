@@ -71,9 +71,9 @@ private:
             Draws &draws,
             std::vector<Material> &mats,
             Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
-            D3D12_VERTEX_BUFFER_VIEW vertexBufferView,
+            D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
             Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
-            D3D12_INDEX_BUFFER_VIEW indexBufferView,
+            D3D12_INDEX_BUFFER_VIEW &indexBufferView,
             ID3D12GraphicsCommandList* uploadCommandList);
 
     void CreateConstantBuffer ();

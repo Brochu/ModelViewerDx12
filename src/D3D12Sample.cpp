@@ -713,9 +713,9 @@ void D3D12Sample::CreateMeshBuffers (
             Draws &draws,
             std::vector<Material> &mats,
             Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
-            D3D12_VERTEX_BUFFER_VIEW vertexBufferView,
+            D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
             Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
-            D3D12_INDEX_BUFFER_VIEW indexBufferView,
+            D3D12_INDEX_BUFFER_VIEW &indexBufferView,
             ID3D12GraphicsCommandList* uploadCommandList)
 {
     std::string path = folder + "/model.obj";
@@ -760,13 +760,13 @@ void D3D12Sample::CreateMeshBuffers (
         IID_PPV_ARGS (&indexBuffer));
 
     // Create buffer views
-    vertexBufferView_.BufferLocation = vertexBuffer_->GetGPUVirtualAddress ();
-    vertexBufferView_.SizeInBytes = vertexCount * sizeof(Vertex);
-    vertexBufferView_.StrideInBytes = sizeof (Vertex);
+    vertexBufferView.BufferLocation = vertexBuffer->GetGPUVirtualAddress ();
+    vertexBufferView.SizeInBytes = vertexCount * sizeof(Vertex);
+    vertexBufferView.StrideInBytes = sizeof (Vertex);
 
-    indexBufferView_.BufferLocation = indexBuffer_->GetGPUVirtualAddress ();
-    indexBufferView_.SizeInBytes = indexCount * sizeof(unsigned int);
-    indexBufferView_.Format = DXGI_FORMAT_R32_UINT;
+    indexBufferView.BufferLocation = indexBuffer->GetGPUVirtualAddress ();
+    indexBufferView.SizeInBytes = indexCount * sizeof(unsigned int);
+    indexBufferView.Format = DXGI_FORMAT_R32_UINT;
 
     // Copy data on CPU into the upload buffer
     void* p;
@@ -778,16 +778,16 @@ void D3D12Sample::CreateMeshBuffers (
 
     // Copy data from upload buffer on CPU into the index/vertex buffer on 
     // the GPU
-    uploadCommandList->CopyBufferRegion (vertexBuffer_.Get (), 0,
+    uploadCommandList->CopyBufferRegion (vertexBuffer.Get (), 0,
         uploadBuffer_.Get (), 0, vertexCount * sizeof(Vertex));
-    uploadCommandList->CopyBufferRegion (indexBuffer_.Get (), 0,
+    uploadCommandList->CopyBufferRegion (indexBuffer.Get (), 0,
         uploadBuffer_.Get (), vertexCount * sizeof(Vertex), indexCount * sizeof(unsigned int));
 
     // Barriers, batch them together
     const CD3DX12_RESOURCE_BARRIER barriers[2] = {
-        CD3DX12_RESOURCE_BARRIER::Transition (vertexBuffer_.Get (),
+        CD3DX12_RESOURCE_BARRIER::Transition (vertexBuffer.Get (),
         D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER),
-        CD3DX12_RESOURCE_BARRIER::Transition (indexBuffer_.Get (),
+        CD3DX12_RESOURCE_BARRIER::Transition (indexBuffer.Get (),
             D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_INDEX_BUFFER)
     };
 
