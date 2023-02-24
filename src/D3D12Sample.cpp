@@ -689,7 +689,7 @@ void D3D12Sample::CreatePipelineStateObject ()
 void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
     //TODO: Extract mesh info
     CreateMeshBuffers (uploadCommandList);
-    UploadTextures(
+    Textures::UploadTextures(
             "data/models/" + config_.models[modelIndex_] + "/",
             device_, srvDescriptorHeap_,
             materials_, image_, uploadImage_,

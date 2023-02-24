@@ -8,6 +8,7 @@
 using namespace Microsoft::WRL;
 
 namespace AMD {
+namespace Textures {
 void UploadTextures (
         const std::string &folder,
         const ComPtr<ID3D12Device> &device,
@@ -81,5 +82,6 @@ void UploadTextures (
 
         device->CreateShaderResourceView (imgs[i].Get (), &shaderResourceViewDesc, srvHandle);
     }
+}
 }
 }

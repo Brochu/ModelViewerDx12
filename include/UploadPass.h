@@ -7,6 +7,7 @@
 #include <wrl.h>
 
 namespace AMD {
+namespace Textures {
 void UploadTextures (
         const std::string &folder,
         const Microsoft::WRL::ComPtr<ID3D12Device> &device,
@@ -15,4 +16,5 @@ void UploadTextures (
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs,
         ID3D12GraphicsCommandList* uploadCommandList);
+}
 }
