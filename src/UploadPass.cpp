@@ -2,7 +2,6 @@
 #include "UploadPass.h"
 #include "ImageIO.h"
 
-#include "Tracy.hpp"
 #include "d3dx12.h"
 
 using namespace Microsoft::WRL;
@@ -115,11 +114,6 @@ void UploadTextures (
         int width = 0, height = 0;
         std::string path = folder + m.textureName;
         std::vector<std::uint8_t> imgdata = LoadImageFromFile(path.c_str(), 1, &width, &height);
-
-        std::string out(path);
-        out.append("; size = ");
-        out.append(std::to_string(imgdata.size()));
-        TracyMessage(out.c_str(), out.size());
 
         const auto resourceDesc = CD3DX12_RESOURCE_DESC::Tex2D ( DXGI_FORMAT_R8G8B8A8_UNORM_SRGB, width, height, 1, 1 );
         device->CreateCommittedResource (&defaultHeapProperties,
