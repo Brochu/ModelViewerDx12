@@ -10,10 +10,9 @@ using namespace Microsoft::WRL;
 namespace AMD {
 namespace Meshes {
 void CreateMeshBuffers (
-    const std::string &folder,
     const Microsoft::WRL::ComPtr<ID3D12Device> &device,
-    Draws &draws,
-    std::vector<Material> &mats,
+    std::vector<Vertex> &vertices,
+    std::vector<unsigned int> &indices,
     Microsoft::WRL::ComPtr<ID3D12Resource> &uploadBuffer,
     Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
     D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
@@ -21,11 +20,6 @@ void CreateMeshBuffers (
     D3D12_INDEX_BUFFER_VIEW &indexBufferView,
     ID3D12GraphicsCommandList* uploadCommandList)
 {
-    std::string path = folder + "/model.obj";
-    std::vector<Vertex> vertices;
-    std::vector<unsigned int> indices;
-
-    draws = ExtractAiScene(path.c_str(), vertices, indices, mats);
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
 

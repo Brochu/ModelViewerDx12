@@ -689,19 +689,24 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
-    //TODO: Extract mesh info before uploading data
+    std::string path = "data/models/" + config_.models[modelIndex_] + "/model.obj";
+    std::vector<Vertex> vertices;
+    std::vector<unsigned int> indices;
+
+    draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
 
     //TODO: Simplify the parameter we have to send here
     // We should only send some raw data through for upload
     Meshes::CreateMeshBuffers(
-            "data/models/" + config_.models[modelIndex_],
             device_,
-            draws_, materials_,
+            vertices, indices,
             uploadBuffer_,
             vertexBuffer_, vertexBufferView_,
             indexBuffer_, indexBufferView_,
             uploadCommandList);
 
+    //TODO: Simplify the parameter we have to send here
+    // We should only send some raw data through for upload
     Textures::UploadTextures(
             "data/models/" + config_.models[modelIndex_] + "/",
             device_, srvDescriptorHeap_,

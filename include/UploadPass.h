@@ -9,10 +9,9 @@
 namespace AMD {
 namespace Meshes {
 void CreateMeshBuffers (
-    const std::string &folder,
     const Microsoft::WRL::ComPtr<ID3D12Device> &device,
-    Draws &draws,
-    std::vector<Material> &mats,
+    std::vector<Vertex> &vertices,
+    std::vector<unsigned int> &indices,
     Microsoft::WRL::ComPtr<ID3D12Resource> &uploadBuffer,
     Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
     D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
