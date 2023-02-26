@@ -689,7 +689,9 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
-    std::string path = "data/models/" + config_.models[modelIndex_] + "/model.obj";
+    static const std::string folder = "data/models/" + config_.models[modelIndex_] + "/";
+
+    std::string path = folder + "model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
 
@@ -705,12 +707,29 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
             indexBuffer_, indexBufferView_,
             uploadCommandList);
 
+    // Load texture files to prepare for upload to vram
+    std::vector<Texture> textures;
+    for (int i = 0; i < materials_.size(); i++) {
+        Material m = materials_[i];
+
+        if (m.textureName.size() == 0) {
+            //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
+            textures.push_back({ 0, 0, {} });
+        } else {
+            std::string path = folder + m.textureName;
+
+            int w, h = 0;
+            std::vector<std::uint8_t> imgdata = LoadImageFromFile(path.c_str(), 1, &w, &h);
+            textures.push_back({ w, h, imgdata });
+        }
+    }
+
     //TODO: Simplify the parameter we have to send here
     // We should only send some raw data through for upload
     Textures::UploadTextures(
-            "data/models/" + config_.models[modelIndex_] + "/",
             device_, srvDescriptorHeap_,
-            materials_, image_, uploadImage_,
+            textures,
+            image_, uploadImage_,
             uploadCommandList);
 }
 

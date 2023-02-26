@@ -22,10 +22,9 @@ void CreateMeshBuffers (
 
 namespace Textures {
 void UploadTextures (
-        const std::string &folder,
         const Microsoft::WRL::ComPtr<ID3D12Device> &device,
         const Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &srvHeap,
-        const std::vector<Material> &mats,
+        const std::vector<Texture> &textures,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs,
         ID3D12GraphicsCommandList* uploadCommandList);

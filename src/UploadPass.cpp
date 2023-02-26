@@ -93,29 +93,27 @@ void CreateMeshBuffers (
 
 namespace Textures {
 void UploadTextures (
-        const std::string &folder,
         const ComPtr<ID3D12Device> &device,
         const ComPtr<ID3D12DescriptorHeap> &srvHeap,
-        const std::vector<Material> &mats,
+        const std::vector<Texture> &textures,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs,
         ID3D12GraphicsCommandList* uploadCommandList)
 {
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
-    for (size_t i = 0; i < mats.size(); i++) {
+    for (size_t i = 0; i < textures.size(); i++) {
         //TODO: This is pretty ugly, why do we have textures with empty names?
         imgs.emplace_back();
         uploadImgs.emplace_back();
         
-        Material m = mats[i];
-        if (m.textureName.size() <= 0) continue;
+        Texture t = textures[i];
+        if (t.data.size() <= 0) continue;
 
-        int width = 0, height = 0;
-        std::string path = folder + m.textureName;
-        std::vector<std::uint8_t> imgdata = LoadImageFromFile(path.c_str(), 1, &width, &height);
-
-        const auto resourceDesc = CD3DX12_RESOURCE_DESC::Tex2D ( DXGI_FORMAT_R8G8B8A8_UNORM_SRGB, width, height, 1, 1 );
+        const auto resourceDesc = CD3DX12_RESOURCE_DESC::Tex2D (
+                DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
+                t.width, t.height,
+                1, 1 );
         device->CreateCommittedResource (&defaultHeapProperties,
             D3D12_HEAP_FLAG_CREATE_NOT_ZEROED,
             &resourceDesc,
@@ -135,9 +133,9 @@ void UploadTextures (
             IID_PPV_ARGS (&uploadImgs[i]));
 
         D3D12_SUBRESOURCE_DATA srcData;
-        srcData.pData = imgdata.data ();
-        srcData.RowPitch = width * 4;
-        srcData.SlicePitch = width * height * 4;
+        srcData.pData = t.data.data ();
+        srcData.RowPitch = t.width * 4;
+        srcData.SlicePitch = t.width * t.height * 4;
 
         UpdateSubresources (uploadCommandList, imgs[i].Get (), uploadImgs[i].Get (), 0, 0, 1, &srcData);
         const auto transition = CD3DX12_RESOURCE_BARRIER::Transition (imgs[i].Get (),
