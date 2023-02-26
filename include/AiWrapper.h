@@ -15,9 +15,9 @@ struct Material {
 };
 
 struct Texture {
-    std::vector<std::uint8_t> data;
     int width;
     int height;
+    std::vector<std::uint8_t> data;
 };
 
 struct Draws {
