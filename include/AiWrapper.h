@@ -14,6 +14,12 @@ struct Material {
     std::string textureName;
 };
 
+struct Texture {
+    std::vector<std::uint8_t> data;
+    int width;
+    int height;
+};
+
 struct Draws {
     std::vector<size_t> indexCounts;
 
