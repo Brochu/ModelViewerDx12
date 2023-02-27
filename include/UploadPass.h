@@ -24,11 +24,12 @@ struct UploadPass {
         const std::vector<Texture> &textures,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs);
 
-    inline ID3D12CommandList* GetUploadCommandList() { return uploadCmdList_.Get(); }
-    inline void CloseUploadPass() { uploadCmdList_->Close(); }
+    void Execute(ID3D12CommandQueue *queue);
+    void WaitForUpload();
 
 private:
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
+    Microsoft::WRL::ComPtr<ID3D12Fence> uploadFence_;
 
     Microsoft::WRL::ComPtr<ID3D12CommandAllocator> uploadCmdAlloc_;
     Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> uploadCmdList_;

@@ -1,4 +1,5 @@
 #include <d3d12.h>
+#include <stdexcept>
 #define NOMINMAX
 #include "UploadPass.h"
 #include "ImageIO.h"
@@ -10,6 +11,11 @@ using namespace Microsoft::WRL;
 namespace AMD {
 UploadPass::UploadPass(ComPtr<ID3D12Device> &device) {
     device_ = device;
+    // Create our upload fence, command list and command allocator
+    // This will be only used while creating the mesh buffer and the texture
+    // to upload data to the GPU.
+    device_->CreateFence (0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS (&uploadFence_));
+
     device_->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&uploadCmdAlloc_));
     device_->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT,
         uploadCmdAlloc_.Get(), nullptr, IID_PPV_ARGS(&uploadCmdList_));
@@ -167,5 +173,27 @@ void UploadPass::UploadTextures (
 
         device_->CreateShaderResourceView (imgs[i].Get (), &shaderResourceViewDesc, srvHandle);
     }
+}
+
+void UploadPass::Execute(ID3D12CommandQueue *queue) {
+    uploadCmdList_->Close();
+
+    ID3D12CommandList* commandLists [] = { uploadCmdList_.Get() };
+    queue->ExecuteCommandLists (std::extent<decltype(commandLists)>::value, commandLists);
+    queue->Signal (uploadFence_.Get (), 1);
+}
+
+void UploadPass::WaitForUpload() {
+    auto waitEvent = CreateEvent (nullptr, FALSE, FALSE, nullptr);
+
+    if (waitEvent == NULL) {
+        throw std::runtime_error ("Could not create wait event.");
+    }
+
+    if (uploadFence_->GetCompletedValue () < 1) {
+        uploadFence_->SetEventOnCompletion (1, waitEvent);
+        WaitForSingleObject (waitEvent, INFINITE);
+    }
+    CloseHandle (waitEvent);
 }
 }

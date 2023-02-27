@@ -506,34 +506,12 @@ void D3D12Sample::Initialize ()
                         imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
                         imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
     
-    // Create our upload fence, command list and command allocator
-    // This will be only used while creating the mesh buffer and the texture
-    // to upload data to the GPU.
-    ComPtr<ID3D12Fence> uploadFence;
-    device_->CreateFence (0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS (&uploadFence));
-
     //TODO: How do we call this again after changing the selected model
     UploadPass upload(device_);
     LoadContent(upload);
-    //---------------------------------
-    //---------------------------------------
 
-    upload.CloseUploadPass();
-
-    // Execute the upload and finish the command list
-    ID3D12CommandList* commandLists [] = { upload.GetUploadCommandList() };
-    commandQueue_->ExecuteCommandLists (std::extent<decltype(commandLists)>::value, commandLists);
-    commandQueue_->Signal (uploadFence.Get (), 1);
-
-    auto waitEvent = CreateEvent (nullptr, FALSE, FALSE, nullptr);
-
-    if (waitEvent == NULL) {
-        throw std::runtime_error ("Could not create wait event.");
-    }
-
-    WaitForFence (uploadFence.Get (), 1, waitEvent);
-    CloseHandle (waitEvent);
-    // Upload Pass structure gets destroyed and cleaned up here
+    upload.Execute(commandQueue_.Get());
+    upload.WaitForUpload();
 
     CreateRootSignature ();
     CreatePipelineStateObject ();
