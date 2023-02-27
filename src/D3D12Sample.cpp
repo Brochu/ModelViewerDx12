@@ -24,7 +24,6 @@
 #include "D3D12Sample.h"
 #include "ImageIO.h"
 #include "Utility.h"
-#include "UploadPass.h"
 
 #include "Tracy.hpp"
 #include "imgui.h"
@@ -489,14 +488,6 @@ void D3D12Sample::Initialize ()
     ComPtr<ID3D12Fence> uploadFence;
     device_->CreateFence (0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS (&uploadFence));
 
-    ComPtr<ID3D12CommandAllocator> uploadCommandAllocator;
-    device_->CreateCommandAllocator (D3D12_COMMAND_LIST_TYPE_DIRECT,
-        IID_PPV_ARGS (&uploadCommandAllocator));
-    ComPtr<ID3D12GraphicsCommandList> uploadCommandList;
-    device_->CreateCommandList (0, D3D12_COMMAND_LIST_TYPE_DIRECT,
-        uploadCommandAllocator.Get (), nullptr,
-        IID_PPV_ARGS (&uploadCommandList));
-
     //---------------------------------------
     config_ = ParseConfig();
 
@@ -517,7 +508,8 @@ void D3D12Sample::Initialize ()
     CreateConstantBuffer ();
 
     //TODO: How do we call this again after changing the selected model
-    LoadContent(uploadCommandList.Get());
+    UploadPass upload(device_);
+    LoadContent(upload);
     //---------------------------------
 
     // Imgui render side init
@@ -529,10 +521,10 @@ void D3D12Sample::Initialize ()
                         imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
     //---------------------------------------
 
-    uploadCommandList->Close ();
+    upload.CloseUploadPass();
 
     // Execute the upload and finish the command list
-    ID3D12CommandList* commandLists [] = { uploadCommandList.Get () };
+    ID3D12CommandList* commandLists [] = { upload.GetUploadCommandList() };
     commandQueue_->ExecuteCommandLists (std::extent<decltype(commandLists)>::value, commandLists);
     commandQueue_->Signal (uploadFence.Get (), 1);
 
@@ -543,11 +535,8 @@ void D3D12Sample::Initialize ()
     }
 
     WaitForFence (uploadFence.Get (), 1, waitEvent);
-
-    // Cleanup our upload handle
-    uploadCommandAllocator->Reset ();
-
     CloseHandle (waitEvent);
+    // Upload Pass structure gets destroyed and cleaned up here
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -688,7 +677,7 @@ void D3D12Sample::CreatePipelineStateObject ()
     device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
 }
 
-void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
+void D3D12Sample::LoadContent (UploadPass &upload) {
     static const std::string folder = "data/models/" + config_.models[modelIndex_] + "/";
 
     std::string path = folder + "model.obj";
@@ -696,17 +685,14 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
     std::vector<unsigned int> indices;
 
     draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
-    UploadPass upload = {};
 
     //TODO: Simplify the parameter we have to send here
     // We should only send some raw data through for upload
     upload.CreateMeshBuffers(
-            device_,
             vertices, indices,
             uploadBuffer_,
             vertexBuffer_, vertexBufferView_,
-            indexBuffer_, indexBufferView_,
-            uploadCommandList);
+            indexBuffer_, indexBufferView_);
 
     // Load texture files to prepare for upload to vram
     std::vector<Texture> textures;
@@ -728,10 +714,9 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
     //TODO: Simplify the parameter we have to send here
     // We should only send some raw data through for upload
     upload.UploadTextures(
-            device_, srvDescriptorHeap_,
+            srvDescriptorHeap_,
             textures,
-            image_, uploadImage_,
-            uploadCommandList);
+            image_, uploadImage_);
 }
 
 void D3D12Sample::CreateConstantBuffer ()

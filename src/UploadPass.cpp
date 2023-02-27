@@ -1,3 +1,4 @@
+#include <d3d12.h>
 #define NOMINMAX
 #include "UploadPass.h"
 #include "ImageIO.h"
@@ -7,16 +8,25 @@
 using namespace Microsoft::WRL;
 
 namespace AMD {
+UploadPass::UploadPass(ComPtr<ID3D12Device> &device) {
+    device_ = device;
+    device_->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&uploadCmdAlloc_));
+    device_->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT,
+        uploadCmdAlloc_.Get(), nullptr, IID_PPV_ARGS(&uploadCmdList_));
+}
+
+UploadPass::~UploadPass() {
+    uploadCmdAlloc_->Reset();
+}
+
 void UploadPass::CreateMeshBuffers (
-    const Microsoft::WRL::ComPtr<ID3D12Device> &device,
     std::vector<Vertex> &vertices,
     std::vector<unsigned int> &indices,
     Microsoft::WRL::ComPtr<ID3D12Resource> &uploadBuffer,
     Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
     D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
     Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
-    D3D12_INDEX_BUFFER_VIEW &indexBufferView,
-    ID3D12GraphicsCommandList* uploadCommandList)
+    D3D12_INDEX_BUFFER_VIEW &indexBufferView)
 {
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
@@ -26,7 +36,7 @@ void UploadPass::CreateMeshBuffers (
     static const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
 
     // Create upload buffer on CPU
-    device->CreateCommittedResource (&uploadHeapProperties,
+    device_->CreateCommittedResource (&uploadHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &uploadBufferDesc,
         D3D12_RESOURCE_STATE_GENERIC_READ,
@@ -39,7 +49,7 @@ void UploadPass::CreateMeshBuffers (
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
     static const auto vertexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (vertexCount * sizeof(Vertex));
-    device->CreateCommittedResource (&defaultHeapProperties,
+    device_->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &vertexBufferDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
@@ -47,7 +57,7 @@ void UploadPass::CreateMeshBuffers (
         IID_PPV_ARGS (&vertexBuffer));
 
     static const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount * sizeof(unsigned int));
-    device->CreateCommittedResource (&defaultHeapProperties,
+    device_->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &indexBufferDesc,
         D3D12_RESOURCE_STATE_COPY_DEST,
@@ -73,9 +83,9 @@ void UploadPass::CreateMeshBuffers (
 
     // Copy data from upload buffer on CPU into the index/vertex buffer on 
     // the GPU
-    uploadCommandList->CopyBufferRegion (vertexBuffer.Get (), 0,
+    uploadCmdList_->CopyBufferRegion (vertexBuffer.Get (), 0,
         uploadBuffer.Get (), 0, vertexCount * sizeof(Vertex));
-    uploadCommandList->CopyBufferRegion (indexBuffer.Get (), 0,
+    uploadCmdList_->CopyBufferRegion (indexBuffer.Get (), 0,
         uploadBuffer.Get (), vertexCount * sizeof(Vertex), indexCount * sizeof(unsigned int));
 
     // Barriers, batch them together
@@ -86,16 +96,14 @@ void UploadPass::CreateMeshBuffers (
             D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_INDEX_BUFFER)
     };
 
-    uploadCommandList->ResourceBarrier (2, barriers);
+    uploadCmdList_->ResourceBarrier (2, barriers);
 }
 
 void UploadPass::UploadTextures (
-        const ComPtr<ID3D12Device> &device,
         const ComPtr<ID3D12DescriptorHeap> &srvHeap,
         const std::vector<Texture> &textures,
         std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs,
-        ID3D12GraphicsCommandList* uploadCommandList)
+        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs)
 {
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
@@ -111,7 +119,7 @@ void UploadPass::UploadTextures (
                 DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
                 t.width, t.height,
                 1, 1 );
-        device->CreateCommittedResource (&defaultHeapProperties,
+        device_->CreateCommittedResource (&defaultHeapProperties,
             D3D12_HEAP_FLAG_CREATE_NOT_ZEROED,
             &resourceDesc,
             D3D12_RESOURCE_STATE_COPY_DEST,
@@ -122,7 +130,7 @@ void UploadPass::UploadTextures (
         const auto uploadBufferSize = GetRequiredIntermediateSize (imgs[i].Get (), 0, 1);
         const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
 
-        device->CreateCommittedResource (&uploadHeapProperties,
+        device_->CreateCommittedResource (&uploadHeapProperties,
             D3D12_HEAP_FLAG_NONE,
             &uploadBufferDesc,
             D3D12_RESOURCE_STATE_GENERIC_READ,
@@ -134,10 +142,10 @@ void UploadPass::UploadTextures (
         srcData.RowPitch = t.width * 4;
         srcData.SlicePitch = t.width * t.height * 4;
 
-        UpdateSubresources (uploadCommandList, imgs[i].Get (), uploadImgs[i].Get (), 0, 0, 1, &srcData);
+        UpdateSubresources (uploadCmdList_.Get(), imgs[i].Get (), uploadImgs[i].Get (), 0, 0, 1, &srcData);
         const auto transition = CD3DX12_RESOURCE_BARRIER::Transition (imgs[i].Get (),
             D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
-        uploadCommandList->ResourceBarrier (1, &transition);
+        uploadCmdList_->ResourceBarrier (1, &transition);
 
         D3D12_SHADER_RESOURCE_VIEW_DESC shaderResourceViewDesc = {};
         shaderResourceViewDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
@@ -147,13 +155,13 @@ void UploadPass::UploadTextures (
         shaderResourceViewDesc.Texture2D.MostDetailedMip = 0;
         shaderResourceViewDesc.Texture2D.ResourceMinLODClamp = 0.0f;
 
-        UINT incrementSize = device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
+        UINT incrementSize = device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
         D3D12_CPU_DESCRIPTOR_HANDLE srvHandle;
         CD3DX12_CPU_DESCRIPTOR_HANDLE::InitOffsetted (srvHandle,
             srvHeap->GetCPUDescriptorHandleForHeapStart (),
             (UINT)i, incrementSize);
 
-        device->CreateShaderResourceView (imgs[i].Get (), &shaderResourceViewDesc, srvHandle);
+        device_->CreateShaderResourceView (imgs[i].Get (), &shaderResourceViewDesc, srvHandle);
     }
 }
 }

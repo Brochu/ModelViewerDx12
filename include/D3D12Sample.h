@@ -24,6 +24,7 @@
 #define ANTERU_D3D12_SAMPLE_D3D12SAMPLE_H_
 #include "AiWrapper.h"
 #include "Config.h"
+#include "UploadPass.h"
 
 #include <d3d12.h>
 #include <dxgi.h>
@@ -63,7 +64,7 @@ private:
     void SetupSwapChain ();
     void SetupRenderTargets ();
 
-    void LoadContent (ID3D12GraphicsCommandList* uploadCommandList);
+    void LoadContent (UploadPass &upload);
 
     void CreateConstantBuffer ();
     void UpdateConstantBuffer ();
