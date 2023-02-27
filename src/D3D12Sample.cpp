@@ -478,18 +478,12 @@ void D3D12Sample::SetupSwapChain ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Initialize ()
 {
+    //---------------------------------------
+    config_ = ParseConfig();
+
     CreateDeviceAndSwapChain ();
     CreateAllocatorsAndCommandLists ();
     CreateViewportScissor ();
-    
-    // Create our upload fence, command list and command allocator
-    // This will be only used while creating the mesh buffer and the texture
-    // to upload data to the GPU.
-    ComPtr<ID3D12Fence> uploadFence;
-    device_->CreateFence (0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS (&uploadFence));
-
-    //---------------------------------------
-    config_ = ParseConfig();
 
     // We need one descriptor heap to store our texture SRV which cannot go
     // into the root signature. So create a SRV type heap with one entry
@@ -504,15 +498,6 @@ void D3D12Sample::Initialize ()
     descriptorHeapDesc.NumDescriptors = 1;
     device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&imguiDescriptorHeap_));
 
-    CreateRootSignature ();
-    CreatePipelineStateObject ();
-    CreateConstantBuffer ();
-
-    //TODO: How do we call this again after changing the selected model
-    UploadPass upload(device_);
-    LoadContent(upload);
-    //---------------------------------
-
     // Imgui render side init
     ImGui_ImplDX12_Init(device_.Get(),
                         QUEUE_SLOT_COUNT,
@@ -520,6 +505,17 @@ void D3D12Sample::Initialize ()
                         imguiDescriptorHeap_.Get(),
                         imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
                         imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
+    
+    // Create our upload fence, command list and command allocator
+    // This will be only used while creating the mesh buffer and the texture
+    // to upload data to the GPU.
+    ComPtr<ID3D12Fence> uploadFence;
+    device_->CreateFence (0, D3D12_FENCE_FLAG_NONE, IID_PPV_ARGS (&uploadFence));
+
+    //TODO: How do we call this again after changing the selected model
+    UploadPass upload(device_);
+    LoadContent(upload);
+    //---------------------------------
     //---------------------------------------
 
     upload.CloseUploadPass();
@@ -538,6 +534,10 @@ void D3D12Sample::Initialize ()
     WaitForFence (uploadFence.Get (), 1, waitEvent);
     CloseHandle (waitEvent);
     // Upload Pass structure gets destroyed and cleaned up here
+
+    CreateRootSignature ();
+    CreatePipelineStateObject ();
+    CreateConstantBuffer ();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -765,7 +765,7 @@ void D3D12Sample::UpdateConstantBuffer ()
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
-    XMMATRIX world = XMMatrixInverse(nullptr, model); // Need to convert local space to world space
+    XMMATRIX world = XMMatrixTranspose(model); // Need to convert local space to world space
 
     ConstantBuffer cb { mvp, world, XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f) };
 
