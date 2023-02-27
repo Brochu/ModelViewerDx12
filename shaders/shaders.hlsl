@@ -44,6 +44,7 @@ float4 PS_main (VertexShaderOutput input) : SV_TARGET
     float3 color = anteruTexture[texIndex].Sample(texureSampler, input.uv).xyz;
     float3 final = float3(0.0, 0.0, 0.0);
 
+    //TODO: Something does not work when rotating models
     float3 light2pix = lightPos.xyz - input.worldpos.xyz;
     float dist = length(light2pix);
 

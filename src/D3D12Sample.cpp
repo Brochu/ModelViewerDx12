@@ -771,7 +771,7 @@ void D3D12Sample::UpdateConstantBuffer ()
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
-    XMMATRIX world = XMMatrixTranspose(model); // Need to convert local space to world space
+    XMMATRIX world = XMMatrixInverse(nullptr, model); // Need to convert local space to world space
 
     ConstantBuffer cb { mvp, world, XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f) };
 
