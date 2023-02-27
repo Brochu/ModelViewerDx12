@@ -14,7 +14,6 @@ struct UploadPass {
     void CreateMeshBuffers (
         std::vector<Vertex> &vertices,
         std::vector<unsigned int> &indices,
-        Microsoft::WRL::ComPtr<ID3D12Resource> &uploadBuffer,
         Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
         D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
         Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
@@ -23,15 +22,18 @@ struct UploadPass {
     void UploadTextures (
         const Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> &srvHeap,
         const std::vector<Texture> &textures,
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs);
+        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs);
 
     inline ID3D12CommandList* GetUploadCommandList() { return uploadCmdList_.Get(); }
     inline void CloseUploadPass() { uploadCmdList_->Close(); }
 
 private:
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
+
     Microsoft::WRL::ComPtr<ID3D12CommandAllocator> uploadCmdAlloc_;
     Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> uploadCmdList_;
+
+    Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
+    std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> uploadImages_;
 };
 }

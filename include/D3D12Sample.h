@@ -105,15 +105,13 @@ private:
     Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffers_[QUEUE_SLOT_COUNT];
 
     //TODO: Try to move these to an upload pass namespace
-    Microsoft::WRL::ComPtr<ID3D12Resource> uploadBuffer_;
     Microsoft::WRL::ComPtr<ID3D12Resource> vertexBuffer_;
     D3D12_VERTEX_BUFFER_VIEW vertexBufferView_;
     Microsoft::WRL::ComPtr<ID3D12Resource> indexBuffer_;
     D3D12_INDEX_BUFFER_VIEW indexBufferView_;
 
-    //TODO: Try to move these to an upload pass namespace
     std::vector<Material> materials_;
-    std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> uploadImage_;
+    //TODO: Try to move these to an upload pass namespace
     std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap_;

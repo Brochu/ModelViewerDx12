@@ -690,7 +690,6 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     // We should only send some raw data through for upload
     upload.CreateMeshBuffers(
             vertices, indices,
-            uploadBuffer_,
             vertexBuffer_, vertexBufferView_,
             indexBuffer_, indexBufferView_);
 
@@ -710,13 +709,7 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
             textures.push_back({ w, h, imgdata });
         }
     }
-
-    //TODO: Simplify the parameter we have to send here
-    // We should only send some raw data through for upload
-    upload.UploadTextures(
-            srvDescriptorHeap_,
-            textures,
-            image_, uploadImage_);
+    upload.UploadTextures(srvDescriptorHeap_, textures, image_);
 }
 
 void D3D12Sample::CreateConstantBuffer ()

@@ -17,12 +17,17 @@ UploadPass::UploadPass(ComPtr<ID3D12Device> &device) {
 
 UploadPass::~UploadPass() {
     uploadCmdAlloc_->Reset();
+
+    uploadBuffer_.Reset();
+    for (auto& img : uploadImages_) {
+        img.Reset();
+    }
+    uploadImages_.clear();
 }
 
 void UploadPass::CreateMeshBuffers (
     std::vector<Vertex> &vertices,
     std::vector<unsigned int> &indices,
-    Microsoft::WRL::ComPtr<ID3D12Resource> &uploadBuffer,
     Microsoft::WRL::ComPtr<ID3D12Resource> &vertexBuffer,
     D3D12_VERTEX_BUFFER_VIEW &vertexBufferView,
     Microsoft::WRL::ComPtr<ID3D12Resource> &indexBuffer,
@@ -41,7 +46,7 @@ void UploadPass::CreateMeshBuffers (
         &uploadBufferDesc,
         D3D12_RESOURCE_STATE_GENERIC_READ,
         nullptr,
-        IID_PPV_ARGS (&uploadBuffer));
+        IID_PPV_ARGS (&uploadBuffer_));
 
     // Create vertex & index buffer on the GPU
     // HEAP_TYPE_DEFAULT is on GPU, we also initialize with COPY_DEST state
@@ -75,18 +80,18 @@ void UploadPass::CreateMeshBuffers (
 
     // Copy data on CPU into the upload buffer
     void* p;
-    uploadBuffer->Map (0, nullptr, &p);
+    uploadBuffer_->Map (0, nullptr, &p);
     ::memcpy (p, vertices.data(), vertexCount * sizeof(Vertex));
     ::memcpy (static_cast<unsigned char*>(p) + vertexCount * sizeof(Vertex),
         indices.data(), indexCount * sizeof(unsigned int));
-    uploadBuffer->Unmap (0, nullptr);
+    uploadBuffer_->Unmap (0, nullptr);
 
     // Copy data from upload buffer on CPU into the index/vertex buffer on 
     // the GPU
     uploadCmdList_->CopyBufferRegion (vertexBuffer.Get (), 0,
-        uploadBuffer.Get (), 0, vertexCount * sizeof(Vertex));
+        uploadBuffer_.Get (), 0, vertexCount * sizeof(Vertex));
     uploadCmdList_->CopyBufferRegion (indexBuffer.Get (), 0,
-        uploadBuffer.Get (), vertexCount * sizeof(Vertex), indexCount * sizeof(unsigned int));
+        uploadBuffer_.Get (), vertexCount * sizeof(Vertex), indexCount * sizeof(unsigned int));
 
     // Barriers, batch them together
     const CD3DX12_RESOURCE_BARRIER barriers[2] = {
@@ -102,15 +107,14 @@ void UploadPass::CreateMeshBuffers (
 void UploadPass::UploadTextures (
         const ComPtr<ID3D12DescriptorHeap> &srvHeap,
         const std::vector<Texture> &textures,
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs,
-        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &uploadImgs)
+        std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> &imgs)
 {
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
     for (size_t i = 0; i < textures.size(); i++) {
         //TODO: This is pretty ugly, why do we have textures with empty names?
         imgs.emplace_back();
-        uploadImgs.emplace_back();
+        uploadImages_.emplace_back();
         
         Texture t = textures[i];
         if (t.data.size() <= 0) continue;
@@ -135,14 +139,14 @@ void UploadPass::UploadTextures (
             &uploadBufferDesc,
             D3D12_RESOURCE_STATE_GENERIC_READ,
             nullptr,
-            IID_PPV_ARGS (&uploadImgs[i]));
+            IID_PPV_ARGS (&uploadImages_[i]));
 
         D3D12_SUBRESOURCE_DATA srcData;
         srcData.pData = t.data.data ();
         srcData.RowPitch = t.width * 4;
         srcData.SlicePitch = t.width * t.height * 4;
 
-        UpdateSubresources (uploadCmdList_.Get(), imgs[i].Get (), uploadImgs[i].Get (), 0, 0, 1, &srcData);
+        UpdateSubresources (uploadCmdList_.Get(), imgs[i].Get (), uploadImages_[i].Get (), 0, 0, 1, &srcData);
         const auto transition = CD3DX12_RESOURCE_BARRIER::Transition (imgs[i].Get (),
             D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
         uploadCmdList_->ResourceBarrier (1, &transition);
