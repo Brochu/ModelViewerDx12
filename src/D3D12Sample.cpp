@@ -696,10 +696,11 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
     std::vector<unsigned int> indices;
 
     draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
+    UploadPass upload = {};
 
     //TODO: Simplify the parameter we have to send here
     // We should only send some raw data through for upload
-    Meshes::CreateMeshBuffers(
+    upload.CreateMeshBuffers(
             device_,
             vertices, indices,
             uploadBuffer_,
@@ -726,7 +727,7 @@ void D3D12Sample::LoadContent (ID3D12GraphicsCommandList* uploadCommandList) {
 
     //TODO: Simplify the parameter we have to send here
     // We should only send some raw data through for upload
-    Textures::UploadTextures(
+    upload.UploadTextures(
             device_, srvDescriptorHeap_,
             textures,
             image_, uploadImage_,

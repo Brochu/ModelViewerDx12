@@ -7,8 +7,7 @@
 using namespace Microsoft::WRL;
 
 namespace AMD {
-namespace Meshes {
-void CreateMeshBuffers (
+void UploadPass::CreateMeshBuffers (
     const Microsoft::WRL::ComPtr<ID3D12Device> &device,
     std::vector<Vertex> &vertices,
     std::vector<unsigned int> &indices,
@@ -89,10 +88,8 @@ void CreateMeshBuffers (
 
     uploadCommandList->ResourceBarrier (2, barriers);
 }
-}
 
-namespace Textures {
-void UploadTextures (
+void UploadPass::UploadTextures (
         const ComPtr<ID3D12Device> &device,
         const ComPtr<ID3D12DescriptorHeap> &srvHeap,
         const std::vector<Texture> &textures,
@@ -158,6 +155,5 @@ void UploadTextures (
 
         device->CreateShaderResourceView (imgs[i].Get (), &shaderResourceViewDesc, srvHandle);
     }
-}
 }
 }
