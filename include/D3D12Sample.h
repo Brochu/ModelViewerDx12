@@ -60,15 +60,15 @@ private:
     void CreateDeviceAndSwapChain ();
     void CreateAllocatorsAndCommandLists ();
     void CreateViewportScissor ();
-    void CreatePipelineStateObject ();
     void SetupSwapChain ();
     void SetupRenderTargets ();
 
     void LoadContent (UploadPass &upload);
 
+    void CreatePipelineStateObject ();
+    void CreateRootSignature ();
     void CreateConstantBuffer ();
     void UpdateConstantBuffer ();
-    void CreateRootSignature ();
 
     static const int QUEUE_SLOT_COUNT = 3;
     int currentBackBuffer_ = 0;
@@ -76,6 +76,7 @@ private:
     HWND hwnd_;
     int width_ = -1;
     int height_ = -1;
+
     int modelIndex_ = 0;
     Config config_;
 

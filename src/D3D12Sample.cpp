@@ -485,11 +485,9 @@ void D3D12Sample::Initialize ()
     CreateAllocatorsAndCommandLists ();
     CreateViewportScissor ();
 
-    // We need one descriptor heap to store our texture SRV which cannot go
-    // into the root signature. So create a SRV type heap with one entry
+    // We need one descriptor heap to store our texture SRVs which cannot go
     D3D12_DESCRIPTOR_HEAP_DESC descriptorHeapDesc = {};
     descriptorHeapDesc.NumDescriptors = 256;
-    // This heap contains SRV, UAV or CBVs -- in our case one SRV
     descriptorHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
     descriptorHeapDesc.NodeMask = 0;
     descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
