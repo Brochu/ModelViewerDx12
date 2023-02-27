@@ -685,15 +685,8 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     std::vector<unsigned int> indices;
 
     draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
+    upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
 
-    //TODO: Simplify the parameter we have to send here
-    // We should only send some raw data through for upload
-    upload.CreateMeshBuffers(
-            vertices, indices,
-            vertexBuffer_, vertexBufferView_,
-            indexBuffer_, indexBufferView_);
-
-    // Load texture files to prepare for upload to vram
     std::vector<Texture> textures;
     for (int i = 0; i < materials_.size(); i++) {
         Material m = materials_[i];
