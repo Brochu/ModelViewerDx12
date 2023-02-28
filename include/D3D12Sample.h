@@ -78,6 +78,7 @@ private:
     int height_ = -1;
 
     int modelIndex_ = 0;
+    bool swappedModel_ = false;
     Config config_;
 
     Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
@@ -111,7 +112,6 @@ private:
     Microsoft::WRL::ComPtr<ID3D12Resource> indexBuffer_;
     D3D12_INDEX_BUFFER_VIEW indexBufferView_;
 
-    std::vector<Material> materials_;
     //TODO: Try to move these to an upload pass namespace
     std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
 

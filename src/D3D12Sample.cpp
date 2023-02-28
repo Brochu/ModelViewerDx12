@@ -128,6 +128,16 @@ DebugParams dparams = {};
 
 const size_t MAX_MODEL_COUNT = 64;
 
+namespace {
+void WaitForFence (ID3D12Fence* fence, UINT64 completionValue, HANDLE waitEvent)
+{
+    if (fence->GetCompletedValue () < completionValue) {
+        fence->SetEventOnCompletion (completionValue, waitEvent);
+        WaitForSingleObject (waitEvent, INFINITE);
+    }
+}
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 D3D12Sample::D3D12Sample ()
 {
@@ -148,6 +158,21 @@ void D3D12Sample::PrepareRender ()
 {
     ZoneScopedN("Sample::PrepareRender");
     commandAllocators_ [currentBackBuffer_]->Reset ();
+
+    if (swappedModel_) {
+        // Drain the queue, wait for everything to finish
+        for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
+            WaitForFence (frameFences_[i].Get (), fenceValues_[i], frameFenceEvents_[i]);
+        }
+
+        UploadPass upload(device_);
+        LoadContent(upload);
+
+        upload.Execute(commandQueue_.Get());
+        upload.WaitForUpload();
+
+        swappedModel_ = false;
+    }
 
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
     commandList->Reset (
@@ -249,7 +274,7 @@ void D3D12Sample::Render ()
             models[i] = m[i].data();
         }
         if (ImGui::Combo("Model", &modelIndex_, models, (int)m.size())) {
-            // Start thinking on how to reload model data when selecting a new model
+            swappedModel_ = true;
         }
 
         ImGui::Separator();
@@ -303,16 +328,6 @@ void D3D12Sample::FinalizeRender ()
     // Execute our commands
     ID3D12CommandList* commandLists [] = { commandList };
     commandQueue_->ExecuteCommandLists (std::extent<decltype(commandLists)>::value, commandLists);
-}
-
-namespace {
-void WaitForFence (ID3D12Fence* fence, UINT64 completionValue, HANDLE waitEvent)
-{
-    if (fence->GetCompletedValue () < completionValue) {
-        fence->SetEventOnCompletion (completionValue, waitEvent);
-        WaitForSingleObject (waitEvent, INFINITE);
-    }
-}
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -478,7 +493,6 @@ void D3D12Sample::SetupSwapChain ()
 ///////////////////////////////////////////////////////////////////////////////
 void D3D12Sample::Initialize ()
 {
-    //---------------------------------------
     config_ = ParseConfig();
 
     CreateDeviceAndSwapChain ();
@@ -655,27 +669,26 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (UploadPass &upload) {
-    static const std::string folder = "data/models/" + config_.models[modelIndex_] + "/";
+    const std::string folder = "data/models/" + config_.models[modelIndex_] + "/";
 
-    std::string path = folder + "model.obj";
+    const std::string model_path = folder + "model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
+    std::vector<Material> materials;
 
-    draws_ = ExtractAiScene(path.c_str(), vertices, indices, materials_);
+    draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
     upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
 
     std::vector<Texture> textures;
-    for (int i = 0; i < materials_.size(); i++) {
-        Material m = materials_[i];
-
-        if (m.textureName.size() == 0) {
+    for (auto& [textureName] : materials) {
+        if (textureName.empty()) {
             //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
             textures.push_back({ 0, 0, {} });
         } else {
-            std::string path = folder + m.textureName;
+            std::string tex_path = folder + textureName;
 
             int w, h = 0;
-            std::vector<std::uint8_t> imgdata = LoadImageFromFile(path.c_str(), 1, &w, &h);
+            const std::vector<std::uint8_t> imgdata = LoadImageFromFile(tex_path.c_str(), 1, &w, &h);
             textures.push_back({ w, h, imgdata });
         }
     }
