@@ -697,15 +697,15 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
 
 void D3D12Sample::CreateConstantBuffer ()
 {
-    static const ConstantBuffer cb = {
+    const ConstantBuffer cb = {
         DirectX::XMMatrixIdentity(),
         DirectX::XMMatrixIdentity(),
         DirectX::XMVectorSet(0.0 ,0.0, 0.0, 1.0)
     };
 
     for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
-        static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
-        static const auto constantBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (sizeof (ConstantBuffer));
+        const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
+        const auto constantBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (sizeof (ConstantBuffer));
 
         // These will remain in upload heap because we use them only once per
         // frame.
@@ -759,7 +759,7 @@ void D3D12Sample::UpdateConstantBuffer ()
     ConstantBuffer cb { mvp, world, XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f) };
 
     void* p;
-    constantBuffers_[currentBackBuffer_]->Map (0, nullptr, &p);
+    HRESULT r = constantBuffers_[currentBackBuffer_]->Map (0, nullptr, &p);
     ::memcpy(p, &cb, sizeof(ConstantBuffer));
     constantBuffers_[currentBackBuffer_]->Unmap (0, nullptr);
 }

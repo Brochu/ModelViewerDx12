@@ -42,9 +42,9 @@ void UploadPass::CreateMeshBuffers (
     unsigned int vertexCount = (UINT) vertices.size();
     unsigned int indexCount = (UINT) indices.size();
 
-    static const int uploadBufferSize = vertexCount * sizeof(Vertex) + indexCount * sizeof(unsigned int);
-    static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
-    static const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
+    const int uploadBufferSize = vertexCount * sizeof(Vertex) + indexCount * sizeof(unsigned int);
+    const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
+    const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
 
     // Create upload buffer on CPU
     device_->CreateCommittedResource (&uploadHeapProperties,
@@ -59,7 +59,7 @@ void UploadPass::CreateMeshBuffers (
     // so we don't have to transition into this before copying into them
     static const auto defaultHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_DEFAULT);
 
-    static const auto vertexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (vertexCount * sizeof(Vertex));
+    const auto vertexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (vertexCount * sizeof(Vertex));
     device_->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &vertexBufferDesc,
@@ -67,7 +67,7 @@ void UploadPass::CreateMeshBuffers (
         nullptr,
         IID_PPV_ARGS (&vertexBuffer));
 
-    static const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount * sizeof(unsigned int));
+    const auto indexBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (indexCount * sizeof(unsigned int));
     device_->CreateCommittedResource (&defaultHeapProperties,
         D3D12_HEAP_FLAG_NONE,
         &indexBufferDesc,
