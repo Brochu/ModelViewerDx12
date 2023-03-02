@@ -652,6 +652,7 @@ void D3D12Sample::CreatePipelineStateObject ()
     psoDesc.RasterizerState = CD3DX12_RASTERIZER_DESC (D3D12_DEFAULT);
     psoDesc.BlendState = CD3DX12_BLEND_DESC (D3D12_DEFAULT);
     // Simple alpha blending
+    //TODO: Look into this, is alpha working like I am thinking?
     psoDesc.BlendState.RenderTarget[0].BlendEnable = true;
     psoDesc.BlendState.RenderTarget[0].SrcBlend = D3D12_BLEND_SRC_ALPHA;
     psoDesc.BlendState.RenderTarget[0].DestBlend = D3D12_BLEND_INV_SRC_ALPHA;
