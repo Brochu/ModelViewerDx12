@@ -41,7 +41,7 @@ float4 PS_main (VertexShaderOutput input) : SV_TARGET
     input.normal = normalize(input.normal);
 
     float3 ambient = float3(0.0, 0.0, 0.0);
-    float3 color = anteruTexture[texIndex].Sample(texureSampler, input.uv).xyz;
+    float4 color = anteruTexture[texIndex].Sample(texureSampler, input.uv);
     float3 final = float3(0.0, 0.0, 0.0);
 
     //TODO: Something does not work when rotating models
@@ -57,5 +57,5 @@ float4 PS_main (VertexShaderOutput input) : SV_TARGET
     }
 
     final = saturate(final + ambient);
-    return float4(final, 1.0);
+    return float4(final, color.a);
 }
