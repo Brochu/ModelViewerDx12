@@ -1,0 +1,324 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 24.11.2020 18:48:18
+
+newmtl wire_255255000
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 1.0000 1.0000 0.0000
+	Kd 1.0000 1.0000 0.0000
+	Ks 0.3500 0.3500 0.3500
+
+newmtl Seal_MoonWorldCrater00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Seal_MoonWorldCrater00_alb.png
+	map_Kd Seal_MoonWorldCrater00_alb.png
+	map_d Seal_MoonWorldCrater00_alb.png
+
+newmtl MoonWorldCrater00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCrater00_alb.png
+	map_Kd MoonWorldCrater00_alb.png
+	map_d MoonWorldCrater00_alb.png
+
+newmtl MoonWorldCriff00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff03_alb.png
+	map_Kd MoonWorldCriff03_alb.png
+	map_d MoonWorldCriff03_alb.png
+
+newmtl MoonWorldCriff00_01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff00_alb.png
+	map_Kd MoonWorldCriff00_alb.png
+	map_d MoonWorldCriff00_alb.png
+
+newmtl MoonWorldCriff01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff01_alb.png
+	map_Kd MoonWorldCriff01_alb.png
+	map_d MoonWorldCriff01_alb.png
+
+newmtl MoonWorldGravel00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldGravel00_alb.png
+	map_Kd MoonWorldGravel00_alb.png
+	map_d MoonWorldGravel00_alb.png
+
+newmtl MoonWorldSand00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldSand00_alb.png
+	map_Kd MoonWorldSand00_alb.png
+	map_d MoonWorldSand00_alb.png
+
+newmtl OUPBM_M_MoonCriff00_01_M_MoonSand00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff00_alb.png
+	map_Kd MoonWorldCriff00_alb.png
+	map_d MoonWorldCriff00_alb.png
+
+newmtl OUPBM_M_MoonCriff00_M_MoonSand00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff03_alb.png
+	map_Kd MoonWorldCriff03_alb.png
+	map_d MoonWorldCriff03_alb.png
+
+newmtl OUPBM_MoonWorldCrater00_MoonWorldGravel00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCrater00_alb.png
+	map_Kd MoonWorldCrater00_alb.png
+	map_d MoonWorldCrater00_alb.png
+
+newmtl OUPBM_MoonWorldCrater00_MoonWorldSand00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCrater00_alb.png
+	map_Kd MoonWorldCrater00_alb.png
+	map_d MoonWorldCrater00_alb.png
+
+newmtl OUPBM_MoonWorldCriff00_MoonWorldCriff01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff03_alb.png
+	map_Kd MoonWorldCriff03_alb.png
+	map_d MoonWorldCriff03_alb.png
+
+newmtl OUPBM_MoonWorldGravel00_MoonWorldSand00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldGravel00_alb.png
+	map_Kd MoonWorldGravel00_alb.png
+	map_d MoonWorldGravel00_alb.png
+
+newmtl MetalCube00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka PyriteGround00_alb.png
+	map_Kd PyriteGround00_alb.png
+	map_d PyriteGround00_alb.png
+
+newmtl KoopaFootPrint
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka KoopsaFootPrint_alb.png
+	map_Kd KoopsaFootPrint_alb.png
+	map_d KoopsaFootPrint_alb.png
+
+newmtl M_RoadStone00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl MoonWorldRock02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldRock02_alb.png
+	map_Kd MoonWorldRock02_alb.png
+	map_d MoonWorldRock02_alb.png
+
+newmtl MoonWorldRock01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka MoonWorldCriff00_alb.png
+	map_Kd MoonWorldCriff00_alb.png
+	map_d MoonWorldCriff00_alb.png
+
+newmtl MoonStoneCube00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka StoneWallUni02_alb.png
+	map_Kd StoneWallUni02_alb.png
+	map_d StoneWallUni02_alb.png
+
+newmtl StoneWallUni02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka StoneWallUni02_alb.png
+	map_Kd StoneWallUni02_alb.png
+	map_d StoneWallUni02_alb.png
+
+newmtl FootPrintMat00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka FootPrint_alb.png
+	map_Kd FootPrint_alb.png
+	map_d FootPrint_alb.png

@@ -1,0 +1,163 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 15.01.2022 14:29:06
+
+newmtl wire_255255000
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 1.0000 1.0000 0.0000
+	Kd 1.0000 1.0000 0.0000
+	Ks 0.3500 0.3500 0.3500
+
+newmtl LavaGlare
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaHot_blend_alb.png
+	map_Kd LavaHot_blend_alb.png
+	map_d LavaHot_blend_alb.png
+
+newmtl LavaHotEdge
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaHotSide_alb.png
+	map_Kd LavaHotSide_alb.png
+	map_d LavaHotSide_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaHot
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaHot_alb.png
+	map_Kd LavaHot_alb.png
+	map_d LavaHot_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaHotSide
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaHotSide_alb.png
+	map_Kd LavaHotSide_alb.png
+	map_d LavaHotSide_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl _BlackWall
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl LavaWorldHomeFloor00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldFloor00_alb.png
+	map_Kd LavaWorldFloor00_alb.png
+	map_d LavaWorldFloor00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaWorldWall00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldWall00_alb.png
+	map_Kd LavaWorldWall00_alb.png
+	map_d LavaWorldWall00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockVolcano00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockVolcano00_alb.png
+	map_Kd RockVolcano00_alb.png
+	map_d RockVolcano00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl White
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl LavaWorldSpice00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldSpice_alb.png
+	map_Kd LavaWorldSpice_alb.png
+	map_d LavaWorldSpice_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga

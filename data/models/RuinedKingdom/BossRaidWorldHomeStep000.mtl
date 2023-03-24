@@ -1,0 +1,220 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 25.05.2019 18:57:28
+
+newmtl wire_255255000
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 1.0000 1.0000 0.0000
+	Kd 1.0000 1.0000 0.0000
+	Ks 0.3500 0.3500 0.3500
+
+newmtl OUPBM_RockCrossSection01_SoilPlateAttack01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockCrossSection01_alb.png
+	map_Kd RockCrossSection01_alb.png
+	map_d RockCrossSection01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl OUPBM_RockPlateAttack04_SoilPlateAttack00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockPlateAttack04_alb.png
+	map_Kd RockPlateAttack04_alb.png
+	map_d RockPlateAttack04_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl PlantsTower00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka PlantsTower00_alb.png
+	map_Kd PlantsTower00_alb.png
+	map_d PlantsTower00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl RockBlockFloor01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockBlockFloor01_alb.png
+	map_Kd RockBlockFloor01_alb.png
+	map_d RockBlockFloor01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl RockBlockFloor02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockBlockFloor02_alb.png
+	map_Kd RockBlockFloor02_alb.png
+	map_d RockBlockFloor02_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl RockCrossSection01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockCrossSection01_alb.png
+	map_Kd RockCrossSection01_alb.png
+	map_d RockCrossSection01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl RockPlateAttack04
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockPlateAttack04_alb.png
+	map_Kd RockPlateAttack04_alb.png
+	map_d RockPlateAttack04_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl SoilPlateAttack00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka SoilPlateAttack00_alb.png
+	map_Kd SoilPlateAttack00_alb.png
+	map_d SoilPlateAttack00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl overwrap_RockCrack00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockCrack00_Alb.png
+	map_Kd RockCrack00_Alb.png
+	map_d RockCrack00_Alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl wall_parts_BrockWallTower00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka BrockWallTower00_alb.png
+	map_Kd BrockWallTower00_alb.png
+	map_d BrockWallTower00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl wall_parts_BrockWallTower03
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka BrockWallTower00_alb.png
+	map_Kd BrockWallTower00_alb.png
+	map_d BrockWallTower00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl wall_parts_StoneWallDecoration00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka StoneWallDecoration00_alb.png
+	map_Kd StoneWallDecoration00_alb.png
+	map_d StoneWallDecoration00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png
+
+newmtl wall_parts_StoneWallDecoration01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka StoneWallDecoration01_alb.png
+	map_Kd StoneWallDecoration01_alb.png
+	map_d StoneWallDecoration01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.png

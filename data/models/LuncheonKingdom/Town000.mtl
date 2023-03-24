@@ -1,0 +1,364 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 15.01.2022 15:25:07
+
+newmtl wire_255255000
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 1.0000 1.0000 0.0000
+	Kd 1.0000 1.0000 0.0000
+	Ks 0.3500 0.3500 0.3500
+
+newmtl Carrot00_IA
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Carrot00_IA_alb.png
+	map_Kd Carrot00_IA_alb.png
+	map_d Carrot00_IA_alb.png
+
+newmtl FireSea
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka FireSea.png
+	map_Kd FireSea.png
+	map_d FireSea.png
+
+newmtl LavaWorldHomeFloor00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldFloor00_alb.png
+	map_Kd LavaWorldFloor00_alb.png
+	map_d LavaWorldFloor00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaWorldPillar00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldPillar00_alb.png
+	map_Kd LavaWorldPillar00_alb.png
+	map_d LavaWorldPillar00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaWorldPillar01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldPillar01_alb.png
+	map_Kd LavaWorldPillar01_alb.png
+	map_d LavaWorldPillar01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaWorldSpice00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldSpice_alb.png
+	map_Kd LavaWorldSpice_alb.png
+	map_d LavaWorldSpice_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LavaWorldWall00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldWall00_alb.png
+	map_Kd LavaWorldWall00_alb.png
+	map_d LavaWorldWall00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl MapCode_LavaWorldHomeFloor00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LavaWorldFloor00_alb.png
+	map_Kd LavaWorldFloor00_alb.png
+	map_d LavaWorldFloor00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl Mushroom
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Mushroom_alb.png
+	map_Kd Mushroom_alb.png
+	map_d Mushroom_alb.png
+
+newmtl Paprika00_SM
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Paprika00_SM_alb.png
+	map_Kd Paprika00_SM_alb.png
+	map_d Paprika00_SM_alb.png
+
+newmtl Paprika01_IA
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Paprika01_IA_alb.png
+	map_Kd Paprika01_IA_alb.png
+	map_d Paprika01_IA_alb.png
+
+newmtl RockVolcano00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockVolcano00_alb.png
+	map_Kd RockVolcano00_alb.png
+	map_d RockVolcano00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl Shell
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Shell_alb.png
+	map_Kd Shell_alb.png
+	map_d Shell_alb.png
+
+newmtl Tomato00_SM1
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Tomato00_SM_alb.png
+	map_Kd Tomato00_SM_alb.png
+	map_d Tomato00_SM_alb.png
+
+newmtl TomatoCalyx00_SM1
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka TomatoCalyx00_SM_alb.png
+	map_Kd TomatoCalyx00_SM_alb.png
+	map_d TomatoCalyx00_SM_alb.png
+
+newmtl Turnip00_SM
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Turnip00_SM_alb.png
+	map_Kd Turnip00_SM_alb.png
+	map_d Turnip00_SM_alb.png
+
+newmtl VolcanoPot
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka VolcanoPot_alb.png
+	map_Kd VolcanoPot_alb.png
+	map_d VolcanoPot_alb.png
+
+newmtl White
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl vesi_Bean00_SM
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Bean00_SM_alb.png
+	map_Kd Bean00_SM_alb.png
+	map_d Bean00_SM_alb.png
+
+newmtl vesi_Eggplant00_SM
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Eggplant00_SM_alb.png
+	map_Kd Eggplant00_SM_alb.png
+	map_d Eggplant00_SM_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl vesi_Olive00_IA
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Olive00_IA_alb.png
+	map_Kd Olive00_IA_alb.png
+	map_d Olive00_IA_alb.png
+
+newmtl vesi_Pumpkin00_SM
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Pumpkin00_SM_alb.png
+	map_Kd Pumpkin00_SM_alb.png
+	map_d Pumpkin00_SM_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl vesi_PumpkinCalyx00_SM
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka PumpkinCalyx00_SM_alb.png
+	map_Kd PumpkinCalyx00_SM_alb.png
+	map_d PumpkinCalyx00_SM_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga

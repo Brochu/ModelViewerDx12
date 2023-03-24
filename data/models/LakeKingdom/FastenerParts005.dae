@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <authoring_tool>CINEMA4D 15.064 COLLADA Exporter</authoring_tool>
+        </contributor>
+        <created>2021-10-09T18:36:47Z</created>
+        <modified>2021-10-09T18:36:47Z</modified>
+        <unit meter="0.01" name="centimeter"/>
+        <up_axis>Y_UP</up_axis>
+    </asset>
+    <library_images>
+        <image id="ID5">
+            <init_from>WaveRock02_alb.png</init_from>
+        </image>
+    </library_images>
+    <library_effects>
+        <effect id="ID4">
+            <profile_COMMON>
+                <newparam sid="ID6">
+                    <surface type="2D">
+                        <init_from>ID5</init_from>
+                    </surface>
+                </newparam>
+                <newparam sid="ID7">
+                    <sampler2D>
+                        <source>ID6</source>
+                    </sampler2D>
+                </newparam>
+                <technique sid="COMMON">
+                    <blinn>
+                        <diffuse>
+                            <texture texture="ID7" texcoord="UVSET0"/>
+                        </diffuse>
+                    </blinn>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_materials>
+        <material id="ID3" name="WaveRock02">
+            <instance_effect url="#ID4"/>
+        </material>
+    </library_materials>
+    <library_geometries>
+        <geometry id="ID29">
+            <mesh>
+                <source id="ID30">
+                    <float_array id="ID31" count="159">408.674 38.001 -117.202 390.92 33.2066 -116.181 413.629 40.698 -2.22903 396.154 36.1587 -0.613019 418.584 43.3951 112.744 291.111 18.8864 -111.577 401.388 39.1108 114.955 15.6777 -0.03962 -101.2 19.0138 -0.155428 22.4071 22.9737 15.0791 -183.881 298.74 18.6169 -188.457 294.54 26.3298 123.418 390.92 33.2066 -116.181 298.74 18.6169 -188.457 3.42063 13.3657 -180.312 6.17995e-005 -2.20045e-006 -100.198 -5.99281e-006 1.46519e-006 26.3375 26.9612 9.60095 142.584 23.4098 15.3162 -204.314 298.137 17.6779 -206.61 39.3292 28.6147 191.091 300.385 33.3387 189.41 405.069 30.3134 -192.463 386.656 29.8028 -191.496 408.674 38.001 -117.202 8.20088 9.79732 147.55 21.7672 33.3809 190.476 47.1767 34.0899 208.405 300.006 34.0739 208.002 391.283 29.54 -212.02 386.656 29.8028 -191.496 396.977 40.6957 180.209 416.396 43.0863 179.665 401.388 39.1108 114.955 418.584 43.3951 112.744 294.54 26.3298 123.418 396.977 40.6957 180.209 300.385 33.3387 189.41 397.06 41.455 200.398 416.396 43.0863 179.665 396.977 40.6957 180.209 300.006 34.0739 208.002 397.06 41.455 200.398 300.385 33.3387 189.41 396.977 40.6957 180.209 396.154 36.1587 -0.613019 291.111 18.8864 -111.577 401.388 39.1108 114.955 294.54 26.3298 123.418 298.74 18.6169 -188.457 386.656 29.8028 -191.496 298.137 17.6779 -206.61 391.283 29.54 -212.02</float_array>
+                    <technique_common>
+                        <accessor count="53" source="#ID31" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID32">
+                    <float_array id="ID33" count="144">-0.255422 0.966753 -0.0121592 -0.219227 0.975566 -0.0145109 -0.261292 0.965193 -0.0113817 -0.247914 0.968698 -0.0127848 -0.223053 0.9747 -0.0144297 -0.142847 0.989566 -0.0188084 -0.243399 0.969829 -0.0137503 -0.0364554 0.998867 -0.0305925 -0.0337363 0.994002 0.104034 -0.0569448 0.997741 0.0356345 -0.045425 0.996267 0.0734036 -0.0115241 0.999822 -0.0149431 -0.0640529 0.988065 -0.140091 -0.135112 0.990445 -0.0276123 -0.141675 0.988834 -0.0462089 -0.142797 0.989595 -0.0176401 -0.0423877 0.992223 0.117036 0.00795699 0.998428 0.0554871 -0.00366567 0.998564 -0.0534398 -0.00475351 0.96932 -0.245754 -0.0357633 0.999309 -0.0101082 -0.00901398 0.99864 -0.0513586 -0.0126934 0.989121 -0.146558 0.0783707 0.94597 -0.314642 -0.0787834 0.996066 -0.0405559 -0.148229 0.98682 -0.0649223 -0.264324 0.96064 -0.0854634 -0.0617326 0.960539 -0.271208 0.133897 0.895512 -0.424417 0.0797243 0.965621 -0.247429 -8.85013e-009 0.999219 -0.0395146 -0.0287255 0.999402 -0.0192735 -0.182948 0.982959 -0.0179579 -0.123013 0.991876 -0.0324064 -0.242173 0.970227 -0.00343972 -0.103109 0.992538 -0.0650912 -0.121231 0.992099 -0.0322914 -0.0848413 0.991583 -0.0977995 -0.123115 0.99171 -0.0367907 -0.0791868 0.996094 -0.0390685 -0.0789623 0.996034 -0.0409994 -0.079411 0.99615 -0.0371375 -0.131951 0.99096 -0.0242369 -0.142847 0.989566 -0.0188084 -0.121036 0.992205 -0.0296617 -0.12814 0.990764 -0.0443441 -0.127677 0.990701 -0.0470059 -0.128602 0.99082 -0.041682</float_array>
+                    <technique_common>
+                        <accessor count="48" source="#ID33" stride="3">
+                            <param name="X" type="float"/>
+                            <param name="Y" type="float"/>
+                            <param name="Z" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID34">
+                    <float_array id="ID35" count="60">8.86037 1.94437 8.94142 1.95826 8.94184 1.94521 8.77757 1.94371 8.85944 1.95759 8.93952 2.01262 8.77662 1.9581 8.84238 2.14535 8.9305 2.14049 8.99512 2.14298 8.98943 2.00702 8.77116 2.02322 8.99291 2.15321 8.93337 2.15354 8.8439 2.15714 8.76027 2.15716 9.00744 2.14641 9.00368 2.00845 8.72729 2.02436 8.72106 2.16974 8.99045 1.95799 8.99217 1.94533 8.76226 2.17039 8.72087 2.18331 8.70325 2.17233 8.71264 2.02687 9.00554 1.95418 8.73118 1.94244 8.73342 1.95875 8.71789 1.95538</float_array>
+                    <technique_common>
+                        <accessor count="30" source="#ID35" stride="2">
+                            <param name="S" type="float"/>
+                            <param name="T" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="ID36">
+                    <input semantic="POSITION" source="#ID30"/>
+                </vertices>
+                <triangles count="42" material="Material1">
+                    <input offset="0" semantic="VERTEX" source="#ID36"/>
+                    <input offset="1" semantic="NORMAL" source="#ID32"/>
+                    <input offset="2" semantic="TEXCOORD" source="#ID34" set="0"/>
+                    <p>0 2 2 1 1 1 2 0 0 2 0 0 3 4 4 4 3 3 2 0 0 1 1 1 3 4 4 1 1 1 5 5 5 3 4 4 3 4 4 6 6 6 4 3 3 5 9 5 7 8 8 8 7 7 5 9 5 9 10 9 7 8 8 5 9 5 10 11 10 9 10 9 5 9 5 8 7 7 11 12 11 5 15 5 12 14 1 13 13 10 7 8 8 9 10 9 14 16 12 7 8 8 14 16 12 15 17 13 7 8 8 15 17 13 8 7 7 8 7 7 15 17 13 16 18 14 8 7 7 16 18 14 17 19 15 8 7 7 17 19 15 11 12 11 9 10 9 10 11 10 18 20 16 9 10 9 18 20 16 14 16 12 10 11 10 19 21 17 18 20 16 11 12 11 20 23 19 21 22 18 11 12 11 17 19 15 20 23 19 12 14 1 22 25 21 23 24 20 12 14 1 24 26 2 22 25 21 12 14 1 23 24 20 13 13 10 16 18 14 25 27 22 17 19 15 17 19 15 26 28 23 20 23 19 17 19 15 25 27 22 26 28 23 20 23 19 26 28 23 27 29 24 20 23 19 27 29 24 21 22 18 21 22 18 27 29 24 28 30 25 22 31 21 29 31 26 30 31 20 31 33 28 32 32 27 33 32 6 32 32 27 34 34 3 33 32 6 33 36 6 35 35 11 36 35 28 35 35 11 37 37 18 36 35 28 38 38 29 39 38 27 40 38 28 41 40 25 42 39 29 43 39 18 42 39 29 44 41 28 43 39 18 45 43 4 46 42 5 47 42 6 46 42 5 48 44 11 47 42 6 49 46 10 50 45 20 51 45 17 50 45 20 52 47 26 51 45 17</p>
+                </triangles>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_controllers>
+        <controller id="ID28">
+            <skin source="#ID29">
+                <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+                <source id="ID37">
+                    <Name_array id="ID38" count="1">joint1</Name_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID38">
+                            <param name="JOINT" type="Name"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID39">
+                    <float_array id="ID40" count="2">0 1</float_array>
+                    <technique_common>
+                        <accessor count="2" source="#ID40">
+                            <param name="WEIGHT" type="float"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="ID41">
+                    <float_array id="ID42" count="16">1 9.22873e-016 -2.1684e-019 -5.68434e-014 -5.00967e-031 5.46946e-016 -1 2.9976e-015 -9.15934e-016 1 5.48803e-016 8.88178e-016 0 0 0 1</float_array>
+                    <technique_common>
+                        <accessor count="1" source="#ID42" stride="16">
+                            <param name="TRANSFORM" type="float4x4"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <joints>
+                    <input semantic="JOINT" source="#ID37"/>
+                    <input semantic="INV_BIND_MATRIX" source="#ID41"/>
+                </joints>
+                <vertex_weights count="53">
+                    <input offset="0" semantic="JOINT" source="#ID37"/>
+                    <input offset="1" semantic="WEIGHT" source="#ID39"/>
+                    <vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</vcount>
+                    <v>0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1</v>
+                </vertex_weights>
+            </skin>
+        </controller>
+    </library_controllers>
+    <library_visual_scenes>
+        <visual_scene id="ID8">
+            <node id="ID9" name="Fastener0" sid="joint1" type="JOINT">
+                <translate sid="translate">-0.0647426 -16.6461 -210.147</translate>
+                <rotate sid="rotateY">0 1 0 268.1</rotate>
+                <rotate sid="rotateX">1 0 0 2.26459</rotate>
+                <rotate sid="rotateZ">0 0 1 -8.53774e-007</rotate>
+                <scale sid="scale">1 1 1</scale>
+                <node id="ID10" name="Fastener1" sid="joint2" type="JOINT">
+                    <translate sid="translate">-4.57764e-005 -1.06581e-014 26.3375</translate>
+                    <rotate sid="rotateY">0 1 0 3.87056</rotate>
+                    <rotate sid="rotateX">1 0 0 -4.61055</rotate>
+                    <rotate sid="rotateZ">0 0 1 -0.152937</rotate>
+                    <scale sid="scale">1 1 0.999999</scale>
+                    <node id="ID11" name="Fastener2" sid="joint3" type="JOINT">
+                        <translate sid="translate">1.52588e-005 -3.8147e-006 121.884</translate>
+                        <rotate sid="rotateY">0 1 0 13.0958</rotate>
+                        <rotate sid="rotateX">1 0 0 -23.1979</rotate>
+                        <rotate sid="rotateZ">0 0 1 -359.41</rotate>
+                        <scale sid="scale">1 1 1</scale>
+                        <node id="ID12" name="Fastener3" sid="joint4" type="JOINT">
+                            <translate sid="translate">-9.54115e-006 2.03429e-005 50.8222</translate>
+                            <rotate sid="rotateY">0 1 0 40.4396</rotate>
+                            <rotate sid="rotateX">1 0 0 19.941</rotate>
+                            <rotate sid="rotateZ">0 0 1 -343.793</rotate>
+                            <scale sid="scale">1 1 1</scale>
+                            <node id="ID13" name="Fastener4" sid="joint5" type="JOINT">
+                                <translate sid="translate">3.03952e-005 5.61262e-006 31.1062</translate>
+                                <rotate sid="rotateY">0 1 0 35.3192</rotate>
+                                <rotate sid="rotateX">1 0 0 -1.25522e-007</rotate>
+                                <rotate sid="rotateZ">0 0 1 -1.26347e-005</rotate>
+                                <scale sid="scale">1 1 1</scale>
+                                <node id="ID14" name="Fastener5" sid="joint6" type="JOINT">
+                                    <translate sid="translate">2.60145e-006 2.44114e-007 252.83</translate>
+                                    <rotate sid="rotateY">0 1 0 4.21412</rotate>
+                                    <rotate sid="rotateX">1 0 0 -4.5093</rotate>
+                                    <rotate sid="rotateZ">0 0 1 -360</rotate>
+                                    <scale sid="scale">1 1 1</scale>
+                                    <node id="ID15" name="Fastener6" sid="joint7" type="JOINT">
+                                        <translate sid="translate">4.48989e-005 2.08426e-006 97.6303</translate>
+                                        <rotate sid="rotateY">0 1 0 42.4047</rotate>
+                                        <rotate sid="rotateX">1 0 0 -1.62219</rotate>
+                                        <rotate sid="rotateZ">0 0 1 -356.949</rotate>
+                                        <scale sid="scale">1 1 1</scale>
+                                        <node id="ID16" name="Fastener7" sid="joint8" type="JOINT">
+                                            <translate sid="translate">2.48732e-006 1.73541e-005 28.3976</translate>
+                                            <rotate sid="rotateY">0 1 0 41.2029</rotate>
+                                            <rotate sid="rotateX">1 0 0 1.19507</rotate>
+                                            <rotate sid="rotateZ">0 0 1 -356.74</rotate>
+                                            <scale sid="scale">1 1 1</scale>
+                                            <node id="ID17" name="Fastener8" sid="joint9" type="JOINT">
+                                                <translate sid="translate">2.00277e-006 2.77227e-005 66.957</translate>
+                                                <rotate sid="rotateY">0 1 0 4.34242</rotate>
+                                                <rotate sid="rotateX">1 0 0 1.60045</rotate>
+                                                <rotate sid="rotateZ">0 0 1 -359.809</rotate>
+                                                <scale sid="scale">1 1 1</scale>
+                                                <node id="ID18" name="Fastener9" sid="joint10" type="JOINT">
+                                                    <translate sid="translate">-5.58552e-006 1.15496e-005 115.111</translate>
+                                                    <rotate sid="rotateY">0 1 0 4.44269e-007</rotate>
+                                                    <rotate sid="rotateX">1 0 0 -2.02301e-006</rotate>
+                                                    <rotate sid="rotateZ">0 0 1 -9.35262e-006</rotate>
+                                                    <scale sid="scale">0.999999 0.999999 1</scale>
+                                                    <node id="ID19" name="Fastener10" sid="joint11" type="JOINT">
+                                                        <translate sid="translate">-2.08443e-005 7.74439e-006 115.111</translate>
+                                                        <rotate sid="rotateY">0 1 0 0.266738</rotate>
+                                                        <rotate sid="rotateX">1 0 0 4.48357</rotate>
+                                                        <rotate sid="rotateZ">0 0 1 -359.996</rotate>
+                                                        <scale sid="scale">1 1 1</scale>
+                                                        <node id="ID20" name="Fastener11" sid="joint12" type="JOINT">
+                                                            <translate sid="translate">-3.67937e-006 -2.86841e-006 75.7379</translate>
+                                                            <rotate sid="rotateY">0 1 0 38.0784</rotate>
+                                                            <rotate sid="rotateX">1 0 0 -2.80655</rotate>
+                                                            <rotate sid="rotateZ">0 0 1 -2.19697</rotate>
+                                                            <scale sid="scale">1 1 1</scale>
+                                                            <node id="ID21" name="Fastener12" sid="joint13" type="JOINT">
+                                                                <translate sid="translate">-3.54896e-007 1.92014e-005 25.7088</translate>
+                                                                <rotate sid="rotateY">0 1 0 52.3136</rotate>
+                                                                <rotate sid="rotateX">1 0 0 7.61314</rotate>
+                                                                <rotate sid="rotateZ">0 0 1 -7.44303e-006</rotate>
+                                                                <scale sid="scale">1 1 1</scale>
+                                                                <node id="ID22" name="Fastener13" sid="joint14" type="JOINT">
+                                                                    <translate sid="translate">6.67996e-005 -1.07905e-005 91.0801</translate>
+                                                                    <rotate sid="rotateY">0 1 0 357.367</rotate>
+                                                                    <rotate sid="rotateX">1 0 0 -7.09413</rotate>
+                                                                    <rotate sid="rotateZ">0 0 1 -359.651</rotate>
+                                                                    <scale sid="scale">1 1 1</scale>
+                                                                    <node id="ID23" name="Fastener14" sid="joint15" type="JOINT">
+                                                                        <translate sid="translate">-3.22386e-005 6.4434e-006 274.747</translate>
+                                                                        <rotate sid="rotateY">0 1 0 49.605</rotate>
+                                                                        <rotate sid="rotateX">1 0 0 4.98085</rotate>
+                                                                        <rotate sid="rotateZ">0 0 1 -0.390888</rotate>
+                                                                        <scale sid="scale">1 1 1</scale>
+                                                                        <node id="ID24" name="Fastener15" sid="joint16" type="JOINT">
+                                                                            <translate sid="translate">6.12042e-005 -1.68003e-005 31.2963</translate>
+                                                                            <rotate sid="rotateY">0 1 0 36.8943</rotate>
+                                                                            <rotate sid="rotateX">1 0 0 7.49152</rotate>
+                                                                            <rotate sid="rotateZ">0 0 1 -3.254</rotate>
+                                                                            <scale sid="scale">1 1 1</scale>
+                                                                            <node id="ID25" name="Fastener16" sid="joint17" type="JOINT">
+                                                                                <translate sid="translate">-3.40955e-005 -3.39637e-005 81.2936</translate>
+                                                                                <rotate sid="rotateY">0 1 0 2.49489</rotate>
+                                                                                <rotate sid="rotateX">1 0 0 -9.45016</rotate>
+                                                                                <rotate sid="rotateZ">0 0 1 -0.50726</rotate>
+                                                                                <scale sid="scale">1 1 1</scale>
+                                                                                <node id="ID26" name="Fastener17" sid="joint18" type="JOINT">
+                                                                                    <translate sid="translate">-4.79413e-006 1.68821e-005 100.198</translate>
+                                                                                    <rotate sid="rotateY">0 1 0 179.985</rotate>
+                                                                                    <rotate sid="rotateX">1 0 0 -87.7354</rotate>
+                                                                                    <rotate sid="rotateZ">0 0 1 -88.0851</rotate>
+                                                                                    <scale sid="scale">1 1 0.999999</scale>
+                                                                                </node>
+                                                                            </node>
+                                                                        </node>
+                                                                    </node>
+                                                                </node>
+                                                            </node>
+                                                        </node>
+                                                    </node>
+                                                </node>
+                                            </node>
+                                        </node>
+                                    </node>
+                                </node>
+                            </node>
+                        </node>
+                    </node>
+                </node>
+            </node>
+            <node id="ID27" name="polySurface909__WaveRock02">
+                <translate sid="translate">0 0 -0</translate>
+                <rotate sid="rotateY">0 1 0 0</rotate>
+                <rotate sid="rotateX">1 0 0 -90</rotate>
+                <rotate sid="rotateZ">0 0 1 -0</rotate>
+                <scale sid="scale">1 1 1</scale>
+                <instance_controller url="#ID28">
+                    <skeleton>#ID8</skeleton>
+                    <bind_material>
+                        <technique_common>
+                            <instance_material symbol="Material1" target="#ID3">
+                                <bind_vertex_input semantic="UVSET0" input_semantic="TEXCOORD" input_set="0"/>
+                            </instance_material>
+                        </technique_common>
+                    </bind_material>
+                </instance_controller>
+            </node>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#ID8"/>
+    </scene>
+</COLLADA>

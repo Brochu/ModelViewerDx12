@@ -1,0 +1,468 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 15.01.2022 13:07:21
+
+newmtl wire_255255000
+	Ns 32
+	d 1
+	Tr 0
+	Tf 1 1 1
+	illum 2
+	Ka 1.0000 1.0000 0.0000
+	Kd 1.0000 1.0000 0.0000
+	Ks 0.3500 0.3500 0.3500
+
+newmtl RockWall08
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockWall08_alb.png
+	map_Kd RockWall08_alb.png
+	map_d RockWall08_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockFloor15
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor15_alb.png
+	map_Kd RockFloor15_alb.png
+	map_d RockFloor15_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockFloor00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor00_alb.png
+	map_Kd RockFloor00_alb.png
+	map_d RockFloor00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockWall00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockWall00_alb.png
+	map_Kd RockWall00_alb.png
+	map_d RockWall00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl Shadow00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl RockWall00_vis
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockWall00_alb.png
+	map_Kd RockWall00_alb.png
+	map_d RockWall00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockFloor02_vis
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor02_alb.png
+	map_Kd RockFloor02_alb.png
+	map_d RockFloor02_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl WoodlBanyan00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka WoodlBanyan00_alb.png
+	map_Kd WoodlBanyan00_alb.png
+	map_d WoodlBanyan00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl WoodlBanyan01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka WoodlBanyan01_alb.png
+	map_Kd WoodlBanyan01_alb.png
+	map_d WoodlBanyan01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl OUPBM_WoodlBanyan01_WoodlBanyan03
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka WoodlBanyan01_alb.png
+	map_Kd WoodlBanyan01_alb.png
+	map_d WoodlBanyan01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl WoodlBanyan03
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka WoodlBanyan03_alb.png
+	map_Kd WoodlBanyan03_alb.png
+	map_d WoodlBanyan03_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl OUPBM_RockFloor00_RockFloor02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor00_alb.png
+	map_Kd RockFloor00_alb.png
+	map_d RockFloor00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockFloor02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor02_alb.png
+	map_Kd RockFloor02_alb.png
+	map_d RockFloor02_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl OUPBM_RockFloor01_RockFloor15
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor01_alb.png
+	map_Kd RockFloor01_alb.png
+	map_d RockFloor01_alb.png
+
+newmtl RockFloor01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockFloor01_alb.png
+	map_Kd RockFloor01_alb.png
+	map_d RockFloor01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockCurb04
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockCurb04_alb.png
+	map_Kd RockCurb04_alb.png
+	map_d RockCurb04_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockCurb05
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockCurb05_alb.png
+	map_Kd RockCurb05_alb.png
+	map_d RockCurb05_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LeafCoco03
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LeafCoco03_alb.png
+	map_Kd LeafCoco03_alb.png
+	map_d LeafCoco03_alb.png
+
+newmtl RockWall01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockWall01_alb.png
+	map_Kd RockWall01_alb.png
+	map_d RockWall01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RockWall08_vis
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RockWall08_alb.png
+	map_Kd RockWall08_alb.png
+	map_d RockWall08_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl Grassspleenwort00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Grassspleenwort00_alb.png
+	map_Kd Grassspleenwort00_alb.png
+	map_d Grassspleenwort00_alb.png
+
+newmtl GrassFloor01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka GrassFloor01_alb.png
+	map_Kd GrassFloor01_alb.png
+	map_d GrassFloor01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RuinsStepStone00
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RuinsStepStone00_alb.png
+	map_Kd RuinsStepStone00_alb.png
+	map_d RuinsStepStone00_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl RuinsStone02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka RuinsStone02_alb.png
+	map_Kd RuinsStone02_alb.png
+	map_d RuinsStone02_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl PoisonSea
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka PoisonSea.png
+	map_Kd PoisonSea.png
+	map_d PoisonSea.png
+
+newmtl WoodlBanyan02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka WoodlBanyan02_alb.png
+	map_Kd WoodlBanyan02_alb.png
+	map_d WoodlBanyan02_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LeafBanyan02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LeafBanyan02_alb.png
+	map_Kd LeafBanyan02_alb.png
+	map_d LeafBanyan02_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LeafBanyan05
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LeafBanyan05_alb.png
+	map_Kd LeafBanyan05_alb.png
+	map_d LeafBanyan05_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
+
+newmtl LeafBanyan01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka LeafBanyan01_alb.png
+	map_Kd LeafBanyan01_alb.png
+	map_d LeafBanyan01_alb.png
+	map_bump -bm 0.3000 Normal_Bump_Normal_Bump.tga
