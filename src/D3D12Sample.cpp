@@ -670,8 +670,6 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     const ModelEntry model = config_.models[modelIndex_];
     const std::string model_folder = "data/models/" + model.folder + "/";
 
-    //TODO: Add possibility to load .dae files
-    //TODO: Add logic to handle custom file names from config
     const std::string model_path = model_folder + model.file;
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
