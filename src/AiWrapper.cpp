@@ -85,10 +85,22 @@ Draws ExtractAiScene(
     for (unsigned int i = 0; i < scene->mNumMaterials; i++) {
         //TODO: Maybe handle different texture types ?
         // All the models I test now use the DIFFUSE textures only
-        aiString texPath;
-        scene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, 0, &texPath);
+        aiMaterial *mat = scene->mMaterials[i];
 
-        materials.push_back({ texPath.C_Str() });
+        aiString aiTexPath;
+        mat->GetTexture(aiTextureType_DIFFUSE, 0, &aiTexPath);
+
+        std::string texPath{aiTexPath.C_Str()};
+        size_t blastidx = texPath.find_last_of('\\');
+        size_t flastidx = texPath.find_last_of('/');
+        if (blastidx != std::string::npos) {
+            texPath = texPath.substr(blastidx + 1);
+        }
+        else if (flastidx != std::string::npos) {
+            texPath = texPath.substr(flastidx + 1);
+        }
+
+        materials.push_back({ texPath });
     }
 
     return draws;
