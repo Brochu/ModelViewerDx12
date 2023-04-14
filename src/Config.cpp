@@ -17,9 +17,11 @@ Config ParseConfig() {
             while (std::getline(fs, line)) {
                 if (line.size() == 0) break;
 
-                //auto idx = line.find('|');
-                c.models.push_back(line);
+                const auto idx = line.find('|');
+                const std::string folder = line.substr(0, idx);
+                const std::string file = line.substr(idx + 1);
 
+                c.models.push_back({folder, file});
                 //TODO: Handle sub models found in the selected model folder
             }
         }

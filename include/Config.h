@@ -5,8 +5,13 @@
 
 namespace AMD{
 
+struct ModelEntry {
+    std::string folder;
+    std::string file;
+};
+
 struct Config {
-    std::vector<std::string> models;
+    std::vector<ModelEntry> models;
 };
 
 Config ParseConfig();
