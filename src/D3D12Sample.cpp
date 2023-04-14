@@ -669,6 +669,7 @@ void D3D12Sample::CreatePipelineStateObject ()
 void D3D12Sample::LoadContent (UploadPass &upload) {
     const std::string folder = "data/models/" + config_.models[modelIndex_] + "/";
 
+    // TODO: Add possibility to load .dae files
     const std::string model_path = folder + "model.obj";
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;

@@ -35,10 +35,15 @@ Draws ExtractAiScene(
 
             aiMesh *m = scene->mMeshes[current->mMeshes[i]];
 
+            auto test = m->GetNumUVChannels();
             for (unsigned int j = 0; j < m->mNumVertices; j++) {
                 const auto pos = m->mVertices[j];
                 const auto normal = m->mNormals[j];
-                const auto uv = m->mTextureCoords[0][j];
+
+                aiVector3D uv{};
+                if (m->GetNumUVChannels() > 0) {
+                    uv = m->mTextureCoords[0][j];
+                }
 
                 vertices.push_back(
                     {{ pos.x, pos.y, pos.z },
