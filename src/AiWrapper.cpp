@@ -6,6 +6,8 @@
 #include "assimp/postprocess.h"
 #include "assimp/scene.h"
 
+#include "tracy/Tracy.hpp"
+
 namespace AMD {
 Draws ExtractAiScene(
     const char *path,
@@ -21,8 +23,10 @@ Draws ExtractAiScene(
                                              aiProcessPreset_TargetRealtime_MaxQuality | 
                                              aiProcess_PreTransformVertices);
     if (scene == nullptr) {
-        auto message = importer.GetErrorString();
-        printf("[AiWrapper] error loading model : %s\n", message);
+        char message[500];
+        sprintf_s(message, "[AiWrapper] error loading model : %s\n", importer.GetErrorString());
+
+        TracyMessage(message, 500);
     }
 
     std::vector<aiNode*> stack;
