@@ -267,11 +267,11 @@ void D3D12Sample::Render ()
         ImGui::Separator();
         ImGui::Text("Model Viewer");
 
-        std::vector<std::string> m = config_.models;
+        std::vector<ModelEntry> m = config_.models;
         assert(m.size() <= MAX_MODEL_COUNT);
         char* models[MAX_MODEL_COUNT];
         for (int i = 0; i < m.size(); i++) {
-            models[i] = m[i].data();
+            models[i] = m[i].folder.data();
         }
         if (ImGui::Combo("Model", &modelIndex_, models, (int)m.size())) {
             swappedModel_ = true;
@@ -667,11 +667,12 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (UploadPass &upload) {
-    const std::string folder = "data/models/" + config_.models[modelIndex_] + "/";
+    const ModelEntry model = config_.models[modelIndex_];
+    const std::string model_folder = "data/models/" + model.folder + "/";
 
     //TODO: Add possibility to load .dae files
     //TODO: Add logic to handle custom file names from config
-    const std::string model_path = folder + "model.obj";
+    const std::string model_path = model_folder + model.file;
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
@@ -685,7 +686,7 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
             //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
             textures.push_back({ 0, 0, {} });
         } else {
-            std::string tex_path = folder + textureName;
+            std::string tex_path = model_folder + textureName;
 
             int w, h = 0;
             const std::vector<std::uint8_t> imgdata = LoadImageFromFile(tex_path.c_str(), 1, &w, &h);
