@@ -20,6 +20,10 @@ Draws ExtractAiScene(
                                              aiProcess_ConvertToLeftHanded |
                                              aiProcessPreset_TargetRealtime_MaxQuality | 
                                              aiProcess_PreTransformVertices);
+    if (scene == nullptr) {
+        auto message = importer.GetErrorString();
+        printf("[AiWrapper] error loading model : %s\n", message);
+    }
 
     std::vector<aiNode*> stack;
     stack.push_back(scene->mRootNode);
