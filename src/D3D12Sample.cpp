@@ -205,6 +205,7 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ClearRenderTargetView (renderTargetHandle,
         dparams.clearColor, 0, nullptr);
+    //TODO: Try and setup inverted depth for better depth precision
     commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 }
 
