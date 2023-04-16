@@ -23,6 +23,8 @@ Config ParseConfig() {
 
                 c.models.push_back({folder, file});
                 //TODO: Handle sub models found in the selected model folder
+                // Return an array of all scenes to combine
+                // Find a way to find a list of offsets for each sub models
             }
         }
     }

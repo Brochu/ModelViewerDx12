@@ -668,6 +668,7 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (UploadPass &upload) {
+    //TODO: Config should return an array of scenes to load
     const ModelEntry model = config_.models[modelIndex_];
     const std::string model_folder = "data/models/" + model.folder + "/";
 
@@ -676,6 +677,8 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
 
+    //TODO: Load all scenes in array, combine in draw list
+    // One upload for all draws
     draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
     upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
 
