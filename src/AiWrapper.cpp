@@ -90,6 +90,8 @@ Draws ExtractAiScene(
         aiString aiTexPath;
         mat->GetTexture(aiTextureType_DIFFUSE, 0, &aiTexPath);
 
+        //TODO: This will not work with models with sub folders for textures
+        // Try to find a new solution for DAE textures with local paths from ripper's computer
         std::string texPath{aiTexPath.C_Str()};
         size_t blastidx = texPath.find_last_of('\\');
         size_t flastidx = texPath.find_last_of('/');
