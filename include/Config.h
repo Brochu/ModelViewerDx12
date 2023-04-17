@@ -7,7 +7,7 @@ namespace AMD{
 
 struct ModelEntry {
     std::string folder;
-    std::string file;
+    std::vector<std::string> files;
 };
 
 struct Config {

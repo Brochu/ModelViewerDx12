@@ -21,7 +21,7 @@ Config ParseConfig() {
                 const std::string folder = line.substr(0, idx);
                 const std::string file = line.substr(idx + 1);
 
-                c.models.push_back({folder, file});
+                c.models.push_back({folder, {file} });
                 //TODO: Handle sub models found in the selected model folder
                 // Return an array of all scenes to combine
                 // Find a way to find a list of offsets for each sub models

@@ -673,7 +673,7 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     const ModelEntry model = config_.models[modelIndex_];
     const std::string model_folder = "data/models/" + model.folder + "/";
 
-    const std::string model_path = model_folder + model.file;
+    const std::string model_path = model_folder + model.files[0];
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
