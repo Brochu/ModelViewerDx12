@@ -1,0 +1,9 @@
+_mat_bottle1
+============
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 137, 138, 144, 255

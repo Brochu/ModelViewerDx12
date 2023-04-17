@@ -1,0 +1,18 @@
+_pollution00_s1o
+================
+  Textures:
+    - mare_pollution00_s01
+    - B_ricoDrDr
+    - B_kagerou
+        Offset: 0.05604846030473709, 0
+        Scale: 1, 0.4000000059604645
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 78, 78, 255
+
+  Color Registers:
+    - 248, 228, 220, 160
+    - 281, 281, 248, 199

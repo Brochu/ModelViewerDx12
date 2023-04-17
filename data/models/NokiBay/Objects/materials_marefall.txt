@@ -1,0 +1,82 @@
+_mat6
+=====
+  Textures:
+    - cloud_i8
+        Offset: 0.6166666746139526, 2.4666666984558105
+        Scale: 2, 2
+    - P_sandnoise2mm
+        Offset: -0.6166666746139526, 2.4666666984558105
+        Scale: 3, 1.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 65, 85, 69, 255
+    - 193, 255, 207, 255
+    - 64, 107, 81, 255
+
+  Color Registers:
+    - 97, 113, 137, 255
+
+
+
+_mat7
+=====
+  Textures:
+    - P_tamatama
+        Offset: 0.6166666746139526, 4.933333396911621
+        Scale: 4, 10
+    - P_sandnoise2mm
+        Offset: -0.6166666746139526, 4.933333396911621
+        Scale: 2, 8
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 137, 155, 165, 255
+    - 193, 255, 208, 255
+    - 105, 114, 110, 255
+
+  Color Registers:
+    - 97, 125, 129, 255
+
+
+
+_mat8
+=====
+  Textures:
+    - cloud_i8
+        Offset: 0, -2.4666666984558105
+        Scale: 1, 0.7177734375
+    - P_sandnoise2mm
+        Offset: 0, -2.4666666984558105
+        Scale: 8, 1
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 154, 176, 217, 255
+
+  Color Registers:
+    - 137, 218, 255, 255
+
+
+
+_mat9
+=====
+  Textures:
+    - P_rainbow
+        Center: 0, 0.2490234375
+        Scale: 2, 1.1572265625
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 200, 200, 200, 255
+    - 200, 200, 200, 255
+
+  Color Registers:

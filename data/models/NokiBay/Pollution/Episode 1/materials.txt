@@ -1,0 +1,19 @@
+_pollution03_o
+==============
+  Textures:
+    - mare_pollution00_s0123456
+    - B_RAKenogu_pink
+        Scale: 3, 3
+        Rotation: -0.3335367900631733
+    - B_ind_metal
+        Offset: 0.23014061152935028, 0
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 78, 78, 255
+
+  Color Registers:
+    - 207, 216, 260, 160
+    - 281, 281, 248, 199

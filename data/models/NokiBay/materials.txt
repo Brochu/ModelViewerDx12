@@ -1,0 +1,1656 @@
+_bottom_sea_o2
+==============
+  Textures:
+    - mare_03
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_box
+====
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_1
+==========
+  Textures:
+    - mare_24
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2
+==========
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_corona
+=======
+  Textures:
+    - corona
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_02
+=========
+  Textures:
+    - mare_27
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d
+========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_iwa_iwa
+========
+  Textures:
+    - mare_01
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_iwa_kusa
+=========
+  Textures:
+    - mare_01
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_iwa_suna
+=========
+  Textures:
+    - mare_01
+    - mare_03
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_kabe
+=====
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kai_b
+======
+  Textures:
+    - J_mare_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusa2_sand
+===========
+  Textures:
+    - mare_27
+    - mare_03
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_kusasakai_d
+============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou2
+=======
+  Textures:
+    - mare_30
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy
+============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1
+========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1191
+======
+  Textures:
+    - cogwheel2_01_1
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1248
+======
+  Textures:
+    - mare_07
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_plantShadow
+============
+  Textures:
+    - plam_ougi
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_pole_03o
+=========
+  Textures:
+    - mare_06
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_pot_o2_1
+=========
+  Textures:
+    - cogwheel2_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_ps_5
+=====
+  Textures:
+    - mare_12
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_sakai_iwa
+==========
+  Textures:
+    - mare_22
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_sakai_kusa1
+============
+  Textures:
+    - mare_22
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_sakai_tuta
+===========
+  Textures:
+    - mare_22
+    - mare_24
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_shell_01o_0
+============
+  Textures:
+    - mare_16
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_shell_01o_3
+============
+  Textures:
+    - mare_11
+        Scale: 8, 3
+    - mare_10
+    - mare_08
+    - mare_14
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 255, 255, 255, 178
+
+
+
+_shell_01o_4
+============
+  Textures:
+    - mare_16
+    - mare_08
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_shell_02o_4
+============
+  Textures:
+    - mare_15
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_shell_03o_1
+============
+  Textures:
+    - mare_11
+        Scale: 8, 3
+    - mare_10
+    - mare_08
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 255, 255, 255, 178
+
+
+
+_shell_03o_2
+============
+  Textures:
+    - mare_14
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_shell_03o_5
+============
+  Textures:
+    - mare_28
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_shin
+=====
+  Textures:
+    - cogwheel2_06
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_suimen_o
+=========
+  Textures:
+    - HAYAwave2a
+        Offset: 0.09450976550579071, 0.09450976550579071
+    - HAYAwave2a
+        Offset: 0.09450976550579071, 0
+        Scale: 1.5, 1.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_tail_o
+=======
+  Textures:
+    - mare_25
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tail_sand
+==========
+  Textures:
+    - mare_25
+    - mare_03
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_take_san2
+==========
+  Textures:
+    - mare_05
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tunnel_under
+=============
+  Textures:
+    - A_hole_en
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_tuta_iwa
+=========
+  Textures:
+    - mare_24
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_tuta_kusa1
+===========
+  Textures:
+    - mare_24
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_tuta_kusa2
+===========
+  Textures:
+    - mare_24
+    - mare_27
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_tuta_sakai
+===========
+  Textures:
+    - mare_24
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_tuta_suna
+==========
+  Textures:
+    - mare_24
+    - mare_03
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 255, 255, 127
+
+
+
+_yane
+=====
+  Textures:
+    - mare_29
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(2)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(3)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(2)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(3)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(4)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(5)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(6)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(4)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(5)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(6)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(7)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(8)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(9)
+===============
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(10)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(11)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(12)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(2)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(3)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(4)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(5)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(2)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(6)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(7)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(7)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(13)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(14)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(3)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(15)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(16)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(4)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(17)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(5)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(18)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(6)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(19)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(7)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(20)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(21)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(8)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(22)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(8)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(9)
+===========
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(9)
+=============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(10)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(10)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(11)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(11)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(12)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(13)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(12)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(14)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(13)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(15)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(14)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(16)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(15)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(17)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(16)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(18)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(17)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(19)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(18)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(20)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(19)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(21)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(20)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(22)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(21)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(23)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(23)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(22)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(24)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(23)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(25)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(24)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(26)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(25)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(27)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_1(2)
+=============
+  Textures:
+    - mare_24
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(26)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(28)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(27)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(29)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(28)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(30)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(29)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(31)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(30)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(32)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(31)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(33)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(24)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(34)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(2)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(2)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(3)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(3)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(4)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(4)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(5)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(5)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(6)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(6)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(7)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(7)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(8)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_1(3)
+=============
+  Textures:
+    - mare_24
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_conbine_2(32)
+==============
+  Textures:
+    - mare_19_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glass_d(8)
+===========
+  Textures:
+    - mare_02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabe(8)
+========
+  Textures:
+    - mare_26
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kusasakai_d(9)
+===============
+  Textures:
+    - mare_22
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_moyou_dammy(25)
+================
+  Textures:
+    - mare_23
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o1154_1(35)
+============
+  Textures:
+    - mare_01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
