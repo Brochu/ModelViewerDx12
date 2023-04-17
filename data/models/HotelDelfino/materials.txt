@@ -1,0 +1,1101 @@
+_00Table_URA301
+===============
+  Textures:
+    - L_delps_tex01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 221, 226, 253, 255
+    - 221, 226, 253, 255
+
+
+
+_1F_floor_13
+============
+  Textures:
+    - L_delf_dairi_moza00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1F_floor_16
+============
+  Textures:
+    - L_delf_dairi_moza00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1Fmado_12
+==========
+  Textures:
+    - L_delps_tex04
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1Fstep_18
+==========
+  Textures:
+    - L_delps_yuka01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1Fstep_19
+==========
+  Textures:
+    - L_del_sirotail00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1Fwcflo_24
+===========
+  Textures:
+    - L_rocktail_gr
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1Fwcwall_27
+============
+  Textures:
+    - L_rocktail_big
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1fTENJO_3
+==========
+  Textures:
+    - L_rocktail_cream
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1tenjohuti_3
+=============
+  Textures:
+    - L_delf_akadairi_128x64
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_201flo_7
+=========
+  Textures:
+    - L_panelwood
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_202b_flo_15
+============
+  Textures:
+    - L_rocktail
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_202mado_8_11___2
+=================
+  Textures:
+    - L_delps_tex02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 106, 117, 230, 255
+    - 106, 117, 230, 255
+
+
+
+_2TENJO
+=======
+  Textures:
+    - L_rocktail_cream
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_2roomw_8
+=========
+  Textures:
+    - L_Dairi_white
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_303ANA_14
+==========
+  Textures:
+    - L_danmen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_3kasa_16
+=========
+  Textures:
+    - L_hutinuno
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_3kasa_18
+=========
+  Textures:
+    - L_hutinuno
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_BUKE205_18
+===========
+  Textures:
+    - L_tree_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_CAUNTA_12_11___2
+=================
+  Textures:
+    - L_rockkabe
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 221, 226, 253, 255
+    - 221, 226, 253, 255
+
+
+
+_GYAKKO_4
+=========
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_GYAKKO_7
+=========
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_HANA_4
+=======
+  Textures:
+    - L_tree_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_NUKEANA_3F
+===========
+  Textures:
+    - L_conkuri
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_NUKEGUTI_2F
+============
+  Textures:
+    - L_conkuri
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_anaita
+=======
+  Textures:
+    - L_puraban_blue
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glassHNSYA1
+============
+  Textures:
+    - HAYAwave2a
+        Offset: -0.5029296875, 0
+        Center: 0.419921875, -2.48046875
+        Scale: 8, 8
+    - HAYAwave2a
+        Offset: 2.2705078125, 2.5634765625
+        Center: 0, 0
+        Scale: 4, 4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 255, 144
+    - 255, 255, 255, 144
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_glassHNSYAmini
+===============
+  Textures:
+    - HAYAwave2a
+        Offset: -0.5029296875, 0
+        Center: 0.419921875, -2.48046875
+        Scale: 0.8837890625, 0.8837890625
+    - HAYAwave2a
+        Offset: 2.2705078125, 2.5634765625
+        Center: 0, 0
+        Scale: 1.513671875, 1.513671875
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 255, 144
+    - 255, 255, 255, 144
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_glassIRO1
+==========
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 45, 28, 0, 0
+    - 45, 28, 0, 0
+
+
+
+_glassIRO2
+==========
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 45, 28, 0, 0
+    - 45, 28, 0, 0
+
+
+
+_glassIRO3
+==========
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 45, 28, 0, 0
+    - 45, 28, 0, 0
+
+
+
+_glassIROmini
+=============
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 115, 90, 0, 0
+    - 115, 90, 0, 0
+
+
+
+_kabin_10
+=========
+  Textures:
+    - L_sarasa_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabin_6
+========
+  Textures:
+    - L_sarasa_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kaidanhuti2
+============
+  Textures:
+    - L_delf_akadairi_128x64
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mat89_62_11___2
+================
+  Textures:
+    - L_tree_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 221, 226, 253, 255
+    - 221, 226, 253, 255
+
+
+
+_mat_doorA_r_21
+===============
+  Textures:
+    - L_doorhotel
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mirror
+=======
+  Textures:
+    - L_mirror_back
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mizusitastep_4
+===============
+  Textures:
+    - A_kon_ita
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mizusitastep_7
+===============
+  Textures:
+    - A_kon_ita
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o12329_20
+==========
+  Textures:
+    - L_del_sirotail00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o23820_14
+==========
+  Textures:
+    - L_Goza_teppan
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o24655_13
+==========
+  Textures:
+    - L_delps_tex04
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o26186_9
+=========
+  Textures:
+    - L_delps_yuka01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o26602_4
+=========
+  Textures:
+    - L_eledoor
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o26602_7
+=========
+  Textures:
+    - L_eledoor
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o36779_19
+==========
+  Textures:
+    - L_delps_tex02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o36813_8
+=========
+  Textures:
+    - L_delps_tex02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o36836_7
+=========
+  Textures:
+    - L_rockkabe
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o37081_8
+=========
+  Textures:
+    - L_delf_gotugotu00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o39068
+=======
+  Textures:
+    - L_Gold
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o39068_4
+=========
+  Textures:
+    - L_Gold
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o39068_5
+=========
+  Textures:
+    - L_Goza_teppan
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o4954_57
+=========
+  Textures:
+    - L_delps_tex01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o4954_98
+=========
+  Textures:
+    - L_delps_tex01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6153_4
+========
+  Textures:
+    - L_rockkabe
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6224_11
+=========
+  Textures:
+    - L_rocktail_big
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6312_12
+=========
+  Textures:
+    - L_wara
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6312_9
+========
+  Textures:
+    - L_wara
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_rouka
+======
+  Textures:
+    - L_teppan
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_soko_4
+=======
+  Textures:
+    - L_rocktail_gr
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_top1_3
+=======
+  Textures:
+    - L_danmen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_un_SIRO_4
+==========
+  Textures:
+    - L_delf_gotugotu00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_water1
+=======
+  Textures:
+    - HAYAwave2a
+        Offset: 0.7532389760017395, 0.7532389760017395
+    - HAYAwave2a
+        Offset: 0.7532389760017395, 0
+        Scale: 1.5, 1.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_water1_under
+=============
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 55, 11, 0, 0
+    - 55, 11, 0, 0
+
+
+
+_waterhuro3
+===========
+  Textures:
+    - HAYAwave2a
+        Offset: 0.7532389760017395, 0.7532389760017395
+    - HAYAwave2a
+        Offset: 0.7532389760017395, 0
+        Scale: 1.5, 1.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_NUKEANA_3F(2)
+==============
+  Textures:
+    - L_conkuri
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabin_6(2)
+===========
+  Textures:
+    - L_sarasa_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o23820_14(2)
+=============
+  Textures:
+    - L_Goza_teppan
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o24655_13(2)
+=============
+  Textures:
+    - L_delps_tex04
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_top1_3(2)
+==========
+  Textures:
+    - L_danmen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glassHNSYA1(2)
+===============
+  Textures:
+    - HAYAwave2a
+        Offset: -0.5029296875, 0
+        Center: 0.419921875, -2.48046875
+        Scale: 8, 8
+    - HAYAwave2a
+        Offset: 2.2705078125, 2.5634765625
+        Center: 0, 0
+        Scale: 4, 4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 255, 144
+    - 255, 255, 255, 144
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_water1(2)
+==========
+  Textures:
+    - HAYAwave2a
+        Offset: 0.0909629613161087, 0.0909629613161087
+    - HAYAwave2a
+        Offset: 0.0909629613161087, 0
+        Scale: 1.5, 1.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_water1_under(2)
+================
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 55, 11, 0, 0
+    - 55, 11, 0, 0
+
+
+
+_1F_floor_13(2)
+===============
+  Textures:
+    - L_delf_dairi_moza00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1fTENJO_3(2)
+=============
+  Textures:
+    - L_rocktail_cream
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_1tenjohuti_3(2)
+================
+  Textures:
+    - L_delf_akadairi_128x64
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_GYAKKO_4(2)
+============
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_HANA_4(2)
+==========
+  Textures:
+    - L_tree_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kabin_6(3)
+===========
+  Textures:
+    - L_sarasa_00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mizusitastep_4(2)
+==================
+  Textures:
+    - A_kon_ita
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o12329_20(2)
+=============
+  Textures:
+    - L_del_sirotail00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o23820_14(3)
+=============
+  Textures:
+    - L_Goza_teppan
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o24655_13(3)
+=============
+  Textures:
+    - L_delps_tex04
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o26186_9(2)
+============
+  Textures:
+    - L_delps_yuka01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o26602_4(2)
+============
+  Textures:
+    - L_eledoor
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o36813_8(2)
+============
+  Textures:
+    - L_delps_tex02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o4954_98(2)
+============
+  Textures:
+    - L_delps_tex01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6153_4(2)
+===========
+  Textures:
+    - L_rockkabe
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6224_11(2)
+============
+  Textures:
+    - L_rocktail_big
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6312_12(2)
+============
+  Textures:
+    - L_wara
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_soko_4(2)
+==========
+  Textures:
+    - L_rocktail_gr
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_top1_3(3)
+==========
+  Textures:
+    - L_danmen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_un_SIRO_4(2)
+=============
+  Textures:
+    - L_delf_gotugotu00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_glassHNSYA1(3)
+===============
+  Textures:
+    - HAYAwave2a
+        Offset: -0.5029296875, 0
+        Center: 0.419921875, -2.48046875
+        Scale: 8, 8
+    - HAYAwave2a
+        Offset: 2.2705078125, 2.5634765625
+        Center: 0, 0
+        Scale: 4, 4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 255, 144
+    - 255, 255, 255, 144
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_water1(3)
+==========
+  Textures:
+    - HAYAwave2a
+        Offset: 0.16022861003875732, 0.16022861003875732
+    - HAYAwave2a
+        Offset: 0.16022861003875732, 0
+        Scale: 1.5, 1.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_water1_under(3)
+================
+  Textures:
+    - L_glass
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 55, 11, 0, 0
+    - 55, 11, 0, 0
+

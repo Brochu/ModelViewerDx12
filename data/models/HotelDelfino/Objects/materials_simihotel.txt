@@ -1,0 +1,79 @@
+_SIMI_ove_1_22___2
+==================
+  Textures:
+    - B_HAYAwave3_half
+        Offset: 0.12266826629638672, 0.12266826629638672
+    - B_HAYAwave3_half
+        Offset: 0.12266826629638672, 0
+        Scale: 1.5, 1.5
+    - L_Simi01
+        Offset: -0.3369140625, -0.6298828125
+        Scale: 1.3427734375, 1.3427734375
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_SIMI_und_1_11___2
+==================
+  Textures:
+    - L_Simi01
+        Offset: -0.29296875, -0.673828125
+        Scale: 1.38671875, 1.38671875
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 16, 65, 69, -169
+
+
+
+_Simi_ANA_22___1
+================
+  Textures:
+    - L_Simi_ANA00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 20, 34, 0, 70
+    - 20, 34, 0, 70
+
+
+
+_TARE_ove_1_11___2
+==================
+  Textures:
+    - B_HAYAwave3_half
+        Offset: 0.12266826629638672, 0.12266826629638672
+    - B_HAYAwave3_half
+        Offset: 0.12266826629638672, 0
+        Scale: 1.5, 1.5
+    - L_Simi00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_TARE_und_1_22___2
+==================
+  Textures:
+    - L_Simi00
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 10, 57, 78, 110
