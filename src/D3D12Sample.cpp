@@ -206,7 +206,7 @@ void D3D12Sample::PrepareRender ()
     commandList->ClearRenderTargetView (renderTargetHandle,
         dparams.clearColor, 0, nullptr);
     //TODO: Try and setup inverted depth for better depth precision
-    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
+    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 0.0f, 0, 0, nullptr);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -473,7 +473,7 @@ void D3D12Sample::SetupSwapChain ()
 
     D3D12_CLEAR_VALUE depthClearValue = {};
     depthClearValue.Format = DXGI_FORMAT_D32_FLOAT;
-    depthClearValue.DepthStencil.Depth = 1.f;
+    depthClearValue.DepthStencil.Depth = 0.f;
     depthClearValue.DepthStencil.Stencil = 0;
 
     for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
@@ -661,6 +661,7 @@ void D3D12Sample::CreatePipelineStateObject ()
     psoDesc.BlendState.RenderTarget[0].RenderTargetWriteMask = D3D12_COLOR_WRITE_ENABLE_ALL;
     psoDesc.SampleDesc.Count = 1;
     psoDesc.DepthStencilState = CD3DX12_DEPTH_STENCIL_DESC(D3D12_DEFAULT);
+    psoDesc.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_GREATER;
     psoDesc.SampleMask = 0xFFFFFFFF;
     psoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
@@ -753,7 +754,7 @@ void D3D12Sample::UpdateConstantBuffer ()
 
     // Projection
     float aspect = (float)width_ / (float)height_;
-    XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(dparams.fov), aspect, 0.1f, 100000.f);
+    XMMATRIX projection = XMMatrixPerspectiveFovLH(XMConvertToRadians(dparams.fov), aspect, 100000.f, 0.1f);
 
     XMMATRIX mvp = XMMatrixMultiply(model, view);
     mvp = XMMatrixMultiply(mvp, projection);
