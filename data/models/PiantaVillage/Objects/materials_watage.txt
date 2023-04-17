@@ -1,0 +1,33 @@
+_o1
+===
+  Textures:
+    - B_tanpopo
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o6
+===
+  Textures:
+    - B_tanpopo_wataLs
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o7
+===
+  Textures:
+    - B_tanpopo_wataLs
+        Scale: 1.1669921875, 1.1669921875
+        Rotation: 0.30808435316019167
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 221, 255
+    - 255, 255, 221, 255

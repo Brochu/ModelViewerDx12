@@ -1,0 +1,334 @@
+_ReBottol
+=========
+  Textures:
+    - A_mamma_s
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_cs_take
+========
+  Textures:
+    - S_take02_mip
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_dis_ha0_21
+===========
+  Textures:
+    - S_yasi_ha02_mip
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_fence_ura
+==========
+  Textures:
+    - A_bamboo
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_gake3TevSand
+=============
+  Textures:
+    - A_pinna_s2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_green1
+=======
+  Textures:
+    - S_green_mon1_mip
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_kc_20
+======
+  Textures:
+    - A_kage_monte
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 255, 255, 255, 222
+    - 255, 255, 255, 222
+
+
+
+_kinoko_env
+===========
+  Textures:
+    - A_kinoko02
+    - A_ekitekari
+        Scale: 1.4453125, 1.4453125
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 62, 60, 59, 224
+
+
+
+_kusasakai_d
+============
+  Textures:
+    - A_mare
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m15_ji_d
+=========
+  Textures:
+    - A_suna_sire02m4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m_heri
+=======
+  Textures:
+    - A_sotokabe2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m_huroisi1_1
+=============
+  Textures:
+    - A_brock_sire_3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m_kinoko_y_1
+=============
+  Textures:
+    - A_kinoko02
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m_mon_eye
+==========
+  Textures:
+    - A_monte_nuki
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m_notex
+========
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_m_sea_env
+==========
+  Textures:
+    - B_ENKEIwave
+        Offset: 0.4179936647415161, 0.4179936647415161
+        Scale: 5, 5
+    - B_ENKEIwave
+        Offset: 0, 0.4179936647415161
+        Scale: 4, 4
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 252, 255, 255, 255
+    - 232, 228, 252, 255
+
+
+
+_m_wall_A1_1
+============
+  Textures:
+    - A_monte_kabe
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mat115_6
+=========
+  Textures:
+    - A_corona
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_mich3
+======
+  Textures:
+    - A_michi1_til
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_michi1
+=======
+  Textures:
+    - A_michi1
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_michi2
+=======
+  Textures:
+    - A_michi3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o13
+====
+  Textures:
+    - A_bamboo3
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o3337
+======
+  Textures:
+    - A_yasi_B2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o3349
+======
+  Textures:
+    - A_yasi_B
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o3350_1
+========
+  Textures:
+    - D_ishidatami_t1
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_o45
+====
+  Textures:
+    - A_monte_shine
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_onsen
+======
+  Textures:
+    - A_ita01_mip
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_sokomizu2
+==========
+  Textures:
+    - S_soko1_mip
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_yashi
+======
+  Textures:
+    - A_yasi
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_yashi_1
+========
+  Textures:
+    - A_yasi_A
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_yashi_ne
+=========
+  Textures:
+    - A_yasi2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_yashi_sun_3
+============
+  Textures:
+    - A_yasi_A2
+
+  Ambient Colors:
+    - 128, 128, 128, 50

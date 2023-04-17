@@ -1,0 +1,19 @@
+_mr
+===
+  Textures:
+    - S_rakugaki0630
+    - S_red1_mip
+        Offset: 0.5, 0
+    - B_ind_metal
+        Scale: 2, 2
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 255, 78, 78, 255
+    - 255, 0, 0, 255
+
+  Color Registers:
+    - 207, 216, 260, 160
+    - 113, 198, 214, 199

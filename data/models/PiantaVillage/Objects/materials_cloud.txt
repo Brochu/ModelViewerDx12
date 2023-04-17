@@ -1,0 +1,9 @@
+_mat_cloud
+==========
+  Textures:
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 160, 160, 160, 255
