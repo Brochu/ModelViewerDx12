@@ -669,34 +669,35 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (UploadPass &upload) {
-    //TODO: Config should return an array of scenes to load
     const ModelEntry model = config_.models[modelIndex_];
+    //TODO: Find a way to handle source folder for sub-meshes?
     const std::string model_folder = "data/models/" + model.folder + "/";
 
-    const std::string model_path = model_folder + model.files[0];
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
 
-    //TODO: Load all scenes in array, combine in draw list
-    // One upload for all draws
-    draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
-    upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
+    for (const auto f : model.files) {
+        const std::string model_path = model_folder + f;
 
-    std::vector<Texture> textures;
-    for (auto& [textureName] : materials) {
-        if (textureName.empty()) {
-            //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
-            textures.push_back({ 0, 0, {} });
-        } else {
-            std::string tex_path = model_folder + textureName;
+        draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
+        upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
 
-            int w, h = 0;
-            const std::vector<std::uint8_t> imgdata = LoadImageFromFile(tex_path.c_str(), 1, &w, &h);
-            textures.push_back({ w, h, imgdata });
+        std::vector<Texture> textures;
+        for (auto& [textureName] : materials) {
+            if (textureName.empty()) {
+                //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
+                textures.push_back({ 0, 0, {} });
+            } else {
+                std::string tex_path = model_folder + textureName;
+
+                int w, h = 0;
+                const std::vector<std::uint8_t> imgdata = LoadImageFromFile(tex_path.c_str(), 1, &w, &h);
+                textures.push_back({ w, h, imgdata });
+            }
         }
+        upload.UploadTextures(srvDescriptorHeap_, textures, image_);
     }
-    upload.UploadTextures(srvDescriptorHeap_, textures, image_);
 }
 
 void D3D12Sample::CreateConstantBuffer ()
