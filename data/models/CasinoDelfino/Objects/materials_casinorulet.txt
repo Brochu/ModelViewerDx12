@@ -1,0 +1,106 @@
+_Dairi00_22___2
+===============
+  Textures:
+    - L_boss_dairiseki01
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_GRN0_22___2
+============
+  Textures:
+    - L_boss_redgreen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_RED0_22___2
+============
+  Textures:
+    - L_boss_redgreen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_gld_00_1_22___2
+================
+  Textures:
+    - L_Gold
+        Scale: 7, 7
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 253, 253, 216, 255
+    - 253, 253, 216, 255
+
+
+
+_gold_0_22___2
+==============
+  Textures:
+    - L_Gold
+        Scale: 7, 7
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 253, 253, 216, 255
+    - 253, 253, 216, 255
+
+
+
+_ike_22___2
+===========
+  Textures:
+    - L_Gold
+        Scale: 3.5, 3.5
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Material Colors:
+    - 253, 253, 216, 255
+    - 253, 253, 216, 255
+
+
+
+_ster00_22___2
+==============
+  Textures:
+    - L_boss_kazarister
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+
+
+_switch0_22___2
+===============
+  Textures:
+    - L_boss_redgreen
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Color Registers:
+    - 0, 0, 0, 255
+
+
+
+_uramen_22___2
+==============
+  Textures:
+    - L_dairiten
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+

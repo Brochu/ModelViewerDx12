@@ -1,0 +1,42 @@
+_mat1
+=====
+  Textures:
+    - P_telusaroom1_i
+        Offset: -0.08198068290948868, 0.14732325077056885
+        Scale: 6, 0.3499999940395355
+    - P_telusaroom1_i
+        Offset: -1.3401200771331787, 0.709445595741272
+        Scale: 6, 0.3499999940395355
+    - P_telusaroom1_i
+        Offset: 0.19996218383312225, 0.9480943083763123
+        Scale: 6, 0.3499999940395355
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 135, 0, 40, 160
+    - 64, 140, 0, 255
+    - 0, 49, 135, 255
+
+
+
+_ten00
+======
+  Textures:
+    - P_casino_glow2mm
+        Scale: 10, 10
+    - P_casino_shine4
+        Offset: 0.0625, 0.0625
+        Scale: 1.25, 1.25
+
+  Ambient Colors:
+    - 128, 128, 128, 50
+
+  Constant Colors:
+    - 96, 96, 0, 255
+    - 24, 0, 72, 255
+
+  Material Colors:
+    - 96, 73, 96, 255
+    - 96, 73, 96, 255
