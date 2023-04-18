@@ -8,6 +8,28 @@
 
 #include "tracy/Tracy.hpp"
 
+AMD::Material ParseMaterial(const aiMaterial* aiMaterial) {
+    //TODO: Maybe handle different texture types ?
+    // All the models I test now use the DIFFUSE textures only
+    aiString aiTexturePath;
+    aiMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &aiTexturePath);
+
+    //TODO: This will not work with models with sub folders for textures
+    // Try to find a new solution for DAE textures with local paths from ripper's computer
+    std::string texturePath{aiTexturePath.C_Str()};
+
+    size_t blastidx = texturePath.find_last_of('\\');
+    size_t flastidx = texturePath.find_last_of('/');
+    if (blastidx != std::string::npos) {
+        texturePath = texturePath.substr(blastidx + 1);
+    }
+    else if (flastidx != std::string::npos) {
+        texturePath = texturePath.substr(flastidx + 1);
+    }
+
+    return { texturePath };
+}
+
 namespace AMD {
 Draws ExtractAiScene(
     const char *path,
@@ -83,26 +105,7 @@ Draws ExtractAiScene(
 
     // To load the textures needed later, we need to extract the materials' data
     for (unsigned int i = 0; i < scene->mNumMaterials; i++) {
-        //TODO: Maybe handle different texture types ?
-        // All the models I test now use the DIFFUSE textures only
-        aiMaterial *mat = scene->mMaterials[i];
-
-        aiString aiTexPath;
-        mat->GetTexture(aiTextureType_DIFFUSE, 0, &aiTexPath);
-
-        //TODO: This will not work with models with sub folders for textures
-        // Try to find a new solution for DAE textures with local paths from ripper's computer
-        std::string texPath{aiTexPath.C_Str()};
-        size_t blastidx = texPath.find_last_of('\\');
-        size_t flastidx = texPath.find_last_of('/');
-        if (blastidx != std::string::npos) {
-            texPath = texPath.substr(blastidx + 1);
-        }
-        else if (flastidx != std::string::npos) {
-            texPath = texPath.substr(flastidx + 1);
-        }
-
-        materials.push_back({ texPath });
+        materials.push_back(ParseMaterial(scene->mMaterials[i]));
     }
 
     return draws;
