@@ -1,0 +1,1257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2022-10-15T13:02:05Z</created>
+    <modified>2022-10-15T13:02:05Z</modified>
+  </asset>
+  <library_images>
+    <image id="Image">
+      <init_from>Texture_0_IA8.png</init_from>
+    </image>
+    <image id="Image1">
+      <init_from>Texture_0_IA8.png</init_from>
+    </image>
+    <image id="Image2">
+      <init_from>Texture_1_CI8_RGB5A3.png</init_from>
+    </image>
+    <image id="Image3">
+      <init_from>Texture_2_IA4.png</init_from>
+    </image>
+    <image id="Image4">
+      <init_from>Texture_3_IA4.png</init_from>
+    </image>
+    <image id="Image5">
+      <init_from>Texture_4_IA4.png</init_from>
+    </image>
+    <image id="Image6">
+      <init_from>Texture_5_IA4.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="VisualMaterial" name="Joint_1_Object_0_Material_0">
+      <instance_effect url="#Effect"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_1_Object_0_Material_0</user_properties>
+        </technique>
+      </extra>
+    </material>
+    <material id="VisualMaterial1" name="Joint_2_Object_0_Material_0">
+      <instance_effect url="#Effect1"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_2_Object_0_Material_0</user_properties>
+        </technique>
+      </extra>
+    </material>
+    <material id="VisualMaterial2" name="Joint_2_Object_1_Material_1">
+      <instance_effect url="#Effect2"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_2_Object_1_Material_1</user_properties>
+        </technique>
+      </extra>
+    </material>
+    <material id="VisualMaterial3" name="Joint_3_Object_0_Material_0">
+      <instance_effect url="#Effect3"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_3_Object_0_Material_0</user_properties>
+        </technique>
+      </extra>
+    </material>
+    <material id="VisualMaterial4" name="Joint_4_Object_0_Material_0">
+      <instance_effect url="#Effect4"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_4_Object_0_Material_0</user_properties>
+        </technique>
+      </extra>
+    </material>
+    <material id="VisualMaterial5" name="Joint_5_Object_0_Material_0">
+      <instance_effect url="#Effect5"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_5_Object_0_Material_0</user_properties>
+        </technique>
+      </extra>
+    </material>
+    <material id="VisualMaterial6" name="Joint_6_Object_0_Material_0">
+      <instance_effect url="#Effect6"/>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Joint_6_Object_0_Material_0</user_properties>
+        </technique>
+      </extra>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Effect" name="Texture_0_IA8_png">
+      <profile_COMMON>
+        <newparam sid="Image-surface">
+          <surface type="2D">
+            <init_from>Image</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image-sampler">
+          <sampler2D>
+            <source>Image-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_0_IA8.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Effect1" name="Texture_0_IA8_png">
+      <profile_COMMON>
+        <newparam sid="Image1-surface">
+          <surface type="2D">
+            <init_from>Image1</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image1-sampler">
+          <sampler2D>
+            <source>Image1-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image1-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_0_IA8.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Effect2" name="Texture_1_CI8_RGB5A3_png">
+      <profile_COMMON>
+        <newparam sid="Image2-surface">
+          <surface type="2D">
+            <init_from>Image2</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image2-sampler">
+          <sampler2D>
+            <source>Image2-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image2-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_1_CI8_RGB5A3.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Effect3" name="Texture_2_IA4_png">
+      <profile_COMMON>
+        <newparam sid="Image3-surface">
+          <surface type="2D">
+            <init_from>Image3</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image3-sampler">
+          <sampler2D>
+            <source>Image3-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image3-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_2_IA4.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Effect4" name="Texture_3_IA4_png">
+      <profile_COMMON>
+        <newparam sid="Image4-surface">
+          <surface type="2D">
+            <init_from>Image4</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image4-sampler">
+          <sampler2D>
+            <source>Image4-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image4-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_3_IA4.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Effect5" name="Texture_4_IA4_png">
+      <profile_COMMON>
+        <newparam sid="Image5-surface">
+          <surface type="2D">
+            <init_from>Image5</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image5-sampler">
+          <sampler2D>
+            <source>Image5-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image5-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_4_IA4.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+    <effect id="Effect6" name="Texture_5_IA4_png">
+      <profile_COMMON>
+        <newparam sid="Image6-surface">
+          <surface type="2D">
+            <init_from>Image6</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="Image6-sampler">
+          <sampler2D>
+            <source>Image6-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color>0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Image6-sampler" texcoord=""/>
+            </diffuse>
+            <specular>
+              <color>1 1 1 1</color>
+            </specular>
+            <shininess>
+              <float>0</float>
+            </shininess>
+            <transparent opaque="A_ONE">
+              <color>0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+            <index_of_refraction>
+              <float>1.55</float>
+            </index_of_refraction>
+          </phong>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <float>0</float>
+              </spec_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>Texture_5_IA4.png</user_properties>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Geometry" name="Joint_1_Object_0_SINGLE">
+      <mesh>
+        <source id="GeometrySource" name="Joint_1_Object_0_SINGLEPos">
+          <float_array id="GeometrySource-array" count="12">6.31299 -6.31299 0 6.31299 6.31299 0 -6.31299 6.31299 0 -6.31299 -6.31299 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource1" name="Joint_1_Object_0_SINGLENrm">
+          <float_array id="GeometrySource1-array" count="12">0 0 1 0 0 1 0 0 1 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource1-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource2" name="Joint_1_Object_0_SINGLEUV">
+          <float_array id="GeometrySource2-array" count="8">0 1 0 0 1 0.007812 0.992188 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource2-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry-vertices">
+          <input semantic="POSITION" source="#GeometrySource"/>
+          <input semantic="NORMAL" source="#GeometrySource1"/>
+          <input semantic="TEXCOORD" source="#GeometrySource2"/>
+        </vertices>
+        <triangles material="VisualMaterial0" count="2">
+          <input semantic="VERTEX" source="#Geometry-vertices" offset="0"/>
+          <p>0 1 2 3 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Geometry1" name="Joint_2_Object_0_SINGLE">
+      <mesh>
+        <source id="GeometrySource3" name="Joint_2_Object_0_SINGLEPos">
+          <float_array id="GeometrySource3-array" count="12">-5.80894 5.80894 -0.83911 -5.80894 -5.80894 -0.83911 5.80894 -5.80894 -0.83911 5.80894 5.80894 -0.83911</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource3-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource4" name="Joint_2_Object_0_SINGLENrm">
+          <float_array id="GeometrySource4-array" count="12">1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource4-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource5" name="Joint_2_Object_0_SINGLEUV">
+          <float_array id="GeometrySource5-array" count="8">0 1 0 0 1 0.007812 0.992188 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource5-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry1-vertices">
+          <input semantic="POSITION" source="#GeometrySource3"/>
+          <input semantic="NORMAL" source="#GeometrySource4"/>
+          <input semantic="TEXCOORD" source="#GeometrySource5"/>
+        </vertices>
+        <triangles material="VisualMaterial10" count="2">
+          <input semantic="VERTEX" source="#Geometry1-vertices" offset="0"/>
+          <p>0 1 2 3 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Geometry2" name="Joint_2_Object_1_SINGLE">
+      <mesh>
+        <source id="GeometrySource6" name="Joint_2_Object_1_SINGLEPos">
+          <float_array id="GeometrySource6-array" count="153">2.10928 0 0.68532 1.79412 -1.30357 0 2.21789 0 0 1.70628 1.23958 0.68532 1.79412 1.30357 0 0.651643 2.00601 0.68532 0.68532 2.10928 0 -0.651643 2.00601 0.68532 -0.68532 2.10928 0 -1.70628 1.23958 0.68532 -1.79412 1.30357 0 -2.10928 0 0.68532 -2.21789 0 0 -1.70628 -1.23958 0.68532 -1.79412 -1.30357 0 -0.651643 -2.00601 0.68532 -0.68532 -2.10928 0 0.651643 -2.00601 0.68532 0.68532 -2.10928 0 1.70628 -1.23958 0.68532 1.79412 0 1.30357 1.45146 1.05464 1.30357 0.554261 1.70628 1.30357 -0.554261 1.70628 1.30357 -1.45146 1.05464 1.30357 -1.79412 0 1.30357 -1.45146 -1.05464 1.30357 -0.554261 -1.70628 1.30357 0.554261 -1.70628 1.30357 1.45146 -1.05464 1.30357 1.30357 0 1.79412 1.05464 0.766144 1.79412 0.402716 1.23958 1.79412 -0.402716 1.23958 1.79412 -1.05464 0.766144 1.79412 -1.30357 0 1.79412 -1.05464 -0.766144 1.79412 -0.402716 -1.23958 1.79412 0.402716 -1.23958 1.79412 1.05464 -0.766144 1.79412 0.68532 0 2.10928 0.554261 0.402716 2.10928 0.211602 0.651643 2.10928 -0.211602 0.651643 2.10928 -0.554261 0.402716 2.10928 -0.68532 0 2.10928 -0.554261 -0.402716 2.10928 -0.211602 -0.651643 2.10928 0.211602 -0.651643 2.10928 0.554261 -0.402716 2.10928 0 0 2.21789</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource6-array" count="51" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource7" name="Joint_2_Object_1_SINGLENrm">
+          <float_array id="GeometrySource7-array" count="153">1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource7-array" count="51" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource8" name="Joint_2_Object_1_SINGLEUV">
+          <float_array id="GeometrySource8-array" count="102">0.96875 0.5 0.898438 0.210938 1 0.507813 0.882813 0.796875 0.898438 0.796875 0.648438 0.976563 0.648438 1 0.34375 0.976563 0.34375 1 0.109375 0.796875 0.09375 0.796875 0.023437 0.507813 0 0.5 0.109375 0.210938 0.09375 0.210938 0.34375 0.03125 0.34375 0.007812 0.648438 0.03125 0.648438 0 0.882813 0.210938 0.898438 0.5 0.820313 0.75 0.625 0.90625 0.375 0.90625 0.171875 0.75 0.09375 0.5 0.171875 0.25 0.367188 0.101563 0.617188 0.101563 0.820313 0.25 0.789063 0.5 0.734375 0.6875 0.585938 0.796875 0.40625 0.796875 0.257813 0.6875 0.203125 0.507813 0.257813 0.320313 0.40625 0.210938 0.585938 0.210938 0.734375 0.320313 0.648438 0.5 0.617188 0.601563 0.546875 0.65625 0.445313 0.65625 0.375 0.601563 0.34375 0.5 0.375 0.40625 0.445313 0.351563 0.546875 0.351563 0.617188 0.40625 0.492188 0.5</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource8-array" count="51" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry2-vertices">
+          <input semantic="POSITION" source="#GeometrySource6"/>
+          <input semantic="NORMAL" source="#GeometrySource7"/>
+          <input semantic="TEXCOORD" source="#GeometrySource8"/>
+        </vertices>
+        <triangles material="VisualMaterial20" count="90">
+          <input semantic="VERTEX" source="#Geometry2-vertices" offset="0"/>
+          <p>0 1 2 3 0 2 3 2 4 5 3 4 5 4 6 7 5 6 7 6 8 9 7 8 9 8 10 11 9 10 11 10 12 13 11 12 13 12 14 15 13 14 15 14 16 17 15 16 17 16 18 19 18 1 19 1 0 19 17 18 20 19 0 21 20 0 21 0 3 22 3 5 22 21 3 23 5 7 23 22 5 24 7 9 24 23 7 25 24 9 25 9 11 26 11 13 26 25 11 27 13 15 27 26 13 28 15 17 28 27 15 29 28 17 29 17 19 29 19 20 30 29 20 31 20 21 31 30 20 32 21 22 32 31 21 33 22 23 33 32 22 34 33 23 34 23 24 35 24 25 35 34 24 36 25 26 36 35 25 37 26 27 37 36 26 38 27 28 38 37 27 39 38 28 39 28 29 39 29 30 40 39 30 41 30 31 41 40 30 42 31 32 42 41 31 43 42 32 43 32 33 44 33 34 44 43 33 45 34 35 45 44 34 46 35 36 46 45 35 47 46 36 47 36 37 48 37 38 48 47 37 49 38 39 49 39 40 49 48 38 50 49 40 50 40 41 50 41 42 50 42 43 50 43 44 50 44 45 50 45 46 50 46 47 50 47 48 49 50 48</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Geometry3" name="Joint_3_Object_0_SINGLE">
+      <mesh>
+        <source id="GeometrySource9" name="Joint_3_Object_0_SINGLEPos">
+          <float_array id="GeometrySource9-array" count="276">-1.26019 0.679723 2.29284 -1.57363 -0.09957 2.19559 -0.931219 0.349021 2.51362 -0.197431 0.763364 2.58533 0.01759 -0.18843 2.69628 -0.818319 -0.151493 2.57184 -0.964376 -0.629783 2.44547 -0.260378 -1.09869 2.45577 0.468977 -1.46011 2.22584 0.85168 -0.20688 2.55697 0.555732 1.10299 2.40426 -0.823166 1.39257 2.16539 -1.67943 0.714811 1.99395 -2.02898 0.44038 1.73098 -1.6207 1.45918 1.5968 -0.305674 1.96914 1.82615 1.25433 1.33474 1.98778 1.60216 -0.205357 2.16723 1.15238 -1.67822 1.77807 0.076505 -2.52229 0.968685 -0.446162 -2.1779 1.53739 -0.92533 -1.62028 1.95553 -1.31392 -0.904213 2.1825 -1.73316 -0.869125 1.88361 -1.72287 -1.55367 1.38694 -1.54406 -2.08618 0.754666 -1.21418 -2.41467 0.048501 -0.765406 -2.50647 -0.662253 0.591682 -2.61964 0.305271 1.72303 -1.7324 1.15637 2.196 -0.183552 1.5656 1.83006 1.43568 1.37676 0.241775 2.35314 1.30824 -1.40357 2.06086 1.04343 -2.28566 0.937592 1.09656 -2.17503 -0.037909 1.6046 -2.06213 -0.538423 1.66282 -2.3486 -0.924463 0.966995 -2.40546 -1.22003 0.176557 -2.22674 -1.39627 -0.631038 -1.83006 -1.43568 -1.37676 -1.25433 -1.33474 -1.98778 -0.241775 -2.35314 -1.30824 1.04891 -2.46076 -0.388056 2.12479 -1.61669 0.42133 2.57456 -0.143828 0.810486 2.22674 1.39627 0.631038 0.765406 2.50647 0.662253 -1.04891 2.46076 0.388056 -2.31871 1.34307 0.354973 -2.56362 0.027331 0.856049 -2.70141 0.089839 0.023846 -2.57456 0.143828 -0.810486 -2.196 0.183552 -1.5656 -1.60216 0.205357 -2.16723 -0.85168 0.20688 -2.55697 -0.555732 -1.10299 -2.40426 0.305674 -1.96914 -1.82615 1.40357 -2.06086 -1.04343 2.31871 -1.34307 -0.354973 2.70141 -0.089839 -0.023846 2.40546 1.22003 -0.176557 1.21418 2.41467 -0.048501 -0.591682 2.61964 -0.305271 -2.12479 1.61669 -0.42133 -1.72303 1.7324 -1.15637 -0.076505 2.52229 -0.968685 1.54406 2.08618 -0.754666 2.3486 0.924463 -0.966995 2.56362 -0.027331 -0.856049 2.28566 -0.937592 -1.09656 1.6207 -1.45918 -1.5968 0.823166 -1.39257 -2.16539 0.197431 -0.763364 -2.58533 -0.01759 0.18843 -2.69628 0.260378 1.09869 -2.45577 -0.468977 1.46011 -2.22584 -1.15238 1.67822 -1.77807 0.446162 2.1779 -1.53739 1.72287 1.55367 -1.38694 2.06213 0.538423 -1.66282 2.17503 0.037909 -1.6046 2.02898 -0.44038 -1.73098 1.67943 -0.714811 -1.99395 1.26019 -0.679723 -2.29284 0.931219 -0.349021 -2.51362 0.818319 0.151493 -2.57184 0.964376 0.629783 -2.44547 1.31392 0.904213 -2.1825 0.92533 1.62028 -1.95553 1.73316 0.869125 -1.88361 1.57363 0.09957 -2.19559</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource9-array" count="92" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource10" name="Joint_3_Object_0_SINGLENrm">
+          <float_array id="GeometrySource10-array" count="276">1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource10-array" count="92" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource11" name="Joint_3_Object_0_SINGLEUV">
+          <float_array id="GeometrySource11-array" count="184">0.648438 0.03125 0.5 0 0.625 0.03125 0.734375 0.101563 0.585938 0.101563 0.546875 0.03125 0.445313 0.03125 0.40625 0.101563 0.375 0.210938 0.625 0.210938 0.820313 0.210938 0.789063 0.101563 0.625 0.03125 0.546875 0.03125 0.734375 0.101563 0.898438 0.210938 0.882813 0.351563 0.640625 0.351563 0.351563 0.351563 0.109375 0.351563 0.171875 0.210938 0.257813 0.101563 0.375 0.03125 0.34375 0.03125 0.203125 0.101563 0.09375 0.210938 0.023437 0.351563 0 0.5 0.09375 0.5 0.34375 0.5 0.648438 0.5 0.898438 0.5 0.96875 0.351563 0.820313 0.210938 0.585938 0.101563 0.445313 0.03125 0.375 0.03125 0.257813 0.101563 0.171875 0.210938 0.109375 0.351563 0.09375 0.5 0.109375 0.65625 0.023437 0.65625 0.109375 0.65625 0.351563 0.65625 0.640625 0.65625 0.882813 0.65625 1 0.507813 0.882813 0.351563 0.625 0.210938 0.40625 0.101563 0.375 0.210938 0.351563 0.351563 0.34375 0.5 0.351563 0.65625 0.375 0.796875 0.171875 0.796875 0.09375 0.796875 0.171875 0.796875 0.375 0.796875 0.625 0.796875 0.820313 0.796875 0.96875 0.65625 0.898438 0.5 0.640625 0.351563 0.648438 0.5 0.882813 0.65625 0.898438 0.796875 0.734375 0.90625 0.585938 0.90625 0.40625 0.90625 0.257813 0.90625 0.203125 0.90625 0.257813 0.90625 0.40625 0.90625 0.585938 0.90625 0.625 0.796875 0.640625 0.65625 0.820313 0.796875 0.789063 0.90625 0.625 0.976563 0.546875 0.976563 0.445313 0.976563 0.375 0.976563 0.34375 0.976563 0.375 0.976563 0.445313 0.976563 0.546875 0.976563 0.625 0.976563 0.734375 0.90625 0.648438 0.976563 0.5 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource11-array" count="92" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry3-vertices">
+          <input semantic="POSITION" source="#GeometrySource9"/>
+          <input semantic="NORMAL" source="#GeometrySource10"/>
+          <input semantic="TEXCOORD" source="#GeometrySource11"/>
+        </vertices>
+        <triangles material="VisualMaterial30" count="180">
+          <input semantic="VERTEX" source="#Geometry3-vertices" offset="0"/>
+          <p>0 1 2 3 0 2 4 3 2 5 2 1 5 4 2 5 1 6 4 5 7 5 6 7 4 7 8 3 4 9 4 8 9 3 9 10 0 3 11 3 10 11 1 0 12 0 11 12 13 1 12 14 12 11 14 13 12 15 14 11 15 11 10 16 15 10 17 10 9 17 16 10 18 9 8 18 17 9 19 18 8 20 19 8 20 8 7 21 7 6 21 20 7 22 6 1 22 21 6 22 1 23 21 22 24 22 23 24 21 24 25 20 21 25 19 20 26 20 25 26 19 26 27 18 19 28 19 27 28 17 18 29 18 28 29 17 29 30 16 17 30 16 30 31 15 16 32 16 31 32 14 15 33 15 32 33 13 14 34 14 33 34 13 34 35 1 13 35 23 1 36 1 35 36 24 23 37 23 36 37 25 24 38 24 37 38 25 38 39 26 25 39 27 26 40 26 39 40 27 40 41 28 27 42 27 41 42 29 28 43 28 42 43 29 43 44 30 29 44 31 30 45 30 44 45 31 45 46 32 31 47 31 46 47 33 32 48 32 47 48 33 48 49 34 33 49 35 34 50 36 35 50 37 36 50 34 49 50 37 50 51 38 37 51 50 49 51 38 51 52 39 38 52 39 52 53 40 39 53 40 53 54 41 40 54 41 54 55 42 41 56 41 55 56 43 42 57 42 56 57 44 43 58 43 57 58 44 58 59 45 44 59 46 45 60 45 59 60 46 60 61 47 46 62 46 61 62 47 62 63 48 47 63 49 64 51 49 48 64 52 51 64 48 63 64 65 52 64 65 64 63 65 53 52 66 63 62 66 65 63 67 62 61 67 66 62 68 67 61 69 61 60 69 68 61 70 69 60 70 60 59 71 59 58 71 70 59 72 58 57 72 71 58 73 57 56 73 72 57 74 56 55 74 73 56 75 74 55 76 55 54 76 75 55 65 77 53 77 76 54 77 65 66 77 54 53 78 77 66 78 66 67 78 76 77 79 78 67 79 67 68 80 79 68 81 80 68 81 68 69 82 81 69 82 69 70 83 70 71 83 82 70 84 83 71 84 71 72 85 72 73 85 84 72 86 73 74 86 85 73 87 74 75 87 86 74 88 87 75 78 89 76 89 75 76 89 78 79 89 88 75 90 89 79 90 79 80 90 88 89 91 80 81 91 81 82 91 82 83 91 83 84 91 84 85 91 85 86 91 86 87 91 87 88 90 91 88 91 90 80</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Geometry4" name="Joint_4_Object_0_SINGLE">
+      <mesh>
+        <source id="GeometrySource12" name="Joint_4_Object_0_SINGLEPos">
+          <float_array id="GeometrySource12-array" count="12">3.62113 -11.9379 0 3.63915 -0.622984 0 -3.64112 -0.61139 0 -3.65913 -11.9263 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource12-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource13" name="Joint_4_Object_0_SINGLENrm">
+          <float_array id="GeometrySource13-array" count="12">1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource13-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource14" name="Joint_4_Object_0_SINGLEUV">
+          <float_array id="GeometrySource14-array" count="8">0 1 0 0 1 0.007812 0.992188 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource14-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource15" name="Joint_4_Object_0_SINGLEClr">
+          <float_array id="GeometrySource15-array" count="16">0 0 0.52549 1 1 1 1 1 1 1 1 1 0 0 0.52549 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource15-array" count="4" stride="4">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+              <param name="A" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry4-vertices">
+          <input semantic="POSITION" source="#GeometrySource12"/>
+          <input semantic="NORMAL" source="#GeometrySource13"/>
+          <input semantic="TEXCOORD" source="#GeometrySource14"/>
+          <input semantic="COLOR" source="#GeometrySource15"/>
+        </vertices>
+        <triangles material="VisualMaterial40" count="2">
+          <input semantic="VERTEX" source="#Geometry4-vertices" offset="0"/>
+          <p>0 1 2 3 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Geometry5" name="Joint_5_Object_0_SINGLE">
+      <mesh>
+        <source id="GeometrySource16" name="Joint_5_Object_0_SINGLEPos">
+          <float_array id="GeometrySource16-array" count="12">6.16234 8.7236 0 -2.34359 2.55256 0 2.34144 -3.90559 0 10.8479 2.26495 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource16-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource17" name="Joint_5_Object_0_SINGLENrm">
+          <float_array id="GeometrySource17-array" count="12">1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource17-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource18" name="Joint_5_Object_0_SINGLEUV">
+          <float_array id="GeometrySource18-array" count="8">0 1 0 0 1 0.007812 0.992188 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource18-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource19" name="Joint_5_Object_0_SINGLEClr">
+          <float_array id="GeometrySource19-array" count="16">0 0 0.52549 1 1 1 1 1 1 1 1 1 0 0 0.52549 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource19-array" count="4" stride="4">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+              <param name="A" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry5-vertices">
+          <input semantic="POSITION" source="#GeometrySource16"/>
+          <input semantic="NORMAL" source="#GeometrySource17"/>
+          <input semantic="TEXCOORD" source="#GeometrySource18"/>
+          <input semantic="COLOR" source="#GeometrySource19"/>
+        </vertices>
+        <triangles material="VisualMaterial50" count="2">
+          <input semantic="VERTEX" source="#Geometry5-vertices" offset="0"/>
+          <p>0 1 2 3 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Geometry6" name="Joint_6_Object_0_SINGLE">
+      <mesh>
+        <source id="GeometrySource20" name="Joint_6_Object_0_SINGLEPos">
+          <float_array id="GeometrySource20-array" count="12">-8.79059 0.57943 0 -0.786604 -2.74777 0 1.73968 3.32878 0 -6.26431 6.65647 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource20-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource21" name="Joint_6_Object_0_SINGLENrm">
+          <float_array id="GeometrySource21-array" count="12">1 0 0 1 0 0 1 0 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource21-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource22" name="Joint_6_Object_0_SINGLEUV">
+          <float_array id="GeometrySource22-array" count="8">0 1 0 0 1 0.007812 0.992188 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource22-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="GeometrySource23" name="Joint_6_Object_0_SINGLEClr">
+          <float_array id="GeometrySource23-array" count="16">0 0 0.52549 1 1 1 1 1 1 1 1 1 0 0 0.52549 1</float_array>
+          <technique_common>
+            <accessor source="#GeometrySource23-array" count="4" stride="4">
+              <param name="R" type="float"/>
+              <param name="G" type="float"/>
+              <param name="B" type="float"/>
+              <param name="A" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Geometry6-vertices">
+          <input semantic="POSITION" source="#GeometrySource20"/>
+          <input semantic="NORMAL" source="#GeometrySource21"/>
+          <input semantic="TEXCOORD" source="#GeometrySource22"/>
+          <input semantic="COLOR" source="#GeometrySource23"/>
+        </vertices>
+        <triangles material="VisualMaterial60" count="2">
+          <input semantic="VERTEX" source="#Geometry6-vertices" offset="0"/>
+          <p>0 1 2 3 0 2</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers>
+    <controller id="Controller">
+      <skin source="#Geometry">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller-joints">
+          <Name_array id="Controller-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller-bind_poses">
+          <float_array id="Controller-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller-weights">
+          <float_array id="Controller-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller-bind_poses"/>
+        </joints>
+        <vertex_weights count="4">
+          <input semantic="JOINT" source="#Controller-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller-weights" offset="1"/>
+          <vcount>1 1 1 1 </vcount>
+          <v>0 0 0 0 0 0 0 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+    <controller id="Controller1">
+      <skin source="#Geometry1">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller1-joints">
+          <Name_array id="Controller1-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller1-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller1-bind_poses">
+          <float_array id="Controller1-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller1-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller1-weights">
+          <float_array id="Controller1-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller1-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller1-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller1-bind_poses"/>
+        </joints>
+        <vertex_weights count="4">
+          <input semantic="JOINT" source="#Controller1-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller1-weights" offset="1"/>
+          <vcount>1 1 1 1 </vcount>
+          <v>2 0 2 0 2 0 2 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+    <controller id="Controller2">
+      <skin source="#Geometry2">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller2-joints">
+          <Name_array id="Controller2-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller2-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller2-bind_poses">
+          <float_array id="Controller2-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller2-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller2-weights">
+          <float_array id="Controller2-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller2-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller2-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller2-bind_poses"/>
+        </joints>
+        <vertex_weights count="51">
+          <input semantic="JOINT" source="#Controller2-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller2-weights" offset="1"/>
+          <vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </vcount>
+          <v>2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0 2 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+    <controller id="Controller3">
+      <skin source="#Geometry3">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller3-joints">
+          <Name_array id="Controller3-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller3-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller3-bind_poses">
+          <float_array id="Controller3-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller3-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller3-weights">
+          <float_array id="Controller3-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller3-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller3-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller3-bind_poses"/>
+        </joints>
+        <vertex_weights count="92">
+          <input semantic="JOINT" source="#Controller3-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller3-weights" offset="1"/>
+          <vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </vcount>
+          <v>1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+    <controller id="Controller4">
+      <skin source="#Geometry4">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller4-joints">
+          <Name_array id="Controller4-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller4-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller4-bind_poses">
+          <float_array id="Controller4-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller4-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller4-weights">
+          <float_array id="Controller4-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller4-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller4-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller4-bind_poses"/>
+        </joints>
+        <vertex_weights count="4">
+          <input semantic="JOINT" source="#Controller4-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller4-weights" offset="1"/>
+          <vcount>1 1 1 1 </vcount>
+          <v>3 0 3 0 3 0 3 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+    <controller id="Controller5">
+      <skin source="#Geometry5">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller5-joints">
+          <Name_array id="Controller5-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller5-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller5-bind_poses">
+          <float_array id="Controller5-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller5-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller5-weights">
+          <float_array id="Controller5-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller5-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller5-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller5-bind_poses"/>
+        </joints>
+        <vertex_weights count="4">
+          <input semantic="JOINT" source="#Controller5-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller5-weights" offset="1"/>
+          <vcount>1 1 1 1 </vcount>
+          <v>4 0 4 0 4 0 4 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+    <controller id="Controller6">
+      <skin source="#Geometry6">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="Controller6-joints">
+          <Name_array id="Controller6-joints-array" count="7">JOBJ_1 JOBJ_3 JOBJ_2 JOBJ_4 JOBJ_5 JOBJ_6 JOBJ_0</Name_array>
+          <technique_common>
+            <accessor source="#Controller6-joints-array" count="7" stride="1">
+              <param name="JOINT" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller6-bind_poses">
+          <float_array id="Controller6-bind_poses-array" count="112">-1 -0.000000 0 0 0.000000 -1 0 0 0 0 1 0 0 0 0 1 0.492664 1.61332 0.426268 0 1.01289 0.064089 -1.41322 0 -1.32611 0.648316 -0.921053 0 0 0 0 1 1.73989 0 0 0 0 1.73989 0 0 0 0 1.73989 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 -0.999999 0.001592 0 0 -0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Controller6-bind_poses-array" count="7" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Controller6-weights">
+          <float_array id="Controller6-weights-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#Controller6-weights-array" count="1" stride="1">
+              <param name="WEIGHT" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#Controller6-joints"/>
+          <input semantic="INV_BIND_MATRIX" source="#Controller6-bind_poses"/>
+        </joints>
+        <vertex_weights count="4">
+          <input semantic="JOINT" source="#Controller6-joints" offset="0"/>
+          <input semantic="WEIGHT" source="#Controller6-weights" offset="1"/>
+          <vcount>1 1 1 1 </vcount>
+          <v>5 0 5 0 5 0 5 0</v>
+        </vertex_weights>
+      </skin>
+      <extra>
+        <technique profile="FCOLLADA">
+          <user_properties>SkinController</user_properties>
+        </technique>
+      </extra>
+    </controller>
+  </library_controllers>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="rdmscene">
+      <node id="VisualSceneNode1" name="JOBJ_0" sid="JOBJ_0" type="JOINT">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <node id="VisualSceneNode2" name="JOBJ_1" sid="JOBJ_1" type="JOINT">
+          <matrix>-1 0.000000 0 0 -0.000000 -1 0 0 0 0 1 0 0 0 0 1</matrix>
+        </node>
+        <node id="VisualSceneNode3" name="JOBJ_2" sid="JOBJ_2" type="JOINT">
+          <matrix>0.574748 0 0 0 0 0.574748 0 0 0 0 0.574748 0 0 0 0 1</matrix>
+          <node id="VisualSceneNode4" name="JOBJ_3" sid="JOBJ_3" type="JOINT">
+            <matrix>0.283157 0.582154 -0.762181 0 0.927253 0.036835 0.372619 0 0.244996 -0.812244 -0.529374 0 0 0 0 1</matrix>
+          </node>
+        </node>
+        <node id="VisualSceneNode5" name="JOBJ_4" sid="JOBJ_4" type="JOINT">
+          <matrix>-0.999999 -0.001592 0 0 0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1</matrix>
+        </node>
+        <node id="VisualSceneNode6" name="JOBJ_5" sid="JOBJ_5" type="JOINT">
+          <matrix>-0.999999 -0.001592 0 0 0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1</matrix>
+        </node>
+        <node id="VisualSceneNode7" name="JOBJ_6" sid="JOBJ_6" type="JOINT">
+          <matrix>-0.999999 -0.001592 0 0 0.001592 -0.999999 0 0 0 0 1 0 0 0 0 1</matrix>
+        </node>
+      </node>
+      <node id="VisualSceneNode8" name="Joint_1_Object_0_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial0" target="#VisualMaterial"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="VisualSceneNode9" name="Joint_2_Object_0_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller1">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial10" target="#VisualMaterial1"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="VisualSceneNode10" name="Joint_2_Object_1_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller2">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial20" target="#VisualMaterial2"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="VisualSceneNode11" name="Joint_3_Object_0_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller3">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial30" target="#VisualMaterial3"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="VisualSceneNode12" name="Joint_4_Object_0_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller4">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial40" target="#VisualMaterial4"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="VisualSceneNode13" name="Joint_5_Object_0_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller5">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial50" target="#VisualMaterial5"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="VisualSceneNode14" name="Joint_6_Object_0_SINGLE" type="NODE">
+        <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_controller url="#Controller6">
+          <skeleton>#VisualSceneNode1</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="VisualMaterial60" target="#VisualMaterial6"/>
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>
