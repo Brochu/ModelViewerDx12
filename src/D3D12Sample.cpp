@@ -682,7 +682,8 @@ void D3D12Sample::CreatePipelineStateObject ()
 }
 
 void D3D12Sample::LoadContent (UploadPass &upload) {
-    const ModelEntry model = config_.models[modelIndex_];
+    const GroupEntry group = config_.groups[groupIndex_];
+    const ModelEntry model = config_.models[group.modelrefs[modelIndex_]];
     //TODO: Find a way to handle source folder for sub-meshes?
     const std::string model_folder = "data/models/" + model.folder + "/";
 
