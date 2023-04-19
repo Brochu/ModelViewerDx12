@@ -14,19 +14,7 @@ AMD::Material ParseMaterial(const aiMaterial* aiMaterial) {
     aiString aiTexturePath;
     aiMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &aiTexturePath);
 
-    //TODO: This will not work with models with sub folders for textures
-    // Try to find a new solution for DAE textures with local paths from ripper's computer
-    std::string texturePath{aiTexturePath.C_Str()};
-
-    size_t blastidx = texturePath.find_last_of('\\');
-    size_t flastidx = texturePath.find_last_of('/');
-    if (blastidx != std::string::npos) {
-        texturePath = texturePath.substr(blastidx + 1);
-    }
-    else if (flastidx != std::string::npos) {
-        texturePath = texturePath.substr(flastidx + 1);
-    }
-
+    const std::string texturePath{aiTexturePath.C_Str()};
     return { texturePath };
 }
 
