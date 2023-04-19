@@ -127,7 +127,7 @@ struct DebugParams {
 DebugParams dparams = {};
 
 const size_t MAX_GROUP_COUNT = 64;
-const size_t MAX_MODEL_COUNT = 64;
+const size_t MAX_MODEL_COUNT = 128;
 
 namespace {
 void WaitForFence (ID3D12Fence* fence, UINT64 completionValue, HANDLE waitEvent)
