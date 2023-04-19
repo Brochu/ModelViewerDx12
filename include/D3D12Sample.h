@@ -77,6 +77,7 @@ private:
     int width_ = -1;
     int height_ = -1;
 
+    int groupIndex_ = 0;
     int modelIndex_ = 0;
     bool swappedModel_ = false;
     Config config_;

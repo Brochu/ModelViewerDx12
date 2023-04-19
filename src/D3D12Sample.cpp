@@ -126,6 +126,7 @@ struct DebugParams {
 };
 DebugParams dparams = {};
 
+const size_t MAX_GROUP_COUNT = 64;
 const size_t MAX_MODEL_COUNT = 64;
 
 namespace {
@@ -268,13 +269,25 @@ void D3D12Sample::Render ()
         ImGui::Separator();
         ImGui::Text("Model Viewer");
 
+        std::vector<GroupEntry> g = config_.groups;
+        assert(g.size() <= MAX_GROUP_COUNT);
+        char* groups[MAX_GROUP_COUNT];
+        for (int i = 0; i < g.size(); i++) {
+            groups[i] = g[i].name.data();
+        }
+        if (ImGui::Combo("Game", &groupIndex_, groups, (int)g.size())) {
+            modelIndex_ = 0;
+            swappedModel_ = true;
+        }
+
         std::vector<ModelEntry> m = config_.models;
         assert(m.size() <= MAX_MODEL_COUNT);
         char* models[MAX_MODEL_COUNT];
-        for (int i = 0; i < m.size(); i++) {
-            models[i] = m[i].folder.data();
+        for (int i = 0; i < g[groupIndex_].modelrefs.size(); i++) {
+            const size_t modelIdx = g[groupIndex_].modelrefs[i];
+            models[i] = m[modelIdx].folder.data();
         }
-        if (ImGui::Combo("Model", &modelIndex_, models, (int)m.size())) {
+        if (ImGui::Combo("Model", &modelIndex_, models, (int)g[groupIndex_].modelrefs.size())) {
             swappedModel_ = true;
         }
 
