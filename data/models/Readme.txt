@@ -1,1 +1,0 @@
-This model was ripped by Shadowth117 using 3D Ripper DX. No credit needed.
