@@ -10,9 +10,13 @@ struct GroupEntry {
     std::vector<size_t> modelrefs;
 };
 
-struct ModelEntry {
+struct ModelFile {
     std::string folder;
-    std::vector<std::string> files;
+    std::string file;
+};
+
+struct ModelEntry {
+    std::vector<ModelFile> files;
 };
 
 struct Config {

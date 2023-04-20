@@ -285,7 +285,8 @@ void D3D12Sample::Render ()
         char* models[MAX_MODEL_COUNT];
         for (int i = 0; i < g[groupIndex_].modelrefs.size(); i++) {
             const size_t modelIdx = g[groupIndex_].modelrefs[i];
-            models[i] = m[modelIdx].folder.data();
+            //TODO: Handle listing all models in the selected folder
+            models[i] = m[modelIdx].files[0].folder.data();
         }
         if (ImGui::Combo("Model", &modelIndex_, models, (int)g[groupIndex_].modelrefs.size())) {
             swappedModel_ = true;
@@ -685,14 +686,14 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     const GroupEntry group = config_.groups[groupIndex_];
     const ModelEntry model = config_.models[group.modelrefs[modelIndex_]];
     //TODO: Find a way to handle source folder for sub-meshes?
-    const std::string model_folder = "data/models/" + model.folder + "/";
 
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
 
     for (const auto f : model.files) {
-        const std::string model_path = model_folder + f;
+        const std::string model_folder = "data/models/" + f.folder + "/";
+        const std::string model_path = model_folder + f.file;
 
         draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
         upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);

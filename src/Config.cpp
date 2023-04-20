@@ -10,7 +10,7 @@ AMD::ModelEntry ParseEntry(const std::string& line) {
     // Return an array of all scenes to combine
     // Find a way to find a list of offsets for each sub models
 
-    return { folder, {file} };
+    return {{ AMD::ModelFile{folder, file} }};
 };
 
 AMD::GroupEntry ParseGroup(const std::string& line, const std::vector<std::string>& models, AMD::Config& c) {
