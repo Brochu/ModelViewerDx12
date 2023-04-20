@@ -7,7 +7,9 @@ AMD::ModelEntry ParseEntry(const std::string& line) {
     const std::string file = line.substr(idx + 1);
 
     //TODO: Handle sub models found in the selected model folder
-    // Return an array of all scenes to combine
+    // If we find a * in the name, find all files with given extension
+    // If we find a ;, parse a list of files
+
     // Find a way to find a list of offsets for each sub models
 
     return {{ AMD::ModelFile{folder, file} }};
