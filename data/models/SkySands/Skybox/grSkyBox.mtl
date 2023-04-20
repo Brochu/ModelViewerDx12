@@ -1,0 +1,54 @@
+newmtl Joint_0_Object_0_Material_0
+ illum 2
+ Ka 0.2 0.2 0.2
+ Kd 1 1 1
+ Ks 0.2 0.2 0.2
+ Ns 50
+ d 1
+ Tr 0
+ map_Kd Texture_0.png
+newmtl Joint_0_Object_1_Material_1
+ illum 2
+ Ka 0.2 0.2 0.2
+ Kd 1 1 1
+ Ks 0.2 0.2 0.2
+ Ns 50
+ d 1
+ Tr 0
+ map_Kd Texture_1.png
+newmtl Joint_0_Object_2_Material_2
+ illum 2
+ Ka 0.2 0.2 0.2
+ Kd 1 1 1
+ Ks 0.2 0.2 0.2
+ Ns 50
+ d 1
+ Tr 0
+ map_Kd Texture_2.png
+newmtl Joint_0_Object_3_Material_3
+ illum 2
+ Ka 0.2 0.2 0.2
+ Kd 1 1 1
+ Ks 0.2 0.2 0.2
+ Ns 50
+ d 1
+ Tr 0
+ map_Kd Texture_3.png
+newmtl Joint_0_Object_4_Material_4
+ illum 2
+ Ka 0.2 0.2 0.2
+ Kd 1 1 1
+ Ks 0.2 0.2 0.2
+ Ns 50
+ d 1
+ Tr 0
+ map_Kd Texture_4.png
+newmtl Joint_0_Object_5_Material_5
+ illum 2
+ Ka 0.2 0.2 0.2
+ Kd 1 1 1
+ Ks 0.2 0.2 0.2
+ Ns 50
+ d 0
+ Tr 1
+ map_Kd Texture_5.png
