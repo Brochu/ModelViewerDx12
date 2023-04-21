@@ -685,7 +685,6 @@ void D3D12Sample::CreatePipelineStateObject ()
 void D3D12Sample::LoadContent (UploadPass &upload) {
     const GroupEntry group = config_.groups[groupIndex_];
     const ModelEntry model = config_.models[group.modelrefs[modelIndex_]];
-    //TODO: Find a way to handle source folder for sub-meshes?
 
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
@@ -712,6 +711,7 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
         }
         //TODO: This is ugly, fix this part of the upload process
         // Need to accumulate the results of ExtractAiScene
+        //TODO: Find a way to handle source folder for sub-meshes?
         materials.clear();
     }
     upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
