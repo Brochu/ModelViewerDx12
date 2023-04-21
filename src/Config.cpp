@@ -3,8 +3,15 @@
 
 AMD::ModelEntry ParseEntry(const std::string& line) {
     const auto idx = line.find('|');
-    const std::string folder = line.substr(0, idx);
+    const std::string base = line.substr(0, idx);
     const std::string file = line.substr(idx + 1);
+
+    size_t fidx = file.find_last_of('/');
+    if (fidx == std::string::npos) {
+        fidx = file.find_last_of('\\');
+    }
+
+    // Loop through files
 
     //TODO: Handle sub models found in the selected model folder
     // If we find a * in the name, find all files with given extension
@@ -12,7 +19,7 @@ AMD::ModelEntry ParseEntry(const std::string& line) {
 
     // Find a way to find a list of offsets for each sub models
 
-    return {{ AMD::ModelFile{folder, file} }};
+    return {{ AMD::ModelFile{base, file} }};
 };
 
 AMD::GroupEntry ParseGroup(const std::string& line, const std::vector<std::string>& models, AMD::Config& c) {
