@@ -690,15 +690,14 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
+    std::vector<Texture> textures;
 
     for (const auto f : model.files) {
         const std::string model_folder = "data/models/" + f.folder + "/";
         const std::string model_path = model_folder + f.file;
 
         draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
-        upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
 
-        std::vector<Texture> textures;
         for (auto& [textureName] : materials) {
             if (textureName.empty()) {
                 //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
@@ -711,8 +710,12 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
                 textures.push_back({ w, h, imgdata });
             }
         }
-        upload.UploadTextures(srvDescriptorHeap_, textures, image_);
+        //TODO: This is ugly, fix this part of the upload process
+        // Need to accumulate the results of ExtractAiScene
+        materials.clear();
     }
+    upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
+    upload.UploadTextures(srvDescriptorHeap_, textures, image_);
 }
 
 void D3D12Sample::CreateConstantBuffer ()

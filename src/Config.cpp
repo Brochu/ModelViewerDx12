@@ -18,8 +18,8 @@ void SplitFolderFile(const std::string& in, char separator, std::string& first, 
 
     const size_t idx = in.find_last_of(separator);
     if (idx != std::string::npos) {
-        first = { in.substr(0, idx) };
-        second = { in.substr(idx) };
+        first = { "/" + in.substr(0, idx) };
+        second = { in.substr(idx + 1) };
     }
 }
 
@@ -30,13 +30,14 @@ AMD::ModelEntry ParseEntry(const std::string& line) {
     SplitOnce(line, '|', base, file);
 
     while (!file.empty()) {
-        std::string current;
-        SplitOnce(file, ';', current, file);
+        std::string current, rest;
+        SplitOnce(file, ';', current, rest);
         std::string subfolder, f;
         SplitFolderFile(current, '/', subfolder, f);
 
         //TODO: If we find a * in the name, find all files with given extension
         files.push_back({ base + subfolder, f });
+        file = rest;
     }
 
     //TODO: Find a way to find a list of offsets for each sub models
