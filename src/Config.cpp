@@ -1,5 +1,21 @@
 #include "Config.h"
 #include <fstream>
+#include <string_view>
+
+bool SplitOnce(const std::string& in, char separator, std::string_view& first, std::string_view& second) {
+    first = { in };
+    second = {};
+
+    size_t idx = in.find(separator);
+    if (idx != std::string::npos) {
+        first = { in.substr(0, idx) };
+        second = { in.substr(idx + 1) };
+
+        return true;
+    }
+
+    return false;
+}
 
 AMD::ModelEntry ParseEntry(const std::string& line) {
     const auto idx = line.find('|');
