@@ -1,8 +1,7 @@
 #include "Config.h"
 #include <fstream>
-#include <string_view>
 
-bool SplitOnce(const std::string& in, char separator, std::string_view& first, std::string_view& second) {
+void SplitOnce(const std::string& in, char separator, std::string& first, std::string& second) {
     first = { in };
     second = {};
 
@@ -10,32 +9,32 @@ bool SplitOnce(const std::string& in, char separator, std::string_view& first, s
     if (idx != std::string::npos) {
         first = { in.substr(0, idx) };
         second = { in.substr(idx + 1) };
-
-        return true;
     }
-
-    return false;
 }
 
 AMD::ModelEntry ParseEntry(const std::string& line) {
-    const auto idx = line.find('|');
-    const std::string base = line.substr(0, idx);
-    const std::string file = line.substr(idx + 1);
+    std::vector<AMD::ModelFile> files;
 
-    size_t fidx = file.find_last_of('/');
-    if (fidx == std::string::npos) {
-        fidx = file.find_last_of('\\');
+    std::string base, file;
+    SplitOnce(line, '|', base, file);
+
+    while (!file.empty()) {
+        std::string current;
+        SplitOnce(file, ';', current, file);
+
+        //TODO: Handle dynamic folder path for each model parsed
+        //size_t fidx = file.find_last_of('/');
+        //if (fidx == std::string::npos) {
+        //    fidx = file.find_last_of('\\');
+        //}
+        //TODO: If we find a * in the name, find all files with given extension
+
+        files.push_back({ base, current });
     }
 
-    // Loop through files
+    //TODO: Find a way to find a list of offsets for each sub models
 
-    //TODO: Handle sub models found in the selected model folder
-    // If we find a * in the name, find all files with given extension
-    // If we find a ;, parse a list of files
-
-    // Find a way to find a list of offsets for each sub models
-
-    return {{ AMD::ModelFile{base, file} }};
+    return { files };
 };
 
 AMD::GroupEntry ParseGroup(const std::string& line, const std::vector<std::string>& models, AMD::Config& c) {
