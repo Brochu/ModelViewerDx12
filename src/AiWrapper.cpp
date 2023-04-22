@@ -23,7 +23,8 @@ Draws ExtractAiScene(
     const char *path,
     std::vector<Vertex> &vertices,
     std::vector<unsigned int> &indices,
-    std::vector<Material> &materials)
+    std::vector<Material> &materials,
+    size_t matOffset)
 {
     Draws draws { };
 
@@ -78,7 +79,7 @@ Draws ExtractAiScene(
                 }
             }
 
-            draws.materialIndices.push_back(m->mMaterialIndex);
+            draws.materialIndices.push_back(m->mMaterialIndex + matOffset);
 
             // Indices that were added need to be drawn
             draws.indexCounts.push_back(indices.size() - draws.indexOffsets[draws.indexOffsets.size() - 1]);
