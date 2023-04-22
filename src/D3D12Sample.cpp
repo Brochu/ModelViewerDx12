@@ -690,14 +690,17 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
     std::vector<Texture> textures;
+    size_t matIdx = 0;
 
     for (const auto f : model.files) {
         const std::string model_folder = "data/models/" + f.folder + "/";
         const std::string model_path = model_folder + f.file;
 
-        draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials);
+        draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials, matIdx);
 
-        for (auto& [textureName] : materials) {
+        for (; matIdx < materials.size(); matIdx++) {
+            const std::string textureName = materials[matIdx].textureName;
+
             if (textureName.empty()) {
                 //TODO: This should not be like this, WHY EMPTY TEXTURE NAMES?
                 textures.push_back({ 0, 0, {} });
@@ -709,10 +712,8 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
                 textures.push_back({ w, h, imgdata });
             }
         }
-        //TODO: This is ugly, fix this part of the upload process
-        // Need to accumulate the results of ExtractAiScene
+        //TODO: Need to accumulate the results of ExtractAiScene
         //TODO: Find a way to handle source folder for sub-meshes?
-        materials.clear();
     }
     upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
     upload.UploadTextures(srvDescriptorHeap_, textures, image_);
