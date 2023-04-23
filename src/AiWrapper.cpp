@@ -19,15 +19,14 @@ AMD::Material ParseMaterial(const aiMaterial* aiMaterial) {
 }
 
 namespace AMD {
-Draws ExtractAiScene(
+void ExtractAiScene(
     const char *path,
+    Draws &draws,
     std::vector<Vertex> &vertices,
     std::vector<unsigned int> &indices,
     std::vector<Material> &materials,
     size_t matOffset)
 {
-    Draws draws { };
-
     Assimp::Importer importer;
     const aiScene *scene = importer.ReadFile(path,
                                              aiProcess_ConvertToLeftHanded |
@@ -79,7 +78,7 @@ Draws ExtractAiScene(
                 }
             }
 
-            draws.materialIndices.push_back(m->mMaterialIndex + matOffset);
+            draws.materialIndices.push_back(m->mMaterialIndex + (unsigned int)matOffset);
 
             // Indices that were added need to be drawn
             draws.indexCounts.push_back(indices.size() - draws.indexOffsets[draws.indexOffsets.size() - 1]);
@@ -96,7 +95,5 @@ Draws ExtractAiScene(
     for (unsigned int i = 0; i < scene->mNumMaterials; i++) {
         materials.push_back(ParseMaterial(scene->mMaterials[i]));
     }
-
-    return draws;
 }
 }

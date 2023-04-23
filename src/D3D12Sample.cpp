@@ -686,6 +686,7 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
     const GroupEntry group = config_.groups[groupIndex_];
     const ModelEntry model = config_.models[group.modelrefs[modelIndex_]];
 
+    draws_ = {};
     std::vector<Vertex> vertices;
     std::vector<unsigned int> indices;
     std::vector<Material> materials;
@@ -696,7 +697,7 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
         const std::string model_folder = "data/models/" + f.folder + "/";
         const std::string model_path = model_folder + f.file;
 
-        draws_ = ExtractAiScene(model_path.c_str(), vertices, indices, materials, matIdx);
+        ExtractAiScene(model_path.c_str(), draws_, vertices, indices, materials, matIdx);
 
         for (; matIdx < materials.size(); matIdx++) {
             const std::string textureName = materials[matIdx].textureName;
@@ -713,7 +714,6 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
             }
         }
         //TODO: Need to accumulate the results of ExtractAiScene
-        //TODO: Find a way to handle source folder for sub-meshes?
     }
     upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
     upload.UploadTextures(srvDescriptorHeap_, textures, image_);
