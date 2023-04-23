@@ -123,6 +123,7 @@ struct DebugParams {
 
     // Light
     float lightPos[3] { 1.0, 1.0, 0.0 };
+    float lightPower = 1.f;
 };
 DebugParams dparams = {};
 
@@ -307,6 +308,7 @@ void D3D12Sample::Render ()
         ImGui::Separator();
         ImGui::Text("Light");
         ImGui::DragFloat3("pos", dparams.lightPos, 1.f, -500.f, 500.f);
+        ImGui::DragFloat("power", &dparams.lightPower, 0.05f, 0.05f, 5.f);
 
         ImGui::Separator();
         ImGui::End();
@@ -780,7 +782,11 @@ void D3D12Sample::UpdateConstantBuffer ()
     mvp = XMMatrixMultiply(mvp, projection);
     XMMATRIX world = XMMatrixTranspose(model); // Need to convert local space to world space
 
-    ConstantBuffer cb { mvp, world, XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f) };
+    ConstantBuffer cb {
+        mvp,
+        world,
+        XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f)
+    };
 
     void* p;
     HRESULT r = constantBuffers_[currentBackBuffer_]->Map (0, nullptr, &p);
