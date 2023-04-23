@@ -785,7 +785,7 @@ void D3D12Sample::UpdateConstantBuffer ()
     ConstantBuffer cb {
         mvp,
         world,
-        XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], 1.f)
+        XMVectorSet(dparams.lightPos[0], dparams.lightPos[1], dparams.lightPos[2], dparams.lightPower)
     };
 
     void* p;
