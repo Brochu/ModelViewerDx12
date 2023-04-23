@@ -54,6 +54,7 @@ float4 PS_main (VertexShaderOutput input) : SV_TARGET
     if (theta > 0.0) {
         final += theta * color;
         final /= att.x + (att.y * dist) + (att.z * (dist * dist));
+        final *= lightPos.w;
     }
 
     final = saturate(final + ambient);
