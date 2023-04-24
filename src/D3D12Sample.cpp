@@ -208,7 +208,7 @@ void D3D12Sample::PrepareRender ()
     commandList->ClearRenderTargetView (renderTargetHandle,
         dparams.clearColor, 0, nullptr);
     //TODO: Try and setup inverted depth for better depth precision
-    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 0.0f, 0, 0, nullptr);
+    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -286,7 +286,6 @@ void D3D12Sample::Render ()
         char* models[MAX_MODEL_COUNT];
         for (int i = 0; i < g[groupIndex_].modelrefs.size(); i++) {
             const size_t modelIdx = g[groupIndex_].modelrefs[i];
-            //TODO: Handle listing all models in the selected folder
             models[i] = m[modelIdx].files[0].folder.data();
         }
         if (ImGui::Combo("Model", &modelIndex_, models, (int)g[groupIndex_].modelrefs.size())) {
@@ -489,7 +488,7 @@ void D3D12Sample::SetupSwapChain ()
 
     D3D12_CLEAR_VALUE depthClearValue = {};
     depthClearValue.Format = DXGI_FORMAT_D32_FLOAT;
-    depthClearValue.DepthStencil.Depth = 0.f;
+    depthClearValue.DepthStencil.Depth = 1.f;
     depthClearValue.DepthStencil.Stencil = 0;
 
     for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
