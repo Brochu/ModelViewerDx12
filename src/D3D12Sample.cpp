@@ -535,7 +535,6 @@ void D3D12Sample::Initialize ()
                         imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
                         imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
     
-    //TODO: How do we call this again after changing the selected model
     UploadPass upload(device_);
     LoadContent(upload);
 
@@ -715,7 +714,6 @@ void D3D12Sample::LoadContent (UploadPass &upload) {
                 textures.push_back({ w, h, imgdata });
             }
         }
-        //TODO: Need to accumulate the results of ExtractAiScene
     }
     upload.CreateMeshBuffers(vertices, indices, vertexBuffer_, vertexBufferView_, indexBuffer_, indexBufferView_);
     upload.UploadTextures(srvDescriptorHeap_, textures, image_);
