@@ -297,7 +297,7 @@ void D3D12Sample::Render ()
         ImGui::Text("Transform");
         ImGui::DragFloat3("translate", dparams.translate, 0.1f, -100.f, 100.f);
         ImGui::DragFloat3("rotate", dparams.rotate, 1.f, -359.f, 359.f);
-        ImGui::DragFloat3("scale", dparams.scale, 0.01f, 0.f, 10.f);
+        ImGui::DragFloat3("scale", dparams.scale, 0.01f, -10.f, 10.f);
 
         ImGui::Separator();
         ImGui::Text("Camera");
