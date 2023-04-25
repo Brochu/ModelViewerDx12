@@ -207,7 +207,7 @@ void D3D12Sample::PrepareRender ()
 
     commandList->ClearRenderTargetView (renderTargetHandle,
         dparams.clearColor, 0, nullptr);
-    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 1.0f, 0, 0, nullptr);
+    commandList->ClearDepthStencilView(depthStencilHandle, D3D12_CLEAR_FLAG_DEPTH, 0.0f, 0, 0, nullptr);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -487,7 +487,7 @@ void D3D12Sample::SetupSwapChain ()
 
     D3D12_CLEAR_VALUE depthClearValue = {};
     depthClearValue.Format = DXGI_FORMAT_D32_FLOAT;
-    depthClearValue.DepthStencil.Depth = 1.f;
+    depthClearValue.DepthStencil.Depth = 0.f;
     depthClearValue.DepthStencil.Stencil = 0;
 
     for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
