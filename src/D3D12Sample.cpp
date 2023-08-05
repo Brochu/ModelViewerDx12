@@ -273,7 +273,7 @@ void D3D12Sample::Render ()
         assert(g.size() <= MAX_GROUP_COUNT);
         char* groups[MAX_GROUP_COUNT];
         for (int i = 0; i < g.size(); i++) {
-            groups[i] = g[i].name.data();
+            groups[i] = const_cast<char*>(g[i].name.data());
         }
         if (ImGui::Combo("Game", &groupIndex_, groups, (int)g.size())) {
             modelIndex_ = 0;
@@ -285,7 +285,7 @@ void D3D12Sample::Render ()
         char* models[MAX_MODEL_COUNT];
         for (int i = 0; i < g[groupIndex_].modelrefs.size(); i++) {
             const size_t modelIdx = g[groupIndex_].modelrefs[i];
-            models[i] = m[modelIdx].files[0].folder.data();
+            models[i] = const_cast<char*>(m[modelIdx].files[0].folder.data());
         }
         if (ImGui::Combo("Model", &modelIndex_, models, (int)g[groupIndex_].modelrefs.size())) {
             swappedModel_ = true;
