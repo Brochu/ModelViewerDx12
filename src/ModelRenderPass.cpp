@@ -9,4 +9,8 @@ ModelRenderPass::ModelRenderPass(ComPtr<ID3D12Device> &device) {
 
 ModelRenderPass::~ModelRenderPass() {
 }
+
+void ModelRenderPass::Execute(ID3D12CommandQueue *queue) {
+}
+
 }
