@@ -1,5 +1,7 @@
 # START My own ignore entries
 build/
+imgui.ini
+compile_commands.json
 # END My own ignore entries
 
 # Created by https://www.toptal.com/developers/gitignore/api/rider,visualstudio,vim,c++
@@ -538,5 +540,3 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/rider,visualstudio,vim,c++
-
-imgui.ini
