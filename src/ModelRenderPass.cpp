@@ -1,9 +1,15 @@
 #include "ModelRenderPass.h"
+#include "Utility.h"
+
+#include <d3dcompiler.h>
 #include <d3dx12.h>
+#include <vector>
 
 using namespace Microsoft::WRL;
 
 namespace AMD {
+const char *shaderFile_ = "shaders/shaders.hlsl";
+
 ModelRenderPass::ModelRenderPass(ComPtr<ID3D12Device> &device) {
     device_ = device;
 
@@ -20,6 +26,8 @@ void ModelRenderPass::Execute(ID3D12CommandQueue *queue) {
 }
 
 void ModelRenderPass::CreateRootSignature() {
+    if (rootSignature_.Get() != nullptr) return;
+
     // We have two root parameters, one is a pointer to a descriptor heap
     // with a SRV, the second is a constant buffer view
     CD3DX12_ROOT_PARAMETER parameters[3];
@@ -54,6 +62,67 @@ void ModelRenderPass::CreateRootSignature() {
         rootBlob->GetBufferPointer (),
         rootBlob->GetBufferSize (), IID_PPV_ARGS (&rootSignature_));
 
+}
+
+void ModelRenderPass::CreatePipelineStateObject() {
+    if (pso_.Get() != nullptr) return;
+
+    std::vector<unsigned char> code = ReadFile(shaderFile_);
+
+    static const D3D12_INPUT_ELEMENT_DESC layout[] =
+    {
+        { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0,
+        D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+        { "NORMAL", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 12,
+        D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+        { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 24,
+        D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 }
+    };
+
+    static const D3D_SHADER_MACRO macros[] = {
+        { nullptr, nullptr }
+    };
+
+    ComPtr<ID3DBlob> error;
+    ComPtr<ID3DBlob> vertexShader;
+    D3DCompile (code.data(), code.size(),
+        "", macros, nullptr,
+        "VS_main", "vs_5_1", 0, 0, &vertexShader, &error);
+    unsigned char *vserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
+
+    ComPtr<ID3DBlob> pixelShader;
+    D3DCompile (code.data(), code.size(),
+        "", macros, nullptr,
+        "PS_main", "ps_5_1", 0, 0, &pixelShader, &error);
+    unsigned char *pserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
+
+    D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc = {};
+    psoDesc.VS.BytecodeLength = vertexShader->GetBufferSize ();
+    psoDesc.VS.pShaderBytecode = vertexShader->GetBufferPointer ();
+    psoDesc.PS.BytecodeLength = pixelShader->GetBufferSize ();
+    psoDesc.PS.pShaderBytecode = pixelShader->GetBufferPointer ();
+    psoDesc.pRootSignature = rootSignature_.Get ();
+    psoDesc.NumRenderTargets = 1;
+    psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
+    psoDesc.DSVFormat = DXGI_FORMAT_D32_FLOAT;
+    psoDesc.InputLayout.NumElements = std::extent<decltype(layout)>::value;
+    psoDesc.InputLayout.pInputElementDescs = layout;
+    psoDesc.RasterizerState = CD3DX12_RASTERIZER_DESC (D3D12_DEFAULT);
+    psoDesc.BlendState = CD3DX12_BLEND_DESC (D3D12_DEFAULT);
+    // Simple alpha blending
+    //TODO: I think blending works okay, but the draws are not sorted so looks strange
+    psoDesc.BlendState.RenderTarget[0].BlendEnable = true;
+    psoDesc.BlendState.RenderTarget[0].BlendOp = D3D12_BLEND_OP_ADD;
+    psoDesc.BlendState.RenderTarget[0].SrcBlend = D3D12_BLEND_SRC_ALPHA;
+    psoDesc.BlendState.RenderTarget[0].DestBlend = D3D12_BLEND_INV_SRC_ALPHA;
+    psoDesc.BlendState.RenderTarget[0].RenderTargetWriteMask = D3D12_COLOR_WRITE_ENABLE_ALL;
+    psoDesc.SampleDesc.Count = 1;
+    psoDesc.DepthStencilState = CD3DX12_DEPTH_STENCIL_DESC(D3D12_DEFAULT);
+    psoDesc.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_GREATER;
+    psoDesc.SampleMask = 0xFFFFFFFF;
+    psoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
+
+    device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
 }
 
 }

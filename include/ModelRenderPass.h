@@ -12,9 +12,11 @@ struct ModelRenderPass {
 
 private:
     void CreateRootSignature();
+    void CreatePipelineStateObject();
 
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
+    Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
 
     Microsoft::WRL::ComPtr<ID3D12CommandAllocator> uploadCmdAlloc_;
     Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> uploadCmdList_;
