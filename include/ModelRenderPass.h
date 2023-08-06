@@ -11,7 +11,12 @@ struct ModelRenderPass {
     void Execute(ID3D12CommandQueue *queue);
 
 private:
+    void CreateRootSignature();
+
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
+
+    Microsoft::WRL::ComPtr<ID3D12CommandAllocator> uploadCmdAlloc_;
+    Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> uploadCmdList_;
 };
 }
