@@ -13,16 +13,51 @@ const char *shaderFile_ = "shaders/shaders.hlsl";
 ModelRenderPass::ModelRenderPass(ComPtr<ID3D12Device> &device) {
     device_ = device;
 
-    device_->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&uploadCmdAlloc_));
+    device_->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&renderCmdAlloc_));
     device_->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT,
-        uploadCmdAlloc_.Get(), nullptr, IID_PPV_ARGS(&uploadCmdList_));
+        renderCmdAlloc_.Get(), nullptr, IID_PPV_ARGS(&renderCmdList_));
 }
 
 ModelRenderPass::~ModelRenderPass() {
-    uploadCmdAlloc_->Reset();
+    renderCmdAlloc_->Reset();
 }
 
-void ModelRenderPass::Execute(ID3D12CommandQueue *queue) {
+void ModelRenderPass::Execute(Draws &draws,
+                              D3D12_VERTEX_BUFFER_VIEW &vertBufferView,
+                              D3D12_INDEX_BUFFER_VIEW &idxBufferView,
+                              ComPtr<ID3D12Resource> constantBuffer,
+                              ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap) {
+    // --------------------------------------
+    // Set our state (shaders, etc.)
+    renderCmdList_->SetPipelineState (pso_.Get ());
+
+    // Set our root signature
+    renderCmdList_->SetGraphicsRootSignature (rootSignature_.Get ());
+
+    // Set the descriptor heap containing the texture srv
+    ID3D12DescriptorHeap* heaps[] = { srvDescriptorHeap.Get () };
+    renderCmdList_->SetDescriptorHeaps (1, heaps);
+
+    // Set slot 0 of our root signature to point to our descriptor heap with
+    // the texture SRV
+    renderCmdList_->SetGraphicsRootDescriptorTable (0, srvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
+
+    // Set slot 1 of our root signature to the constant buffer view
+    renderCmdList_->SetGraphicsRootConstantBufferView (1, constantBuffer->GetGPUVirtualAddress());
+
+    renderCmdList_->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    renderCmdList_->IASetVertexBuffers (0, 1, &vertBufferView);
+    renderCmdList_->IASetIndexBuffer (&idxBufferView);
+    for (size_t i = 0; i < draws.numDraws; i++) {
+        renderCmdList_->SetGraphicsRoot32BitConstant(2, draws.materialIndices[i], 0);
+        renderCmdList_->DrawIndexedInstanced (
+            (INT)draws.indexCounts[i],
+            1,
+            (INT)draws.indexOffsets[i],
+            (INT)draws.vertexOffsets[i],
+            0
+        );
+    }
 }
 
 void ModelRenderPass::CreateRootSignature() {
