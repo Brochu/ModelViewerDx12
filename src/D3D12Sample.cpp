@@ -214,7 +214,7 @@ void D3D12Sample::PrepareRender ()
 void D3D12Sample::Render ()
 {
     ZoneScopedN("Sample::Render");
-    PrepareRender ();
+    PrepareRender();
     
     auto commandList = commandLists_ [currentBackBuffer_].Get ();
 

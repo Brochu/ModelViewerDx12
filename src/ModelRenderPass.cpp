@@ -22,6 +22,10 @@ ModelRenderPass::~ModelRenderPass() {
     renderCmdAlloc_->Reset();
 }
 
+void ModelRenderPass::Prepare() {
+    // Init the resources that are created once
+    // TODO: implementation details
+}
 void ModelRenderPass::Execute(Draws &draws,
                               D3D12_VERTEX_BUFFER_VIEW &vertBufferView,
                               D3D12_INDEX_BUFFER_VIEW &idxBufferView,
