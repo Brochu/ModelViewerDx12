@@ -10,7 +10,8 @@ struct ModelRenderPass {
     ~ModelRenderPass();
 
     void Prepare();
-    void Execute(Draws &draws,
+    void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
+                 Draws &draws,
                  D3D12_VERTEX_BUFFER_VIEW &vertBufferView,
                  D3D12_INDEX_BUFFER_VIEW &idxBufferView,
                  Microsoft::WRL::ComPtr<ID3D12Resource> constantBuffer,
@@ -23,8 +24,5 @@ private:
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
     Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
-
-    Microsoft::WRL::ComPtr<ID3D12CommandAllocator> renderCmdAlloc_;
-    Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> renderCmdList_;
 };
 }

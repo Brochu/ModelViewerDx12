@@ -12,49 +12,46 @@ const char *shaderFile_ = "shaders/shaders.hlsl";
 
 ModelRenderPass::ModelRenderPass(ComPtr<ID3D12Device> &device) {
     device_ = device;
-
-    device_->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&renderCmdAlloc_));
-    device_->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT,
-        renderCmdAlloc_.Get(), nullptr, IID_PPV_ARGS(&renderCmdList_));
 }
 
 ModelRenderPass::~ModelRenderPass() {
-    renderCmdAlloc_->Reset();
 }
 
 void ModelRenderPass::Prepare() {
-    // Init the resources that are created once
-    // TODO: implementation details
+    //TODO: Check if more work should be done here
+    CreateRootSignature();
+    CreatePipelineStateObject();
 }
-void ModelRenderPass::Execute(Draws &draws,
+void ModelRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
+                              Draws &draws,
                               D3D12_VERTEX_BUFFER_VIEW &vertBufferView,
                               D3D12_INDEX_BUFFER_VIEW &idxBufferView,
                               ComPtr<ID3D12Resource> constantBuffer,
                               ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap) {
     // --------------------------------------
     // Set our state (shaders, etc.)
-    renderCmdList_->SetPipelineState (pso_.Get ());
+    renderCmdList->SetPipelineState (pso_.Get ());
 
     // Set our root signature
-    renderCmdList_->SetGraphicsRootSignature (rootSignature_.Get ());
+    renderCmdList->SetGraphicsRootSignature (rootSignature_.Get ());
 
     // Set the descriptor heap containing the texture srv
     ID3D12DescriptorHeap* heaps[] = { srvDescriptorHeap.Get () };
-    renderCmdList_->SetDescriptorHeaps (1, heaps);
+    renderCmdList->SetDescriptorHeaps (1, heaps);
 
     // Set slot 0 of our root signature to point to our descriptor heap with
     // the texture SRV
-    renderCmdList_->SetGraphicsRootDescriptorTable (0, srvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
+    renderCmdList->SetGraphicsRootDescriptorTable (0, srvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
 
     // Set slot 1 of our root signature to the constant buffer view
-    renderCmdList_->SetGraphicsRootConstantBufferView (1, constantBuffer->GetGPUVirtualAddress());
+    renderCmdList->SetGraphicsRootConstantBufferView (1, constantBuffer->GetGPUVirtualAddress());
 
-    renderCmdList_->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    renderCmdList_->IASetVertexBuffers (0, 1, &vertBufferView);
-    renderCmdList_->IASetIndexBuffer (&idxBufferView);
+    renderCmdList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    renderCmdList->IASetVertexBuffers (0, 1, &vertBufferView);
+    renderCmdList->IASetIndexBuffer (&idxBufferView);
     for (size_t i = 0; i < draws.numDraws; i++) {
-        renderCmdList_->SetGraphicsRoot32BitConstant(2, draws.materialIndices[i], 0);
-        renderCmdList_->DrawIndexedInstanced (
+        renderCmdList->SetGraphicsRoot32BitConstant(2, draws.materialIndices[i], 0);
+        renderCmdList->DrawIndexedInstanced (
             (INT)draws.indexCounts[i],
             1,
             (INT)draws.indexOffsets[i],
