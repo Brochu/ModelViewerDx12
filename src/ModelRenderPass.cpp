@@ -48,6 +48,7 @@ void ModelRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
     renderCmdList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     renderCmdList->IASetVertexBuffers (0, 1, &vertBufferView);
     renderCmdList->IASetIndexBuffer (&idxBufferView);
+
     for (size_t i = 0; i < draws.numDraws; i++) {
         renderCmdList->SetGraphicsRoot32BitConstant(2, draws.materialIndices[i], 0);
         renderCmdList->DrawIndexedInstanced (

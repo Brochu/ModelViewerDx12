@@ -216,42 +216,16 @@ void D3D12Sample::Render ()
     ZoneScopedN("Sample::Render");
     PrepareRender();
     
-    auto commandList = commandLists_ [currentBackBuffer_].Get ();
-
-    // --------------------------------------
-    // Set our state (shaders, etc.)
-    commandList->SetPipelineState (pso_.Get ());
-
-    // Set our root signature
-    commandList->SetGraphicsRootSignature (rootSignature_.Get ());
-
     UpdateConstantBuffer ();
+    auto commandList = commandLists_ [currentBackBuffer_];
 
-    // Set the descriptor heap containing the texture srv
-    ID3D12DescriptorHeap* heaps[] = { srvDescriptorHeap_.Get () };
-    commandList->SetDescriptorHeaps (1, heaps);
-
-    // Set slot 0 of our root signature to point to our descriptor heap with
-    // the texture SRV
-    commandList->SetGraphicsRootDescriptorTable (0, srvDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
-
-    // Set slot 1 of our root signature to the constant buffer view
-    commandList->SetGraphicsRootConstantBufferView (1,
-        constantBuffers_[currentBackBuffer_]->GetGPUVirtualAddress ());
-
-    commandList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    commandList->IASetVertexBuffers (0, 1, &vertexBufferView_);
-    commandList->IASetIndexBuffer (&indexBufferView_);
-    for (size_t i = 0; i < draws_.numDraws; i++) {
-        commandList->SetGraphicsRoot32BitConstant(2, draws_.materialIndices[i], 0);
-        commandList->DrawIndexedInstanced (
-            (INT)draws_.indexCounts[i],
-            1,
-            (INT)draws_.indexOffsets[i],
-            (INT)draws_.vertexOffsets[i],
-            0
-        );
-    }
+    renderpass_.Execute(commandList,
+                        draws_,
+                        vertexBufferView_,
+                        indexBufferView_,
+                        constantBuffers_[currentBackBuffer_],
+                        srvDescriptorHeap_
+    );
 
     // Imgui logic ---------------------
     ImGui_ImplDX12_NewFrame();
@@ -315,7 +289,7 @@ void D3D12Sample::Render ()
 
     ID3D12DescriptorHeap* imguiHeaps[] = { imguiDescriptorHeap_.Get() };
     commandList->SetDescriptorHeaps(1, imguiHeaps);
-    ImGui_ImplDX12_RenderDrawData(ImGui::GetDrawData(), commandList);
+    ImGui_ImplDX12_RenderDrawData(ImGui::GetDrawData(), commandList.Get());
     // --------------------------------------
     
     FinalizeRender ();
@@ -538,6 +512,8 @@ void D3D12Sample::Initialize ()
 
     upload.Execute(commandQueue_.Get());
     upload.WaitForUpload();
+
+    renderpass_.Prepare(device_);
 
     //TODO: Need to remove rootsig and pso functions to model render pass prepare
     CreateRootSignature ();

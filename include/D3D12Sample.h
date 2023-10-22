@@ -25,6 +25,7 @@
 #include "AiWrapper.h"
 #include "Config.h"
 #include "UploadPass.h"
+#include "ModelRenderPass.h"
 
 #include <d3d12.h>
 #include <dxgi.h>
@@ -120,6 +121,7 @@ private:
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> imguiDescriptorHeap_;
 
     Draws draws_;
+    ModelRenderPass renderpass_ = {};
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";
