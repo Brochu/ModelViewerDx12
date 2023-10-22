@@ -16,6 +16,7 @@ set (headers
     ${CMAKE_CURRENT_LIST_DIR}/include/Config.h
     ${CMAKE_CURRENT_LIST_DIR}/include/UploadPass.h
     ${CMAKE_CURRENT_LIST_DIR}/include/ModelRenderPass.h
+    ${CMAKE_CURRENT_LIST_DIR}/include/UIRenderPass.h
 
     ${CMAKE_CURRENT_LIST_DIR}/include/D3D12Sample.h
 )
@@ -41,6 +42,7 @@ set (source
     ${CMAKE_CURRENT_LIST_DIR}/src/Config.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/UploadPass.cpp
     ${CMAKE_CURRENT_LIST_DIR}/src/ModelRenderPass.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/src/UIRenderPass.cpp
 
     ${CMAKE_CURRENT_LIST_DIR}/src/D3D12Sample.cpp
 )
