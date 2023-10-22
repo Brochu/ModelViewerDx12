@@ -10,14 +10,13 @@ using namespace Microsoft::WRL;
 namespace AMD {
 const char *shaderFile_ = "shaders/shaders.hlsl";
 
-ModelRenderPass::ModelRenderPass(ComPtr<ID3D12Device> &device) {
+ModelRenderPass::ModelRenderPass() { }
+
+ModelRenderPass::~ModelRenderPass() { }
+
+void ModelRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
     device_ = device;
-}
 
-ModelRenderPass::~ModelRenderPass() {
-}
-
-void ModelRenderPass::Prepare() {
     //TODO: Check if more work should be done here
     CreateRootSignature();
     CreatePipelineStateObject();

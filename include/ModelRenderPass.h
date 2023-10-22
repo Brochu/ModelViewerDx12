@@ -6,10 +6,10 @@
 
 namespace AMD {
 struct ModelRenderPass {
-    ModelRenderPass(Microsoft::WRL::ComPtr<ID3D12Device> &device);
+    ModelRenderPass();
     ~ModelRenderPass();
 
-    void Prepare();
+    void Prepare(Microsoft::WRL::ComPtr<ID3D12Device> &device);
     void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
                  Draws &draws,
                  D3D12_VERTEX_BUFFER_VIEW &vertBufferView,
