@@ -66,8 +66,6 @@ private:
 
     void LoadContent (UploadPass &upload);
 
-    void CreatePipelineStateObject ();
-    void CreateRootSignature ();
     void CreateConstantBuffer ();
     void UpdateConstantBuffer ();
 
