@@ -514,10 +514,6 @@ void D3D12Sample::Initialize ()
     upload.WaitForUpload();
 
     renderpass_.Prepare(device_);
-
-    //TODO: Need to remove rootsig and pso functions to model render pass prepare
-    CreateRootSignature ();
-    CreatePipelineStateObject ();
     CreateConstantBuffer ();
 }
 
