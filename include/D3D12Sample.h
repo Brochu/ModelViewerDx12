@@ -26,6 +26,7 @@
 #include "Config.h"
 #include "UploadPass.h"
 #include "ModelRenderPass.h"
+#include "UIRenderPass.h"
 
 #include <d3d12.h>
 #include <dxgi.h>
@@ -116,10 +117,10 @@ private:
     std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap_;
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> imguiDescriptorHeap_;
 
     Draws draws_;
     ModelRenderPass renderpass_ = {};
+    UIRenderPass uipass_ = {};
 
     // Paths
     const char *shaderFile_ = "shaders/shaders.hlsl";

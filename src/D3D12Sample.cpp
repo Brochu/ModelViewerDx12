@@ -127,9 +127,6 @@ struct DebugParams {
 };
 DebugParams dparams = {};
 
-const size_t MAX_GROUP_COUNT = 64;
-const size_t MAX_MODEL_COUNT = 128;
-
 namespace {
 void WaitForFence (ID3D12Fence* fence, UINT64 completionValue, HANDLE waitEvent)
 {
@@ -224,74 +221,16 @@ void D3D12Sample::Render ()
                         vertexBufferView_,
                         indexBufferView_,
                         constantBuffers_[currentBackBuffer_],
-                        srvDescriptorHeap_
-    );
+                        srvDescriptorHeap_);
 
-    // Imgui logic ---------------------
-    ImGui_ImplDX12_NewFrame();
-    ImGui_ImplWin32_NewFrame();
-    ImGui::NewFrame();
+    uipass_.Execute(commandList,
+                    config_,
+                    groupIndex_, modelIndex_, swappedModel_,
+                    dparams.clearColor,
+                    dparams.translate, dparams.rotate, dparams.scale,
+                    dparams.camPos, dparams.lookAt, &dparams.fov,
+                    dparams.lightPos, &dparams.lightPower);
 
-    {
-        // Main debug parameters window
-        ImGui::Begin("ModelViewer - Parameters");
-
-        ImGui::Separator();
-        ImGui::Text("Background");
-        ImGui::ColorEdit3("clear color", dparams.clearColor);
-
-        ImGui::Separator();
-        ImGui::Text("Model Viewer");
-
-        std::vector<GroupEntry> g = config_.groups;
-        assert(g.size() <= MAX_GROUP_COUNT);
-        char* groups[MAX_GROUP_COUNT];
-        for (int i = 0; i < g.size(); i++) {
-            groups[i] = const_cast<char*>(g[i].name.data());
-        }
-        if (ImGui::Combo("Game", &groupIndex_, groups, (int)g.size())) {
-            modelIndex_ = 0;
-            swappedModel_ = true;
-        }
-
-        std::vector<ModelEntry> m = config_.models;
-        assert(m.size() <= MAX_MODEL_COUNT);
-        char* models[MAX_MODEL_COUNT];
-        for (int i = 0; i < g[groupIndex_].modelrefs.size(); i++) {
-            const size_t modelIdx = g[groupIndex_].modelrefs[i];
-            models[i] = const_cast<char*>(m[modelIdx].files[0].folder.data());
-        }
-        if (ImGui::Combo("Model", &modelIndex_, models, (int)g[groupIndex_].modelrefs.size())) {
-            swappedModel_ = true;
-        }
-
-        ImGui::Separator();
-        ImGui::Text("Transform");
-        ImGui::DragFloat3("translate", dparams.translate, 0.1f, -100.f, 100.f);
-        ImGui::DragFloat3("rotate", dparams.rotate, 1.f, -359.f, 359.f);
-        ImGui::DragFloat3("scale", dparams.scale, 0.01f, -10.f, 10.f);
-
-        ImGui::Separator();
-        ImGui::Text("Camera");
-        ImGui::DragFloat3("position", dparams.camPos, 1.f, -500.f, 500.f);
-        ImGui::DragFloat3("focus", dparams.lookAt, 1.f, -500.f, 500.f);
-        ImGui::DragFloat("FOV", &dparams.fov, 0.25f, 5.f, 110.f);
-
-        ImGui::Separator();
-        ImGui::Text("Light");
-        ImGui::DragFloat3("pos", dparams.lightPos, 1.f, -500.f, 500.f);
-        ImGui::DragFloat("power", &dparams.lightPower, 0.05f, 0.05f, 5.f);
-
-        ImGui::Separator();
-        ImGui::End();
-    }
-    ImGui::Render();
-
-    ID3D12DescriptorHeap* imguiHeaps[] = { imguiDescriptorHeap_.Get() };
-    commandList->SetDescriptorHeaps(1, imguiHeaps);
-    ImGui_ImplDX12_RenderDrawData(ImGui::GetDrawData(), commandList.Get());
-    // --------------------------------------
-    
     FinalizeRender ();
 }
 
@@ -496,17 +435,6 @@ void D3D12Sample::Initialize ()
     descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
     device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&srvDescriptorHeap_));
 
-    descriptorHeapDesc.NumDescriptors = 1;
-    device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&imguiDescriptorHeap_));
-
-    // Imgui render side init
-    ImGui_ImplDX12_Init(device_.Get(),
-                        QUEUE_SLOT_COUNT,
-                        DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
-                        imguiDescriptorHeap_.Get(),
-                        imguiDescriptorHeap_->GetCPUDescriptorHandleForHeapStart(),
-                        imguiDescriptorHeap_->GetGPUDescriptorHandleForHeapStart());
-    
     UploadPass upload(device_);
     LoadContent(upload);
 
@@ -514,6 +442,7 @@ void D3D12Sample::Initialize ()
     upload.WaitForUpload();
 
     renderpass_.Prepare(device_);
+    uipass_.Prepare(device_);
     CreateConstantBuffer ();
 }
 
