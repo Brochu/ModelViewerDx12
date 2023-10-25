@@ -223,6 +223,8 @@ void D3D12Sample::Render ()
                         constantBuffers_[currentBackBuffer_],
                         srvDescriptorHeap_);
 
+    smokepass_.Execute(commandList);
+
     uipass_.Execute(commandList,
                     config_,
                     groupIndex_, modelIndex_, swappedModel_,
@@ -442,6 +444,7 @@ void D3D12Sample::Initialize ()
     upload.WaitForUpload();
 
     renderpass_.Prepare(device_);
+    smokepass_.Prepare(device_);
     uipass_.Prepare(device_);
     CreateConstantBuffer ();
 }

@@ -26,6 +26,7 @@
 #include "Config.h"
 #include "UploadPass.h"
 #include "ModelRenderPass.h"
+#include "SmokeRenderPass.h"
 #include "UIRenderPass.h"
 
 #include <d3d12.h>
@@ -120,6 +121,7 @@ private:
 
     Draws draws_;
     ModelRenderPass renderpass_ = {};
+    SmokeRenderPass smokepass_ = {};
     UIRenderPass uipass_ = {};
 
     // Paths
