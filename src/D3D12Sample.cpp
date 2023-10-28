@@ -112,7 +112,7 @@ struct DebugParams {
     float clearColor[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
 
     // Skip Passes
-    bool skipModels = false;
+    bool skipModels = true;
     bool skipSmoke = false;
 
     // Transforms
