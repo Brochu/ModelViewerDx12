@@ -96,11 +96,17 @@ void SmokeRenderPass::CreatePipelineStateObject() {
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "VS_main", "vs_5_1", 0, 0, &vertexShader, &error);
+    if (error != nullptr) {
+        const char *vserr = reinterpret_cast<const char*>(error->GetBufferPointer());
+    }
 
     ComPtr<ID3DBlob> pixelShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "PS_main", "ps_5_1", 0, 0, &pixelShader, &error);
+    if (error != nullptr) {
+        const char *pserr = reinterpret_cast<const char*>(error->GetBufferPointer());
+    }
 
     D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc = {};
     psoDesc.InputLayout = {nullptr, 0};
