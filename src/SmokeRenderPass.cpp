@@ -19,56 +19,37 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
 
     CreateRootSignature();
     CreatePipelineStateObject();
+    CreateConstantBuffer();
 }
 void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList) {
-    // --------------------------------------
     // Set our state (shaders, etc.)
-    //renderCmdList->SetPipelineState (pso_.Get ());
+    renderCmdList->SetPipelineState (pso_.Get ());
 
     // Set our root signature
-    //renderCmdList->SetGraphicsRootSignature (rootSignature_.Get ());
+    renderCmdList->SetGraphicsRootSignature (rootSignature_.Get ());
 
-    // Set the descriptor heap containing the texture srv
-    //ID3D12DescriptorHeap* heaps[] = { srvDescriptorHeap.Get () };
-    //renderCmdList->SetDescriptorHeaps (1, heaps);
+    // Set slot 0 of our root signature to the constant buffer view
+    //renderCmdList->SetGraphicsRootConstantBufferView (0, constBuffer_->GetGPUVirtualAddress());
 
-    // Set slot 0 of our root signature to point to our descriptor heap with
-    // the texture SRV
-    //renderCmdList->SetGraphicsRootDescriptorTable (0, srvDescriptorHeap->GetGPUDescriptorHandleForHeapStart());
-
-    // Set slot 1 of our root signature to the constant buffer view
-    //renderCmdList->SetGraphicsRootConstantBufferView (1, constantBuffer->GetGPUVirtualAddress());
-
-    //renderCmdList->IASetPrimitiveTopology (D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    //renderCmdList->IASetVertexBuffers (0, 1, &vertBufferView);
-    //renderCmdList->IASetIndexBuffer (&idxBufferView);
-
-    //for (size_t i = 0; i < draws.numDraws; i++) {
-    //    renderCmdList->SetGraphicsRoot32BitConstant(2, draws.materialIndices[i], 0);
-    //    renderCmdList->DrawIndexedInstanced (
-    //        (INT)draws.indexCounts[i],
-    //        1,
-    //        (INT)draws.indexOffsets[i],
-    //        (INT)draws.vertexOffsets[i],
-    //        0
-    //    );
-    //}
+    // Draw full screen tri for smoke effect
+    renderCmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    renderCmdList->DrawInstanced(3, 1, 0, 0);
 }
 
 void SmokeRenderPass::CreateRootSignature() {
     if (rootSignature_.Get() != nullptr) return;
 
     // We have one parameter: a constant buffer to send debug params to smoke shader
-    //CD3DX12_ROOT_PARAMETER parameters[1];
-    //parameters[0].InitAsConstantBufferView (0);
+    CD3DX12_ROOT_PARAMETER parameters[1];
+    parameters[0].InitAsConstantBufferView (0);
 
     // Maybe we will need a static sample for later?
-    //CD3DX12_STATIC_SAMPLER_DESC samplers[1];
-    //samplers[0].Init (0, D3D12_FILTER_MIN_MAG_LINEAR_MIP_POINT);
+    CD3DX12_STATIC_SAMPLER_DESC samplers[1];
+    samplers[0].Init (0, D3D12_FILTER_MIN_MAG_LINEAR_MIP_POINT);
 
     CD3DX12_ROOT_SIGNATURE_DESC descRootSignature;
-    descRootSignature.Init (0, nullptr/*parameters*/,
-                            0, nullptr/*samplers*/,
+    descRootSignature.Init (1, parameters,
+                            1, samplers,
                             D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
     );
 
@@ -129,6 +110,10 @@ void SmokeRenderPass::CreatePipelineStateObject() {
     psoDesc.SampleDesc.Count = 1;
 
     device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
+}
+
+void SmokeRenderPass::CreateConstantBuffer() {
+    //TODO: Create the constant buffer bound for smoke draw call(s)
 }
 
 }

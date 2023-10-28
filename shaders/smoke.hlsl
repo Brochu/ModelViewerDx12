@@ -1,3 +1,10 @@
+cbuffer SmokeConstants : register (b0)
+{
+    uint4 debugValues;
+}
+
+SamplerState texureSampler : register(s0);
+
 void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out float2 Tex : TexCoord0) {
     // Texture coordinates range [0, 2], but only [0, 1] appears on screen.
     Tex = float2(uint2(VertID, VertID << 1) & 2);
@@ -5,5 +12,5 @@ void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out flo
 }
 
 float4 PS_main(float4 pos : SV_Position, float2 tex : TEXCOORD0) : SV_TARGET {
-    return pos;
+    return float4(tex.r, tex.g, 1.0, 1.0);
 }

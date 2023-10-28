@@ -13,9 +13,12 @@ struct SmokeRenderPass {
 private:
     void CreateRootSignature();
     void CreatePipelineStateObject();
+    void CreateConstantBuffer();
 
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;
     Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
+
+    Microsoft::WRL::ComPtr<ID3D12Resource> constBuffer_;
 };
 }
