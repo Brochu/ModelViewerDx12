@@ -96,25 +96,19 @@ void SmokeRenderPass::CreatePipelineStateObject() {
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "VS_main", "vs_5_1", 0, 0, &vertexShader, &error);
-    const char *vserr = reinterpret_cast<const char*>(error->GetBufferPointer());
 
     ComPtr<ID3DBlob> pixelShader;
     D3DCompile (code.data(), code.size(),
         "", macros, nullptr,
         "PS_main", "ps_5_1", 0, 0, &pixelShader, &error);
-    unsigned char *pserr = reinterpret_cast<unsigned char*>(error->GetBufferPointer());
-
-    // WHY CANT WE HAVE DEBUG SYMBOLS
-    //auto vsize = vertexShader->GetBufferSize();
-    //auto psize = pixelShader->GetBufferSize();
 
     D3D12_GRAPHICS_PIPELINE_STATE_DESC psoDesc = {};
     psoDesc.InputLayout = {nullptr, 0};
     psoDesc.pRootSignature = rootSignature_.Get();
-    //psoDesc.VS.BytecodeLength = vertexShader->GetBufferSize();
-    //psoDesc.VS.pShaderBytecode = vertexShader->GetBufferPointer();
-    //psoDesc.PS.BytecodeLength = pixelShader->GetBufferSize();
-    //psoDesc.PS.pShaderBytecode = pixelShader->GetBufferPointer();
+    psoDesc.VS.BytecodeLength = vertexShader->GetBufferSize();
+    psoDesc.VS.pShaderBytecode = vertexShader->GetBufferPointer();
+    psoDesc.PS.BytecodeLength = pixelShader->GetBufferSize();
+    psoDesc.PS.pShaderBytecode = pixelShader->GetBufferPointer();
     psoDesc.RasterizerState = CD3DX12_RASTERIZER_DESC(D3D12_DEFAULT);
     psoDesc.RasterizerState.CullMode = D3D12_CULL_MODE_NONE;
     psoDesc.BlendState = CD3DX12_BLEND_DESC(D3D12_DEFAULT);
@@ -128,7 +122,7 @@ void SmokeRenderPass::CreatePipelineStateObject() {
     psoDesc.DSVFormat = DXGI_FORMAT_UNKNOWN;
     psoDesc.SampleDesc.Count = 1;
 
-    //device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
+    device_->CreateGraphicsPipelineState (&psoDesc, IID_PPV_ARGS (&pso_));
 }
 
 }
