@@ -14,6 +14,7 @@ struct UIRenderPass {
                            Config &config,
                            int &groupIndex, int &modelIndex, bool &swappedModel,
                            float *clearColor,
+                           bool *skipModel, bool *skipSmoke,
                            float *translate, float *rotate, float *scale,
                            float *camPos, float *lookAt, float *fov,
                            float *lightPos, float *lightPower);

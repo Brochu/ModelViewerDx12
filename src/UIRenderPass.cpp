@@ -1,4 +1,5 @@
 #include "UIRenderPass.h"
+#include "imgui.h"
 #include <imgui_impl_win32.h>
 #include <imgui_impl_dx12.h>
 #include <d3dx12.h>
@@ -35,6 +36,7 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
                            Config &config,
                            int &groupIndex, int &modelIndex, bool &swappedModel,
                            float *clearColor,
+                           bool *skipModel, bool *skipSmoke,
                            float *translate, float *rotate, float *scale,
                            float *camPos, float *lookAt, float *fov,
                            float *lightPos, float *lightPower) {
@@ -44,6 +46,11 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
 
     {
         ImGui::Begin("ModelViewer - Parameters");
+
+        ImGui::Separator();
+        ImGui::Text("Passes Override");
+        ImGui::Checkbox("Skip Model Pass", skipModel);
+        ImGui::Checkbox("Skip Smoke Pass", skipSmoke);
 
         ImGui::Separator();
         ImGui::Text("Background");

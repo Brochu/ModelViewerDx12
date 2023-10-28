@@ -111,6 +111,10 @@ struct DebugParams {
     bool showWindow = true;
     float clearColor[4] = { 0.042f, 0.042f, 0.042f, 1.0f };
 
+    // Skip Passes
+    bool skipModels = false;
+    bool skipSmoke = false;
+
     // Transforms
     float translate[3] { 0.0, 0.0, 0.0 };
     float rotate[3] { 0.0, 0.0, 0.0 };
@@ -216,19 +220,26 @@ void D3D12Sample::Render ()
     UpdateConstantBuffer ();
     auto commandList = commandLists_ [currentBackBuffer_];
 
-    renderpass_.Execute(commandList,
-                        draws_,
-                        vertexBufferView_,
-                        indexBufferView_,
-                        constantBuffers_[currentBackBuffer_],
-                        srvDescriptorHeap_);
+    //TODO: How can we sample the scene to render the smoke around it?
+    // Access geometry during raymatching?
+    if (!dparams.skipModels) {
+        renderpass_.Execute(commandList,
+                            draws_,
+                            vertexBufferView_,
+                            indexBufferView_,
+                            constantBuffers_[currentBackBuffer_],
+                            srvDescriptorHeap_);
+    }
 
-    smokepass_.Execute(commandList);
+    if (!dparams.skipSmoke) {
+        smokepass_.Execute(commandList);
+    }
 
     uipass_.Execute(commandList,
                     config_,
                     groupIndex_, modelIndex_, swappedModel_,
                     dparams.clearColor,
+                    &dparams.skipModels, &dparams.skipSmoke,
                     dparams.translate, dparams.rotate, dparams.scale,
                     dparams.camPos, dparams.lookAt, &dparams.fov,
                     dparams.lightPos, &dparams.lightPower);
