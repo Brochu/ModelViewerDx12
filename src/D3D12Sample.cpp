@@ -220,6 +220,10 @@ void D3D12Sample::Render ()
     UpdateConstantBuffer ();
     auto commandList = commandLists_ [currentBackBuffer_];
 
+    if (!dparams.skipSmoke) {
+        smokepass_.Execute(commandList);
+    }
+
     //TODO: How can we sample the scene to render the smoke around it?
     // Access geometry during raymatching?
     if (!dparams.skipModels) {
@@ -229,10 +233,6 @@ void D3D12Sample::Render ()
                             indexBufferView_,
                             constantBuffers_[currentBackBuffer_],
                             srvDescriptorHeap_);
-    }
-
-    if (!dparams.skipSmoke) {
-        smokepass_.Execute(commandList);
     }
 
     uipass_.Execute(commandList,
