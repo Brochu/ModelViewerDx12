@@ -28,6 +28,7 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList) 
     // Set our root signature
     renderCmdList->SetGraphicsRootSignature (rootSignature_.Get ());
 
+    //TODO: Setup the constant buffer for smoke rendering
     // Set slot 0 of our root signature to the constant buffer view
     //renderCmdList->SetGraphicsRootConstantBufferView (0, constBuffer_->GetGPUVirtualAddress());
 
