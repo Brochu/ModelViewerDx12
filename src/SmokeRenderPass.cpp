@@ -4,10 +4,16 @@
 #include <d3dcompiler.h>
 #include <d3dx12.h>
 #include <vector>
+#include <DirectXMath.h>
 
 using namespace Microsoft::WRL;
+using namespace DirectX;
 
 namespace AMD {
+struct SmokeCBuffer {
+    XMFLOAT4 values;
+};
+
 const char *smokeShader_ = "shaders/smoke.hlsl";
 
 SmokeRenderPass::SmokeRenderPass() { }
@@ -21,7 +27,9 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
     CreatePipelineStateObject();
     CreateConstantBuffer();
 }
-void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList) {
+void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex) {
+    UpdateConstantBuffer(backBufferIndex);
+
     // Set our state (shaders, etc.)
     renderCmdList->SetPipelineState (pso_.Get ());
 
@@ -114,7 +122,33 @@ void SmokeRenderPass::CreatePipelineStateObject() {
 }
 
 void SmokeRenderPass::CreateConstantBuffer() {
-    //TODO: Create the constant buffer bound for smoke draw call(s)
+    for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
+        D3D12_HEAP_PROPERTIES uploadHeapProps = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+        D3D12_RESOURCE_DESC bufferDesc = CD3DX12_RESOURCE_DESC::Buffer(sizeof(SmokeCBuffer));
+
+        device_->CreateCommittedResource(
+            &uploadHeapProps,
+            D3D12_HEAP_FLAG_NONE,
+            &bufferDesc,
+            D3D12_RESOURCE_STATE_GENERIC_READ,
+            nullptr,
+            IID_PPV_ARGS(&constBuffer_[i])
+        );
+
+        UpdateConstantBuffer(i);
+    }
+}
+
+void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex) {
+    SmokeCBuffer cb {};
+    //TODO: Dynamic values change here
+    cb.values = { 1.0, 1.0, 1.0, 1.0 };
+
+    UINT8 *p;
+    CD3DX12_RANGE readRange(0, 0);
+    constBuffer_[backBufferIndex]->Map(0, &readRange, reinterpret_cast<void **>(&p));
+    memcpy(p, &cb, sizeof(cb));
+    constBuffer_[backBufferIndex]->Unmap(0, nullptr);
 }
 
 }
