@@ -36,9 +36,8 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, 
     // Set our root signature
     renderCmdList->SetGraphicsRootSignature (rootSignature_.Get ());
 
-    //TODO: Setup the constant buffer for smoke rendering
     // Set slot 0 of our root signature to the constant buffer view
-    //renderCmdList->SetGraphicsRootConstantBufferView (0, constBuffer_->GetGPUVirtualAddress());
+    renderCmdList->SetGraphicsRootConstantBufferView (0, constBuffer_[backBufferIndex]->GetGPUVirtualAddress());
 
     // Draw full screen tri for smoke effect
     renderCmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -142,7 +141,7 @@ void SmokeRenderPass::CreateConstantBuffer() {
 void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex) {
     SmokeCBuffer cb {};
     //TODO: Dynamic values change here
-    cb.values = { 1.0, 1.0, 1.0, 1.0 };
+    cb.values = { 0.0, 0.0, 0.0, 0.0 };
 
     UINT8 *p;
     CD3DX12_RANGE readRange(0, 0);
