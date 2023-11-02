@@ -221,7 +221,8 @@ void D3D12Sample::Render ()
     auto commandList = commandLists_ [currentBackBuffer_];
 
     if (!dparams.skipSmoke) {
-        smokepass_.Execute(commandList, currentBackBuffer_);
+        //TODO: Plug values for smoke update
+        smokepass_.Execute(commandList, currentBackBuffer_, 1.0, 1.0);
     }
 
     //TODO: How can we sample the scene to render the smoke around it?

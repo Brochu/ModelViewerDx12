@@ -1,7 +1,7 @@
 cbuffer SmokeConstants : register (b0)
 {
     float4 bgColor;
-    float4 values;
+    float4 values; // (sigma_a, dist_mult, reserved, reserved)
 }
 
 SamplerState texureSampler : register(s0);
@@ -17,10 +17,11 @@ float4 PS_main(float4 pos : SV_Position, float2 tex : TEXCOORD0) : SV_TARGET {
     float cy = tex.y - 0.5;
     float check = sqrt((cx * cx) + (cy * cy));
 
-    if (check > 0.5) {
-        return float4(0.0, 0.0, 0.0, 1.0);
+    if (check < 0.5) {
+        float diff = (0.5 - check) * 2;
+        float4 cloud = (tex.r, tex.g, 1.0, 1.0);
+        return diff;
     }
-    else {
-        return bgColor;
-    }
+
+    return bgColor;
 }

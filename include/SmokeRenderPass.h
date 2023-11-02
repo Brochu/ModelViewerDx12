@@ -8,13 +8,16 @@ struct SmokeRenderPass {
     ~SmokeRenderPass();
 
     void Prepare(Microsoft::WRL::ComPtr<ID3D12Device> &device);
-    void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex);
+    void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
+                 int backBufferIndex,
+                 float sigmaa,
+                 float distmult);
 
 private:
     void CreateRootSignature();
     void CreatePipelineStateObject();
     void CreateConstantBuffer();
-    void UpdateConstantBuffer(int backBufferIndex);
+    void UpdateConstantBuffer(int backBufferIndex, float sigmaa, float distmult);
 
     static const int QUEUE_SLOT_COUNT = 3;
 
