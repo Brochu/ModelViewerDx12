@@ -11,6 +11,7 @@ using namespace DirectX;
 
 namespace AMD {
 struct SmokeCBuffer {
+    XMFLOAT4 bgColor;
     XMFLOAT4 values;
 };
 
@@ -141,7 +142,8 @@ void SmokeRenderPass::CreateConstantBuffer() {
 void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex) {
     SmokeCBuffer cb {};
     //TODO: Dynamic values change here
-    cb.values = { 0.0, 0.0, 0.0, 0.0 };
+    cb.bgColor = { 0.57f, 0.77f, 0.92f, 1.0f };
+    cb.values = { 1.0, 1.0, 1.0, 0.0 };
 
     UINT8 *p;
     CD3DX12_RANGE readRange(0, 0);
