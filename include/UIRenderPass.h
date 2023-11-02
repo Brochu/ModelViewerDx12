@@ -17,7 +17,8 @@ struct UIRenderPass {
                            bool *skipModel, bool *skipSmoke,
                            float *translate, float *rotate, float *scale,
                            float *camPos, float *lookAt, float *fov,
-                           float *lightPos, float *lightPower);
+                           float *lightPos, float *lightPower,
+                           float *sigmaA, float *distMult);
 
 private:
     Microsoft::WRL::ComPtr<ID3D12Device> device_;

@@ -128,6 +128,10 @@ struct DebugParams {
     // Light
     float lightPos[3] { 1.0, 1.0, 0.0 };
     float lightPower = 1.f;
+
+    // Smoke / Cloud
+    float sigmaA = 1.f;
+    float distMult = 1.f;
 };
 DebugParams dparams = {};
 
@@ -243,7 +247,8 @@ void D3D12Sample::Render ()
                     &dparams.skipModels, &dparams.skipSmoke,
                     dparams.translate, dparams.rotate, dparams.scale,
                     dparams.camPos, dparams.lookAt, &dparams.fov,
-                    dparams.lightPos, &dparams.lightPower);
+                    dparams.lightPos, &dparams.lightPower,
+                    &dparams.sigmaA, &dparams.distMult);
 
     FinalizeRender ();
 }
