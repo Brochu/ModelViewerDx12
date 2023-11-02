@@ -19,8 +19,10 @@ float4 PS_main(float4 pos : SV_Position, float2 tex : TEXCOORD0) : SV_TARGET {
 
     if (check < 0.5) {
         float diff = (0.5 - check) * 2;
-        float4 cloud = (tex.r, tex.g, 1.0, 1.0);
-        return diff;
+        float T = exp((-diff * values.y * 2.0) * values.x);
+
+        float4 volColor = float4(0.8, 0.1, 0.5, 1.0);
+        return (T * bgColor) + ((1 - T) * volColor);
     }
 
     return bgColor;
