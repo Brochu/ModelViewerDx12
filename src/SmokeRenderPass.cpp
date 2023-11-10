@@ -46,6 +46,12 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
 
     // Draw full screen tri for smoke effect
     renderCmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    //TODO: Render a cube around the smoke center's position
+    // Ray march for the pixels covered by the cube?
+    // How can I transform from UVs to 3d coords in world space?
+    // Find a way to convert this process to a compute shader
+    // Add SRV to the root sig for the currently rendered backbuffer
+    // -> That way we can sample this when the smoke doesn't fully cover
     renderCmdList->DrawInstanced(3, 1, 0, 0);
 }
 
