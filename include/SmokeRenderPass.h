@@ -34,6 +34,5 @@ private:
     Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
 
     Microsoft::WRL::ComPtr<ID3D12Resource> constBuffer_[QUEUE_SLOT_COUNT];
-    DirectX::XMMATRIX mvp_[QUEUE_SLOT_COUNT];
 };
 }
