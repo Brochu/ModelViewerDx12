@@ -6,6 +6,7 @@ cbuffer SmokeConstants : register (b0)
     float4 values; // (sigma_a, dist_mult, reserved, reserved)
 }
 
+Texture2D<float4> scene : register(t0);
 SamplerState texureSampler : register(s0);
 
 void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out float2 Tex : TexCoord0) {
