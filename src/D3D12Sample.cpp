@@ -130,6 +130,7 @@ struct DebugParams {
     float lightPower = 1.f;
 
     // Smoke / Cloud
+    float smokePos[3] { 0.0, 0.0, 0.0 };
     float sigmaA = 1.f;
     float distMult = 1.f;
 };
@@ -224,13 +225,6 @@ void D3D12Sample::Render ()
     UpdateConstantBuffer ();
     auto commandList = commandLists_ [currentBackBuffer_];
 
-    if (!dparams.skipSmoke) {
-        //TODO: Plug values for smoke update
-        smokepass_.Execute(commandList, currentBackBuffer_, dparams.sigmaA, dparams.distMult);
-    }
-
-    //TODO: How can we sample the scene to render the smoke around it?
-    // Access geometry during raymatching?
     if (!dparams.skipModels) {
         renderpass_.Execute(commandList,
                             draws_,
@@ -238,6 +232,13 @@ void D3D12Sample::Render ()
                             indexBufferView_,
                             constantBuffers_[currentBackBuffer_],
                             srvDescriptorHeap_);
+    }
+
+    if (!dparams.skipSmoke) {
+        smokepass_.Execute(commandList, currentBackBuffer_,
+                           dparams.smokePos,
+                           dparams.sigmaA,
+                           dparams.distMult);
     }
 
     uipass_.Execute(commandList,
