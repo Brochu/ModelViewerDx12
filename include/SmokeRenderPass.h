@@ -21,7 +21,11 @@ private:
     void CreateRootSignature();
     void CreatePipelineStateObject();
     void CreateConstantBuffer();
-    void UpdateConstantBuffer(int backBufferIndex, float *smokePos, float sigmaa, float distmult);
+    void UpdateConstantBuffer(int backBufferIndex,
+                              float *smokePos,
+                              DirectX::XMMATRIX mvp,
+                              float sigmaa,
+                              float distmult);
 
     static const int QUEUE_SLOT_COUNT = 3;
 

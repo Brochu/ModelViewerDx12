@@ -1,8 +1,9 @@
 cbuffer SmokeConstants : register (b0)
 {
     float4 bgColor;
-    float4 values; // (sigma_a, dist_mult, reserved, reserved)
     float4 smokePos;
+    float4x4 mvp;
+    float4 values; // (sigma_a, dist_mult, reserved, reserved)
 }
 
 SamplerState texureSampler : register(s0);

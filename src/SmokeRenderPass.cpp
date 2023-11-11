@@ -1,6 +1,7 @@
 #include "SmokeRenderPass.h"
 #include "Utility.h"
 
+#include <DirectXMath.h>
 #include <d3dcompiler.h>
 #include <d3dx12.h>
 #include <vector>
@@ -11,8 +12,9 @@ using namespace DirectX;
 namespace AMD {
 struct SmokeCBuffer {
     XMFLOAT4 bgColor;
-    XMFLOAT4 values;
     XMFLOAT4 smokePos;
+    XMMATRIX mvp;
+    XMFLOAT4 values;
 };
 
 const char *smokeShader_ = "shaders/smoke.hlsl";
@@ -34,7 +36,7 @@ void SmokeRenderPass::Update(int backBufferIndex,
                              float sigmaa,
                              float distmult) {
 
-    UpdateConstantBuffer(backBufferIndex, smokePos, sigmaa, distmult);
+    UpdateConstantBuffer(backBufferIndex, smokePos, mvp, sigmaa, distmult);
 }
 void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex) {
 
@@ -149,16 +151,22 @@ void SmokeRenderPass::CreateConstantBuffer() {
         );
 
         float smokePos[3] = { 0.0, 0.0, 0.0 };
-        UpdateConstantBuffer(i, smokePos, 1.0, 1.0);
+        UpdateConstantBuffer(i, smokePos, XMMatrixIdentity(), 1.0, 1.0);
     }
 }
 
-void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex, float* smokePos, float sigmaa, float distmult) {
+void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
+                                           float* smokePos,
+                                           XMMATRIX mvp,
+                                           float sigmaa,
+                                           float distmult) {
+
     SmokeCBuffer cb {};
     //TODO: Dynamic values change here
     cb.bgColor = { 0.7f, 0.9f, 1.0f, 1.0f };
-    cb.values = { sigmaa, distmult, 1.0, 0.0 };
     cb.smokePos = { smokePos[0], smokePos[1], smokePos[2], 1.0 };
+    cb.mvp = mvp;
+    cb.values = { sigmaa, distmult, 1.0, 0.0 };
 
     UINT8 *p;
     CD3DX12_RANGE readRange(0, 0);
