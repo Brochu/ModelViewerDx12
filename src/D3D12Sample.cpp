@@ -235,10 +235,7 @@ void D3D12Sample::Render ()
     }
 
     if (!dparams.skipSmoke) {
-        smokepass_.Execute(commandList, currentBackBuffer_,
-                           dparams.smokePos,
-                           dparams.sigmaA,
-                           dparams.distMult);
+        smokepass_.Execute(commandList, currentBackBuffer_);
     }
 
     uipass_.Execute(commandList,
@@ -651,5 +648,7 @@ void D3D12Sample::UpdateConstantBuffer ()
     HRESULT r = constantBuffers_[currentBackBuffer_]->Map (0, nullptr, &p);
     ::memcpy(p, &cb, sizeof(ConstantBuffer));
     constantBuffers_[currentBackBuffer_]->Unmap (0, nullptr);
+
+    smokepass_.Update(currentBackBuffer_, dparams.smokePos, mvp, dparams.sigmaA, dparams.distMult);
 }
 }

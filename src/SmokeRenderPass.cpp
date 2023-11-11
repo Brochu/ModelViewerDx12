@@ -4,7 +4,6 @@
 #include <d3dcompiler.h>
 #include <d3dx12.h>
 #include <vector>
-#include <DirectXMath.h>
 
 using namespace Microsoft::WRL;
 using namespace DirectX;
@@ -29,13 +28,15 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
     CreatePipelineStateObject();
     CreateConstantBuffer();
 }
-void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList,
-                              int backBufferIndex,
-                              float *smokePos,
-                              float sigmaa,
-                              float distmult) {
+void SmokeRenderPass::Update(int backBufferIndex,
+                             float *smokePos,
+                             XMMATRIX mvp,
+                             float sigmaa,
+                             float distmult) {
 
     UpdateConstantBuffer(backBufferIndex, smokePos, sigmaa, distmult);
+}
+void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex) {
 
     // Set our state (shaders, etc.)
     renderCmdList->SetPipelineState (pso_.Get ());
