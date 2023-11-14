@@ -85,7 +85,7 @@ private:
 
     Microsoft::WRL::ComPtr<IDXGISwapChain> swapChain_;
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
-    Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Resource> renderTargets_ [QUEUE_SLOT_COUNT * 2];
     Microsoft::WRL::ComPtr<ID3D12Resource> depthStencil_ [QUEUE_SLOT_COUNT];
     Microsoft::WRL::ComPtr<ID3D12CommandQueue> commandQueue_;
     D3D12_VIEWPORT viewport_;
