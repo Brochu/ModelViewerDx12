@@ -201,6 +201,7 @@ void D3D12Sample::PrepareRender ()
     commandList->RSSetScissorRects (1, &rectScissor_);
 
     // Transition back buffer
+    //TODO: Handle extra render targets for smoke pass
     D3D12_RESOURCE_BARRIER barrier;
     barrier.Transition.pResource = renderTargets_ [currentBackBuffer_].Get ();
     barrier.Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;
