@@ -471,6 +471,7 @@ void D3D12Sample::Initialize ()
     CreateAllocatorsAndCommandLists ();
     CreateViewportScissor ();
 
+    //TODO: Figure out where to store extra RTs SRVs to send to smoke pass
     // We need one descriptor heap to store our texture SRVs which cannot go
     D3D12_DESCRIPTOR_HEAP_DESC descriptorHeapDesc = {};
     descriptorHeapDesc.NumDescriptors = 256;
@@ -478,6 +479,25 @@ void D3D12Sample::Initialize ()
     descriptorHeapDesc.NodeMask = 0;
     descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
     device_->CreateDescriptorHeap (&descriptorHeapDesc, IID_PPV_ARGS (&srvDescriptorHeap_));
+
+    CD3DX12_CPU_DESCRIPTOR_HANDLE srvHandle{ 
+        srvDescriptorHeap_->GetCPUDescriptorHandleForHeapStart()
+    };
+    srvHandle.Offset(256 - QUEUE_SLOT_COUNT, shaderResourceViewDescriptorSize_);
+
+    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
+        D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
+        srvDesc.ViewDimension = D3D12_SRV_DIMENSION_TEXTURE2D;
+        srvDesc.Shader4ComponentMapping = D3D12_DEFAULT_SHADER_4_COMPONENT_MAPPING;
+        srvDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
+        srvDesc.Texture2D.MipLevels = 1;
+        srvDesc.Texture2D.MostDetailedMip = 0;
+        srvDesc.Texture2D.ResourceMinLODClamp = 0.0f;
+
+        device_->CreateShaderResourceView(renderTargets_ [i].Get(), &srvDesc, srvHandle);
+
+        srvHandle.Offset(renderTargetViewDescriptorSize_);
+    }
 
     UploadPass upload(device_);
     LoadContent(upload);
@@ -536,9 +556,11 @@ void D3D12Sample::CreateDeviceAndSwapChain ()
     swapChain_ = renderEnv.swapChain;
 
     renderTargetViewDescriptorSize_ =
-        device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+        device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
     depthStencilViewDescriptorSize_ =
-        device_->GetDescriptorHandleIncrementSize (D3D12_DESCRIPTOR_HEAP_TYPE_DSV);
+        device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_DSV);
+    shaderResourceViewDescriptorSize_ =
+        device_->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
     SetupSwapChain ();
 }

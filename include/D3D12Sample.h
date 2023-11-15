@@ -118,6 +118,7 @@ private:
     std::vector<Microsoft::WRL::ComPtr<ID3D12Resource>> image_;
 
     Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvDescriptorHeap_;
+    std::int32_t shaderResourceViewDescriptorSize_;
 
     Draws draws_;
     ModelRenderPass renderpass_ = {};
