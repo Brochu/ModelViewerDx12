@@ -189,7 +189,7 @@ void D3D12Sample::PrepareRender ()
     D3D12_CPU_DESCRIPTOR_HANDLE renderTargetHandle;
     CD3DX12_CPU_DESCRIPTOR_HANDLE::InitOffsetted (renderTargetHandle,
         renderTargetDescriptorHeap_->GetCPUDescriptorHandleForHeapStart (),
-        currentBackBuffer_, renderTargetViewDescriptorSize_);
+        QUEUE_SLOT_COUNT + currentBackBuffer_, renderTargetViewDescriptorSize_);
 
     D3D12_CPU_DESCRIPTOR_HANDLE depthStencilHandle;
     CD3DX12_CPU_DESCRIPTOR_HANDLE::InitOffsetted(depthStencilHandle,
@@ -320,12 +320,8 @@ _SRGB.
 */
 void D3D12Sample::SetupRenderTargets ()
 {
-    //TODO: Need to setup new render target views for extra RTs
-    // Goal is to render the scene first in the extra RTs
-    // Send this scene render to the smoke pass
-    // Render the smoke pass in the present RTs
     D3D12_DESCRIPTOR_HEAP_DESC heapDesc = {};
-    heapDesc.NumDescriptors = QUEUE_SLOT_COUNT;
+    heapDesc.NumDescriptors = QUEUE_SLOT_COUNT * 2;
     heapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_RTV;
     heapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
     device_->CreateDescriptorHeap (&heapDesc, IID_PPV_ARGS (&renderTargetDescriptorHeap_));
@@ -334,7 +330,7 @@ void D3D12Sample::SetupRenderTargets ()
         renderTargetDescriptorHeap_->GetCPUDescriptorHandleForHeapStart ()
     };
 
-    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
+    for (int i = 0; i < QUEUE_SLOT_COUNT * 2; ++i) {
         D3D12_RENDER_TARGET_VIEW_DESC viewDesc;
         viewDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;
         viewDesc.ViewDimension = D3D12_RTV_DIMENSION_TEXTURE2D;
@@ -418,7 +414,7 @@ void D3D12Sample::SetupSwapChain ()
                 DXGI_FORMAT_R8G8B8A8_UNORM,
                 width_, height_,
                 1, 0, 1, 0,
-                D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL
+                D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET
             );
 
         D3D12_CLEAR_VALUE rtClearValue = {};
