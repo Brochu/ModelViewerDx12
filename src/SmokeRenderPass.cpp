@@ -14,6 +14,7 @@ struct SmokeCBuffer {
     XMFLOAT4 bgColor;
     XMFLOAT4 smokePos;
     XMMATRIX mvp;
+    XMFLOAT4 verts[4];
     XMFLOAT4 values;
 };
 
@@ -166,6 +167,11 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     cb.bgColor = { 0.7f, 0.9f, 1.0f, 1.0f };
     cb.smokePos = { smokePos[0], smokePos[1], smokePos[2], 1.0 };
     cb.mvp = mvp;
+    //TODO: Create verts based off of smoke pos
+    cb.verts[0] = { 0.0, 0.0, 0.0, 0.0 };
+    cb.verts[1] = { 0.0, 0.0, 0.0, 0.0 };
+    cb.verts[2] = { 0.0, 0.0, 0.0, 0.0 };
+    cb.verts[3] = { 0.0, 0.0, 0.0, 0.0 };
     cb.values = { sigmaa, distmult, 1.0, 0.0 };
 
     UINT8 *p;

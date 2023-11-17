@@ -3,6 +3,7 @@ cbuffer SmokeConstants : register (b0)
     float4 bgColor;
     float4 smokePos;
     float4x4 mvp;
+    float4 verts[4];
     float4 values; // (sigma_a, dist_mult, reserved, reserved)
 }
 
