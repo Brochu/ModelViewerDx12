@@ -48,9 +48,6 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, 
 
     // Set slot 0 of our root signature to the constant buffer view
     renderCmdList->SetGraphicsRootConstantBufferView (0, constBuffer_[backBufferIndex]->GetGPUVirtualAddress());
-    //TODO: Hook the result of the rendered scene here
-    D3D12_GPU_VIRTUAL_ADDRESS addr {};
-    renderCmdList->SetGraphicsRootShaderResourceView (1, addr);
 
     // Draw full screen tri for smoke effect
     renderCmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -67,10 +64,8 @@ void SmokeRenderPass::CreateRootSignature() {
     if (rootSignature_.Get() != nullptr) return;
 
     // We have one parameter: a constant buffer to send debug params to smoke shader
-    CD3DX12_ROOT_PARAMETER parameters[2];
+    CD3DX12_ROOT_PARAMETER parameters[1];
     parameters[0].InitAsConstantBufferView (0);
-    //TODO: Setup the rendered scene SRV in order to deal with transparency?
-    parameters[1].InitAsShaderResourceView (0);
 
     // Maybe we will need a static sample for later?
     CD3DX12_STATIC_SAMPLER_DESC samplers[1];
