@@ -459,7 +459,7 @@ void D3D12Sample::SetupSwapChain ()
             );
     }
 
-    SetupRenderTargets();
+    SetupRenderTargets ();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
