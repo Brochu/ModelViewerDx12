@@ -411,33 +411,6 @@ void D3D12Sample::SetupSwapChain ()
         swapChain_->GetBuffer (i, IID_PPV_ARGS (&renderTargets_ [i]));
     }
 
-    // Init the extra render targets
-    for (int i = 0; i < QUEUE_SLOT_COUNT; ++i) {
-        auto rtProp = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
-        auto rtDesc = CD3DX12_RESOURCE_DESC::Tex2D(
-                DXGI_FORMAT_R8G8B8A8_UNORM,
-                width_, height_,
-                1, 0, 1, 0,
-                D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL
-            );
-
-        D3D12_CLEAR_VALUE rtClearValue = {};
-        rtClearValue.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-        rtClearValue.Color[0] = 0.f;
-        rtClearValue.Color[1] = 0.f;
-        rtClearValue.Color[2] = 0.f;
-        rtClearValue.Color[3] = 0.f;
-
-        HRESULT hr = device_->CreateCommittedResource(
-            &rtProp,
-            D3D12_HEAP_FLAG_NONE,
-            &rtDesc,
-            D3D12_RESOURCE_STATE_RENDER_TARGET,
-            &rtClearValue,
-            __uuidof(ID3D12Resource),
-            &renderTargets_[QUEUE_SLOT_COUNT + i]);
-    }
-
     auto depthProp = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT);
     auto depthDesc = CD3DX12_RESOURCE_DESC::Tex2D(
             DXGI_FORMAT_D32_FLOAT,
