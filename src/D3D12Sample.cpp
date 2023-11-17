@@ -653,6 +653,6 @@ void D3D12Sample::UpdateConstantBuffer ()
     ::memcpy(p, &cb, sizeof(ConstantBuffer));
     constantBuffers_[currentBackBuffer_]->Unmap (0, nullptr);
 
-    smokepass_.Update(currentBackBuffer_, dparams.smokePos, mvp, dparams.sigmaA, dparams.distMult);
+    smokepass_.Update(currentBackBuffer_, dparams.smokePos, view, mvp, dparams.sigmaA, dparams.distMult);
 }
 }

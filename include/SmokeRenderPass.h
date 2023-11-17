@@ -12,6 +12,7 @@ struct SmokeRenderPass {
     void Prepare(Microsoft::WRL::ComPtr<ID3D12Device> &device);
     void Update(int backBufferIndex,
                 float *smokePos,
+                DirectX::XMMATRIX view,
                 DirectX::XMMATRIX mvp,
                 float sigmaa,
                 float distmult);
@@ -23,6 +24,7 @@ private:
     void CreateConstantBuffer();
     void UpdateConstantBuffer(int backBufferIndex,
                               float *smokePos,
+                              DirectX::XMMATRIX view,
                               DirectX::XMMATRIX mvp,
                               float sigmaa,
                               float distmult);
