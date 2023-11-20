@@ -12,10 +12,8 @@ struct SmokeRenderPass {
     void Prepare(Microsoft::WRL::ComPtr<ID3D12Device> &device);
     void Update(int backBufferIndex,
                 float *smokePos,
-                DirectX::XMMATRIX view,
-                DirectX::XMMATRIX mvp,
-                float sigmaa,
-                float distmult);
+                DirectX::XMMATRIX view, DirectX::XMMATRIX mvp,
+                float sigmaa, float distmult, float smokeSize);
     void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex);
 
 private:
@@ -24,10 +22,8 @@ private:
     void CreateConstantBuffer();
     void UpdateConstantBuffer(int backBufferIndex,
                               float *smokePos,
-                              DirectX::XMMATRIX view,
-                              DirectX::XMMATRIX mvp,
-                              float sigmaa,
-                              float distmult);
+                              DirectX::XMMATRIX view, DirectX::XMMATRIX mvp,
+                              float sigmaa, float distmult, float smokeSize);
 
     static const int QUEUE_SLOT_COUNT = 3;
 

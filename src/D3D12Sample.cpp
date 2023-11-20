@@ -133,6 +133,7 @@ struct DebugParams {
     float smokePos[3] { 0.0, 0.0, 0.0 };
     float sigmaA = 1.f;
     float distMult = 1.f;
+    float smokeSize = 1.f;
 };
 DebugParams dparams = {};
 
@@ -653,6 +654,8 @@ void D3D12Sample::UpdateConstantBuffer ()
     ::memcpy(p, &cb, sizeof(ConstantBuffer));
     constantBuffers_[currentBackBuffer_]->Unmap (0, nullptr);
 
-    smokepass_.Update(currentBackBuffer_, dparams.smokePos, view, mvp, dparams.sigmaA, dparams.distMult);
+    smokepass_.Update(currentBackBuffer_, dparams.smokePos,
+                      view, mvp,
+                      dparams.sigmaA, dparams.distMult, dparams.smokeSize);
 }
 }

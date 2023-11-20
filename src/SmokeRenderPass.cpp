@@ -33,12 +33,10 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
 }
 void SmokeRenderPass::Update(int backBufferIndex,
                              float *smokePos,
-                             XMMATRIX view,
-                             XMMATRIX mvp,
-                             float sigmaa,
-                             float distmult) {
+                             XMMATRIX view, XMMATRIX mvp,
+                             float sigmaa, float distmult, float smokeSize) {
 
-    UpdateConstantBuffer(backBufferIndex, smokePos, view, mvp, sigmaa, distmult);
+    UpdateConstantBuffer(backBufferIndex, smokePos, view, mvp, sigmaa, distmult, smokeSize);
 }
 void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex) {
 
@@ -158,65 +156,41 @@ void SmokeRenderPass::CreateConstantBuffer() {
         );
 
         float smokePos[3] = { 0.0, 0.0, 0.0 };
-        UpdateConstantBuffer(i, smokePos, XMMatrixIdentity(), XMMatrixIdentity(), 1.0, 1.0);
+        UpdateConstantBuffer(i, smokePos, XMMatrixIdentity(), XMMatrixIdentity(), 1.0, 1.0, 1.0);
     }
 }
 
 void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
                                            float* smokePos,
-                                           XMMATRIX view,
-                                           XMMATRIX mvp,
-                                           float sigmaa,
-                                           float distmult) {
+                                           XMMATRIX view, XMMATRIX mvp,
+                                           float sigmaa, float distmult, float smokeSize) {
 
     SmokeCBuffer cb {};
-    //TODO: Dynamic values change here
     cb.bgColor = { 0.7f, 0.9f, 1.0f, 1.0f };
     cb.smokePos = { smokePos[0], smokePos[1], smokePos[2], 1.0 };
     cb.mvp = mvp;
+
+    XMFLOAT4X4 viewMat{};
+    XMStoreFloat4x4(&viewMat, view);
+    float v_11 = viewMat.m[0][0];
+    float v_21 = viewMat.m[1][0];
+    float v_31 = viewMat.m[2][0];
+    XMVECTOR right{v_11, v_21, v_31};
+    right = XMVector3Normalize(right) * smokeSize * 0.5f;
+
+    float v_12 = viewMat.m[0][1];
+    float v_22 = viewMat.m[1][1];
+    float v_32 = viewMat.m[2][1];
+    XMVECTOR up{v_12, v_22, v_32};
+    up = XMVector3Normalize(up) * smokeSize * 0.5f;
+
     //TODO: Create verts based off of smoke pos
-    // Example of how to create billboards taken from MP-InteractiveMap
-    //std::vector<IconGeometry> iconGeometry;
-    //// -----------------------------------------
-    //// IDEA: Convert this process to a compute shader
-    //// Maybe also look into setting up the overlay pass as an indirect draw
-    //for (int i = 0; i < WorldCount; i++) {
-    //    auto &items = m_worldItems[i];
+    // IconGeometry geo{};
+    // XMStoreFloat3(&geo.pos[0], item.position - right - up);
+    // XMStoreFloat3(&geo.pos[1], item.position - right + up);
+    // XMStoreFloat3(&geo.pos[2], item.position + right - up);
+    // XMStoreFloat3(&geo.pos[3], item.position + right - up);
 
-    //    for (int j = 0; j < items.size(); j++) {
-    //        auto &item = items[j];
-
-    //        XMFLOAT4X4 viewMat{};
-    //        XMStoreFloat4x4(&viewMat, view);
-    //        float v_11 = viewMat.m[0][0];
-    //        float v_21 = viewMat.m[1][0];
-    //        float v_31 = viewMat.m[2][0];
-    //        XMVECTOR right{v_11, v_21, v_31};
-    //        right = XMVector3Normalize(right) * m_iconSize * 0.5f;
-
-    //        float v_12 = viewMat.m[0][1];
-    //        float v_22 = viewMat.m[1][1];
-    //        float v_32 = viewMat.m[2][1];
-    //        XMVECTOR up{v_12, v_22, v_32};
-    //        up = XMVector3Normalize(up) * m_iconSize * 0.5f;
-
-    //        IconGeometry geo{};
-    //        XMStoreFloat3(&geo.pos[0], item.position - right - up);
-    //        geo.uvs[0] = {0.0f, 1.0f};
-    //        XMStoreFloat3(&geo.pos[1], item.position - right + up);
-    //        geo.uvs[1] = {0.0f, 0.0f};
-    //        XMStoreFloat3(&geo.pos[2], item.position + right - up);
-    //        geo.uvs[2] = {1.0f, 1.0f};
-    //        XMStoreFloat3(&geo.pos[3], item.position + right - up);
-    //        geo.uvs[3] = {1.0f, 1.0f};
-    //        XMStoreFloat3(&geo.pos[4], item.position - right + up);
-    //        geo.uvs[4] = {0.0f, 0.0f};
-    //        XMStoreFloat3(&geo.pos[5], item.position + right + up);
-    //        geo.uvs[5] = {1.0f, 0.0f};
-
-    //        iconGeometry.push_back(geo);
-    //    }
-    //}
     cb.verts[0] = { 0.0, 0.0, 0.0, 0.0 };
     cb.verts[1] = { 0.0, 0.0, 0.0, 0.0 };
     cb.verts[2] = { 0.0, 0.0, 0.0, 0.0 };
