@@ -14,7 +14,7 @@ struct SmokeCBuffer {
     XMFLOAT4 bgColor;
     XMFLOAT4 smokePos;
     XMMATRIX mvp;
-    XMFLOAT4 verts[4];
+    XMFLOAT4 verts[6];
     XMFLOAT4 values;
 };
 
@@ -55,7 +55,7 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, 
     //TODO: Look into the idea for rendering smoke, for now we render a billboard
     // Billboard will be filled with smoke effect based off raymarching?
     // Is there a better technque? Cube instead of billboard?
-    renderCmdList->DrawInstanced(4, 1, 0, 0);
+    renderCmdList->DrawInstanced(6, 1, 0, 0);
 }
 
 void SmokeRenderPass::CreateRootSignature() {
@@ -187,7 +187,8 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     XMStoreFloat4(&cb.verts[1], pos - right + up);
     XMStoreFloat4(&cb.verts[2], pos + right - up);
     XMStoreFloat4(&cb.verts[3], pos + right - up);
-    //TODO: Generate 6 verts, d'oh
+    XMStoreFloat4(&cb.verts[4], pos - right + up);
+    XMStoreFloat4(&cb.verts[5], pos + right + up);
 
     cb.values = { sigmaa, distmult, 1.0, 0.0 };
 

@@ -3,20 +3,23 @@ cbuffer SmokeConstants : register (b0)
     float4 bgColor;
     float4 smokePos;
     float4x4 mvp;
-    float4 verts[4];
+    float4 verts[6];
     float4 values; // (sigma_a, dist_mult, unused, unused)
 }
 
 SamplerState texureSampler : register(s0);
 
-static float2 UVs[4] = {
+static float2 UVs[6] = {
     float2(0, 0),
+    float2(0, 1),
+    float2(1, 0),
     float2(1, 0),
     float2(0, 1),
     float2(1, 1),
 };
 
 void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out float2 Tex : TexCoord0) {
+    //TODO: Need to apply transform here
     Pos = verts[VertID];
     Tex = UVs[VertID];
 }
