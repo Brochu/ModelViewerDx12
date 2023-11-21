@@ -51,13 +51,11 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, 
 
     // Draw full screen tri for smoke effect
     renderCmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    //TODO: Render a cube around the smoke center's position
-    // Ray march for the pixels covered by the cube?
-    // How can I transform from UVs to 3d coords in world space?
-    // Find a way to convert this process to a compute shader
-    // Add SRV to the root sig for the currently rendered backbuffer
-    // -> That way we can sample this when the smoke doesn't fully cover
-    renderCmdList->DrawInstanced(3, 1, 0, 0);
+
+    //TODO: Look into the idea for rendering smoke, for now we render a billboard
+    // Billboard will be filled with smoke effect based off raymarching?
+    // Is there a better technque? Cube instead of billboard?
+    renderCmdList->DrawInstanced(4, 1, 0, 0);
 }
 
 void SmokeRenderPass::CreateRootSignature() {
@@ -184,17 +182,13 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     XMVECTOR up{v_12, v_22, v_32};
     up = XMVector3Normalize(up) * smokeSize * 0.5f;
 
-    //TODO: Create verts based off of smoke pos
-    // IconGeometry geo{};
-    // XMStoreFloat3(&geo.pos[0], item.position - right - up);
-    // XMStoreFloat3(&geo.pos[1], item.position - right + up);
-    // XMStoreFloat3(&geo.pos[2], item.position + right - up);
-    // XMStoreFloat3(&geo.pos[3], item.position + right - up);
+    XMVECTOR pos { smokePos[0], smokePos[1], smokePos[2], 1.0 };
+    XMStoreFloat4(&cb.verts[0], pos - right - up);
+    XMStoreFloat4(&cb.verts[1], pos - right + up);
+    XMStoreFloat4(&cb.verts[2], pos + right - up);
+    XMStoreFloat4(&cb.verts[3], pos + right - up);
+    //TODO: Generate 6 verts, d'oh
 
-    cb.verts[0] = { 0.0, 0.0, 0.0, 0.0 };
-    cb.verts[1] = { 0.0, 0.0, 0.0, 0.0 };
-    cb.verts[2] = { 0.0, 0.0, 0.0, 0.0 };
-    cb.verts[3] = { 0.0, 0.0, 0.0, 0.0 };
     cb.values = { sigmaa, distmult, 1.0, 0.0 };
 
     UINT8 *p;
