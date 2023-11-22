@@ -133,7 +133,7 @@ struct DebugParams {
     float smokePos[3] { 0.0, 0.0, 0.0 };
     float sigmaA = 1.f;
     float distMult = 1.f;
-    float smokeSize = 1.f;
+    float smokeSize = 50.f;
 };
 DebugParams dparams = {};
 

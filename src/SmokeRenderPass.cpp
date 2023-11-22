@@ -164,7 +164,7 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
                                            float sigmaa, float distmult, float smokeSize) {
 
     SmokeCBuffer cb {};
-    cb.bgColor = { 0.7f, 0.9f, 1.0f, 1.0f };
+    cb.bgColor = { 0.7f, 0.9f, 1.0f, 0.2f };
     cb.smokePos = { smokePos[0], smokePos[1], smokePos[2], 1.0 };
     cb.mvp = mvp;
 
