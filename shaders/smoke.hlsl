@@ -19,7 +19,6 @@ static float2 UVs[6] = {
 };
 
 void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out float2 Tex : TexCoord0) {
-    //TODO: Need to apply transform here
     Pos = mul(mvp, verts[VertID]);
     Tex = UVs[VertID];
 }
