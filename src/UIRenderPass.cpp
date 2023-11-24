@@ -40,7 +40,7 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
                            float *translate, float *rotate, float *scale,
                            float *camPos, float *lookAt, float *fov,
                            float *lightPos, float *lightPower,
-                           float *sigmaA, float *distMult) {
+                           float *sigmaA, float *distMult, float *smokePos) {
     ImGui_ImplDX12_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
@@ -90,17 +90,18 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
 
         ImGui::Separator();
         ImGui::Text("Camera");
-        ImGui::DragFloat3("position", camPos, 1.f, -500.f, 500.f);
+        ImGui::DragFloat3("cam pos", camPos, 1.f, -500.f, 500.f);
         ImGui::DragFloat3("focus", lookAt, 1.f, -500.f, 500.f);
         ImGui::DragFloat("FOV", fov, 0.25f, 5.f, 110.f);
 
         ImGui::Separator();
         ImGui::Text("Light");
-        ImGui::DragFloat3("pos", lightPos, 1.f, -500.f, 500.f);
+        ImGui::DragFloat3("lit pos", lightPos, 1.f, -500.f, 500.f);
         ImGui::DragFloat("power", lightPower, 0.05f, 0.05f, 5.f);
 
         ImGui::Separator();
         ImGui::Text("Smoke / Cloud");
+        ImGui::DragFloat3("smoke pos", smokePos, 1.f, -500.f, 500.f);
         ImGui::DragFloat("sigma_a", sigmaA, 0.01f, 0.f, 1.f);
         ImGui::DragFloat("dist_mult", distMult, 0.01f, 0.01f, 10.f);
 
