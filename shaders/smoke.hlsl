@@ -32,7 +32,7 @@ float4 PS_main(float4 pos : SV_Position, float2 tex : TEXCOORD0) : SV_TARGET {
         float diff = (0.5 - check) * 2;
         float T = exp((-diff * values.y * 2.0) * values.x);
 
-        float4 volColor = float4(0.8, 0.1, 0.5, 0.8);
+        float4 volColor = float4(0.8, 0.1, 0.5, 0.9);
         return (T * bgColor) + ((1 - T) * volColor);
     }
 
