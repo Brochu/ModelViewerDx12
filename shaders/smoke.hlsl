@@ -11,11 +11,11 @@ SamplerState texureSampler : register(s0);
 
 static float2 UVs[6] = {
     float2(0, 0),
-    float2(0, 1),
     float2(1, 0),
-    float2(1, 0),
-    float2(0, 1),
     float2(1, 1),
+    float2(1, 1),
+    float2(0, 1),
+    float2(0, 0),
 };
 
 void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out float2 Tex : TexCoord0) {
