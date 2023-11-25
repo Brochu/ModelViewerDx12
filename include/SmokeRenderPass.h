@@ -11,9 +11,8 @@ struct SmokeRenderPass {
 
     void Prepare(Microsoft::WRL::ComPtr<ID3D12Device> &device);
     void Update(int backBufferIndex,
-                float *smokePos,
-                DirectX::XMMATRIX view, DirectX::XMMATRIX mvp,
-                float sigmaa, float distmult, float smokeSize);
+                float *smokePos, float smokeSize,
+                DirectX::XMMATRIX mvp, float sigmaa, float distmult);
     void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex);
 
 private:
@@ -21,9 +20,8 @@ private:
     void CreatePipelineStateObject();
     void CreateConstantBuffer();
     void UpdateConstantBuffer(int backBufferIndex,
-                              float *smokePos,
-                              DirectX::XMMATRIX view, DirectX::XMMATRIX mvp,
-                              float sigmaa, float distmult, float smokeSize);
+                              float *smokePos, float smokeSize,
+                              DirectX::XMMATRIX mvp, float sigmaa, float distmult);
 
     void CreateSmokeVolumes();
     void UpdateSmokeVolumes();

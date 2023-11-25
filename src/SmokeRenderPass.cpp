@@ -32,11 +32,10 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
     CreateConstantBuffer();
 }
 void SmokeRenderPass::Update(int backBufferIndex,
-                             float *smokePos,
-                             XMMATRIX view, XMMATRIX mvp,
-                             float sigmaa, float distmult, float smokeSize) {
+                             float *smokePos, float smokeSize,
+                             XMMATRIX mvp, float sigmaa, float distmult) {
 
-    UpdateConstantBuffer(backBufferIndex, smokePos, view, mvp, sigmaa, distmult, smokeSize);
+    UpdateConstantBuffer(backBufferIndex, smokePos, smokeSize, mvp, sigmaa, distmult);
 }
 void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex) {
 
@@ -150,14 +149,14 @@ void SmokeRenderPass::CreateConstantBuffer() {
         );
 
         float smokePos[3] = { 0.0, 0.0, 0.0 };
-        UpdateConstantBuffer(i, smokePos, XMMatrixIdentity(), XMMatrixIdentity(), 1.0, 1.0, 1.0);
+        UpdateConstantBuffer(i, smokePos, 1.0, XMMatrixIdentity(), 1.0, 1.0);
     }
 }
 
 void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
-                                           float* smokePos,
-                                           XMMATRIX view, XMMATRIX mvp,
-                                           float sigmaa, float distmult, float smokeSize) {
+                                           float* smokePos, float smokeSize,
+                                           XMMATRIX mvp,
+                                           float sigmaa, float distmult) {
 
     SmokeCBuffer cb {};
     cb.bgColor = { 0.7f, 0.9f, 1.0f, 0.0f };
@@ -214,7 +213,7 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     XMStoreFloat4(&cb.verts[34], pos + left + up - forward);
     XMStoreFloat4(&cb.verts[35], pos + left + up + forward);
 
-    cb.values = { sigmaa, distmult, 1.0, 0.0 };
+    cb.values = { sigmaa, distmult, smokeSize, 0.0 };
 
     UINT8 *p;
     CD3DX12_RANGE readRange(0, 0);
