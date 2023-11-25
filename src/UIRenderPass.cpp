@@ -40,7 +40,7 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
                            float *translate, float *rotate, float *scale,
                            float *camPos, float *lookAt, float *fov,
                            float *lightPos, float *lightPower,
-                           float *sigmaA, float *distMult, float *smokePos) {
+                           float *sigmaA, float *distMult, float *smokePos, float *smokeSize) {
     ImGui_ImplDX12_NewFrame();
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
@@ -102,6 +102,7 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
         ImGui::Separator();
         ImGui::Text("Smoke / Cloud");
         ImGui::DragFloat3("smoke pos", smokePos, 1.f, -500.f, 500.f);
+        ImGui::DragFloat("smoke size", smokeSize, 1.f, 0.f, 100.f);
         ImGui::DragFloat("sigma_a", sigmaA, 0.01f, 0.f, 1.f);
         ImGui::DragFloat("dist_mult", distMult, 0.01f, 0.01f, 10.f);
 

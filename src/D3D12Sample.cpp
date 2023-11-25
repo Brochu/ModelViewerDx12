@@ -247,7 +247,7 @@ void D3D12Sample::Render ()
                     dparams.translate, dparams.rotate, dparams.scale,
                     dparams.camPos, dparams.lookAt, &dparams.fov,
                     dparams.lightPos, &dparams.lightPower,
-                    &dparams.sigmaA, &dparams.distMult, dparams.smokePos);
+                    &dparams.sigmaA, &dparams.distMult, dparams.smokePos, &dparams.smokeSize);
 
     FinalizeRender ();
 }
