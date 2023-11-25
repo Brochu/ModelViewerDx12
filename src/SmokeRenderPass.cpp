@@ -202,17 +202,17 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
 
     XMStoreFloat4(&cb.verts[24], pos + left - up + forward);
     XMStoreFloat4(&cb.verts[25], pos - left - up + forward);
-    XMStoreFloat4(&cb.verts[26], pos - left - up + forward);
-    XMStoreFloat4(&cb.verts[27], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[26], pos - left - up - forward);
+    XMStoreFloat4(&cb.verts[27], pos - left - up - forward);
     XMStoreFloat4(&cb.verts[28], pos + left - up - forward);
     XMStoreFloat4(&cb.verts[29], pos + left - up + forward);
 
-    XMStoreFloat4(&cb.verts[30], pos + left + up + forward);
-    XMStoreFloat4(&cb.verts[31], pos - left + up + forward);
-    XMStoreFloat4(&cb.verts[32], pos - left + up + forward);
-    XMStoreFloat4(&cb.verts[33], pos - left + up + forward);
-    XMStoreFloat4(&cb.verts[34], pos + left + up - forward);
-    XMStoreFloat4(&cb.verts[35], pos + left + up + forward);
+    XMStoreFloat4(&cb.verts[30], pos + left - up + forward);
+    XMStoreFloat4(&cb.verts[31], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[32], pos - left - up - forward);
+    XMStoreFloat4(&cb.verts[33], pos - left - up - forward);
+    XMStoreFloat4(&cb.verts[34], pos + left - up - forward);
+    XMStoreFloat4(&cb.verts[35], pos + left - up + forward);
 
     cb.values = { sigmaa, distmult, smokeSize, 0.0 };
 
