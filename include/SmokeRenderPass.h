@@ -27,6 +27,9 @@ private:
     void UpdateSmokeVolumes();
 
     static const int QUEUE_SLOT_COUNT = 3;
+    static const int VOLUME_WIDTH = 256;
+    static const int VOLUME_HEIGHT = 256;
+    static const int VOLUME_DEPTH = 256;
 
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
     Microsoft::WRL::ComPtr<ID3D12RootSignature> rootSignature_;

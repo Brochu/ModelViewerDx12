@@ -30,6 +30,7 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
     CreateRootSignature();
     CreatePipelineStateObject();
     CreateConstantBuffer();
+    CreateSmokeVolumes();
 }
 void SmokeRenderPass::Update(int backBufferIndex,
                              float *smokePos, float smokeSize,
@@ -222,10 +223,29 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     constBuffer_[backBufferIndex]->Unmap(0, nullptr);
 }
 
-void CreateSmokeVolumes() {
+void SmokeRenderPass::CreateSmokeVolumes() {
+    for (int i = 0; i < QUEUE_SLOT_COUNT; i++) {
+        D3D12_HEAP_PROPERTIES uploadHeapProps = CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
+        D3D12_RESOURCE_DESC volumeDesc = CD3DX12_RESOURCE_DESC::Tex3D(
+            DXGI_FORMAT_R8_UNORM,
+            VOLUME_WIDTH,
+            VOLUME_HEIGHT,
+            VOLUME_DEPTH);
+
+        device_->CreateCommittedResource(
+            &uploadHeapProps,
+            D3D12_HEAP_FLAG_NONE,
+            &volumeDesc,
+            D3D12_RESOURCE_STATE_GENERIC_READ,
+            nullptr,
+            IID_PPV_ARGS(&smokeVolumes_[i])
+        );
+
+        //TODO: Do we need some sort of init?
+    }
 }
 
-void UpdateSmokeVolumes() {
+void SmokeRenderPass::UpdateSmokeVolumes() {
 }
 
 }
