@@ -14,7 +14,7 @@ struct SmokeCBuffer {
     XMFLOAT4 bgColor;
     XMFLOAT4 smokePos;
     XMMATRIX mvp;
-    XMFLOAT4 verts[6];
+    XMFLOAT4 verts[36];
     XMFLOAT4 values;
 };
 
@@ -52,10 +52,7 @@ void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, 
     // Draw full screen tri for smoke effect
     renderCmdList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-    //TODO: Look into the idea for rendering smoke, for now we render a billboard
-    // Billboard will be filled with smoke effect based off raymarching?
-    // Is there a better technque? Cube instead of billboard?
-    renderCmdList->DrawInstanced(6, 1, 0, 0);
+    renderCmdList->DrawInstanced(36, 1, 0, 0);
 }
 
 void SmokeRenderPass::CreateRootSignature() {
@@ -127,8 +124,7 @@ void SmokeRenderPass::CreatePipelineStateObject() {
     psoDesc.BlendState.RenderTarget[0].DestBlend = D3D12_BLEND_INV_SRC_ALPHA;
     psoDesc.BlendState.RenderTarget[0].RenderTargetWriteMask = D3D12_COLOR_WRITE_ENABLE_ALL;
     psoDesc.DepthStencilState = CD3DX12_DEPTH_STENCIL_DESC(D3D12_DEFAULT);
-    psoDesc.DepthStencilState.DepthEnable = false;
-    psoDesc.DepthStencilState.StencilEnable = false;
+    psoDesc.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_GREATER;
     psoDesc.SampleMask = UINT_MAX;
     psoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
     psoDesc.NumRenderTargets = 1;
@@ -168,27 +164,55 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     cb.smokePos = { smokePos[0], smokePos[1], smokePos[2], 1.0 };
     cb.mvp = mvp;
 
-    XMFLOAT4X4 viewMat{};
-    XMStoreFloat4x4(&viewMat, view);
-    float v_11 = viewMat.m[0][0];
-    float v_21 = viewMat.m[1][0];
-    float v_31 = viewMat.m[2][0];
-    XMVECTOR right{v_11, v_21, v_31};
-    right = XMVector3Normalize(right) * smokeSize * 0.5f;
-
-    float v_12 = viewMat.m[0][1];
-    float v_22 = viewMat.m[1][1];
-    float v_32 = viewMat.m[2][1];
-    XMVECTOR up{v_12, v_22, v_32};
-    up = XMVector3Normalize(up) * smokeSize * 0.5f;
+    XMVECTOR left { 1.f, 0.f, 0.f, 0.f };
+    left *= smokeSize / 2.f;
+    XMVECTOR up { 0.f, 1.f, 0.f, 0.f };
+    up *= smokeSize / 2.f;
+    XMVECTOR forward { 0.f, 0.f, 1.f, 0.f };
+    forward *= smokeSize / 2.f;
 
     XMVECTOR pos { smokePos[0], smokePos[1], smokePos[2], 1.0 };
-    XMStoreFloat4(&cb.verts[0], pos - right - up);
-    XMStoreFloat4(&cb.verts[1], pos - right + up);
-    XMStoreFloat4(&cb.verts[2], pos + right - up);
-    XMStoreFloat4(&cb.verts[3], pos + right - up);
-    XMStoreFloat4(&cb.verts[4], pos - right + up);
-    XMStoreFloat4(&cb.verts[5], pos + right + up);
+    XMStoreFloat4(&cb.verts[0], pos - left + up - forward);
+    XMStoreFloat4(&cb.verts[1], pos + left + up - forward);
+    XMStoreFloat4(&cb.verts[2], pos + left - up - forward);
+    XMStoreFloat4(&cb.verts[3], pos + left - up - forward);
+    XMStoreFloat4(&cb.verts[4], pos - left - up - forward);
+    XMStoreFloat4(&cb.verts[5], pos - left + up - forward);
+
+    XMStoreFloat4(&cb.verts[6], pos - left + up + forward);
+    XMStoreFloat4(&cb.verts[7], pos + left + up + forward);
+    XMStoreFloat4(&cb.verts[8], pos + left - up + forward);
+    XMStoreFloat4(&cb.verts[9], pos + left - up + forward);
+    XMStoreFloat4(&cb.verts[10], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[11], pos - left + up + forward);
+
+    XMStoreFloat4(&cb.verts[12], pos - left + up + forward);
+    XMStoreFloat4(&cb.verts[13], pos - left + up - forward);
+    XMStoreFloat4(&cb.verts[14], pos - left - up - forward);
+    XMStoreFloat4(&cb.verts[15], pos - left - up - forward);
+    XMStoreFloat4(&cb.verts[16], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[17], pos - left + up + forward);
+
+    XMStoreFloat4(&cb.verts[18], pos + left + up + forward);
+    XMStoreFloat4(&cb.verts[19], pos + left + up - forward);
+    XMStoreFloat4(&cb.verts[20], pos + left - up - forward);
+    XMStoreFloat4(&cb.verts[21], pos + left - up - forward);
+    XMStoreFloat4(&cb.verts[22], pos + left - up + forward);
+    XMStoreFloat4(&cb.verts[23], pos + left + up + forward);
+
+    XMStoreFloat4(&cb.verts[24], pos + left - up + forward);
+    XMStoreFloat4(&cb.verts[25], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[26], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[27], pos - left - up + forward);
+    XMStoreFloat4(&cb.verts[28], pos + left - up - forward);
+    XMStoreFloat4(&cb.verts[29], pos + left - up + forward);
+
+    XMStoreFloat4(&cb.verts[30], pos + left + up + forward);
+    XMStoreFloat4(&cb.verts[31], pos - left + up + forward);
+    XMStoreFloat4(&cb.verts[32], pos - left + up + forward);
+    XMStoreFloat4(&cb.verts[33], pos - left + up + forward);
+    XMStoreFloat4(&cb.verts[34], pos + left + up - forward);
+    XMStoreFloat4(&cb.verts[35], pos + left + up + forward);
 
     cb.values = { sigmaa, distmult, 1.0, 0.0 };
 

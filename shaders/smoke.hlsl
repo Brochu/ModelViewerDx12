@@ -3,7 +3,7 @@ cbuffer SmokeConstants : register (b0)
     float4 bgColor;
     float4 smokePos;
     float4x4 mvp;
-    float4 verts[6];
+    float4 verts[36];
     float4 values; // (sigma_a, dist_mult, unused, unused)
 }
 
@@ -20,7 +20,7 @@ static float2 UVs[6] = {
 
 void VS_main(in uint VertID : SV_VertexID, out float4 Pos : SV_Position, out float2 Tex : TexCoord0) {
     Pos = mul(mvp, verts[VertID]);
-    Tex = UVs[VertID];
+    Tex = UVs[VertID % 6];
 }
 
 float4 PS_main(float4 pos : SV_Position, float2 tex : TEXCOORD0) : SV_TARGET {
