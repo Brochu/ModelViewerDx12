@@ -223,4 +223,10 @@ void SmokeRenderPass::UpdateConstantBuffer(int backBufferIndex,
     constBuffer_[backBufferIndex]->Unmap(0, nullptr);
 }
 
+void CreateSmokeVolumes() {
+}
+
+void UpdateSmokeVolumes() {
+}
+
 }

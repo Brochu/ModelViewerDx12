@@ -25,6 +25,9 @@ private:
                               DirectX::XMMATRIX view, DirectX::XMMATRIX mvp,
                               float sigmaa, float distmult, float smokeSize);
 
+    void CreateSmokeVolumes();
+    void UpdateSmokeVolumes();
+
     static const int QUEUE_SLOT_COUNT = 3;
 
     Microsoft::WRL::ComPtr<ID3D12Device> device_;
@@ -32,5 +35,6 @@ private:
     Microsoft::WRL::ComPtr<ID3D12PipelineState> pso_;
 
     Microsoft::WRL::ComPtr<ID3D12Resource> constBuffer_[QUEUE_SLOT_COUNT];
+    Microsoft::WRL::ComPtr<ID3D12Resource> smokeVolumes_[QUEUE_SLOT_COUNT];
 };
 }
