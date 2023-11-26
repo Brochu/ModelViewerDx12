@@ -32,11 +32,13 @@ void SmokeRenderPass::Prepare(ComPtr<ID3D12Device> &device) {
     CreateConstantBuffer();
     CreateSmokeVolumes();
 }
-void SmokeRenderPass::Update(int backBufferIndex,
+void SmokeRenderPass::Update(ComPtr<ID3D12GraphicsCommandList> cmdList,
+                             int backBufferIndex,
                              float *smokePos, float smokeSize,
                              XMMATRIX mvp, float sigmaa, float distmult) {
 
     UpdateConstantBuffer(backBufferIndex, smokePos, smokeSize, mvp, sigmaa, distmult);
+    UpdateSmokeVolumes(cmdList, backBufferIndex);
 }
 void SmokeRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex) {
 
@@ -245,7 +247,42 @@ void SmokeRenderPass::CreateSmokeVolumes() {
     }
 }
 
-void SmokeRenderPass::UpdateSmokeVolumes() {
+void SmokeRenderPass::UpdateSmokeVolumes(ComPtr<ID3D12GraphicsCommandList> cmdList,
+                                         int backBufferIndex) {
+    //TODO: Add commands in the cmdList to upload new noise map to 3d texture
+    // Do we need to keep a copy of the noise map for each backBufferIndex?
+    // EXAMPLE FROM TEXTURE UPLOAD PASS
+    // const auto resourceDesc = CD3DX12_RESOURCE_DESC::Tex2D (
+    //         DXGI_FORMAT_R8G8B8A8_UNORM_SRGB,
+    //         t.width, t.height,
+    //         1, 1 );
+    // device_->CreateCommittedResource (&defaultHeapProperties,
+    //     D3D12_HEAP_FLAG_CREATE_NOT_ZEROED,
+    //     &resourceDesc,
+    //     D3D12_RESOURCE_STATE_COPY_DEST,
+    //     nullptr,
+    //     IID_PPV_ARGS (&imgs[i]));
+
+    // static const auto uploadHeapProperties = CD3DX12_HEAP_PROPERTIES (D3D12_HEAP_TYPE_UPLOAD);
+    // const auto uploadBufferSize = GetRequiredIntermediateSize (imgs[i].Get (), 0, 1);
+    // const auto uploadBufferDesc = CD3DX12_RESOURCE_DESC::Buffer (uploadBufferSize);
+
+    // device_->CreateCommittedResource (&uploadHeapProperties,
+    //     D3D12_HEAP_FLAG_NONE,
+    //     &uploadBufferDesc,
+    //     D3D12_RESOURCE_STATE_GENERIC_READ,
+    //     nullptr,
+    //     IID_PPV_ARGS (&uploadImages_[i]));
+
+    // D3D12_SUBRESOURCE_DATA srcData;
+    // srcData.pData = t.data.data ();
+    // srcData.RowPitch = t.width * 4;
+    // srcData.SlicePitch = t.width * t.height * 4;
+
+    // UpdateSubresources (uploadCmdList_.Get(), imgs[i].Get (), uploadImages_[i].Get (), 0, 0, 1, &srcData);
+    // const auto transition = CD3DX12_RESOURCE_BARRIER::Transition (imgs[i].Get (),
+    //     D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_PIXEL_SHADER_RESOURCE);
+    // uploadCmdList_->ResourceBarrier (1, &transition);
 }
 
 }

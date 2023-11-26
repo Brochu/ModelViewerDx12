@@ -10,7 +10,8 @@ struct SmokeRenderPass {
     ~SmokeRenderPass();
 
     void Prepare(Microsoft::WRL::ComPtr<ID3D12Device> &device);
-    void Update(int backBufferIndex,
+    void Update(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> cmdList,
+                int backBufferIndex,
                 float *smokePos, float smokeSize,
                 DirectX::XMMATRIX mvp, float sigmaa, float distmult);
     void Execute(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> &renderCmdList, int backBufferIndex);
@@ -24,7 +25,8 @@ private:
                               DirectX::XMMATRIX mvp, float sigmaa, float distmult);
 
     void CreateSmokeVolumes();
-    void UpdateSmokeVolumes();
+    void UpdateSmokeVolumes(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> cmdList,
+                            int backBufferIndex);
 
     static const int QUEUE_SLOT_COUNT = 3;
     static const int VOLUME_WIDTH = 256;

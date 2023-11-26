@@ -223,8 +223,8 @@ void D3D12Sample::Render ()
     ZoneScopedN("Sample::Render");
     PrepareRender();
     
-    UpdateConstantBuffer ();
-    auto commandList = commandLists_ [currentBackBuffer_];
+    ComPtr<ID3D12GraphicsCommandList> commandList = commandLists_ [currentBackBuffer_];
+    UpdateConstantBuffer(commandList);
 
     if (!dparams.skipModels) {
         renderpass_.Execute(commandList,
@@ -610,7 +610,7 @@ void D3D12Sample::CreateConstantBuffer ()
     }
 }
 
-void D3D12Sample::UpdateConstantBuffer ()
+void D3D12Sample::UpdateConstantBuffer(ComPtr<ID3D12GraphicsCommandList> cmdList)
 {
     using namespace DirectX;
 
@@ -654,7 +654,7 @@ void D3D12Sample::UpdateConstantBuffer ()
     ::memcpy(p, &cb, sizeof(ConstantBuffer));
     constantBuffers_[currentBackBuffer_]->Unmap (0, nullptr);
 
-    smokepass_.Update(currentBackBuffer_,
+    smokepass_.Update(cmdList, currentBackBuffer_,
                       dparams.smokePos, dparams.smokeSize,
                       mvp, dparams.sigmaA, dparams.distMult);
 }

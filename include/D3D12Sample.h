@@ -69,7 +69,7 @@ private:
     void LoadContent (UploadPass &upload);
 
     void CreateConstantBuffer ();
-    void UpdateConstantBuffer ();
+    void UpdateConstantBuffer(Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> cmdList);
 
     static const int QUEUE_SLOT_COUNT = 3;
     int currentBackBuffer_ = 0;
