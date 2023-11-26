@@ -1,8 +1,10 @@
 #include "UIRenderPass.h"
-#include "imgui.h"
-#include <imgui_impl_win32.h>
-#include <imgui_impl_dx12.h>
+
 #include <d3dx12.h>
+#include <imgui.h>
+#include <imgui_impl_dx12.h>
+#include <imgui_impl_win32.h>
+#include <time.h>
 
 using namespace Microsoft::WRL;
 
@@ -47,6 +49,9 @@ void UIRenderPass::Execute(ComPtr<ID3D12GraphicsCommandList> &uiCmdList,
 
     {
         ImGui::Begin("ModelViewer - Parameters");
+
+        ImGui::Separator();
+        ImGui::Text("Seconds elapsed: %f", (double)clock() / CLOCKS_PER_SEC);
 
         ImGui::Separator();
         ImGui::Text("Passes Override");
