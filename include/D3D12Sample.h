@@ -40,7 +40,9 @@ class D3D12Sample
 {
 public:
     D3D12Sample (const D3D12Sample&) = delete;
+    D3D12Sample (const D3D12Sample&&) = delete;
     D3D12Sample& operator= (const D3D12Sample&) = delete;
+    D3D12Sample& operator= (const D3D12Sample&&) = delete;
 
     D3D12Sample ();
     D3D12Sample (int modelOverride);
