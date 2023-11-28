@@ -53,7 +53,7 @@ LRESULT CALLBACK amdWndProc(
 
     switch (uMsg)
     {
-
+        //TODO: Add input handling here?
     case WM_CLOSE:
         window->OnClose();
         return 0;
