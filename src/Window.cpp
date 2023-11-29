@@ -53,7 +53,22 @@ LRESULT CALLBACK amdWndProc(
 
     switch (uMsg)
     {
-        //TODO: Add input handling here?
+
+    case WM_KEYDOWN:
+        //char downKey = static_cast<char>(wParam);
+        return 0;
+
+    case WM_KEYUP:
+        //unsigned char upKey = static_cast<unsigned char>(wParam);
+        return 0;
+
+    case WM_MOUSEMOVE:
+        //auto pt = MAKEPOINTS(lParam);
+        //bool lButton = (wParam & MK_LBUTTON) == MK_LBUTTON;
+        //bool rButton = (wParam & MK_RBUTTON) == MK_RBUTTON;
+        //bool ctrl = (wParam & MK_CONTROL) == MK_CONTROL;
+        return 0;
+
     case WM_CLOSE:
         window->OnClose();
         return 0;
